@@ -36,14 +36,15 @@ DEBUG_MODE = False
 
 
 def construct_channel(*args, **kwargs):
-    channel = ChannelNode(
-        title='Pratham Open School',
-        source_domain=BASE_URL,
-        source_id='pratham-open-school',
-    )
     global DEBUG_MODE
     DEBUG_MODE = 'debug' in kwargs
-    get_topics(channel, kwargs['language'])
+    language = kwargs['language']
+    channel = ChannelNode(
+        title='Pratham Open School ' + language,
+        source_domain=BASE_URL,
+        source_id='pratham-open-school-' + language,
+    )
+    get_topics(channel, language)
     return channel
 
 

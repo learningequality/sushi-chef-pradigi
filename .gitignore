@@ -3,3 +3,5 @@
 .webcache/
 __pycache__/
 restore/
+.ricecookerfilecache/
+storage/

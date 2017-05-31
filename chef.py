@@ -4,6 +4,9 @@ PRATHAM Open School is organized as follow:
 - Each topic has subtopics (e.g. Geometry, Algebra, ...)
 - Each subtopic has lessons (e.g. Triangle, Circle, Polygons, ...)
 - Finally, each subtopic has contents like videos, pdfs and html5 files.
+
+TODO: hn/Fun and hn/Story do not follow this structure. For now, they
+are not being scraped.
 """
 
 from bs4 import BeautifulSoup
@@ -116,19 +119,21 @@ def get_contents(parent, path):
             title = content.find('div', {'class': 'txtline'}).get_text()
             link = content.find('a', {'title': 'Download'})
             if link:
-                link = link['href']
+                # This link is relative to the current page.
+                link = urllib.parse.urljoin(get_absolute_path(path), link['href'])
             else:
                 # let's get it from the onclick attribute
                 link = content.find('a', {'id': 'navigate'})
                 regex = re.compile(r"res_click\('(.*)','.*','.*','.*'\)")
                 match = regex.search(link['onclick'])
                 link = match.group(1)
+                link = get_absolute_path(link)
             if link.endswith('mp4'):
                 video = VideoNode(
                     title=title,
                     source_id=get_source_id(link),
                     license=licenses.PUBLIC_DOMAIN,
-                    files=[VideoFile(get_absolute_path(link))])
+                    files=[VideoFile(link)])
                 parent.add_child(video)
                 if DEBUG_MODE:
                     return

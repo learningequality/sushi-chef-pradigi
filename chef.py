@@ -9,17 +9,23 @@ TODO: hn/Fun and hn/Story do not follow this structure. For now, they
 are not being scraped.
 """
 
-from bs4 import BeautifulSoup
 import re
 import requests
 import urllib
 
+from bs4 import BeautifulSoup
 from le_utils.constants import licenses
 from ricecooker.classes.files import VideoFile, HTMLZipFile, WebVideoFile, ThumbnailFile
 from ricecooker.classes.nodes import ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode, ExerciseNode
 from ricecooker.config import LOGGER
 from ricecooker.utils.caching import CacheForeverHeuristic, FileCache, CacheControlAdapter
 
+DOMAIN = 'prathamopenschool.org'
+
+# In debug mode, only one topic is downloaded.
+DEBUG_MODE = False
+
+# Cache logic.
 cache = FileCache('.webcache')
 basic_adapter = CacheControlAdapter(cache=cache)
 forever_adapter = CacheControlAdapter(heuristic=CacheForeverHeuristic(),
@@ -27,12 +33,8 @@ forever_adapter = CacheControlAdapter(heuristic=CacheForeverHeuristic(),
 session = requests.Session()
 session.mount('http://', basic_adapter)
 session.mount('https://', basic_adapter)
-session.mount('http://www.prathamopenschool.org', forever_adapter)
-session.mount('https://www.prathamopenschool.org', forever_adapter)
-
-BASE_URL = 'http://www.prathamopenschool.org'
-# In debug mode, only one channel is downloaded.
-DEBUG_MODE = False
+session.mount('http://www.' + DOMAIN, forever_adapter)
+session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
 def construct_channel(*args, **kwargs):
@@ -40,9 +42,9 @@ def construct_channel(*args, **kwargs):
     DEBUG_MODE = 'debug' in kwargs
     language = kwargs['language']
     channel = ChannelNode(
-        title='Pratham Open School ' + language,
-        source_domain=BASE_URL,
-        source_id='pratham-open-school-' + language,
+        title='Pratham Open School {}'.format(language),
+        source_domain=DOMAIN,
+        source_id='pratham-open-school-{}'.format(language),
     )
     get_topics(channel, language)
     return channel
@@ -54,6 +56,7 @@ def get_topics(parent, path):
         menu_row = doc.find('div', {'id': 'menu-row'})
     except Exception as e:
         LOGGER.error('get_topics: %s : %s' % (e, doc))
+        return
     for topic in menu_row.find_all('a'):
         try:
             if topic['href'] == '#':
@@ -77,6 +80,7 @@ def get_subtopics(parent, path):
         menu_row = menu_row.find('div', {'class': 'col-md-2'})
     except Exception as e:
         LOGGER.error('get_subtopics: %s : %s' % (e, doc))
+        return
     for subtopic in menu_row.find_all('a'):
         try:
             LOGGER.info('subtopic: %s' % (subtopic['href']))
@@ -96,6 +100,7 @@ def get_lessons(parent, path):
         menu_row = menu_row.find('div', {'class': 'col-md-9'})
     except Exception as e:
         LOGGER.error('get_lessons: %s : %s' % (e, doc))
+        return
     for lesson in menu_row.find_all('div', {'class': 'thumbnail'}):
         try:
             title = lesson.find('div', {'class': 'txtline'}).get_text().strip()
@@ -115,20 +120,11 @@ def get_contents(parent, path):
         menu_row = doc.find('div', {'id': 'row-exu'})
     except Exception as e:
         LOGGER.error('get_contents: %s : %s' % (e, doc))
+        return
     for content in menu_row.find_all('div', {'class': 'col-md-3'}):
         try:
             title = content.find('div', {'class': 'txtline'}).get_text()
-            link = content.find('a', {'title': 'Download'})
-            if link:
-                # This link is relative to the current page.
-                link = urllib.parse.urljoin(get_absolute_path(path), link['href'])
-            else:
-                # let's get it from the onclick attribute
-                link = content.find('a', {'id': 'navigate'})
-                regex = re.compile(r"res_click\('(.*)','.*','.*','.*'\)")
-                match = regex.search(link['onclick'])
-                link = match.group(1)
-                link = get_absolute_path(link)
+            link = get_content_link(content)
             if link.endswith('mp4'):
                 video = VideoNode(
                     title=title,
@@ -138,13 +134,19 @@ def get_contents(parent, path):
                 parent.add_child(video)
                 if DEBUG_MODE:
                     return
+            elif link.endswith('pdf'):
+                # TODO
+                pass
+            elif link.endswith('html'):
+                # TODO
+                pass
         except Exception as e:
             LOGGER.error('get_contents: %s : %s' % (e, content))
 
 
 # Helper functions
 def get_absolute_path(path):
-    return urllib.parse.urljoin(BASE_URL, path)
+    return urllib.parse.urljoin('http://www.' + DOMAIN, path)
 
 
 def get_page(path):
@@ -155,3 +157,12 @@ def get_page(path):
 
 def get_source_id(path):
     return path.strip("/").split("/")[-1]
+
+
+def get_content_link(content):
+    link = content.find('a', {'id': 'navigate'})
+    regex = re.compile(r"res_click\('(.*)','.*','.*','.*'\)")
+    match = regex.search(link['onclick'])
+    link = match.group(1)
+    link = get_absolute_path(link)
+    return link

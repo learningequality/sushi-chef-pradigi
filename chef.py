@@ -111,9 +111,13 @@ def get_lessons(parent, path):
         try:
             title = lesson.find('div', {'class': 'txtline'}).get_text().strip()
             link = lesson.find('a')['href']
+            thumbnail = lesson.find('a').find('img')['src']
+            thumbnail = get_absolute_path(thumbnail)
             LOGGER.info('    lesson: %s' % (link))
             source_id = get_source_id(link)
-            node = TopicNode(title=title, source_id=source_id)
+            node = TopicNode(title=title,
+                             source_id=source_id,
+                             thumbnail=thumbnail)
             parent.add_child(node)
             get_contents(node, link)
         except Exception as e:
@@ -130,20 +134,30 @@ def get_contents(parent, path):
     for content in menu_row.find_all('div', {'class': 'col-md-3'}):
         try:
             title = content.find('div', {'class': 'txtline'}).get_text()
+            thumbnail = content.find('a').find('img')['src']
+            thumbnail = get_absolute_path(thumbnail)
             main_file, master_file = get_content_link(content)
             if main_file.endswith('mp4'):
                 video = VideoNode(
                     title=title,
                     source_id=get_source_id(main_file),
                     license=licenses.PUBLIC_DOMAIN,
+                    thumbnail=thumbnail,
                     files=[VideoFile(main_file)])
                 parent.add_child(video)
             elif main_file.endswith('pdf'):
                 # TODO
                 pass
             elif main_file.endswith('html') and master_file.endswith('zip'):
-                html5app = get_zip_file(master_file, main_file, title)
-                if html5app:
+                zippath = get_zip_file(master_file, main_file)
+                if zippath:
+                    html5app = HTML5AppNode(
+                        title=title,
+                        source_id=get_source_id(main_file),
+                        license=licenses.PUBLIC_DOMAIN,
+                        thumbnail=thumbnail,
+                        files=[HTMLZipFile(zippath)],
+                    )
                     parent.add_child(html5app)
             else:
                 LOGGER.error('Content not supported: %s, %s' % (main_file, master_file))
@@ -192,7 +206,7 @@ def get_content_link(content):
     return main_file, master_file
 
 
-def get_zip_file(zip_file_url, main_file, title):
+def get_zip_file(zip_file_url, main_file):
     """HTML games are provided as zip files, the entry point of the game is
      main_file. main_file needs to be renamed to index.html to make it
      compatible with Kolibri.
@@ -224,15 +238,7 @@ def get_zip_file(zip_file_url, main_file, title):
         dest = os.path.join(zip_folder, 'index.html')
         os.rename(src, dest)
 
-        zippath = create_predictable_zip(zip_folder)
-        html5app = HTML5AppNode(
-            files=[HTMLZipFile(zippath)],
-            title=title,
-            # thumbnail=thumbnail,
-            source_id=main_file,
-            license=licenses.PUBLIC_DOMAIN,
-        )
-        return html5app
+        return create_predictable_zip(zip_folder)
     except Exception as e:
         LOGGER.error("get_zip_file: %s, %s, %s, %s, %s" %
                      (zip_file_url, main_file, title, destpath, e))

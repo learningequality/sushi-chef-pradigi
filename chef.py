@@ -9,9 +9,13 @@ TODO: hn/Fun and hn/Story do not follow this structure. For now, they
 are not being scraped.
 """
 
+import os
 import re
 import requests
+import shutil
+import tempfile
 import urllib
+import zipfile
 
 from bs4 import BeautifulSoup
 from le_utils.constants import licenses
@@ -19,6 +23,8 @@ from ricecooker.classes.files import VideoFile, HTMLZipFile, WebVideoFile, Thumb
 from ricecooker.classes.nodes import ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode, ExerciseNode
 from ricecooker.config import LOGGER
 from ricecooker.utils.caching import CacheForeverHeuristic, FileCache, CacheControlAdapter
+from ricecooker.utils.html import download_file
+from ricecooker.utils.zip import create_predictable_zip
 
 DOMAIN = 'prathamopenschool.org'
 
@@ -83,7 +89,7 @@ def get_subtopics(parent, path):
         return
     for subtopic in menu_row.find_all('a'):
         try:
-            LOGGER.info('subtopic: %s' % (subtopic['href']))
+            LOGGER.info('  subtopic: %s' % (subtopic['href']))
             title = subtopic.get_text().strip()
             source_id = get_source_id(subtopic['href'])
             node = TopicNode(title=title, source_id=source_id)
@@ -105,7 +111,7 @@ def get_lessons(parent, path):
         try:
             title = lesson.find('div', {'class': 'txtline'}).get_text().strip()
             link = lesson.find('a')['href']
-            LOGGER.info('lesson: %s' % (link))
+            LOGGER.info('    lesson: %s' % (link))
             source_id = get_source_id(link)
             node = TopicNode(title=title, source_id=source_id)
             parent.add_child(node)
@@ -124,22 +130,23 @@ def get_contents(parent, path):
     for content in menu_row.find_all('div', {'class': 'col-md-3'}):
         try:
             title = content.find('div', {'class': 'txtline'}).get_text()
-            link = get_content_link(content)
-            if link.endswith('mp4'):
+            main_file, master_file = get_content_link(content)
+            if main_file.endswith('mp4'):
                 video = VideoNode(
                     title=title,
-                    source_id=get_source_id(link),
+                    source_id=get_source_id(main_file),
                     license=licenses.PUBLIC_DOMAIN,
-                    files=[VideoFile(link)])
+                    files=[VideoFile(main_file)])
                 parent.add_child(video)
-                if DEBUG_MODE:
-                    return
-            elif link.endswith('pdf'):
+            elif main_file.endswith('pdf'):
                 # TODO
                 pass
-            elif link.endswith('html'):
-                # TODO
-                pass
+            elif main_file.endswith('html') and master_file.endswith('zip'):
+                html5app = get_zip_file(master_file, main_file, title)
+                if html5app:
+                    parent.add_child(html5app)
+            else:
+                LOGGER.error('Content not supported: %s, %s' % (main_file, master_file))
         except Exception as e:
             LOGGER.error('get_contents: %s : %s' % (e, content))
 
@@ -149,20 +156,84 @@ def get_absolute_path(path):
     return urllib.parse.urljoin('http://www.' + DOMAIN, path)
 
 
+def make_request(url):
+    response = session.get(url)
+    if response.status_code != 200:
+        LOGGER.error("NOT FOUND: %s" % (url))
+    return response
+
+
 def get_page(path):
     url = get_absolute_path(path)
-    resp = session.get(url)
+    resp = make_request(url)
     return BeautifulSoup(resp.content, 'html.parser')
 
 
 def get_source_id(path):
-    return path.strip("/").split("/")[-1]
+    return path.strip('/').split('/')[-1]
 
 
 def get_content_link(content):
+    """The link to a content has an onclick attribute that executes
+    the res_click function. This function has 4 parameters:
+    - The main file (e.g. an mp4 file, an entry html page to a game).
+    - The type of resource (video, internal link, ...).
+    - A description.
+    - A master file (e.g. for a game, it is a zip file).
+    """
     link = content.find('a', {'id': 'navigate'})
-    regex = re.compile(r"res_click\('(.*)','.*','.*','.*'\)")
+    regex = re.compile(r"res_click\('(.*)','.*','.*','(.*)'\)")
     match = regex.search(link['onclick'])
     link = match.group(1)
-    link = get_absolute_path(link)
-    return link
+    main_file = get_absolute_path(link)
+    master_file = match.group(2)
+    if master_file:
+        master_file = get_absolute_path(master_file)
+    return main_file, master_file
+
+
+def get_zip_file(zip_file_url, main_file, title):
+    """HTML games are provided as zip files, the entry point of the game is
+     main_file. main_file needs to be renamed to index.html to make it
+     compatible with Kolibri.
+    """
+    destpath = tempfile.mkdtemp()
+    try:
+        download_file(zip_file_url, destpath, request_fn=make_request)
+
+        zip_filename = zip_file_url.split('/')[-1]
+        zip_basename = zip_filename.rsplit('.', 1)[0]
+        zip_folder = os.path.join(destpath, zip_basename)
+
+        # Extract zip file contents.
+        local_zip_file = os.path.join(destpath, zip_filename)
+        with zipfile.ZipFile(local_zip_file) as zf:
+            zf.extractall(destpath)
+
+        # In some cases, the files are under the www directory,
+        # let's move them up one level.
+        www_dir = os.path.join(zip_folder, 'www')
+        if os.path.isdir(www_dir):
+            files = os.listdir(www_dir)
+            for f in files:
+                shutil.move(os.path.join(www_dir, f), zip_folder)
+
+        # Rename main_file to index.html.
+        main_file = main_file.split('/')[-1]
+        src = os.path.join(zip_folder, main_file)
+        dest = os.path.join(zip_folder, 'index.html')
+        os.rename(src, dest)
+
+        zippath = create_predictable_zip(zip_folder)
+        html5app = HTML5AppNode(
+            files=[HTMLZipFile(zippath)],
+            title=title,
+            # thumbnail=thumbnail,
+            source_id=main_file,
+            license=licenses.PUBLIC_DOMAIN,
+        )
+        return html5app
+    except Exception as e:
+        LOGGER.error("get_zip_file: %s, %s, %s, %s, %s" %
+                     (zip_file_url, main_file, title, destpath, e))
+        return None

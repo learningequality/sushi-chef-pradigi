@@ -67,9 +67,9 @@ def get_topics(parent, path):
         try:
             if topic['href'] == '#':
                 continue
-            LOGGER.info('topic: %s' % (topic['href']))
             title = topic.get_text().strip()
             source_id = get_source_id(topic['href'])
+            LOGGER.info('topic: %s: %s' % (source_id, title))
             node = TopicNode(title=title, source_id=source_id)
             parent.add_child(node)
             get_subtopics(node, topic['href'])
@@ -89,9 +89,9 @@ def get_subtopics(parent, path):
         return
     for subtopic in menu_row.find_all('a'):
         try:
-            LOGGER.info('  subtopic: %s' % (subtopic['href']))
             title = subtopic.get_text().strip()
             source_id = get_source_id(subtopic['href'])
+            LOGGER.info('  subtopic: %s: %s' % (source_id, title))
             node = TopicNode(title=title, source_id=source_id)
             parent.add_child(node)
             get_lessons(node, subtopic['href'])
@@ -113,8 +113,8 @@ def get_lessons(parent, path):
             link = lesson.find('a')['href']
             thumbnail = lesson.find('a').find('img')['src']
             thumbnail = get_absolute_path(thumbnail)
-            LOGGER.info('    lesson: %s' % (link))
             source_id = get_source_id(link)
+            LOGGER.info('    lesson: %s: %s' % (source_id, title))
             node = TopicNode(title=title,
                              source_id=source_id,
                              thumbnail=thumbnail)
@@ -136,11 +136,12 @@ def get_contents(parent, path):
             title = content.find('div', {'class': 'txtline'}).get_text()
             thumbnail = content.find('a').find('img')['src']
             thumbnail = get_absolute_path(thumbnail)
-            main_file, master_file = get_content_link(content)
+            main_file, master_file, source_id = get_content_link(content)
+            LOGGER.info('      content: %s: %s' % (source_id, title))
             if main_file.endswith('mp4'):
                 video = VideoNode(
                     title=title,
-                    source_id=get_source_id(main_file),
+                    source_id=source_id,
                     license=licenses.PUBLIC_DOMAIN,
                     thumbnail=thumbnail,
                     files=[VideoFile(main_file)])
@@ -148,7 +149,7 @@ def get_contents(parent, path):
             elif main_file.endswith('pdf'):
                 pdf = DocumentNode(
                     title=title,
-                    source_id=get_source_id(main_file),
+                    source_id=source_id,
                     license=licenses.PUBLIC_DOMAIN,
                     thumbnail=thumbnail,
                     files=[DocumentFile(main_file)])
@@ -158,7 +159,7 @@ def get_contents(parent, path):
                 if zippath:
                     html5app = HTML5AppNode(
                         title=title,
-                        source_id=get_source_id(main_file),
+                        source_id=source_id,
                         license=licenses.PUBLIC_DOMAIN,
                         thumbnail=thumbnail,
                         files=[HTMLZipFile(zippath)],
@@ -202,6 +203,7 @@ def get_content_link(content):
     - A master file (e.g. for a game, it is a zip file).
     """
     link = content.find('a', {'id': 'navigate'})
+    source_id = link['href'][1:]
     regex = re.compile(r"res_click\('(.*)','.*','.*','(.*)'\)")
     match = regex.search(link['onclick'])
     link = match.group(1)
@@ -209,7 +211,7 @@ def get_content_link(content):
     master_file = match.group(2)
     if master_file:
         master_file = get_absolute_path(master_file)
-    return main_file, master_file
+    return main_file, master_file, source_id
 
 
 def get_zip_file(zip_file_url, main_file):

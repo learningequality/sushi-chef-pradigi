@@ -16,10 +16,12 @@ import zipfile
 
 from bs4 import BeautifulSoup
 from le_utils.constants import licenses
-from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile, WebVideoFile, ThumbnailFile
-from ricecooker.classes.nodes import ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode, ExerciseNode
+from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile
+from ricecooker.classes.nodes import (ChannelNode, HTML5AppNode,
+                                      TopicNode, VideoNode, DocumentNode)
 from ricecooker.config import LOGGER
-from ricecooker.utils.caching import CacheForeverHeuristic, FileCache, CacheControlAdapter
+from ricecooker.utils.caching import (CacheForeverHeuristic, FileCache,
+                                      CacheControlAdapter)
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
 
@@ -163,7 +165,8 @@ def get_contents(parent, path):
                     )
                     parent.add_child(html5app)
             else:
-                LOGGER.error('Content not supported: %s, %s' % (main_file, master_file))
+                LOGGER.error('Content not supported: %s, %s' %
+                             (main_file, master_file))
         except Exception as e:
             LOGGER.error('get_contents: %s : %s' % (e, content))
 

@@ -3,10 +3,7 @@ PRATHAM Open School is organized as follow:
 - There is top level set of topics (e.g. Mathematics, English, Science, ...)
 - Each topic has subtopics (e.g. Geometry, Algebra, ...)
 - Each subtopic has lessons (e.g. Triangle, Circle, Polygons, ...)
-- Finally, each subtopic has contents like videos, pdfs and html5 files.
-
-TODO: hn/Fun and hn/Story do not follow this structure. For now, they
-are not being scraped.
+- Finally, each lesson has contents like videos, pdfs and html5 files.
 """
 
 import os
@@ -19,7 +16,7 @@ import zipfile
 
 from bs4 import BeautifulSoup
 from le_utils.constants import licenses
-from ricecooker.classes.files import VideoFile, HTMLZipFile, WebVideoFile, ThumbnailFile
+from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile, WebVideoFile, ThumbnailFile
 from ricecooker.classes.nodes import ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode, ExerciseNode
 from ricecooker.config import LOGGER
 from ricecooker.utils.caching import CacheForeverHeuristic, FileCache, CacheControlAdapter
@@ -51,6 +48,7 @@ def construct_channel(*args, **kwargs):
         title='Pratham Open School {}'.format(language),
         source_domain=DOMAIN,
         source_id='pratham-open-school-{}'.format(language),
+        thumbnail=get_absolute_path('img/logop.png')
     )
     get_topics(channel, language)
     return channel
@@ -146,8 +144,13 @@ def get_contents(parent, path):
                     files=[VideoFile(main_file)])
                 parent.add_child(video)
             elif main_file.endswith('pdf'):
-                # TODO
-                pass
+                pdf = DocumentNode(
+                    title=title,
+                    source_id=get_source_id(main_file),
+                    license=licenses.PUBLIC_DOMAIN,
+                    thumbnail=thumbnail,
+                    files=[DocumentFile(main_file)])
+                parent.add_child(pdf)
             elif main_file.endswith('html') and master_file.endswith('zip'):
                 zippath = get_zip_file(master_file, main_file)
                 if zippath:
@@ -240,6 +243,6 @@ def get_zip_file(zip_file_url, main_file):
 
         return create_predictable_zip(zip_folder)
     except Exception as e:
-        LOGGER.error("get_zip_file: %s, %s, %s, %s, %s" %
-                     (zip_file_url, main_file, title, destpath, e))
+        LOGGER.error("get_zip_file: %s, %s, %s, %s" %
+                     (zip_file_url, main_file, destpath, e))
         return None

@@ -58,6 +58,7 @@ def construct_channel(*args, **kwargs):
 def populate_channel(channel, *args, **kwargs):
     language = kwargs['language']
     get_topics(channel, language)
+    return channel
 
 
 def get_topics(parent, path):

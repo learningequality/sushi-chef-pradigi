@@ -52,8 +52,12 @@ def construct_channel(*args, **kwargs):
         source_id='pratham-open-school-{}'.format(language),
         thumbnail=get_absolute_path('img/logop.png')
     )
-    get_topics(channel, language)
     return channel
+
+
+def populate_channel(channel, *args, **kwargs):
+    language = kwargs['language']
+    get_topics(channel, language)
 
 
 def get_topics(parent, path):

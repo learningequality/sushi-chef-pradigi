@@ -42,7 +42,7 @@ session.mount('http://www.' + DOMAIN, forever_adapter)
 session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
-def construct_channel(*args, **kwargs):
+def create_channel(*args, **kwargs):
     global DEBUG_MODE
     DEBUG_MODE = 'debug' in kwargs
     language = kwargs['language']
@@ -52,6 +52,12 @@ def construct_channel(*args, **kwargs):
         source_id='pratham-open-school-{}'.format(language),
         thumbnail=get_absolute_path('img/logop.png')
     )
+    return channel
+
+
+def construct_channel(*args, **kwargs):
+    channel = create_channel(*args, **kwargs)
+    language = kwargs['language']
     get_topics(channel, language)
     return channel
 

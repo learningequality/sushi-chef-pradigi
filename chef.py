@@ -66,7 +66,8 @@ def construct_channel(*args, **kwargs):
 
 def validate_language(language):
     if language not in LANGUAGES:
-        raise ValueError('Invalid language option, valid values: {}'.format(', '.join(LANGUAGES)))
+        l = ', '.join(LANGUAGES)
+        raise ValueError('Invalid language, valid values: {}'.format(l))
 
 
 def get_topics(parent, path):

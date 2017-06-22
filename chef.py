@@ -26,6 +26,7 @@ from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
 
 DOMAIN = 'prathamopenschool.org'
+LANGUAGES = ['hn', 'mr']
 
 # In debug mode, only one topic is downloaded.
 DEBUG_MODE = False
@@ -46,6 +47,7 @@ def create_channel(*args, **kwargs):
     global DEBUG_MODE
     DEBUG_MODE = 'debug' in kwargs
     language = kwargs['language']
+    validate_language(language)
     channel = ChannelNode(
         title='Pratham Open School {}'.format(language),
         source_domain=DOMAIN,
@@ -60,6 +62,12 @@ def construct_channel(*args, **kwargs):
     language = kwargs['language']
     get_topics(channel, language)
     return channel
+
+
+def validate_language(language):
+    if language not in LANGUAGES:
+        l = ', '.join(LANGUAGES)
+        raise ValueError('Invalid language, valid values: {}'.format(l))
 
 
 def get_topics(parent, path):

@@ -41,7 +41,7 @@ def chef_info():
 ################################################################################
 
 @task
-def run_pradigi(debug="False"):
+def run_pradigi(debug="False", lang='hn'):
     if debug == "False":
         debug_str = ''
     else:

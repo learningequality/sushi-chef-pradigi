@@ -21,13 +21,17 @@ from bs4 import BeautifulSoup
 from le_utils.constants import licenses
 from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile
 from ricecooker.classes.nodes import (ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode)
+from ricecooker.classes.licenses import get_license
 from ricecooker.config import LOGGER
 from ricecooker.utils.caching import (CacheForeverHeuristic, FileCache, CacheControlAdapter)
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
 
+
 DOMAIN = 'prathamopenschool.org'
 LANGUAGES = ['hn', 'mr']
+
+PRATHAM_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='Pratham Open School')
 
 # In debug mode, only one topic is downloaded.
 DEBUG_MODE = False
@@ -133,7 +137,7 @@ def get_contents(parent, path):
                 video = VideoNode(
                     title=title,
                     source_id=source_id,
-                    license=licenses.PUBLIC_DOMAIN,
+                    license=PRATHAM_LICENSE,
                     thumbnail=thumbnail,
                     files=[VideoFile(main_file)])
                 parent.add_child(video)
@@ -141,7 +145,7 @@ def get_contents(parent, path):
                 pdf = DocumentNode(
                     title=title,
                     source_id=source_id,
-                    license=licenses.PUBLIC_DOMAIN,
+                    license=PRATHAM_LICENSE,
                     thumbnail=thumbnail,
                     files=[DocumentFile(main_file)])
                 parent.add_child(pdf)
@@ -151,7 +155,7 @@ def get_contents(parent, path):
                     html5app = HTML5AppNode(
                         title=title,
                         source_id=source_id,
-                        license=licenses.PUBLIC_DOMAIN,
+                        license=PRATHAM_LICENSE,
                         thumbnail=thumbnail,
                         files=[HTMLZipFile(zippath)],
                     )
@@ -260,7 +264,7 @@ class PraDigiChef(SushiChef):
         language = kwargs['language']
         self.validate_language(language)
         channel = ChannelNode(
-            title='Pratham Open School {}'.format(language),
+            title='PraDigi',
             source_domain=DOMAIN,
             source_id='pratham-open-school-{}'.format(language),
             thumbnail=None, # get_absolute_path('img/logop.png'),

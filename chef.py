@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 PRATHAM Open School is organized as follow:
 - There is top level set of topics (e.g. Mathematics, English, Science, ...)
@@ -14,14 +15,14 @@ import tempfile
 import urllib
 import zipfile
 
+
+from ricecooker.chefs import SushiChef
 from bs4 import BeautifulSoup
 from le_utils.constants import licenses
 from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile
-from ricecooker.classes.nodes import (ChannelNode, HTML5AppNode,
-                                      TopicNode, VideoNode, DocumentNode)
+from ricecooker.classes.nodes import (ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode)
 from ricecooker.config import LOGGER
-from ricecooker.utils.caching import (CacheForeverHeuristic, FileCache,
-                                      CacheControlAdapter)
+from ricecooker.utils.caching import (CacheForeverHeuristic, FileCache, CacheControlAdapter)
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
 
@@ -43,31 +44,7 @@ session.mount('http://www.' + DOMAIN, forever_adapter)
 session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
-def create_channel(*args, **kwargs):
-    global DEBUG_MODE
-    DEBUG_MODE = 'debug' in kwargs
-    language = kwargs['language']
-    validate_language(language)
-    channel = ChannelNode(
-        title='Pratham Open School {}'.format(language),
-        source_domain=DOMAIN,
-        source_id='pratham-open-school-{}'.format(language),
-        thumbnail=get_absolute_path('img/logop.png')
-    )
-    return channel
 
-
-def construct_channel(*args, **kwargs):
-    channel = create_channel(*args, **kwargs)
-    language = kwargs['language']
-    get_topics(channel, language)
-    return channel
-
-
-def validate_language(language):
-    if language not in LANGUAGES:
-        l = ', '.join(LANGUAGES)
-        raise ValueError('Invalid language, valid values: {}'.format(l))
 
 
 def get_topics(parent, path):
@@ -265,3 +242,47 @@ def get_zip_file(zip_file_url, main_file):
         LOGGER.error("get_zip_file: %s, %s, %s, %s" %
                      (zip_file_url, main_file, destpath, e))
         return None
+
+
+# CHEF
+################################################################################
+
+class PraDigiChef(SushiChef):
+
+    def validate_language(self, language):
+        if language not in LANGUAGES:
+            l = ', '.join(LANGUAGES)
+            raise ValueError('Invalid language, valid values: {}'.format(l))
+
+    def get_channel(self, *args, **kwargs):
+        global DEBUG_MODE
+        DEBUG_MODE = 'debug' in kwargs
+        language = kwargs['language']
+        self.validate_language(language)
+        channel = ChannelNode(
+            title='Pratham Open School {}'.format(language),
+            source_domain=DOMAIN,
+            source_id='pratham-open-school-{}'.format(language),
+            thumbnail=None, # get_absolute_path('img/logop.png'),
+            language='hi', # language
+        )
+        return channel
+
+
+    def construct_channel(self, *args, **kwargs):
+        channel = self.get_channel(*args, **kwargs)
+        language = kwargs['language']
+        get_topics(channel, language)
+        return channel
+
+
+# CLI
+################################################################################
+
+if __name__ == '__main__':
+    pradigi_chef = PraDigiChef()
+    # args, options = pradigi_chef.parse_args_and_options()
+    # if 'lang' not in options:
+    #     raise ValueError('Need to specify command line option `lang=XY`, where XY in en, fr, ar, sw.')
+    pradigi_chef.main()
+

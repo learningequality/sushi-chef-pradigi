@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-PRATHAM Open School is organized as follow:
+PRATHAM Open School (PraDigi) content is organized as follow:
 - There is top level set of topics (e.g. Mathematics, English, Science, ...)
 - Each topic has subtopics (e.g. Geometry, Algebra, ...)
 - Each subtopic has lessons (e.g. Triangle, Circle, Polygons, ...)

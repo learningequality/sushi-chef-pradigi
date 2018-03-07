@@ -7,6 +7,7 @@ PRATHAM Open School (PraDigi) content is organized as follow:
 - Finally, each lesson has contents like videos, pdfs and html5 files.
 """
 
+import json
 import os
 import re
 import requests
@@ -19,6 +20,7 @@ import zipfile
 from basiccrawler.crawler import BasicCrawler
 from bs4 import BeautifulSoup
 from le_utils.constants import licenses
+from le_utils.constants.languages import getlang
 from ricecooker.chefs import SushiChef
 from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile
 from ricecooker.classes.nodes import (ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode)
@@ -31,11 +33,12 @@ from ricecooker.utils.zip import create_predictable_zip
 DOMAIN = 'prathamopenschool.org'
 FULL_DOMAIN_URL = 'http://www.' + DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi')
-PRADIGI_LANGUAGES = ['hn', 'mr']
+PRADIGI_LANGUAGES = ['hi', 'mr']  # le-utils language codes for Hindi and Marathi
 PRADIGI_LANG_URL_MAP = {
-    'hn': 'http://www.prathamopenschool.org/hn/',
+    'hi': 'http://www.prathamopenschool.org/hn/',
     'mr': 'http://www.prathamopenschool.org/mr/',
 }
+
 
 
 # In debug mode, only one topic is downloaded.
@@ -56,7 +59,6 @@ session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
 class PraDigiCrawler(BasicCrawler):
-    CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_web_resource_tree.json'
     MAIN_SOURCE_DOMAIN = FULL_DOMAIN_URL
     START_PAGE_CONTEXT = {'kind': 'lang_page'}
     kind_handlers = {
@@ -67,6 +69,63 @@ class PraDigiCrawler(BasicCrawler):
         'lesson_page': 'on_lesson_page',
     }
 
+
+    # CRALWING
+    ############################################################################
+
+
+
+    def __init__(self, lang=None, **kwargs):
+        """
+        Extend base class constructor to handle two-letter language code `lang`.
+        """
+        if lang is None:
+            raise ValueError('Must specify `lang` argument for PraDigiCrawler.')
+        if lang not in PRADIGI_LANGUAGES:
+            raise ValueError('Bad lang. Use one of ' + str(PRADIGI_LANGUAGES))
+        self.lang = lang
+        start_page = PRADIGI_LANG_URL_MAP[self.lang]
+        self.CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
+        super().__init__(start_page=start_page)
+
+
+    def crawl(self, **kwargs):
+        """
+        Extend base crawl method to add PraDigi channel metadata. 
+        """
+        web_resource_tree = super().crawl(**kwargs)
+
+        # channel metadata
+        lang_obj = getlang(self.lang)
+        channel_metadata = dict(
+            title='PraDigi ({})'.format(lang_obj.native_name),
+            description = 'PraDigi video lessons and games.',  # TODO(ivan): what should be the longer descitpiton?
+            source_domain = DOMAIN,
+            source_id='pratham-open-school-{}'.format(self.lang),
+            language=self.lang,
+            thumbnail=None, # get_absolute_path('img/logop.png'),
+        )
+        web_resource_tree.update(channel_metadata)
+
+        # convert tree format expected by scraping functions
+        # restructure_web_resource_tree(web_resource_tree)
+        # remove_sections(web_resource_tree)
+        self.write_web_resource_tree_json(web_resource_tree)
+        return web_resource_tree
+
+    def write_web_resource_tree_json(self, channel_dict):
+        destpath = self.CRAWLING_STAGE_OUTPUT
+        parent_dir, _ = os.path.split(destpath)
+        if not os.path.exists(parent_dir):
+            os.makedirs(parent_dir, exist_ok=True)
+        with open(destpath, 'w') as wrt_file:
+            json.dump(channel_dict, wrt_file, indent=2)
+
+
+
+
+    # HANDLERS
+    ############################################################################
 
     def on_lang_page(self, url, page, context):
         LOGGER.debug('in on_lang_page ' + url)

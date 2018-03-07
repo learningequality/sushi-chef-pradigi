@@ -12,13 +12,14 @@ import re
 import requests
 import shutil
 import tempfile
-import urllib
+from urllib.parse import urljoin
 import zipfile
 
 
-from ricecooker.chefs import SushiChef
+from basiccrawler.crawler import BasicCrawler
 from bs4 import BeautifulSoup
 from le_utils.constants import licenses
+from ricecooker.chefs import SushiChef
 from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile
 from ricecooker.classes.nodes import (ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode)
 from ricecooker.classes.licenses import get_license
@@ -27,11 +28,15 @@ from ricecooker.utils.caching import (CacheForeverHeuristic, FileCache, CacheCon
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
 
-
 DOMAIN = 'prathamopenschool.org'
-LANGUAGES = ['hn', 'mr']
+FULL_DOMAIN_URL = 'http://www.' + DOMAIN
+PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi')
+PRADIGI_LANGUAGES = ['hn', 'mr']
+PRADIGI_LANG_URL_MAP = {
+    'hn': 'http://www.prathamopenschool.org/hn/',
+    'mr': 'http://www.prathamopenschool.org/mr/',
+}
 
-PRATHAM_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='Pratham Open School')
 
 # In debug mode, only one topic is downloaded.
 DEBUG_MODE = False
@@ -50,73 +55,165 @@ session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
 
+class PraDigiCrawler(BasicCrawler):
+    CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_web_resource_tree.json'
+    MAIN_SOURCE_DOMAIN = FULL_DOMAIN_URL
+    START_PAGE_CONTEXT = {'kind': 'lang_page'}
+    kind_handlers = {
+        'lang_page': 'on_lang_page',
+        'topic_page': 'on_topic_page',
+        'games_page': 'on_games_page',
+        'subtopic_page': 'on_subtopic_page',
+        'lesson_page': 'on_lesson_page',
+    }
 
-def get_topics(parent, path):
-    doc = get_page(path)
-    try:
-        menu_row = doc.find('div', {'id': 'menu-row'})
-    except Exception as e:
-        LOGGER.error('get_topics: %s : %s' % (e, doc))
-        return
-    for topic in menu_row.find_all('a'):
+
+    def on_lang_page(self, url, page, context):
+        LOGGER.debug('in on_lang_page ' + url)
+        page_dict = dict(
+            kind='lang_page',
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+
         try:
-            if topic['href'] == '#':
-                continue
-            title = topic.get_text().strip()
-            source_id = get_source_id(topic['href'])
-            LOGGER.info('topic: %s: %s' % (source_id, title))
-            node = TopicNode(title=title, source_id=source_id)
-            parent.add_child(node)
-            get_subtopics(node, topic['href'])
-            if DEBUG_MODE:
-                return
+            menu_row = page.find('div', {'id': 'menu-row'})
         except Exception as e:
-            LOGGER.error('get_topics: %s : %s' % (e, topic))
+            LOGGER.error('on_lang_page: %s : %s' % (e, page))
+            return
+        for topic in menu_row.find_all('a'):
+            try:
+                if topic['href'] == '#':
+                    print('skipping', topic)
+                    continue
+                topic_url = urljoin(url, topic['href'])
+                title = topic.get_text().strip()
+                source_id = get_source_id(topic['href'])
+                
+                if 'Fun' in topic['href'] or 'Story' in topic['href']:
+                    LOGGER.info('found games page: %s: %s' % (source_id, title))
+                    context = dict(
+                        parent=page_dict,
+                        kind='games_page',
+                        title=title,
+                        source_id=source_id,
+                    )
+                    self.enqueue_url_and_context(topic_url, context)
+
+                else:
+                    LOGGER.info('found topic: %s: %s' % (source_id, title))
+                    context = dict(
+                        parent=page_dict,
+                        kind='topic_page',
+                        title=title,
+                        source_id=source_id,
+                    )
+                    self.enqueue_url_and_context(topic_url, context)
+
+                if DEBUG_MODE:
+                    return
+            except Exception as e:
+                LOGGER.error('on_lang_page: %s : %s' % (e, topic))
 
 
-def get_subtopics(parent, path):
-    doc = get_page(path)
-    try:
-        menu_row = doc.find('div', {'id': 'body-row'})
-        menu_row = menu_row.find('div', {'class': 'col-md-2'})
-    except Exception as e:
-        LOGGER.error('get_subtopics: %s : %s' % (e, doc))
-        return
-    for subtopic in menu_row.find_all('a'):
+    def on_topic_page(self, url, page, context):
+        LOGGER.debug('in on_topic_page ' + url)
+        page_dict = dict(
+            kind='topic_page',
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+
         try:
-            title = subtopic.get_text().strip()
-            source_id = get_source_id(subtopic['href'])
-            LOGGER.info('  subtopic: %s: %s' % (source_id, title))
-            node = TopicNode(title=title, source_id=source_id)
-            parent.add_child(node)
-            get_lessons(node, subtopic['href'])
+            body_row = page.find('div', {'id': 'body-row'})
+            menu_row = body_row.find('div', {'class': 'col-md-2'})
         except Exception as e:
-            LOGGER.error('get_subtopics: %s : %s' % (e, subtopic))
+            LOGGER.error('get_subtopics: %s : %s' % (e, page))
+            return
+        for subtopic in menu_row.find_all('a'):
+            try:
+                subtopic_url = urljoin(url, subtopic['href'])
+                title = subtopic.get_text().strip()
+                source_id = get_source_id(subtopic['href'])
+                LOGGER.info('  found subtopic: %s: %s' % (source_id, title))
+                context = dict(
+                    parent=page_dict,
+                    kind='subtopic_page',
+                    title=title,
+                    source_id=source_id,
+                )
+                self.enqueue_url_and_context(subtopic_url, context)
+            except Exception as e:
+                LOGGER.error('on_topic_page: %s : %s' % (e, subtopic))
 
 
-def get_lessons(parent, path):
-    doc = get_page(path)
-    try:
-        menu_row = doc.find('div', {'id': 'body-row'})
-        menu_row = menu_row.find('div', {'class': 'col-md-9'})
-    except Exception as e:
-        LOGGER.error('get_lessons: %s : %s' % (e, doc))
-        return
-    for lesson in menu_row.find_all('div', {'class': 'thumbnail'}):
+    def on_games_page(self, url, page, context):
+        print('     in on_games_page', url)
+        page_dict = dict(
+            kind='games_page_WIP',
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+
+
+
+
+
+
+    def on_subtopic_page(self, url, page, context):
+        print('     in on_subtopic_page', url)
+        page_dict = dict(
+            kind='subtopic_page',
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+
         try:
-            title = lesson.find('div', {'class': 'txtline'}).get_text().strip()
-            link = lesson.find('a')['href']
-            thumbnail = lesson.find('a').find('img')['src']
-            thumbnail = get_absolute_path(thumbnail)
-            source_id = get_source_id(link)
-            LOGGER.info('    lesson: %s: %s' % (source_id, title))
-            node = TopicNode(title=title,
-                             source_id=source_id,
-                             thumbnail=thumbnail)
-            parent.add_child(node)
-            get_contents(node, link)
+            menu_row = page.find('div', {'id': 'body-row'})
+            menu_row = menu_row.find('div', {'class': 'col-md-9'})
         except Exception as e:
-            LOGGER.error('get_lessons: %s : %s' % (e, lesson))
+            LOGGER.error('on_subtopic_page: %s : %s' % (e, page))
+            return
+        for lesson in menu_row.find_all('div', {'class': 'thumbnail'}):
+            try:
+                title = lesson.find('div', {'class': 'txtline'}).get_text().strip()
+                lesson_url = urljoin(url, lesson.find('a')['href'])
+                thumbnail_src = lesson.find('a').find('img')['src']
+                thumbnail_url = urljoin(url, thumbnail_src)
+                source_id = get_source_id(lesson.find('a')['href'])
+                LOGGER.info('     lesson: %s: %s' % (source_id, title))
+                context = dict(
+                    parent=page_dict,
+                    kind='lesson_page',
+                    title=title,
+                    source_id=source_id,
+                    thumbnail_url=thumbnail_url,
+                )
+                self.enqueue_url_and_context(lesson_url, context)
+                # get_contents(node, link)
+            except Exception as e:
+                LOGGER.error('on_subtopic_page: %s : %s' % (e, lesson))
+
+
+    def on_lesson_page(self, url, page, context):
+        print('      in on_lesson_page', url)
+        page_dict = dict(
+            kind='lessons_page',
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+
+
 
 
 def get_contents(parent, path):
@@ -137,7 +234,7 @@ def get_contents(parent, path):
                 video = VideoNode(
                     title=title,
                     source_id=source_id,
-                    license=PRATHAM_LICENSE,
+                    license=PRADIGI_LICENSE,
                     thumbnail=thumbnail,
                     files=[VideoFile(main_file)])
                 parent.add_child(video)
@@ -145,7 +242,7 @@ def get_contents(parent, path):
                 pdf = DocumentNode(
                     title=title,
                     source_id=source_id,
-                    license=PRATHAM_LICENSE,
+                    license=PRADIGI_LICENSE,
                     thumbnail=thumbnail,
                     files=[DocumentFile(main_file)])
                 parent.add_child(pdf)
@@ -155,7 +252,7 @@ def get_contents(parent, path):
                     html5app = HTML5AppNode(
                         title=title,
                         source_id=source_id,
-                        license=PRATHAM_LICENSE,
+                        license=PRADIGI_LICENSE,
                         thumbnail=thumbnail,
                         files=[HTMLZipFile(zippath)],
                     )
@@ -167,9 +264,11 @@ def get_contents(parent, path):
             LOGGER.error('get_contents: %s : %s' % (e, content))
 
 
+
+
 # Helper functions
 def get_absolute_path(path):
-    return urllib.parse.urljoin('http://www.' + DOMAIN, path)
+    return urljoin('http://www.' + DOMAIN, path)
 
 
 def make_request(url):

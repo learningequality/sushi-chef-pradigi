@@ -19,20 +19,21 @@ import zipfile
 
 from basiccrawler.crawler import BasicCrawler
 from bs4 import BeautifulSoup
-from le_utils.constants import licenses
+from le_utils.constants import content_kinds, file_types, licenses
 from le_utils.constants.languages import getlang
 from ricecooker.chefs import SushiChef
 from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile
 from ricecooker.classes.nodes import (ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode)
 from ricecooker.classes.licenses import get_license
 from ricecooker.config import LOGGER
+from ricecooker.utils import downloader
 from ricecooker.utils.caching import (CacheForeverHeuristic, FileCache, CacheControlAdapter)
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
 
 DOMAIN = 'prathamopenschool.org'
 FULL_DOMAIN_URL = 'http://www.' + DOMAIN
-PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi')
+PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
 PRADIGI_LANGUAGES = ['hi', 'mr']  # le-utils language codes for Hindi and Marathi
 PRADIGI_LANG_URL_MAP = {
     'hi': 'http://www.prathamopenschool.org/hn/',
@@ -56,6 +57,21 @@ session.mount('http://www.' + DOMAIN, forever_adapter)
 session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
+
+
+class PrathamCMSCrawler(BasicCrawler):
+    MAIN_SOURCE_DOMAIN = 'http://www.gamerepo.prathamcms.org'
+    CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_games_all_langs.json'
+    IGNORE_URLS = [re.compile('.*/Game/.*/index.html')]
+
+    def download_page(self, url, *args, **kwargs):
+        """
+        Download `url` using a JS-enabled web client.
+        """
+        html = downloader.read(url, loadjs=True)
+        page = BeautifulSoup(html, "html.parser")
+        LOGGER.debug('Downloaded page ' + str(url) + ' using PhantomJS. Title:' + self.get_title(page))
+        return (url, page)
 
 
 class PraDigiCrawler(BasicCrawler):
@@ -113,13 +129,7 @@ class PraDigiCrawler(BasicCrawler):
         self.write_web_resource_tree_json(web_resource_tree)
         return web_resource_tree
 
-    def write_web_resource_tree_json(self, channel_dict):
-        destpath = self.CRAWLING_STAGE_OUTPUT
-        parent_dir, _ = os.path.split(destpath)
-        if not os.path.exists(parent_dir):
-            os.makedirs(parent_dir, exist_ok=True)
-        with open(destpath, 'w') as wrt_file:
-            json.dump(channel_dict, wrt_file, indent=2)
+
 
 
 
@@ -244,6 +254,8 @@ class PraDigiCrawler(BasicCrawler):
         for lesson in menu_row.find_all('div', {'class': 'thumbnail'}):
             try:
                 title = lesson.find('div', {'class': 'txtline'}).get_text().strip()
+                caption = lesson.find('div', class_='caption')
+                description = lesson.get_text().strip() if lesson else ''
                 lesson_url = urljoin(url, lesson.find('a')['href'])
                 thumbnail_src = lesson.find('a').find('img')['src']
                 thumbnail_url = urljoin(url, thumbnail_src)
@@ -253,6 +265,7 @@ class PraDigiCrawler(BasicCrawler):
                     parent=page_dict,
                     kind='lesson_page',
                     title=title,
+                    description=description,
                     source_id=source_id,
                     thumbnail_url=thumbnail_url,
                 )
@@ -272,55 +285,66 @@ class PraDigiCrawler(BasicCrawler):
         page_dict.update(context)
         context['parent']['children'].append(page_dict)
 
-
-
-
-def get_contents(parent, path):
-    doc = get_page(path)
-    try:
-        menu_row = doc.find('div', {'id': 'row-exu'})
-    except Exception as e:
-        LOGGER.error('get_contents: %s : %s' % (e, doc))
-        return
-    for content in menu_row.find_all('div', {'class': 'col-md-3'}):
         try:
-            title = content.find('div', {'class': 'txtline'}).get_text()
-            thumbnail = content.find('a').find('img')['src']
-            thumbnail = get_absolute_path(thumbnail)
-            main_file, master_file, source_id = get_content_link(content)
-            LOGGER.info('      content: %s: %s' % (source_id, title))
-            if main_file.endswith('mp4'):
-                video = VideoNode(
-                    title=title,
-                    source_id=source_id,
-                    license=PRADIGI_LICENSE,
-                    thumbnail=thumbnail,
-                    files=[VideoFile(main_file)])
-                parent.add_child(video)
-            elif main_file.endswith('pdf'):
-                pdf = DocumentNode(
-                    title=title,
-                    source_id=source_id,
-                    license=PRADIGI_LICENSE,
-                    thumbnail=thumbnail,
-                    files=[DocumentFile(main_file)])
-                parent.add_child(pdf)
-            elif main_file.endswith('html') and master_file.endswith('zip'):
-                zippath = get_zip_file(master_file, main_file)
-                if zippath:
-                    html5app = HTML5AppNode(
+            menu_row = page.find('div', {'id': 'row-exu'})
+        except Exception as e:
+            LOGGER.error('get_contents: %s : %s' % (e, page))
+            return
+
+        for content in menu_row.find_all('div', {'class': 'col-md-3'}):
+            try:
+                title = content.find('div', {'class': 'txtline'}).get_text()
+                # TODO: description
+                thumbnail = content.find('a').find('img')['src']
+                thumbnail = get_absolute_path(thumbnail)
+                main_file, master_file, source_id = get_content_link(content)
+                LOGGER.info('      content: %s: %s' % (source_id, title))
+
+                if main_file.endswith('mp4'):
+                    video = dict(
+                        kind=content_kinds.VIDEO,
                         title=title,
                         source_id=source_id,
                         license=PRADIGI_LICENSE,
                         thumbnail=thumbnail,
-                        files=[HTMLZipFile(zippath)],
+                        files=[{'file_type':file_types.VIDEO, 'path':main_file}],
+                                children=[],
+                                url=main_file,
                     )
-                    parent.add_child(html5app)
-            else:
-                LOGGER.error('Content not supported: %s, %s' %
-                             (main_file, master_file))
-        except Exception as e:
-            LOGGER.error('get_contents: %s : %s' % (e, content))
+                    page_dict['children'].append(video)
+
+                elif main_file.endswith('pdf'):
+                    pdf = dict(
+                        kind=content_kinds.DOCUMENT,
+                        title=title,
+                        source_id=source_id,
+                        license=PRADIGI_LICENSE,
+                        thumbnail=thumbnail,
+                        files=[{'file_type':file_types.DOCUMENT, 'path':main_file}],
+                                children=[],
+                                url=main_file,
+                    )
+                    page_dict['children'].append(pdf)
+
+                elif main_file.endswith('html') and master_file.endswith('zip'):
+                    # zippath = get_zip_file(master_file, main_file)
+                    zippath = master_file  # TMP HACK <-------<-------<-------<-------<-------<-------
+                    if zippath:
+                        html5app = dict(
+                            kind=content_kinds.HTML5,
+                            title=title,
+                            source_id=source_id,
+                            license=PRADIGI_LICENSE,
+                            thumbnail=thumbnail,
+                            files=[{'file_type':file_types.HTML5, 'path':zippath}],
+                                    children=[],
+                                    url=main_file,
+                        )
+                        page_dict['children'].append(html5app)
+                else:
+                    LOGGER.error('Content not supported: %s, %s' % (main_file, master_file))
+            except Exception as e:
+                LOGGER.error('get_contents: %s : %s' % (e, content))
 
 
 

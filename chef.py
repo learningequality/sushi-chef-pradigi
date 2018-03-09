@@ -2,12 +2,17 @@
 """
 PRATHAM Open School (PraDigi) content is organized as follow:
 - There is top level set of topics (e.g. Mathematics, English, Science, ...)
-- Each topic has subtopics (e.g. Geometry, Algebra, ...)
-- Each subtopic has lessons (e.g. Triangle, Circle, Polygons, ...)
-- Finally, each lesson has contents like videos, pdfs and html5 files.
+    - Each topic has subtopics (e.g. Geometry, Algebra, ...)
+        - Each subtopic has lessons (e.g. Triangle, Circle, Polygons, ...)
+            - Finally, each lesson has contents like videos, pdfs and html5 zip files.
+    - The Fun/ page contains various videos and HTML5 visaulisations
+    - The Stories/ page contains PDFs
+    - The gamelist/ contains various HTML5 games
+      (not used, instead use games form http://www.gamerepo.prathamcms.org/)
 """
 
 import json
+import logging
 import os
 import re
 import requests
@@ -42,7 +47,10 @@ PRADIGI_LANG_URL_MAP = {
 
 
 
+
+
 # In debug mode, only one topic is downloaded.
+LOGGER.setLevel(logging.INFO)
 DEBUG_MODE = False
 
 # Cache logic.
@@ -60,6 +68,9 @@ session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
 class PrathamCMSCrawler(BasicCrawler):
+    """
+    Get links fro all games from http://www.gamerepo.prathamcms.org/index.html
+    """
     MAIN_SOURCE_DOMAIN = 'http://www.gamerepo.prathamcms.org'
     CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_games_all_langs.json'
     IGNORE_URLS = [re.compile('.*/Game/.*/index.html')]
@@ -68,10 +79,22 @@ class PrathamCMSCrawler(BasicCrawler):
         """
         Download `url` using a JS-enabled web client.
         """
-        html = downloader.read(url, loadjs=True)
+        LOGGER.info('Downloading ' +  url + ' then pausing for 15 secs for JS to run.')
+        html = downloader.read(url, loadjs=True, loadjs_wait_time=15)
         page = BeautifulSoup(html, "html.parser")
         LOGGER.debug('Downloaded page ' + str(url) + ' using PhantomJS. Title:' + self.get_title(page))
         return (url, page)
+
+
+
+
+
+PRADIGI_SUBJECT_EN_RE = re.compile(FULL_DOMAIN_URL + r'/(?P<language>\w{2,3})/Course/(?P<subject_en>\w{3,20})(/.*)?')
+def get_subject_en(url):
+    m = PRADIGI_SUBJECT_EN_RE.search(url)
+    if m is None:
+        return None
+    return m.groupdict()['subject_en']
 
 
 class PraDigiCrawler(BasicCrawler):
@@ -80,16 +103,18 @@ class PraDigiCrawler(BasicCrawler):
     kind_handlers = {
         'lang_page': 'on_lang_page',
         'topic_page': 'on_topic_page',
-        'games_page': 'on_games_page',
         'subtopic_page': 'on_subtopic_page',
         'lesson_page': 'on_lesson_page',
+        'fun_page': 'on_fun_page',
+        'fun_resource_page': 'on_fun_resource_page',
+        'story_page': 'on_story_page',
+        'story_resource_page': 'on_story_resource_page',
     }
+
 
 
     # CRALWING
     ############################################################################
-
-
 
     def __init__(self, lang=None, **kwargs):
         """
@@ -131,8 +156,7 @@ class PraDigiCrawler(BasicCrawler):
 
 
 
-
-
+    
 
     # HANDLERS
     ############################################################################
@@ -157,32 +181,34 @@ class PraDigiCrawler(BasicCrawler):
                 if topic['href'] == '#':
                     print('skipping', topic)
                     continue
+                
+                # metadata
                 topic_url = urljoin(url, topic['href'])
                 title = topic.get_text().strip()
                 source_id = get_source_id(topic['href'])
+                subject_en = source_id    # short string to match on top-level categories
+                context = dict(
+                    parent=page_dict,
+                    title=title,
+                    source_id=source_id,
+                    subject_en=subject_en,
+                )
                 
-                if 'Fun' in topic['href'] or 'Story' in topic['href']:
-                    LOGGER.info('found games page: %s: %s' % (source_id, title))
-                    context = dict(
-                        parent=page_dict,
-                        kind='games_page',
-                        title=title,
-                        source_id=source_id,
-                    )
-                    self.enqueue_url_and_context(topic_url, context)
-
+                # what type of tab is it?
+                if 'Fun' in topic['href']:
+                    LOGGER.info('found fun page: %s: %s' % (source_id, title))
+                    context['kind'] = 'fun_page'
+                elif 'Story' in topic['href']:
+                    LOGGER.info('found story page: %s: %s' % (source_id, title))
+                    context['kind'] = 'story_page'
                 else:
                     LOGGER.info('found topic: %s: %s' % (source_id, title))
-                    context = dict(
-                        parent=page_dict,
-                        kind='topic_page',
-                        title=title,
-                        source_id=source_id,
-                    )
-                    self.enqueue_url_and_context(topic_url, context)
+                    context['kind'] = 'topic_page'
+                self.enqueue_url_and_context(topic_url, context)
 
                 if DEBUG_MODE:
                     return
+
             except Exception as e:
                 LOGGER.error('on_lang_page: %s : %s' % (e, topic))
 
@@ -214,25 +240,11 @@ class PraDigiCrawler(BasicCrawler):
                     kind='subtopic_page',
                     title=title,
                     source_id=source_id,
+                    children=[],
                 )
                 self.enqueue_url_and_context(subtopic_url, context)
             except Exception as e:
                 LOGGER.error('on_topic_page: %s : %s' % (e, subtopic))
-
-
-    def on_games_page(self, url, page, context):
-        print('     in on_games_page', url)
-        page_dict = dict(
-            kind='games_page_WIP',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-
-
-
-
 
 
     def on_subtopic_page(self, url, page, context):
@@ -268,12 +280,16 @@ class PraDigiCrawler(BasicCrawler):
                     description=description,
                     source_id=source_id,
                     thumbnail_url=thumbnail_url,
+                    children=[],
                 )
                 self.enqueue_url_and_context(lesson_url, context)
                 # get_contents(node, link)
             except Exception as e:
                 LOGGER.error('on_subtopic_page: %s : %s' % (e, lesson))
 
+
+    # LESSONS
+    ############################################################################
 
     def on_lesson_page(self, url, page, context):
         print('      in on_lesson_page', url)
@@ -288,10 +304,11 @@ class PraDigiCrawler(BasicCrawler):
         try:
             menu_row = page.find('div', {'id': 'row-exu'})
         except Exception as e:
-            LOGGER.error('get_contents: %s : %s' % (e, page))
+            LOGGER.error('on_lesson_page: %s : %s' % (e, page))
             return
 
-        for content in menu_row.find_all('div', {'class': 'col-md-3'}):
+        contents = menu_row.find_all('div', {'class': 'col-md-3'})
+        for content in contents:
             try:
                 title = content.find('div', {'class': 'txtline'}).get_text()
                 # TODO: description
@@ -302,56 +319,216 @@ class PraDigiCrawler(BasicCrawler):
 
                 if main_file.endswith('mp4'):
                     video = dict(
-                        kind=content_kinds.VIDEO,
+                        url=main_file,
+                        kind='PrathamVideoResource',
                         title=title,
                         source_id=source_id,
-                        license=PRADIGI_LICENSE,
-                        thumbnail=thumbnail,
-                        files=[{'file_type':file_types.VIDEO, 'path':main_file}],
-                                children=[],
-                                url=main_file,
+                        thumbnail_url=thumbnail,
+                        children=[],
                     )
                     page_dict['children'].append(video)
 
                 elif main_file.endswith('pdf'):
                     pdf = dict(
-                        kind=content_kinds.DOCUMENT,
+                        url=main_file,
+                        kind='PrathamPdfResource',
                         title=title,
                         source_id=source_id,
-                        license=PRADIGI_LICENSE,
-                        thumbnail=thumbnail,
-                        files=[{'file_type':file_types.DOCUMENT, 'path':main_file}],
-                                children=[],
-                                url=main_file,
+                        thumbnail_url=thumbnail,
+                        children=[],
                     )
                     page_dict['children'].append(pdf)
 
                 elif main_file.endswith('html') and master_file.endswith('zip'):
-                    # zippath = get_zip_file(master_file, main_file)
-                    zippath = master_file  # TMP HACK <-------<-------<-------<-------<-------<-------
-                    if zippath:
-                        html5app = dict(
-                            kind=content_kinds.HTML5,
-                            title=title,
-                            source_id=source_id,
-                            license=PRADIGI_LICENSE,
-                            thumbnail=thumbnail,
-                            files=[{'file_type':file_types.HTML5, 'path':zippath}],
-                                    children=[],
-                                    url=main_file,
-                        )
-                        page_dict['children'].append(html5app)
+                    zipfile = dict(
+                        url=master_file,
+                        kind='PrathamZipResource',
+                        title=title,
+                        source_id=source_id,
+                        thumbnail_url=thumbnail,
+                        main_file=main_file,     # needed to rename to index.html if different
+                        children=[],
+                    )
+                    page_dict['children'].append(zipfile)
+
                 else:
                     LOGGER.error('Content not supported: %s, %s' % (main_file, master_file))
             except Exception as e:
-                LOGGER.error('get_contents: %s : %s' % (e, content))
+                LOGGER.error('zz _process_contents: %s : %s' % (e, content))
 
 
+
+    # FUN PAGES
+    ############################################################################
+    
+    def on_fun_page(self, url, page, context):
+        print('     in on_fun_page', url)
+        page_dict = dict(
+            kind='fun_page',
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+
+        try:
+            body_row = page.find('div', {'id': 'body-row'})
+            contents_row = body_row.find('div', {'class': 'row'})
+        except Exception as e:
+            LOGGER.error('on_fun_page: %s : %s' % (e, page))
+            return
+        contents = contents_row.find_all('div', {'class': 'col-md-3'})
+
+        for content in contents:
+            try:
+                title = get_text(content.find('div', {'class': 'txtline'}))
+                # TODO: description
+                thumbnail = content.find('a').find('img')['src']
+                thumbnail = get_absolute_path(thumbnail)
+
+                # get_fun_content_link
+                link = content.find('a')
+                source_id = link['href'][1:]
+                fun_resource_url = get_absolute_path(link['href'])
+                download_href = content.find('a', class_='dnlinkfunstory')['href']
+                download_url = get_absolute_path(download_href)
+
+                LOGGER.info('      content: %s: %s' % (source_id, title))
+
+                if download_url.endswith('mp4'):
+                    video = dict(
+                        url=download_url,
+                        kind='PrathamVideoResource',
+                        title=title,
+                        source_id=source_id,
+                        thumbnail_url=thumbnail,
+                        children=[],
+                    )
+                    page_dict['children'].append(video)
+
+                elif download_url.endswith('pdf'):
+                    pdf = dict(
+                        url=download_url,
+                        kind='PrathamPdfResource',
+                        title=title,
+                        source_id=source_id,
+                        thumbnail_url=thumbnail,
+                        children=[],
+                    )
+                    page_dict['children'].append(pdf)
+
+                elif download_url.endswith('zip'):
+                    # Need to go get the actual page since main_file is not in avail. in list
+                    html = requests.get(fun_resource_url).content.decode('utf-8')
+                    respath_url = get_respath_url_from_html(html)
+                    zipfile = dict(
+                        url=download_url,
+                        kind='PrathamZipResource',
+                        title=title,
+                        source_id=source_id,
+                        thumbnail_url=thumbnail,
+                        main_file=respath_url,   # needed to rename to index.html if different
+                        children=[],
+                    )
+                    page_dict['children'].append(zipfile)
+
+                else:
+                    LOGGER.error('Fun resource not supported: %s, %s' % (fun_resource_url, download_url))
+
+            except Exception as e:
+                LOGGER.error('on_fun_page: %s : %s' % (e, content))
+
+    def on_story_resource_page(self, url, page, context):
+        print('     in on_story_resource_page', url)
+        RESOURCE_PATH_PATTERN = re.compile('var respath = "(?P<resource_path>.*?)";')
+        html= str(page)
+        m = RESOURCE_PATH_PATTERN.search(html)
+        if m is None:
+            LOGGER.error('Failed to find story_resource_url on page %s' % url)
+        story_resource_url = get_absolute_path('/' + m.groupdict()['resource_path'])
+        page_dict = dict(
+            url=story_resource_url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+
+
+
+    # STORIES
+    ############################################################################
+
+    def on_story_page(self, url, page, context):
+        print('     in on_story_page', url)
+        page_dict = dict(
+            kind='story_page',
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+
+        try:
+            body_row = page.find('div', {'id': 'body-row'})
+            contents_row = body_row.find('div', {'class': 'row'})
+        except Exception as e:
+            LOGGER.error('on_story_page: %s : %s' % (e, page))
+            return
+        contents = contents_row.find_all('div', {'class': 'col-md-3'})
+
+        for content in contents:
+            try:
+                title = get_text(content.find('div', {'class': 'txtline'}))
+                # TODO: description
+                thumbnail = content.find('a').find('img')['src']
+                thumbnail = get_absolute_path(thumbnail)
+
+                # get_fun_content_link
+                link = content.find('a')
+                source_id = link['href'][1:]
+                story_resource_url = get_absolute_path(link['href'])
+                LOGGER.info('      story_resource_page: %s: %s' % (source_id, title))
+                context = dict(
+                    parent = page_dict,
+                    kind='story_resource_page',
+                    title=title,
+                    source_id=source_id,
+                    thumbnail_url=thumbnail,
+                )
+                self.enqueue_url_and_context(story_resource_url, context)
+
+            except Exception as e:
+                LOGGER.error('on_story_page: %s : %s' % (e, content))
+
+    def on_story_resource_page(self, url, page, context):
+        print('     in on_story_resource_page', url)
+        html = str(page)
+        story_resource_url = get_respath_url_from_html(html)
+        if story_resource_url:
+            page_dict = dict(
+                url=story_resource_url,
+                children=[],
+            )
+            page_dict.update(context)
+            context['parent']['children'].append(page_dict)
+        else:
+            LOGGER.error('Failed to find story_resource_url on page %s' % url)
 
 
 # Helper functions
+################################################################################
 def get_absolute_path(path):
     return urljoin('http://www.' + DOMAIN, path)
+
+
+_RESOURCE_PATH_PATTERN = re.compile('var respath = "(?P<resource_path>.*?)";')
+def get_respath_url_from_html(html):
+    m = _RESOURCE_PATH_PATTERN.search(html)
+    if m is None:
+        return None
+    respath_url =  get_absolute_path('/' + m.groupdict()['resource_path'])
+    return respath_url
+
 
 
 def make_request(url):
@@ -366,13 +543,22 @@ def get_page(path):
     resp = make_request(url)
     return BeautifulSoup(resp.content, 'html.parser')
 
+def get_text(element):
+    """
+    Extract text contents of `element`, normalizing newlines to spaces and stripping.
+    """
+    if element is None:
+        return ''
+    else:
+        return element.get_text().replace('\r', '').replace('\n', ' ').strip()
 
 def get_source_id(path):
     return path.strip('/').split('/')[-1]
 
 
 def get_content_link(content):
-    """The link to a content has an onclick attribute that executes
+    """
+    The link to a content has an onclick attribute that executes
     the res_click function. This function has 4 parameters:
     - The main file (e.g. an mp4 file, an entry html page to a game).
     - The type of resource (video, internal link, ...).
@@ -389,6 +575,15 @@ def get_content_link(content):
     if master_file:
         master_file = get_absolute_path(master_file)
     return main_file, master_file, source_id
+
+
+
+
+def get_fun_content_link(content):
+    """
+    Same as the above but works for resources on the Fun page.
+    """
+
 
 
 def get_zip_file(zip_file_url, main_file):
@@ -448,9 +643,9 @@ class PraDigiChef(SushiChef):
         channel = ChannelNode(
             title='PraDigi',
             source_domain=DOMAIN,
-            source_id='pratham-open-school-{}'.format(language),
+            source_id='pradigi-videos-and-games',
             thumbnail=None, # get_absolute_path('img/logop.png'),
-            language='hi', # language
+            language='en', # language
         )
         return channel
 

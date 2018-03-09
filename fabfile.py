@@ -9,18 +9,18 @@ from fabric.utils import puts
 env.hosts = [
     'eslgenie.com:1',  # vader runs ssh on port 1
 ]
-env.user = os.environ.get('USER')
-env.password = os.environ.get('VADER_PASSWORD')
+#env.user = os.environ.get('USER')
+#env.password = os.environ.get('VADER_PASSWORD')
 
 STUDIO_TOKEN = os.environ.get('STUDIO_TOKEN')
 
 
 
 CHEF_USER = 'chef'
-CHEF_REPO_URL = 'https://github.com/fle-internal/sushi-chef-pratham-open-school.git'
+CHEF_REPO_URL = 'https://github.com/learningequality/sushi-chef-pradigi.git'
 GIT_BRANCH = 'master'
 CHEFS_DATA_DIR = '/data'
-CHEF_PROJECT_SLUG = 'sushi-chef-pratham-open-school'
+CHEF_PROJECT_SLUG = 'sushi-chef-pradigi'
 CHEF_DATA_DIR = os.path.join(CHEFS_DATA_DIR, CHEF_PROJECT_SLUG)
 
 CRAWLING_STAGE_OUTPUT = 'web_resource_tree.json'

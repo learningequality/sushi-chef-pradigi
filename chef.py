@@ -11,6 +11,7 @@ PRATHAM Open School (PraDigi) content is organized as follow:
       (not used, instead use games form http://www.gamerepo.prathamcms.org/)
 """
 
+import csv
 import json
 import logging
 import os
@@ -18,14 +19,14 @@ import re
 import requests
 import shutil
 import tempfile
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 import zipfile
 
 
 from basiccrawler.crawler import BasicCrawler
 from bs4 import BeautifulSoup
 from le_utils.constants import content_kinds, file_types, licenses
-from le_utils.constants.languages import getlang
+from le_utils.constants.languages import getlang, getlang_by_name
 from ricecooker.chefs import SushiChef
 from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile
 from ricecooker.classes.nodes import (ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode)
@@ -39,11 +40,98 @@ from ricecooker.utils.zip import create_predictable_zip
 DOMAIN = 'prathamopenschool.org'
 FULL_DOMAIN_URL = 'http://www.' + DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
-PRADIGI_LANGUAGES = ['hi', 'mr']  # le-utils language codes for Hindi and Marathi
+PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
+# 'mr']  # le-utils language codes for Hindi and Marathi
 PRADIGI_LANG_URL_MAP = {
     'hi': 'http://www.prathamopenschool.org/hn/',
     'mr': 'http://www.prathamopenschool.org/mr/',
 }
+PRADIGI_STRINGS = {
+    'hi': {
+        'language_en': 'Hindi',
+        'gamesrepo_suffixes': ['_KKS', '_HI'],
+        'strings': {
+            "Mathematics": "गणित",
+            "English": "अंग्रेजी",
+            "Health": "स्वास्थ्य",
+            "Science": "विज्ञान",
+            "Hospitality": "अतिथी सत्कार",
+            "Construction": "भवन-निर्माण",
+            "Automobile": "वाहन",
+            "Electric": "इलेक्ट्रिक",
+            "Beauty": "ब्युटी",
+            "Healthcare": "स्वास्थ्य सेवा",
+            "Std8": "8 वी कक्षा",
+            "Fun": "मौज",
+            "Story": "कहानियाँ",
+        }
+    },
+    'en': {
+        'language_en': 'English',
+        'gamesrepo_suffixes': [],
+        'strings': {
+            "Mathematics": "Mathematics",
+            "English": "English",
+            "Health": "Health",
+            "Science": "Science",
+            "Hospitality": "Hospitality",            
+            "Construction": "Construction",
+            "Automobile": "Automobile",
+            "Electric": "Electric",
+            "Beauty": "Beauty",
+            "Healthcare": "Healthcare",
+            "Std8": "Std8",
+            "Fun": "Fun",
+            "Story": "Story",
+        }
+    },
+    "or": {
+        "language_en": "Odiya",
+        "gamesrepo_suffixes": ['_OD'],
+        "strings": {}
+    },
+    "bn": {
+        "language_en": "Bangali",
+        "gamesrepo_suffixes": ['_BN'],
+        "strings": {}
+    },
+    "pnb": {
+        "language_en": "Punjabi",
+        "gamesrepo_suffixes": ['_PN'],
+        "strings": {}
+    },
+    "kn": {
+        "language_en": "Kannada",
+        "gamesrepo_suffixes": ['_KN'],
+        "strings": {}
+    },
+    "ta": {
+        "language_en": "Tamil",
+        "gamesrepo_suffixes": ['_TM'],
+        "strings": {}
+    },
+    "te": {
+        "language_en": "Telugu",
+        "gamesrepo_suffixes": ['_TL'],
+        "strings": {}
+    },
+    "mr": {
+        "language_en": "Marathi",
+        "gamesrepo_suffixes": ['_MR'],
+        "strings": {}
+    },
+    "gu": {
+        "language_en": "Gujarati",
+        "gamesrepo_suffixes": ['_KKS', '_GJ'],
+        "strings": {}
+    },
+    "as": {
+        "language_en": "Assamese",
+        "gamesrepo_suffixes": ['_AS'],
+        "strings": {}
+    },
+}
+# TODO: get lang strings for all other languages in the gamesrepo
 
 
 
@@ -67,20 +155,234 @@ session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
 
-class PrathamCMSCrawler(BasicCrawler):
+
+def find_games_for_lang(name, lang):
+    data = json.load(open('chefdata/trees/pradigi_games_all_langs.json','r'))
+    language_en = PRADIGI_STRINGS[lang]['language_en']
+    suffixes = PRADIGI_STRINGS[lang]['gamesrepo_suffixes']
+    assert data["kind"] == "index_page", 'wrong web resource tree loaded'
+    games = []
+    for gameslang_page in data['children']:
+        if gameslang_page['language_en'] == language_en:
+            for game in gameslang_page['children']:                
+                title = game['title']
+                for suffix in suffixes:
+                    if title.strip().endswith(suffix):
+                        title = title.replace(suffix, '').strip()
+                if name == title:
+                    games.append(game)
+            return games 
+    return None
+
+def flatten_tree(tree):
+    if len(tree['children'])==0:
+        return [tree]
+    else:
+        result = []
+        for child in tree['children']:
+            flat_child = flatten_tree(child)
+            result.extend(flat_child)
+        return result
+        
+
+
+# TODO: get from google sheet....
+TEST_GAMENAMES = [
+    'Aakar',
+    'ABCD',
+    'AgePiche',
+    'Aksharkhadi',
+    'Atulya Bharat',
+    'AwazChitra',
+    'AwazPehchano',
+    'Barakhadi',
+    'Coloring',
+    'CountAndKnow',
+    'CountIt',
+    'CrumbleTumble',
+    'De dana dan',
+    'Dhoom_1',
+    'Dhoom_2',
+    'fixUpMixUp',
+    'FlipIt',
+    'GaltiMaafSudharo',
+    'GuessWho',
+    'JaanoNumber',
+    'Kahaniyaan',
+    'LetterBox',
+    'LineLagao',
+    'MujhePehchano',
+    'Number123',
+    'NumberKas',
+    'UlatPalat',
+    'Sangeet',
+    'ShabdhChitra',
+    'ThikThak',
+    'UlatPalat',
+]
+
+def compute_games_by_language_csv():
+    """
+    Checks which game names exist in all the PraDigi languages
+    Matching is performed based on language code suffix, e.g. _MR for Marathi.
+    Returns list of all languages matched.
+    """
+    languages_matches = []
+    languages_en = [PRADIGI_STRINGS[lang]['language_en'] for lang in PRADIGI_LANGUAGES]
+    fieldnames = ['Name on gamerepo'] + languages_en
+    
+    with open('games_by_language_matrix.csv', 'w') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        
+        for game_name in TEST_GAMENAMES:
+            row_dict = {}
+            row_dict['Name on gamerepo'] = game_name
+            for lang in PRADIGI_LANGUAGES:
+                games = find_games_for_lang(game_name, lang)
+                if games:
+                    value = ' and '.join([game['title'] for game in games])
+                    languages_matches.extend(games)
+                else:
+                    value = "N/A"
+                languages_en = PRADIGI_STRINGS[lang]['language_en']
+                row_dict[languages_en] = value
+            writer.writerow(row_dict)
+    return languages_matches
+
+def getlang_by_language_en(language_en):
+    if language_en == 'Odiya':
+        language_en = 'Oriya'
+    elif language_en == 'Bangali':
+        language_en = 'Bengali'
+    lang_obj = getlang_by_name(language_en)
+    return lang_obj
+
+
+def find_undocumented_games():
+    # all games
+    data = json.load(open('chefdata/trees/pradigi_games_all_langs.json','r'))
+    gamelist = flatten_tree(data)
+    all_set = set([game['url'] for game in gamelist])
+    
+    # the ones in TEST_GAMENAMES
+    found_gamelist = compute_games_by_language_csv()
+    found_set = set([game['url'] for game in found_gamelist])
+    
+    diff_set = all_set.difference(found_set)
+    diff_gamelist = []
+    for diff_url in diff_set:
+        for game in gamelist:
+            if game['url'] == diff_url:
+                diff_gamelist.append(game)
+    
+    sorted_by_lang = sorted(diff_gamelist, key=lambda s:s['title'])
+    for game in sorted_by_lang:
+        print(game['title']+'\t'+game['language_en']+'\t'+game['url'])
+    
+    diff_game_names = set()
+    for game in sorted_by_lang:
+        title = game['title']
+        if '_' in title:
+            root = '_'.join(title.split('_')[0:-1])
+        else:
+            root = title
+        diff_game_names.add(root)
+    for name in sorted(diff_game_names):
+        print(name)
+            
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+class PrathamGamesRepoCrawler(BasicCrawler):
     """
     Get links fro all games from http://www.gamerepo.prathamcms.org/index.html
     """
     MAIN_SOURCE_DOMAIN = 'http://www.gamerepo.prathamcms.org'
     CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_games_all_langs.json'
-    IGNORE_URLS = [re.compile('.*/Game/.*/index.html')]
+    START_PAGE_CONTEXT = {'kind': 'index_page'}
+    kind_handlers = {
+        'index_page': 'on_index_page',
+        'gameslang_page': 'on_gameslang_page',
+    }
+
+    def on_index_page(self, url, page, context):
+        LOGGER.info('in on_index_page ' + url)
+        page_dict = dict(
+            kind='index_page',
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+        
+        languagelist_divs = page.find_all('div', attrs={'ng-repeat': "lang in languagelist"})
+        for languagelist_div in languagelist_divs:
+            link = languagelist_div.find('a')
+            language_en = get_text(link)
+            language_url = urljoin(url, link['href'])
+            context = dict(
+                parent=page_dict,
+                kind='gameslang_page',
+                language_en=language_en,
+            )
+            self.enqueue_url_and_context(language_url, context)
+
+    def on_gameslang_page(self, url, page, context):
+        LOGGER.info('in on_gameslang_page ' + url)
+        page_dict = dict(
+            kind='gameslang_page',
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+        
+        gamelist = page.find_all('div', attrs={'ng-repeat':"gamedata in gamelist|filter:gametitle|filter:gamedata.gameurl.length"})
+        for game in gamelist:
+            title = get_text(game.find('h3'))
+            last_modified = get_text(game.find('h6')).replace('Last modified : ', '')
+            links = game.find_all('a')
+            game_link, zipfile_link = links[0], links[1]
+            main_file = urljoin(url, game_link['href'])
+            zipfile_url = urljoin(url, zipfile_link['href'])
+
+            # Handle special case of broken links (no title, and not main file)
+            if len(title) == 0:
+                zip_path = urlparse(zipfile_url).path
+                zip_filename = os.path.basename(zip_path)
+                title, _ = os.path.splitext(zip_filename)
+                main_file = None
+
+            game_dict = dict(
+                url=zipfile_url,
+                kind='PradigiGameZipResource',
+                title=title,
+                last_modified=last_modified,
+                main_file=main_file,
+                language_en=context['language_en'],
+                children=[],
+            )
+            page_dict['children'].append(game_dict)
+
 
     def download_page(self, url, *args, **kwargs):
         """
         Download `url` using a JS-enabled web client.
         """
         LOGGER.info('Downloading ' +  url + ' then pausing for 15 secs for JS to run.')
-        html = downloader.read(url, loadjs=True, loadjs_wait_time=15)
+        html = downloader.read(url, loadjs=True, loadjs_wait_time=3)
         page = BeautifulSoup(html, "html.parser")
         LOGGER.debug('Downloaded page ' + str(url) + ' using PhantomJS. Title:' + self.get_title(page))
         return (url, page)
@@ -89,12 +391,23 @@ class PrathamCMSCrawler(BasicCrawler):
 
 
 
-PRADIGI_SUBJECT_EN_RE = re.compile(FULL_DOMAIN_URL + r'/(?P<language>\w{2,3})/Course/(?P<subject_en>\w{3,20})(/.*)?')
-def get_subject_en(url):
-    m = PRADIGI_SUBJECT_EN_RE.search(url)
-    if m is None:
-        return None
-    return m.groupdict()['subject_en']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class PraDigiCrawler(BasicCrawler):

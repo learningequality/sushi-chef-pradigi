@@ -1,1870 +1,2387 @@
 {
-  "kind": "PageWebResource",
+  "kind": "index_page",
   "url": "http://www.gamerepo.prathamcms.org/index.html",
   "children": [
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Assamese",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/AgePiche_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9796851"
-        },
-        {
-          "kind": "MediaWebResource",
-          "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Aksharkhadi_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "34213671"
-        },
-        {
-          "kind": "PageWebResource",
-          "url": "http://www.gamerepo.prathamcms.org/Game/",
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_AS",
+          "last_modified": "12/4/17 7:30 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/AgePiche_AS/index.html",
+          "language_en": "Assamese",
           "children": []
         },
         {
-          "kind": "MediaWebResource",
+          "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Aksharkhadi_AS_Assamese.zip",
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_AS",
+          "last_modified": "9/13/17 2:09 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/Aksharkhadi_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
+        },
+        {
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/AwazChitraAS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "186"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitraAS_Assamese",
+          "last_modified": "9/15/17 1:33 PM",
+          "main_file": null,
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/AwazChitra_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "29919922"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_AS",
+          "last_modified": "11/6/17 12:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/AwazChitra_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/AwazPehchano_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12771936"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_AS",
+          "last_modified": "9/27/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/AwazPehchano_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Barakhadi_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9610657"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_AS",
+          "last_modified": "9/13/17 2:09 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/Barakhadi_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Coloring_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1435140"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_AS",
+          "last_modified": "9/13/17 2:09 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/Coloring_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Cricket_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51776190"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_AS",
+          "last_modified": "9/13/17 2:10 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/Cricket_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Dhoom_1_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27865828"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_AS",
+          "last_modified": "9/13/17 2:10 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/Dhoom_1_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Dhoom_2_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27728260"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_AS",
+          "last_modified": "9/13/17 2:10 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/Dhoom_2_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/fonts_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "59770"
+          "kind": "PradigiGameZipResource",
+          "title": "fonts_Assamese",
+          "last_modified": "8/3/17 5:01 AM",
+          "main_file": null,
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/JaanoNumber_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "6590540"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_AS",
+          "last_modified": "9/13/17 2:10 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/JaanoNumber_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Kahaniyaan_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "20038679"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_AS",
+          "last_modified": "9/13/17 2:10 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/Kahaniyaan_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/LineLagao_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2790133"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_AS",
+          "last_modified": "9/13/17 2:10 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/LineLagao_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/MujhePehchano_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "21494016"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_AS",
+          "last_modified": "9/13/17 2:10 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/MujhePehchano_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Number123_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9626966"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_AS",
+          "last_modified": "9/13/17 2:10 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/Number123_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/NumberKas_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2994257"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_AS",
+          "last_modified": "11/18/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/NumberKas_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/Sangeet_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7265902"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_AS",
+          "last_modified": "9/13/17 2:11 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/Sangeet_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/ShabdhChitra_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "31153527"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_AS",
+          "last_modified": "9/15/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/ShabdhChitra_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/ThikThak_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "17564260"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_AS",
+          "last_modified": "9/13/17 2:11 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/ThikThak_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/TracingGame_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "14046484"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_AS",
+          "last_modified": "9/13/17 2:11 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/TracingGame_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Assamese/UlatPalat_AS_Assamese.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "77417839"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_AS",
+          "last_modified": "11/17/17 12:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Assamese/UlatPalat_AS/index.html",
+          "language_en": "Assamese",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Assamese"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Bangali",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/AgePiche_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9794587"
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_BN",
+          "last_modified": "12/4/17 7:45 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/AgePiche_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/Aksharkhadi_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "31328846"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_BN",
+          "last_modified": "9/13/17 2:06 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/Aksharkhadi_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/AwazChitra_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "42750621"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_BN",
+          "last_modified": "2/15/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/AwazChitra_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/AwazPehchano_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12654679"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_BN",
+          "last_modified": "9/13/17 2:06 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/AwazPehchano_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/Barakhadi_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "6552826"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_BN",
+          "last_modified": "9/13/17 2:06 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/Barakhadi_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/Coloring_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1361535"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_BN",
+          "last_modified": "9/13/17 2:06 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/Coloring_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/Cricket_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51716184"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_BN",
+          "last_modified": "9/13/17 2:06 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/Cricket_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/Dhoom_1_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27741399"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_BN",
+          "last_modified": "9/13/17 2:06 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/Dhoom_1_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/Dhoom_2_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27668217"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_BN",
+          "last_modified": "9/13/17 2:06 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/Dhoom_2_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/JaanoNumber_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "6741950"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_BN",
+          "last_modified": "9/13/17 2:06 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/JaanoNumber_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/Kahaniyaan_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "42455787"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_BN",
+          "last_modified": "9/13/17 2:07 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/Kahaniyaan_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/LineLagao_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2646741"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_BN",
+          "last_modified": "9/13/17 2:07 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/LineLagao_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/MujhePehchano_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "21945832"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_BN",
+          "last_modified": "10/25/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/MujhePehchano_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/Number123_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9489340"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_BN",
+          "last_modified": "9/13/17 2:07 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/Number123_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/NumberKas_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "3002163"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_BN",
+          "last_modified": "11/18/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/NumberKas_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/Sangeet_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7145669"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_BN",
+          "last_modified": "9/13/17 2:07 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/Sangeet_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/ShabdhChitra_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "33981562"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_BN",
+          "last_modified": "11/6/17 12:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/ShabdhChitra_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/ThikThak_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "67765302"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_BN",
+          "last_modified": "9/27/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/ThikThak_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/TracingGame_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "14117750"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_BN",
+          "last_modified": "9/13/17 2:08 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/TracingGame_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Bangali/UlatPalat_BN_Bangali.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "140896866"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_BN",
+          "last_modified": "9/13/17 2:08 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Bangali/UlatPalat_BN/index.html",
+          "language_en": "Bangali",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Bangali"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=English",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/ABCD_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1500924"
+          "kind": "PradigiGameZipResource",
+          "title": "ABCD",
+          "last_modified": "8/3/17 9:42 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/ABCD/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/CorrectPair_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "11482871"
+          "kind": "PradigiGameZipResource",
+          "title": "CorrectPair",
+          "last_modified": "7/19/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/CorrectPair/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/CountAndKnow_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1248336"
+          "kind": "PradigiGameZipResource",
+          "title": "CountAndKnow",
+          "last_modified": "7/19/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/CountAndKnow/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/CountIt_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1553229"
+          "kind": "PradigiGameZipResource",
+          "title": "CountIt",
+          "last_modified": "7/19/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/CountIt/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/CrumbleTumble_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "4807503"
+          "kind": "PradigiGameZipResource",
+          "title": "CrumbleTumble",
+          "last_modified": "7/19/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/CrumbleTumble/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/fixUpMixUp_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2161957"
+          "kind": "PradigiGameZipResource",
+          "title": "fixUpMixUp",
+          "last_modified": "7/19/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/fixUpMixUp/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/FlipIt_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "50475436"
+          "kind": "PradigiGameZipResource",
+          "title": "FlipIt",
+          "last_modified": "8/3/17 9:42 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/FlipIt/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/GuessWho_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "31372988"
+          "kind": "PradigiGameZipResource",
+          "title": "GuessWho",
+          "last_modified": "8/3/17 9:42 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/GuessWho/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/Jigsaw_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "15166336"
+          "kind": "PradigiGameZipResource",
+          "title": "Jigsaw",
+          "last_modified": "7/19/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/Jigsaw/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/JumbleTumble_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "3661406"
+          "kind": "PradigiGameZipResource",
+          "title": "JumbleTumble",
+          "last_modified": "7/19/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/JumbleTumble/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/LetterBox_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "15373865"
+          "kind": "PradigiGameZipResource",
+          "title": "LetterBox",
+          "last_modified": "7/19/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/LetterBox/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/PointMeOut_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "40287257"
+          "kind": "PradigiGameZipResource",
+          "title": "PointMeOut",
+          "last_modified": "8/3/17 9:42 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/PointMeOut/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/UlatPalat2Science_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "96651662"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat2Science",
+          "last_modified": "7/19/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/UlatPalat2Science/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/UlatPalatScience_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "49521806"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalatScience",
+          "last_modified": "7/19/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/UlatPalatScience/index.html",
+          "language_en": "English",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/English/YouSaid_English.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "4141387"
+          "kind": "PradigiGameZipResource",
+          "title": "YouSaid",
+          "last_modified": "8/3/17 9:42 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/English/YouSaid/index.html",
+          "language_en": "English",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "English"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Gujarati",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Aakar_KKS_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "13593352"
+          "kind": "PradigiGameZipResource",
+          "title": "Aakar_KKS",
+          "last_modified": "2/13/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Aakar_KKS/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/AgePiche_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "11227891"
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_GJ",
+          "last_modified": "12/4/17 7:45 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/AgePiche_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Aksharkhadi_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "39924467"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_GJ",
+          "last_modified": "9/13/17 2:01 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Aksharkhadi_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/AwazChitra_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "43650249"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_GJ",
+          "last_modified": "2/15/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/AwazChitra_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/AwazPehchano_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12660197"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_GJ",
+          "last_modified": "9/13/17 2:01 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/AwazPehchano_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Barahghar_KKS_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "16929890"
+          "kind": "PradigiGameZipResource",
+          "title": "Barahghar_KKS",
+          "last_modified": "2/13/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Barahghar_KKS/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Barakhadi_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "15193577"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_GJ",
+          "last_modified": "9/13/17 2:02 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Barakhadi_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Bhaloo_ki_Barakhadi_KKS_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "25082213"
+          "kind": "PradigiGameZipResource",
+          "title": "Bhaloo_ki_Barakhadi_KKS",
+          "last_modified": "2/16/18 7:32 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Bhaloo_ki_Barakhadi_KKS/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Coloring_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1356460"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_GJ",
+          "last_modified": "9/13/17 2:02 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Coloring_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Cricket_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51965366"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_GJ",
+          "last_modified": "9/13/17 2:02 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Cricket_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Dhoom_1_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "28018183"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_GJ",
+          "last_modified": "9/13/17 2:02 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Dhoom_1_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Dhoom_2_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27945006"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_GJ",
+          "last_modified": "9/13/17 2:02 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Dhoom_2_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/EkSeAnek_KKS_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "13017874"
+          "kind": "PradigiGameZipResource",
+          "title": "EkSeAnek_KKS",
+          "last_modified": "2/22/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/EkSeAnek_KKS/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Gubbare_KKS_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "6905203"
+          "kind": "PradigiGameZipResource",
+          "title": "Gubbare_KKS",
+          "last_modified": "2/16/18 7:32 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Gubbare_KKS/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/HelloHello_KKS_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "15032937"
+          "kind": "PradigiGameZipResource",
+          "title": "HelloHello_KKS",
+          "last_modified": "2/16/18 7:32 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/HelloHello_KKS/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/JaanoNumber_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "8066836"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_GJ",
+          "last_modified": "9/13/17 2:02 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/JaanoNumber_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Judwa_KKS_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "5506846"
+          "kind": "PradigiGameZipResource",
+          "title": "Judwa_KKS",
+          "last_modified": "2/16/18 7:32 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Judwa_KKS/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Kahaniyaan_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9881651"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_GJ",
+          "last_modified": "11/17/17 12:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Kahaniyaan_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/LineLagao_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2932593"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_GJ",
+          "last_modified": "9/13/17 2:02 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/LineLagao_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/MujheDhundho_KKS_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "18918681"
+          "kind": "PradigiGameZipResource",
+          "title": "MujheDhundho_KKS",
+          "last_modified": "2/13/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/MujheDhundho_KKS/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/MujhePehchano_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "85606304"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_GJ",
+          "last_modified": "9/13/17 2:03 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/MujhePehchano_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Number123_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9864611"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_GJ",
+          "last_modified": "9/13/17 2:03 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Number123_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/NumberKas_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "3655274"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_GJ",
+          "last_modified": "11/18/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/NumberKas_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Sangeet_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7376256"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_GJ",
+          "last_modified": "9/13/17 2:03 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Sangeet_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/ShabdhChitra_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "32715844"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_GJ",
+          "last_modified": "11/6/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/ShabdhChitra_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/Suno_Pehchano_KKS_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "18822274"
+          "kind": "PradigiGameZipResource",
+          "title": "Suno_Pehchano_KKS",
+          "last_modified": "2/13/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/Suno_Pehchano_KKS/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/ThikThak_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7836680"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_GJ",
+          "last_modified": "9/13/17 2:03 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/ThikThak_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/TracingGame_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "18941618"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_GJ",
+          "last_modified": "9/13/17 2:03 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/TracingGame_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Gujarati/UlatPalat_GJ_Gujarati.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "79698399"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_GJ",
+          "last_modified": "10/27/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Gujarati/UlatPalat_GJ/index.html",
+          "language_en": "Gujarati",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Gujarati"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Hindi",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Aakar_KKS_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "8284233"
+          "kind": "PradigiGameZipResource",
+          "title": "Aakar_KKS",
+          "last_modified": "2/8/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Aakar_KKS/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/AbKahanHai_KKS_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "5535419"
+          "kind": "PradigiGameZipResource",
+          "title": "AbKahanHai_KKS",
+          "last_modified": "2/13/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/AbKahanHai_KKS/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/AgePiche_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "10561498"
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_HI",
+          "last_modified": "12/4/17 7:45 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/AgePiche_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Aksharkhadi_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "56686896"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_HI",
+          "last_modified": "9/13/17 1:56 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Aksharkhadi_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Aksharkhadi_KKS_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "18812592"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_KKS",
+          "last_modified": "2/8/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Aksharkhadi_KKS/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/AksharMatra_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "91559275"
+          "kind": "PradigiGameZipResource",
+          "title": "AksharMatra_HI",
+          "last_modified": "9/15/17 1:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/AksharMatra_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/AwazChitra_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "34271373"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_HI",
+          "last_modified": "11/6/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/AwazChitra_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/AwazPehchano_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12647308"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_HI",
+          "last_modified": "9/13/17 1:56 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/AwazPehchano_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/BalloonGame_KKS_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "4609071"
+          "kind": "PradigiGameZipResource",
+          "title": "BalloonGame_KKS",
+          "last_modified": "2/16/18 7:32 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/BalloonGame_KKS/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/BarakhadiBanao_KKS_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "15409758"
+          "kind": "PradigiGameZipResource",
+          "title": "BarakhadiBanao_KKS",
+          "last_modified": "2/13/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/BarakhadiBanao_KKS/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/BarakhadiSeekho_KKS_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "16855658"
+          "kind": "PradigiGameZipResource",
+          "title": "BarakhadiSeekho_KKS",
+          "last_modified": "2/8/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/BarakhadiSeekho_KKS/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Barakhadi_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "16855451"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_HI",
+          "last_modified": "9/13/17 1:56 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Barakhadi_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/BhalooKiBarakhadi_KKS_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "23964884"
+          "kind": "PradigiGameZipResource",
+          "title": "BhalooKiBarakhadi_KKS",
+          "last_modified": "2/14/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/BhalooKiBarakhadi_KKS/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/BolBacchaBol_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "16574885"
+          "kind": "PradigiGameZipResource",
+          "title": "BolBacchaBol_HI",
+          "last_modified": "11/20/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/BolBacchaBol_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/ChitraVichitra_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "20959466"
+          "kind": "PradigiGameZipResource",
+          "title": "ChitraVichitra_HI",
+          "last_modified": "11/20/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/ChitraVichitra_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Coloring_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1450260"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_HI",
+          "last_modified": "9/13/17 1:57 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Coloring_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Cricket_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51716227"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_HI",
+          "last_modified": "9/13/17 1:57 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Cricket_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Dhoom_1_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27798814"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_HI",
+          "last_modified": "9/13/17 1:57 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Dhoom_1_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Dhoom_2_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27668181"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_HI",
+          "last_modified": "9/13/17 1:57 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Dhoom_2_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/DingDangDing_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "60505651"
+          "kind": "PradigiGameZipResource",
+          "title": "DingDangDing_HI",
+          "last_modified": "11/20/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/DingDangDing_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/GaltiMaafSudharo_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "5488950"
+          "kind": "PradigiGameZipResource",
+          "title": "GaltiMaafSudharo",
+          "last_modified": "8/3/17 9:39 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/GaltiMaafSudharo/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Golmaal_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "36344521"
+          "kind": "PradigiGameZipResource",
+          "title": "Golmaal_HI",
+          "last_modified": "11/20/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Golmaal_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/JaanoNumber_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9779723"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_HI",
+          "last_modified": "9/13/17 1:57 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/JaanoNumber_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/JumbleTumble_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "3667104"
+          "kind": "PradigiGameZipResource",
+          "title": "JumbleTumble_HI",
+          "last_modified": "9/15/17 1:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/JumbleTumble_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Kahaniyaan_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "43628400"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_HI",
+          "last_modified": "9/13/17 1:57 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Kahaniyaan_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/LetterBox_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "15374546"
+          "kind": "PradigiGameZipResource",
+          "title": "LetterBox_HI",
+          "last_modified": "9/15/17 1:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/LetterBox_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/LineLagao_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "3319377"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_HI",
+          "last_modified": "9/13/17 1:57 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/LineLagao_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/MindMapWheel_KKS_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "6329826"
+          "kind": "PradigiGameZipResource",
+          "title": "MindMapWheel_KKS",
+          "last_modified": "2/14/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/MindMapWheel_KKS/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/MujhePehchano_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "52403271"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_HI",
+          "last_modified": "9/13/17 1:58 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/MujhePehchano_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
-          "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Nadiya%20Ke%20Paar_Hindi.zip",
-          "children": [],
-          "original_url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Nadiya Ke Paar_Hindi.zip",
-          "content-type": "application/x-zip-compressed",
-          "content-length": "5229380"
+          "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Nadiya Ke Paar_Hindi.zip",
+          "kind": "PradigiGameZipResource",
+          "title": "Nadiya Ke Paar",
+          "last_modified": "3/5/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Nadiya Ke Paar/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Number123_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "13765863"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_HI",
+          "last_modified": "9/13/17 1:58 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Number123_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/NumberKas_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "5350132"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_HI",
+          "last_modified": "11/18/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/NumberKas_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/NumberRecognition_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "103885444"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberRecognition",
+          "last_modified": "3/5/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/NumberRecognition/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/NumberRecognition2_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "3916117"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberRecognition2",
+          "last_modified": "3/5/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/NumberRecognition2/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/PattaPalat_KKS_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2222206"
+          "kind": "PradigiGameZipResource",
+          "title": "PattaPalat_KKS",
+          "last_modified": "2/14/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/PattaPalat_KKS/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/RailGadi_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "22858790"
+          "kind": "PradigiGameZipResource",
+          "title": "RailGadi_HI",
+          "last_modified": "11/20/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/RailGadi_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/Sangeet_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "6902237"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_HI",
+          "last_modified": "9/13/17 1:58 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/Sangeet_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/ShabdhChitra_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "34333755"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_HI",
+          "last_modified": "11/14/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/ShabdhChitra_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/ThikThak_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "150315951"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_HI",
+          "last_modified": "9/27/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/ThikThak_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/TracingGame_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "17142492"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_HI",
+          "last_modified": "9/13/17 1:59 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/TracingGame_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Hindi/UlatPalat_HI_Hindi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "131293919"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_HI",
+          "last_modified": "9/13/17 2:00 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Hindi/UlatPalat_HI/index.html",
+          "language_en": "Hindi",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Hindi"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Kannada",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/AgePiche_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9838689"
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_KN",
+          "last_modified": "12/4/17 7:45 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/AgePiche_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/Aksharkhadi_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "38533289"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_KN",
+          "last_modified": "9/13/17 1:52 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/Aksharkhadi_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/AwazChitra_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "45512700"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_KN",
+          "last_modified": "2/15/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/AwazChitra_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/AwazPehchano_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12202841"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_KN",
+          "last_modified": "9/13/17 1:52 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/AwazPehchano_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/Barakhadi_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "13874779"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_KN",
+          "last_modified": "9/13/17 1:53 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/Barakhadi_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/Coloring_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1364730"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_KN",
+          "last_modified": "9/13/17 1:53 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/Coloring_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/Cricket_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51716450"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_KN",
+          "last_modified": "9/13/17 1:53 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/Cricket_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/Dhoom_1_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27741398"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_KN",
+          "last_modified": "9/13/17 1:53 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/Dhoom_1_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/Dhoom_2_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27668230"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_KN",
+          "last_modified": "9/13/17 1:53 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/Dhoom_2_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/JaanoNumber_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "13935884"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_KN",
+          "last_modified": "9/13/17 1:53 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/JaanoNumber_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/Kahaniyaan_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "64065456"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_KN",
+          "last_modified": "9/13/17 1:53 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/Kahaniyaan_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/LineLagao_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2709275"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_KN",
+          "last_modified": "9/13/17 1:54 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/LineLagao_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/MujhePehchano_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "94757339"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_KN",
+          "last_modified": "9/13/17 1:54 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/MujhePehchano_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/Number123_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "10122775"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_KN",
+          "last_modified": "9/13/17 1:54 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/Number123_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/NumberKas_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "6031696"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_KN",
+          "last_modified": "11/18/17 12:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/NumberKas_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/Sangeet_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7083574"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_KN",
+          "last_modified": "9/13/17 1:54 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/Sangeet_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/ShabdhChitra_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "34059377"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_KN",
+          "last_modified": "9/15/17 1:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/ShabdhChitra_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/ThikThak_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "14488570"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_KN",
+          "last_modified": "9/13/17 1:54 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/ThikThak_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/TracingGame_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "16663569"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_KN",
+          "last_modified": "9/13/17 1:54 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/TracingGame_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Kannada/UlatPalat_KN_Kannada.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "45975195"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_KN",
+          "last_modified": "9/13/17 1:55 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Kannada/UlatPalat_KN/index.html",
+          "language_en": "Kannada",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Kannada"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Marathi",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/AgePiche_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "10521063"
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_MR",
+          "last_modified": "12/4/17 7:45 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/AgePiche_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Aksharkhadi_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "41147736"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_MR",
+          "last_modified": "9/13/17 1:48 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Aksharkhadi_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/AksharMatra_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "35373832"
+          "kind": "PradigiGameZipResource",
+          "title": "AksharMatra_MR",
+          "last_modified": "9/15/17 1:35 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/AksharMatra_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/AwazChitra_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "45770166"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_MR",
+          "last_modified": "11/29/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/AwazChitra_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/AwazPehchano_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12648183"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_MR",
+          "last_modified": "9/13/17 1:49 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/AwazPehchano_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Barakhadi_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "15570052"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_MR",
+          "last_modified": "9/13/17 1:49 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Barakhadi_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/BolBacchaBol_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "17563300"
+          "kind": "PradigiGameZipResource",
+          "title": "BolBacchaBol_MR",
+          "last_modified": "11/20/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/BolBacchaBol_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/ChitraVichitra_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "20959466"
+          "kind": "PradigiGameZipResource",
+          "title": "ChitraVichitra_MR",
+          "last_modified": "11/20/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/ChitraVichitra_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Coloring_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1450270"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_MR",
+          "last_modified": "9/13/17 1:49 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Coloring_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Cricket_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51716235"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_MR",
+          "last_modified": "9/13/17 1:49 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Cricket_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Dhoom_1_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27798808"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_MR",
+          "last_modified": "9/13/17 1:49 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Dhoom_1_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Dhoom_2_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27668176"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_MR",
+          "last_modified": "9/13/17 1:49 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Dhoom_2_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/DingDangDing_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "60709561"
+          "kind": "PradigiGameZipResource",
+          "title": "DingDangDing_MR",
+          "last_modified": "11/20/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/DingDangDing_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Golmaal_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "36344523"
+          "kind": "PradigiGameZipResource",
+          "title": "Golmaal_MR",
+          "last_modified": "11/20/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Golmaal_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/JaanoNumber_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "11356299"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_MR",
+          "last_modified": "9/13/17 1:49 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/JaanoNumber_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/js_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "702"
+          "kind": "PradigiGameZipResource",
+          "title": "js_Marathi",
+          "last_modified": "7/14/17 5:46 AM",
+          "main_file": null,
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Kahaniyaan_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "47782890"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_MR",
+          "last_modified": "9/13/17 1:50 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Kahaniyaan_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/LineLagao_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "3622354"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_MR",
+          "last_modified": "9/13/17 1:50 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/LineLagao_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/MujhePehchano_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "105831152"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_MR",
+          "last_modified": "11/17/17 12:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/MujhePehchano_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Number123_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9449666"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_MR",
+          "last_modified": "9/13/17 1:50 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Number123_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/NumberKas_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "5964865"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_MR",
+          "last_modified": "11/18/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/NumberKas_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/RailGadi_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "22785505"
+          "kind": "PradigiGameZipResource",
+          "title": "RailGadi_MR",
+          "last_modified": "11/20/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/RailGadi_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/Sangeet_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7858205"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_MR",
+          "last_modified": "9/13/17 1:51 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/Sangeet_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/ShabdhChitra_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "38395703"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_MR",
+          "last_modified": "12/4/17 7:45 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/ShabdhChitra_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/ThikThak_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "30709566"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_MR",
+          "last_modified": "9/13/17 1:51 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/ThikThak_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/TracingGame_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "16603175"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_MR",
+          "last_modified": "9/13/17 1:51 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/TracingGame_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Marathi/UlatPalat_MR_Marathi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "73069131"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_MR",
+          "last_modified": "9/13/17 1:51 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Marathi/UlatPalat_MR/index.html",
+          "language_en": "Marathi",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Marathi"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Odiya",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/AgePiche_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "11243075"
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_OD",
+          "last_modified": "12/4/17 7:45 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/AgePiche_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/Aksharkhadi_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "40756871"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_OD",
+          "last_modified": "9/27/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/Aksharkhadi_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/AwazChitra_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "47778928"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_OD",
+          "last_modified": "2/15/18 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/AwazChitra_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/AwazPehchano_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12885961"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_OD",
+          "last_modified": "9/13/17 1:43 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/AwazPehchano_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/Barakhadi_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "16256498"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_OD",
+          "last_modified": "9/27/17 1:33 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/Barakhadi_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/Coloring_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1471220"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_OD",
+          "last_modified": "9/13/17 1:43 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/Coloring_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/Cricket_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51828496"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_OD",
+          "last_modified": "9/13/17 1:44 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/Cricket_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/Dhoom_1_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27790930"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_OD",
+          "last_modified": "9/13/17 1:44 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/Dhoom_1_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/Dhoom_2_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27717827"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_OD",
+          "last_modified": "9/13/17 1:44 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/Dhoom_2_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/fonts_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "112136"
+          "kind": "PradigiGameZipResource",
+          "title": "fonts_Odiya",
+          "last_modified": "8/2/17 1:31 PM",
+          "main_file": null,
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/JaanoNumber_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12814060"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_OD",
+          "last_modified": "9/13/17 1:44 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/JaanoNumber_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/Kahaniyaan_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "32635156"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_OD",
+          "last_modified": "9/13/17 1:44 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/Kahaniyaan_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/LineLagao_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2843538"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_OD",
+          "last_modified": "10/3/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/LineLagao_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/MujhePehchano_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "20907914"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_OD",
+          "last_modified": "9/27/17 1:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/MujhePehchano_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/Number123_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9966834"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_OD",
+          "last_modified": "9/13/17 1:45 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/Number123_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/NumberKas_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "5880328"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_OD",
+          "last_modified": "11/18/17 12:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/NumberKas_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/Sangeet_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7250704"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_OD",
+          "last_modified": "9/13/17 1:45 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/Sangeet_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/ShabdhChitra_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "52975088"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_OD",
+          "last_modified": "11/14/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/ShabdhChitra_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/ThikThak_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "58451784"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_OD",
+          "last_modified": "9/13/17 1:45 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/ThikThak_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/TracingGame_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "20575786"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_OD",
+          "last_modified": "11/9/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/TracingGame_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Odiya/UlatPalat_OD_Odiya.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "82171507"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_OD",
+          "last_modified": "9/13/17 1:46 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Odiya/UlatPalat_OD/index.html",
+          "language_en": "Odiya",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Odiya"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Punjabi",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/AgePiche_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "11283734"
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_PN",
+          "last_modified": "12/4/17 7:45 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/AgePiche_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/Aksharkhadi_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "41282560"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_PN",
+          "last_modified": "9/13/17 1:35 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/Aksharkhadi_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/AwazChitra_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "47495818"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_PN",
+          "last_modified": "2/15/18 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/AwazChitra_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/AwazPehchano_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "13195500"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_PN",
+          "last_modified": "9/13/17 1:36 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/AwazPehchano_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/Barakhadi_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "16627381"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_PN",
+          "last_modified": "9/13/17 1:36 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/Barakhadi_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/Coloring_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1349724"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_PN",
+          "last_modified": "9/13/17 1:36 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/Coloring_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/Cricket_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51784226"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_PN",
+          "last_modified": "9/13/17 1:36 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/Cricket_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/Dhoom_1_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27775895"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_PN",
+          "last_modified": "9/13/17 1:36 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/Dhoom_1_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/Dhoom_2_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27702468"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_PN",
+          "last_modified": "9/13/17 1:37 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/Dhoom_2_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/fonts_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "67786"
+          "kind": "PradigiGameZipResource",
+          "title": "fonts_Punjabi",
+          "last_modified": "8/2/17 1:32 PM",
+          "main_file": null,
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/JaanoNumber_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "11720434"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_PN",
+          "last_modified": "9/13/17 1:37 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/JaanoNumber_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/Kahaniyaan_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "42823161"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_PN",
+          "last_modified": "9/13/17 1:37 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/Kahaniyaan_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/LineLagao_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1449835"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_PN",
+          "last_modified": "9/13/17 1:37 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/LineLagao_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/MujhePehchano_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "45078975"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_PN",
+          "last_modified": "9/13/17 1:37 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/MujhePehchano_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/Number123_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12357124"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_PN",
+          "last_modified": "9/13/17 1:38 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/Number123_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/NumberKas_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "6049592"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_PN",
+          "last_modified": "11/18/17 12:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/NumberKas_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/Sangeet_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7587198"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_PN",
+          "last_modified": "9/13/17 1:38 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/Sangeet_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/ShabdhChitra_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "36164017"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_PN",
+          "last_modified": "9/15/17 1:38 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/ShabdhChitra_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/ThikThak_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "110843784"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_PN",
+          "last_modified": "9/13/17 1:38 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/ThikThak_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/TracingGame_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "15319810"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_PN",
+          "last_modified": "9/13/17 1:39 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/TracingGame_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Punjabi/UlatPalat_PN_Punjabi.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "143892212"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_PN",
+          "last_modified": "9/13/17 1:39 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Punjabi/UlatPalat_PN/index.html",
+          "language_en": "Punjabi",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Punjabi"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Tamil",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/AgePiche_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9836948"
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_TM",
+          "last_modified": "11/14/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/AgePiche_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/Aksharkhadi_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "32235171"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_TM",
+          "last_modified": "9/13/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/Aksharkhadi_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/AwazChitra_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "45758763"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_TM",
+          "last_modified": "2/16/18 7:32 AM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/AwazChitra_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/AwazPehchano_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12192197"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_TM",
+          "last_modified": "9/13/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/AwazPehchano_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/Barakhadi_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7497828"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_TM",
+          "last_modified": "9/13/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/Barakhadi_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/Coloring_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1375333"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_TM",
+          "last_modified": "9/13/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/Coloring_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/Cricket_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51716425"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_TM",
+          "last_modified": "9/13/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/Cricket_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/Dhoom_1_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "28137580"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_TM",
+          "last_modified": "9/13/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/Dhoom_1_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/Dhoom_2_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "28064156"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_TM",
+          "last_modified": "9/13/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/Dhoom_2_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/JaanoNumber_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12375260"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_TM",
+          "last_modified": "9/13/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/JaanoNumber_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/Kahaniyaan_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "44154605"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_TM",
+          "last_modified": "9/13/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/Kahaniyaan_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/LineLagao_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2698076"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_TM",
+          "last_modified": "9/13/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/LineLagao_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/MujhePehchano_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "96564772"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_TM",
+          "last_modified": "9/13/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/MujhePehchano_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/Number123_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9828435"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_TM",
+          "last_modified": "11/17/17 12:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/Number123_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/NumberKas_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "5857426"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_TM",
+          "last_modified": "11/18/17 12:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/NumberKas_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/Sangeet_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7084290"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_TM",
+          "last_modified": "9/13/17 1:33 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/Sangeet_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/ShabdhChitra_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "34272525"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_TM",
+          "last_modified": "11/14/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/ShabdhChitra_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/ThikThak_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "60374794"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_TM",
+          "last_modified": "9/13/17 1:33 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/ThikThak_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/TracingGame_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "14112993"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_TM",
+          "last_modified": "9/13/17 1:33 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/TracingGame_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Tamil/UlatPalat_TM_Tamil.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "72114207"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_TM",
+          "last_modified": "9/13/17 1:33 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Tamil/UlatPalat_TM/index.html",
+          "language_en": "Tamil",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Tamil"
     },
     {
-      "kind": "PageWebResource",
+      "kind": "gameslang_page",
       "url": "http://www.gamerepo.prathamcms.org/gamelist.html?lang=Telugu",
       "children": [
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/AgePiche_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9825733"
+          "kind": "PradigiGameZipResource",
+          "title": "AgePiche_TL",
+          "last_modified": "11/14/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/AgePiche_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/Aksharkhadi_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "33742361"
+          "kind": "PradigiGameZipResource",
+          "title": "Aksharkhadi_TL",
+          "last_modified": "9/14/17 1:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/Aksharkhadi_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/AwazChitra_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "40890721"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazChitra_TL",
+          "last_modified": "11/6/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/AwazChitra_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/AwazPehchano_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "12710037"
+          "kind": "PradigiGameZipResource",
+          "title": "AwazPehchano_TL",
+          "last_modified": "9/14/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/AwazPehchano_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/Barakhadi_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "9054913"
+          "kind": "PradigiGameZipResource",
+          "title": "Barakhadi_TL",
+          "last_modified": "9/14/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/Barakhadi_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/Coloring_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "1374576"
+          "kind": "PradigiGameZipResource",
+          "title": "Coloring_TL",
+          "last_modified": "9/14/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/Coloring_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/Cricket_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "51716419"
+          "kind": "PradigiGameZipResource",
+          "title": "Cricket_TL",
+          "last_modified": "9/14/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/Cricket_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/Dhoom_1_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27741517"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_1_TL",
+          "last_modified": "9/14/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/Dhoom_1_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/Dhoom_2_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "27668337"
+          "kind": "PradigiGameZipResource",
+          "title": "Dhoom_2_TL",
+          "last_modified": "9/14/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/Dhoom_2_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/JaanoNumber_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "15135480"
+          "kind": "PradigiGameZipResource",
+          "title": "JaanoNumber_TL",
+          "last_modified": "11/6/17 12:30 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/JaanoNumber_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/Kahaniyaan_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "36203396"
+          "kind": "PradigiGameZipResource",
+          "title": "Kahaniyaan_TL",
+          "last_modified": "9/14/17 1:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/Kahaniyaan_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/LineLagao_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "2673390"
+          "kind": "PradigiGameZipResource",
+          "title": "LineLagao_TL",
+          "last_modified": "9/14/17 1:33 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/LineLagao_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/MujhePehchano_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "69458417"
+          "kind": "PradigiGameZipResource",
+          "title": "MujhePehchano_TL",
+          "last_modified": "11/6/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/MujhePehchano_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/Number123_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "10806481"
+          "kind": "PradigiGameZipResource",
+          "title": "Number123_TL",
+          "last_modified": "11/3/17 1:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/Number123_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/NumberKas_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "6158398"
+          "kind": "PradigiGameZipResource",
+          "title": "NumberKas_TL",
+          "last_modified": "11/18/17 12:32 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/NumberKas_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/Sangeet_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "7122072"
+          "kind": "PradigiGameZipResource",
+          "title": "Sangeet_TL",
+          "last_modified": "9/14/17 1:33 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/Sangeet_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/ShabdhChitra_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "41622890"
+          "kind": "PradigiGameZipResource",
+          "title": "ShabdhChitra_TL",
+          "last_modified": "9/15/17 1:40 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/ShabdhChitra_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/ThikThak_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "5584445"
+          "kind": "PradigiGameZipResource",
+          "title": "ThikThak_TL",
+          "last_modified": "9/14/17 1:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/ThikThak_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/TracingGame_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "17040128"
+          "kind": "PradigiGameZipResource",
+          "title": "TracingGame_TL",
+          "last_modified": "11/6/17 12:31 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/TracingGame_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         },
         {
-          "kind": "MediaWebResource",
           "url": "http://www.gamerepo.prathamcms.org/Zip/Telugu/UlatPalat_TL_Telugu.zip",
-          "children": [],
-          "content-type": "application/x-zip-compressed",
-          "content-length": "45807574"
+          "kind": "PradigiGameZipResource",
+          "title": "UlatPalat_TL",
+          "last_modified": "9/14/17 1:34 PM",
+          "main_file": "http://www.gamerepo.prathamcms.org/Game/Telugu/UlatPalat_TL/index.html",
+          "language_en": "Telugu",
+          "children": []
         }
-      ]
+      ],
+      "language_en": "Telugu"
     }
   ]
 }

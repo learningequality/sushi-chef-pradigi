@@ -2,6 +2,11 @@
 Import content from prathamopenschool.org into kolibri format
 
 
+
+What is up with fonts and js zips?
+
+
+
 Install
 -------
 

@@ -108,7 +108,7 @@ class PrathamGamesRepoCrawler(BasicCrawler):
         Download `url` using a JS-enabled web client.
         """
         LOGGER.info('Downloading ' +  url + ' then pausing for 15 secs for JS to run.')
-        html = downloader.read(url, loadjs=True, loadjs_wait_time=10)
+        html = downloader.read(url, loadjs=True, loadjs_wait_time=20)
         page = BeautifulSoup(html, "html.parser")
         LOGGER.debug('Downloaded page ' + str(url) + ' using PhantomJS. Title:' + self.get_title(page))
         return (url, page)

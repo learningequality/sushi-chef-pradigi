@@ -206,7 +206,7 @@ PRADIGI_STRINGS = {
     },
     "as": {
         "language_en": "Assamese",
-        "gamesrepo_suffixes": ['_AS', 'AS_Assamese'],
+        "gamesrepo_suffixes": ['_AS'],
         "subjects": {}
     },
 }

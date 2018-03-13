@@ -9,8 +9,8 @@ from fabric.utils import puts
 env.hosts = [
     'eslgenie.com:1',  # vader runs ssh on port 1
 ]
-#env.user = os.environ.get('USER')
-#env.password = os.environ.get('VADER_PASSWORD')
+env.user = os.environ.get('USER')
+env.password = os.environ.get('VADER_PASSWORD')
 
 STUDIO_TOKEN = os.environ.get('STUDIO_TOKEN')
 

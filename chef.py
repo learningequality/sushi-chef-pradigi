@@ -352,10 +352,12 @@ def getlang_by_language_en(language_en):
     """
     Convert language names used on PraDigi websites to le_utils language object.
     """
-    if language_en == 'Odiya':
+    if language_en == 'Odiya' or language_en == 'Odisa':
         language_en = 'Oriya'
     elif language_en == 'Bangali':
         language_en = 'Bengali'
+    elif language_en == 'Telagu':
+        language_en = 'Telugu'
     lang_obj = getlang_by_name(language_en)
     return lang_obj
 
@@ -459,11 +461,11 @@ def get_subtree_by_subject_en(lang, subject, topic=None):
         raise ValueError('Language `lang` must mr or hi (only two langs on website)')
     wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
     with open(wrt_filename) as jsonfile:
-        web_resource_tree = json.load(wrt_filename)
-    subjects = web_resource_tree['children']
-    for subject in subjects:
-        if subject['subject_en'] == subject:
-            return subject
+        web_resource_tree = json.load(jsonfile)
+    subject_subtrees = web_resource_tree['children']
+    for subject_subtree in subject_subtrees:
+        if subject_subtree['subject_en'] == subject:
+            return subject_subtree
     return None
 
 
@@ -563,8 +565,6 @@ def game_info_to_ricecooker_node(lang, title, game_info):
 
 
 
-
-
 # CHEF
 ################################################################################
 
@@ -597,13 +597,17 @@ class PraDigiChef(JsonTreeChef):
 
     def build_subtree_for_lang(self, lang):
         print('Building subtree for lang', lang)
-        # A. Go through template and populate children with outputs from
+        
         lang_subtree = copy.deepcopy(TEMPLATE_FOR_LANG)
         lang_obj = getlang(lang)
         first_native_name = lang_obj.native_name.split(',')[0].split('(')[0]
         lang_subtree['title'] = first_native_name
         lang_subtree['language'] = lang
         lang_subtree['source_id'] = 'pradigi_'+str(lang)
+
+        # A. Populate children with resources from website
+
+        # B. Go through template and populate children with games
         age_groups_subtrees = lang_subtree['children']
         for age_groups_subtree in age_groups_subtrees:
             age_group = age_groups_subtree['title']

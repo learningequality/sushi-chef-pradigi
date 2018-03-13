@@ -41,16 +41,10 @@ def chef_info():
 ################################################################################
 
 @task
-def run_pradigi(debug="False", lang='hn'):
-    if debug == "False":
-        debug_str = ''
-    else:
-        debug_str = 'debug=T'
-
+def run_pradigi():
     with cd(CHEF_DATA_DIR):
         with prefix('source ' + os.path.join(CHEF_DATA_DIR, 'venv/bin/activate')):
-            cmd = './chef.py  -v --reset --token={} language={} '.format(STUDIO_TOKEN, lang)
-            cmd += debug_str
+            cmd = 'nohup ./chef.py  -v --reset --token={} &'.format(STUDIO_TOKEN)
             sudo(cmd, user=CHEF_USER)
 
 

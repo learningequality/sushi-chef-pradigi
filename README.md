@@ -1,25 +1,32 @@
-# sushi-chef-pratham-open-school
-Import content from prathamopenschool.org into kolibri format
+PraDigi Sushi Chef
+==================
+Import content from prathamopenschool.org and the Pratham gamerepo into Studio.
 
 
 
-What is up with fonts and js zips?
+TODO
+----
+
+  - How to get thumbnails for games?
+  - get subject strings for all other languages (shared spreadsheet workflow)
 
 
 
 Install
 -------
 
-    git clone https://github.com/fle-internal/sushi-chef-pratham-open-school.git
-    cd sushi-chef-pratham-open-school/
-    mkvirtualenv -p python3 sushi-chef-pratham-open-school
-    pip install ricecooker
+    git clone https://github.com/learningequality/sushi-chef-pradigi.git
+    cd sushi-chef-pradigi/
+    virtualenv -p python3 venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+
+
 
 
 Running
 -------
-Besides ricecooker parameters, you also need to provide the language:
-hn (Hindi) or mr (Marathi).
 
-    workon sushi-chef-pratham-open-school
-    python -m ricecooker uploadchannel chef.py -v --token=<your_token> language=mr
+    source venv/bin/activate
+    python -m ricecooker uploadchannel chef.py -v --token=<your_token>
+

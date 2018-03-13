@@ -11,6 +11,7 @@ PRATHAM Open School (PraDigi) content is organized as follow:
       (not used, instead use games form http://www.gamerepo.prathamcms.org/)
 """
 
+import copy
 import csv
 import json
 import logging
@@ -23,17 +24,13 @@ from urllib.parse import urljoin, urlparse
 import zipfile
 
 
-from basiccrawler.crawler import BasicCrawler
-from bs4 import BeautifulSoup
 from le_utils.constants import content_kinds, file_types, licenses
 from le_utils.constants.languages import getlang, getlang_by_name
-from ricecooker.chefs import SushiChef
-from ricecooker.classes.files import VideoFile, HTMLZipFile, DocumentFile
-from ricecooker.classes.nodes import (ChannelNode, HTML5AppNode, TopicNode, VideoNode, DocumentNode)
+from ricecooker.chefs import JsonTreeChef
 from ricecooker.classes.licenses import get_license
 from ricecooker.config import LOGGER
-from ricecooker.utils import downloader
 from ricecooker.utils.caching import (CacheForeverHeuristic, FileCache, CacheControlAdapter)
+from ricecooker.utils.jsontrees import write_tree_to_json_tree
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
 
@@ -41,16 +38,96 @@ DOMAIN = 'prathamopenschool.org'
 FULL_DOMAIN_URL = 'http://www.' + DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
 PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
-# 'mr']  # le-utils language codes for Hindi and Marathi
-PRADIGI_LANG_URL_MAP = {
-    'hi': 'http://www.prathamopenschool.org/hn/',
-    'mr': 'http://www.prathamopenschool.org/mr/',
-}
+
+
+
+
+
+
+
+
+# CSV EXPORT AND PARSING for the Google Sheet: Kolibri- Content structure 
+################################################################################
+GSHEETS_BASE = 'https://docs.google.com/spreadsheets/d/'
+PRADIGI_SHEET_ID = '1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg'
+PRADIGI_STRUCTURE_SHEET_GID = '342105160'
+PRADIGI_SHEET_CSV_URL = GSHEETS_BASE + PRADIGI_SHEET_ID + '/export?format=csv&gid=' + PRADIGI_STRUCTURE_SHEET_GID
+PRADIGI_SHEET_CSV_PATH = 'chefdata/pradigi_structure.csv'
+AGE_GROUP_KEY = 'Age Group'
+SUBJECT_KEY = 'Subject'
+RESOURCE_TYPE_KEY = 'Resource Type'
+NAME_KEY = 'Name'
+CODENAME_KEY = 'Name on gamerepo (before lang underscore)'
+PRATHAM_COMMENTS_KEY = 'Pratham'
+LE_COMMENTS_KEY = 'LE Comments'
+PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
+PRADIGI_SUBJECTS = ['Math', 'Language', 'English', 'Fun', 'Science',
+                    'Automotive', 'Beauty', 'Construction', 'Electrical', 'Healthcare', 'Hospitality']
+PRADIGI_SHEET_CSV_FILEDNAMES = [
+    AGE_GROUP_KEY,
+    SUBJECT_KEY,
+    RESOURCE_TYPE_KEY,
+    NAME_KEY,
+    CODENAME_KEY,
+    PRATHAM_COMMENTS_KEY,
+    LE_COMMENTS_KEY,
+]
+
+
+def download_structure_csv():
+    response = requests.get(PRADIGI_SHEET_CSV_URL)
+    csv_data = response.content.decode('utf-8')
+    with open(PRADIGI_SHEET_CSV_PATH, 'w') as csvfile:
+        csvfile.write(csv_data)
+        LOGGER.info('Succesfully saved ' + PRADIGI_SHEET_CSV_PATH)
+
+def _clean_dict(row):
+    """
+    Transform empty strings values of dict `row` to None.
+    """
+    row_cleaned = {}
+    for key, val in row.items():
+        if val is None or val == '':
+            row_cleaned[key] = None
+        else:
+            row_cleaned[key] = val.strip()
+    return row_cleaned
+
+def load_pradigi_structure():
+    games_info = []
+    with open(PRADIGI_SHEET_CSV_PATH, 'r') as csvfile:
+        reader = csv.DictReader(csvfile, fieldnames=PRADIGI_SHEET_CSV_FILEDNAMES)
+        for row in reader:
+            clean_row = _clean_dict(row)
+            if clean_row[AGE_GROUP_KEY] in PRADIGI_AGE_GROUPS and clean_row[SUBJECT_KEY] in PRADIGI_SUBJECTS:
+                games_info.append(clean_row)
+    return games_info
+
+
+def get_all_game_names():
+    """
+    Used for debugging chef
+    """
+    game_names = []
+    games_info = load_pradigi_structure()
+    for game in games_info:
+        codename = game[CODENAME_KEY]
+        if codename is not None and codename not in game_names:
+            game_names.append(game[CODENAME_KEY])
+    return game_names
+
+
+################################################################################
+
+
+
+
+
 PRADIGI_STRINGS = {
     'hi': {
         'language_en': 'Hindi',
         'gamesrepo_suffixes': ['_KKS', '_HI'],
-        'strings': {
+        'subjects': {
             "Mathematics": "गणित",
             "English": "अंग्रेजी",
             "Health": "स्वास्थ्य",
@@ -58,7 +135,9 @@ PRADIGI_STRINGS = {
             "Hospitality": "अतिथी सत्कार",
             "Construction": "भवन-निर्माण",
             "Automobile": "वाहन",
+            "Automotive": "वाहन",      # alt spelling used in spreadsheet
             "Electric": "इलेक्ट्रिक",
+            "Electrical": "इलेक्ट्रिक",   # alt spelling used in spreadsheet
             "Beauty": "ब्युटी",
             "Healthcare": "स्वास्थ्य सेवा",
             "Std8": "8 वी कक्षा",
@@ -69,7 +148,7 @@ PRADIGI_STRINGS = {
     'en': {
         'language_en': 'English',
         'gamesrepo_suffixes': [],
-        'strings': {
+        'subjects': {
             "Mathematics": "Mathematics",
             "English": "English",
             "Health": "Health",
@@ -88,50 +167,50 @@ PRADIGI_STRINGS = {
     "or": {
         "language_en": "Odiya",
         "gamesrepo_suffixes": ['_OD'],
-        "strings": {}
+        "subjects": {}
     },
     "bn": {
         "language_en": "Bangali",
         "gamesrepo_suffixes": ['_BN'],
-        "strings": {}
+        "subjects": {}
     },
     "pnb": {
         "language_en": "Punjabi",
         "gamesrepo_suffixes": ['_PN'],
-        "strings": {}
+        "subjects": {}
     },
     "kn": {
         "language_en": "Kannada",
         "gamesrepo_suffixes": ['_KN'],
-        "strings": {}
+        "subjects": {}
     },
     "ta": {
         "language_en": "Tamil",
         "gamesrepo_suffixes": ['_TM'],
-        "strings": {}
+        "subjects": {}
     },
     "te": {
         "language_en": "Telugu",
         "gamesrepo_suffixes": ['_TL'],
-        "strings": {}
+        "subjects": {}
     },
     "mr": {
         "language_en": "Marathi",
         "gamesrepo_suffixes": ['_MR'],
-        "strings": {}
+        "subjects": {}
     },
     "gu": {
         "language_en": "Gujarati",
         "gamesrepo_suffixes": ['_KKS', '_GJ'],
-        "strings": {}
+        "subjects": {}
     },
     "as": {
         "language_en": "Assamese",
         "gamesrepo_suffixes": ['_AS', 'AS_Assamese'],
-        "strings": {}
+        "subjects": {}
     },
 }
-# TODO: get lang strings for all other languages in the gamesrepo
+
 
 
 
@@ -154,7 +233,61 @@ session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
 
+TEMPLATE_FOR_LANG = {
+    'kind': content_kinds.TOPIC,
+    'children': [
+        {   'title': '3-6 years',
+            'children': [
+                {'title': 'Language',       'children': []},
+                {'title': 'Mathematics',    'children': []},
+                {'title': 'Story',          'children': []},  # should include here?
+                {'title': 'Fun',            'children': []},
+            ],
+        },
+        {   'title': '6-10 years',
+            'children': [
+                {'title': 'Mathematics',    'children': []},
+                {'title': 'Language',       'children': []},
+                {'title': 'English',        'children': []},
+                {'title': 'Story',          'children': []},
+                {'title': 'Fun',            'children': []},
+            ],
+        },
+        {   'title': '8-14 years',
+            'children': [
+                {'title': 'Mathematics',    'children': []},
+                {'title': 'Language',       'children': []},
+                {'title': 'English',        'children': []},
+                {'title': 'Health',         'children': []},
+                {'title': 'Science',        'children': []},
+                {'title': 'Std8',           'children': []},
+                {'title': 'Fun',            'children': []},
+            ],
+        },
+        {   'title': '14 and above',
+            'children': [
+                {'title': 'English',        'children': []},
+                {'title': 'Beauty',         'children': []}, 
+                {'title': 'Automotive',     'children': []},
+                {'title': 'Healthcare',     'children': []},
+                {'title': 'Construction',   'children': []},
+                {'title': 'Hospitality',    'children': []},
+                {'title': 'Electrical',     'children': []},
+                {'title': 'Fun',            'children': []},
+            ],
+        },
+    ]
+}
 
+
+
+
+
+
+
+
+# GAMESREPO UTILS
+################################################################################
 
 def find_games_for_lang(name, lang):
     data = json.load(open('chefdata/trees/pradigi_games_all_langs.json','r'))
@@ -183,45 +316,9 @@ def flatten_tree(tree):
             flat_child = flatten_tree(child)
             result.extend(flat_child)
         return result
-        
 
 
-# TODO: get from google sheet....
-TEST_GAMENAMES = [
-    'Aakar',
-    'ABCD',
-    'AgePiche',
-    'Aksharkhadi',
-    'Atulya Bharat',
-    'AwazChitra',
-    'AwazPehchano',
-    'Barakhadi',
-    'Coloring',
-    'CountAndKnow',
-    'CountIt',
-    'CrumbleTumble',
-    'De dana dan',
-    'Dhoom_1',
-    'Dhoom_2',
-    'fixUpMixUp',
-    'FlipIt',
-    'GaltiMaafSudharo',
-    'GuessWho',
-    'JaanoNumber',
-    'Kahaniyaan',
-    'LetterBox',
-    'LineLagao',
-    'MujhePehchano',
-    'Number123',
-    'NumberKas',
-    'UlatPalat',
-    'Sangeet',
-    'ShabdhChitra',
-    'ThikThak',
-    'UlatPalat',
-]
-
-def compute_games_by_language_csv():
+def compute_games_by_language_csv(game_names):
     """
     Checks which game names exist in all the PraDigi languages
     Matching is performed based on language code suffix, e.g. _MR for Marathi.
@@ -235,7 +332,7 @@ def compute_games_by_language_csv():
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         
-        for game_name in TEST_GAMENAMES:
+        for game_name in game_names:
             row_dict = {}
             row_dict['Name on gamerepo'] = game_name
             for lang in PRADIGI_LANGUAGES:
@@ -250,7 +347,11 @@ def compute_games_by_language_csv():
             writer.writerow(row_dict)
     return languages_matches
 
+
 def getlang_by_language_en(language_en):
+    """
+    Convert language names used on PraDigi websites to le_utils language object.
+    """
     if language_en == 'Odiya':
         language_en = 'Oriya'
     elif language_en == 'Bangali':
@@ -266,7 +367,8 @@ def find_undocumented_games():
     all_set = set([game['url'] for game in gamelist])
     
     # the ones in TEST_GAMENAMES
-    found_gamelist = compute_games_by_language_csv()
+    game_names = get_all_game_names()
+    found_gamelist = compute_games_by_language_csv(game_names)
     found_set = set([game['url'] for game in found_gamelist])
     
     diff_set = all_set.difference(found_set)
@@ -280,18 +382,17 @@ def find_undocumented_games():
     for game in sorted_by_lang:
         print(game['title']+'\t'+game['language_en']+'\t'+game['url'])
     
-    diff_game_names = set()
-    for game in sorted_by_lang:
-        title = game['title']
-        if '_' in title:
-            root = '_'.join(title.split('_')[0:-1])
-        else:
-            root = title
-        diff_game_names.add(root)
-    for name in sorted(diff_game_names):
-        print(name)
-            
-    
+    # Print just names
+    # diff_game_names = set()
+    # for game in sorted_by_lang:
+    #     title = game['title']
+    #     if '_' in title:
+    #         root = '_'.join(title.split('_')[0:-1])
+    #     else:
+    #         root = title
+    #     diff_game_names.add(root)
+    # for name in sorted(diff_game_names):
+    #     print(name)
 
 
 
@@ -299,605 +400,14 @@ def find_undocumented_games():
 
 
 
-
-
-
-
-
-
-class PrathamGamesRepoCrawler(BasicCrawler):
-    """
-    Get links fro all games from http://www.gamerepo.prathamcms.org/index.html
-    """
-    MAIN_SOURCE_DOMAIN = 'http://www.gamerepo.prathamcms.org'
-    CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_games_all_langs.json'
-    START_PAGE_CONTEXT = {'kind': 'index_page'}
-    kind_handlers = {
-        'index_page': 'on_index_page',
-        'gameslang_page': 'on_gameslang_page',
-    }
-
-    def on_index_page(self, url, page, context):
-        LOGGER.info('in on_index_page ' + url)
-        page_dict = dict(
-            kind='index_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-        
-        languagelist_divs = page.find_all('div', attrs={'ng-repeat': "lang in languagelist"})
-        for languagelist_div in languagelist_divs:
-            link = languagelist_div.find('a')
-            language_en = get_text(link)
-            language_url = urljoin(url, link['href'])
-            context = dict(
-                parent=page_dict,
-                kind='gameslang_page',
-                language_en=language_en,
-            )
-            self.enqueue_url_and_context(language_url, context)
-
-    def on_gameslang_page(self, url, page, context):
-        LOGGER.info('in on_gameslang_page ' + url)
-        page_dict = dict(
-            kind='gameslang_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-        
-        gamelist = page.find_all('div', attrs={'ng-repeat':"gamedata in gamelist|filter:gametitle|filter:gamedata.gameurl.length"})
-        for game in gamelist:
-            title = get_text(game.find('h3'))
-            last_modified = get_text(game.find('h6')).replace('Last modified : ', '')
-            links = game.find_all('a')
-            game_link, zipfile_link = links[0], links[1]
-            main_file = urljoin(url, game_link['href'])
-            zipfile_url = urljoin(url, zipfile_link['href'])
-
-            # Handle special case of broken links (no title, and not main file)
-            if len(title) == 0:
-                zip_path = urlparse(zipfile_url).path
-                zip_filename = os.path.basename(zip_path)
-                title, _ = os.path.splitext(zip_filename)
-                main_file = None
-
-            game_dict = dict(
-                url=zipfile_url,
-                kind='PradigiGameZipResource',
-                title=title,
-                last_modified=last_modified,
-                main_file=main_file,
-                language_en=context['language_en'],
-                children=[],
-            )
-            page_dict['children'].append(game_dict)
-
-
-    def download_page(self, url, *args, **kwargs):
-        """
-        Download `url` using a JS-enabled web client.
-        """
-        LOGGER.info('Downloading ' +  url + ' then pausing for 15 secs for JS to run.')
-        html = downloader.read(url, loadjs=True, loadjs_wait_time=3)
-        page = BeautifulSoup(html, "html.parser")
-        LOGGER.debug('Downloaded page ' + str(url) + ' using PhantomJS. Title:' + self.get_title(page))
-        return (url, page)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class PraDigiCrawler(BasicCrawler):
-    MAIN_SOURCE_DOMAIN = FULL_DOMAIN_URL
-    START_PAGE_CONTEXT = {'kind': 'lang_page'}
-    kind_handlers = {
-        'lang_page': 'on_lang_page',
-        'topic_page': 'on_topic_page',
-        'subtopic_page': 'on_subtopic_page',
-        'lesson_page': 'on_lesson_page',
-        'fun_page': 'on_fun_page',
-        'fun_resource_page': 'on_fun_resource_page',
-        'story_page': 'on_story_page',
-        'story_resource_page': 'on_story_resource_page',
-    }
-
-
-
-    # CRALWING
-    ############################################################################
-
-    def __init__(self, lang=None, **kwargs):
-        """
-        Extend base class constructor to handle two-letter language code `lang`.
-        """
-        if lang is None:
-            raise ValueError('Must specify `lang` argument for PraDigiCrawler.')
-        if lang not in PRADIGI_LANGUAGES:
-            raise ValueError('Bad lang. Use one of ' + str(PRADIGI_LANGUAGES))
-        self.lang = lang
-        start_page = PRADIGI_LANG_URL_MAP[self.lang]
-        self.CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
-        super().__init__(start_page=start_page)
-
-
-    def crawl(self, **kwargs):
-        """
-        Extend base crawl method to add PraDigi channel metadata. 
-        """
-        web_resource_tree = super().crawl(**kwargs)
-
-        # channel metadata
-        lang_obj = getlang(self.lang)
-        channel_metadata = dict(
-            title='PraDigi ({})'.format(lang_obj.native_name),
-            description = 'PraDigi video lessons and games.',  # TODO(ivan): what should be the longer descitpiton?
-            source_domain = DOMAIN,
-            source_id='pratham-open-school-{}'.format(self.lang),
-            language=self.lang,
-            thumbnail=None, # get_absolute_path('img/logop.png'),
-        )
-        web_resource_tree.update(channel_metadata)
-
-        # convert tree format expected by scraping functions
-        # restructure_web_resource_tree(web_resource_tree)
-        # remove_sections(web_resource_tree)
-        self.write_web_resource_tree_json(web_resource_tree)
-        return web_resource_tree
-
-
-
-    
-
-    # HANDLERS
-    ############################################################################
-
-    def on_lang_page(self, url, page, context):
-        LOGGER.debug('in on_lang_page ' + url)
-        page_dict = dict(
-            kind='lang_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-
-        try:
-            menu_row = page.find('div', {'id': 'menu-row'})
-        except Exception as e:
-            LOGGER.error('on_lang_page: %s : %s' % (e, page))
-            return
-        for topic in menu_row.find_all('a'):
-            try:
-                if topic['href'] == '#':
-                    print('skipping', topic)
-                    continue
-                
-                # metadata
-                topic_url = urljoin(url, topic['href'])
-                title = topic.get_text().strip()
-                source_id = get_source_id(topic['href'])
-                subject_en = source_id    # short string to match on top-level categories
-                context = dict(
-                    parent=page_dict,
-                    title=title,
-                    source_id=source_id,
-                    subject_en=subject_en,
-                )
-                
-                # what type of tab is it?
-                if 'Fun' in topic['href']:
-                    LOGGER.info('found fun page: %s: %s' % (source_id, title))
-                    context['kind'] = 'fun_page'
-                elif 'Story' in topic['href']:
-                    LOGGER.info('found story page: %s: %s' % (source_id, title))
-                    context['kind'] = 'story_page'
-                else:
-                    LOGGER.info('found topic: %s: %s' % (source_id, title))
-                    context['kind'] = 'topic_page'
-                self.enqueue_url_and_context(topic_url, context)
-
-                if DEBUG_MODE:
-                    return
-
-            except Exception as e:
-                LOGGER.error('on_lang_page: %s : %s' % (e, topic))
-
-
-    def on_topic_page(self, url, page, context):
-        LOGGER.debug('in on_topic_page ' + url)
-        page_dict = dict(
-            kind='topic_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-
-        try:
-            body_row = page.find('div', {'id': 'body-row'})
-            menu_row = body_row.find('div', {'class': 'col-md-2'})
-        except Exception as e:
-            LOGGER.error('get_subtopics: %s : %s' % (e, page))
-            return
-        for subtopic in menu_row.find_all('a'):
-            try:
-                subtopic_url = urljoin(url, subtopic['href'])
-                title = subtopic.get_text().strip()
-                source_id = get_source_id(subtopic['href'])
-                LOGGER.info('  found subtopic: %s: %s' % (source_id, title))
-                context = dict(
-                    parent=page_dict,
-                    kind='subtopic_page',
-                    title=title,
-                    source_id=source_id,
-                    children=[],
-                )
-                self.enqueue_url_and_context(subtopic_url, context)
-            except Exception as e:
-                LOGGER.error('on_topic_page: %s : %s' % (e, subtopic))
-
-
-    def on_subtopic_page(self, url, page, context):
-        print('     in on_subtopic_page', url)
-        page_dict = dict(
-            kind='subtopic_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-
-        try:
-            menu_row = page.find('div', {'id': 'body-row'})
-            menu_row = menu_row.find('div', {'class': 'col-md-9'})
-        except Exception as e:
-            LOGGER.error('on_subtopic_page: %s : %s' % (e, page))
-            return
-        for lesson in menu_row.find_all('div', {'class': 'thumbnail'}):
-            try:
-                title = lesson.find('div', {'class': 'txtline'}).get_text().strip()
-                caption = lesson.find('div', class_='caption')
-                description = lesson.get_text().strip() if lesson else ''
-                lesson_url = urljoin(url, lesson.find('a')['href'])
-                thumbnail_src = lesson.find('a').find('img')['src']
-                thumbnail_url = urljoin(url, thumbnail_src)
-                source_id = get_source_id(lesson.find('a')['href'])
-                LOGGER.info('     lesson: %s: %s' % (source_id, title))
-                context = dict(
-                    parent=page_dict,
-                    kind='lesson_page',
-                    title=title,
-                    description=description,
-                    source_id=source_id,
-                    thumbnail_url=thumbnail_url,
-                    children=[],
-                )
-                self.enqueue_url_and_context(lesson_url, context)
-                # get_contents(node, link)
-            except Exception as e:
-                LOGGER.error('on_subtopic_page: %s : %s' % (e, lesson))
-
-
-    # LESSONS
-    ############################################################################
-
-    def on_lesson_page(self, url, page, context):
-        print('      in on_lesson_page', url)
-        page_dict = dict(
-            kind='lessons_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-
-        try:
-            menu_row = page.find('div', {'id': 'row-exu'})
-        except Exception as e:
-            LOGGER.error('on_lesson_page: %s : %s' % (e, page))
-            return
-
-        contents = menu_row.find_all('div', {'class': 'col-md-3'})
-        for content in contents:
-            try:
-                title = content.find('div', {'class': 'txtline'}).get_text()
-                # TODO: description
-                thumbnail = content.find('a').find('img')['src']
-                thumbnail = get_absolute_path(thumbnail)
-                main_file, master_file, source_id = get_content_link(content)
-                LOGGER.info('      content: %s: %s' % (source_id, title))
-
-                if main_file.endswith('mp4'):
-                    video = dict(
-                        url=main_file,
-                        kind='PrathamVideoResource',
-                        title=title,
-                        source_id=source_id,
-                        thumbnail_url=thumbnail,
-                        children=[],
-                    )
-                    page_dict['children'].append(video)
-
-                elif main_file.endswith('pdf'):
-                    pdf = dict(
-                        url=main_file,
-                        kind='PrathamPdfResource',
-                        title=title,
-                        source_id=source_id,
-                        thumbnail_url=thumbnail,
-                        children=[],
-                    )
-                    page_dict['children'].append(pdf)
-
-                elif main_file.endswith('html') and master_file.endswith('zip'):
-                    zipfile = dict(
-                        url=master_file,
-                        kind='PrathamZipResource',
-                        title=title,
-                        source_id=source_id,
-                        thumbnail_url=thumbnail,
-                        main_file=main_file,     # needed to rename to index.html if different
-                        children=[],
-                    )
-                    page_dict['children'].append(zipfile)
-
-                else:
-                    LOGGER.error('Content not supported: %s, %s' % (main_file, master_file))
-            except Exception as e:
-                LOGGER.error('zz _process_contents: %s : %s' % (e, content))
-
-
-
-    # FUN PAGES
-    ############################################################################
-    
-    def on_fun_page(self, url, page, context):
-        print('     in on_fun_page', url)
-        page_dict = dict(
-            kind='fun_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-
-        try:
-            body_row = page.find('div', {'id': 'body-row'})
-            contents_row = body_row.find('div', {'class': 'row'})
-        except Exception as e:
-            LOGGER.error('on_fun_page: %s : %s' % (e, page))
-            return
-        contents = contents_row.find_all('div', {'class': 'col-md-3'})
-
-        for content in contents:
-            try:
-                title = get_text(content.find('div', {'class': 'txtline'}))
-                # TODO: description
-                thumbnail = content.find('a').find('img')['src']
-                thumbnail = get_absolute_path(thumbnail)
-
-                # get_fun_content_link
-                link = content.find('a')
-                source_id = link['href'][1:]
-                fun_resource_url = get_absolute_path(link['href'])
-                download_href = content.find('a', class_='dnlinkfunstory')['href']
-                download_url = get_absolute_path(download_href)
-
-                LOGGER.info('      content: %s: %s' % (source_id, title))
-
-                if download_url.endswith('mp4'):
-                    video = dict(
-                        url=download_url,
-                        kind='PrathamVideoResource',
-                        title=title,
-                        source_id=source_id,
-                        thumbnail_url=thumbnail,
-                        children=[],
-                    )
-                    page_dict['children'].append(video)
-
-                elif download_url.endswith('pdf'):
-                    pdf = dict(
-                        url=download_url,
-                        kind='PrathamPdfResource',
-                        title=title,
-                        source_id=source_id,
-                        thumbnail_url=thumbnail,
-                        children=[],
-                    )
-                    page_dict['children'].append(pdf)
-
-                elif download_url.endswith('zip'):
-                    # Need to go get the actual page since main_file is not in avail. in list
-                    html = requests.get(fun_resource_url).content.decode('utf-8')
-                    respath_url = get_respath_url_from_html(html)
-                    zipfile = dict(
-                        url=download_url,
-                        kind='PrathamZipResource',
-                        title=title,
-                        source_id=source_id,
-                        thumbnail_url=thumbnail,
-                        main_file=respath_url,   # needed to rename to index.html if different
-                        children=[],
-                    )
-                    page_dict['children'].append(zipfile)
-
-                else:
-                    LOGGER.error('Fun resource not supported: %s, %s' % (fun_resource_url, download_url))
-
-            except Exception as e:
-                LOGGER.error('on_fun_page: %s : %s' % (e, content))
-
-    def on_story_resource_page(self, url, page, context):
-        print('     in on_story_resource_page', url)
-        RESOURCE_PATH_PATTERN = re.compile('var respath = "(?P<resource_path>.*?)";')
-        html= str(page)
-        m = RESOURCE_PATH_PATTERN.search(html)
-        if m is None:
-            LOGGER.error('Failed to find story_resource_url on page %s' % url)
-        story_resource_url = get_absolute_path('/' + m.groupdict()['resource_path'])
-        page_dict = dict(
-            url=story_resource_url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-
-
-
-    # STORIES
-    ############################################################################
-
-    def on_story_page(self, url, page, context):
-        print('     in on_story_page', url)
-        page_dict = dict(
-            kind='story_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-
-        try:
-            body_row = page.find('div', {'id': 'body-row'})
-            contents_row = body_row.find('div', {'class': 'row'})
-        except Exception as e:
-            LOGGER.error('on_story_page: %s : %s' % (e, page))
-            return
-        contents = contents_row.find_all('div', {'class': 'col-md-3'})
-
-        for content in contents:
-            try:
-                title = get_text(content.find('div', {'class': 'txtline'}))
-                # TODO: description
-                thumbnail = content.find('a').find('img')['src']
-                thumbnail = get_absolute_path(thumbnail)
-
-                # get_fun_content_link
-                link = content.find('a')
-                source_id = link['href'][1:]
-                story_resource_url = get_absolute_path(link['href'])
-                LOGGER.info('      story_resource_page: %s: %s' % (source_id, title))
-                context = dict(
-                    parent = page_dict,
-                    kind='story_resource_page',
-                    title=title,
-                    source_id=source_id,
-                    thumbnail_url=thumbnail,
-                )
-                self.enqueue_url_and_context(story_resource_url, context)
-
-            except Exception as e:
-                LOGGER.error('on_story_page: %s : %s' % (e, content))
-
-    def on_story_resource_page(self, url, page, context):
-        print('     in on_story_resource_page', url)
-        html = str(page)
-        story_resource_url = get_respath_url_from_html(html)
-        if story_resource_url:
-            page_dict = dict(
-                url=story_resource_url,
-                children=[],
-            )
-            page_dict.update(context)
-            context['parent']['children'].append(page_dict)
-        else:
-            LOGGER.error('Failed to find story_resource_url on page %s' % url)
-
-
-# Helper functions
+# ZIP FILE TRANFORMS AND FIXUPS
 ################################################################################
-def get_absolute_path(path):
-    return urljoin('http://www.' + DOMAIN, path)
-
-
-_RESOURCE_PATH_PATTERN = re.compile('var respath = "(?P<resource_path>.*?)";')
-def get_respath_url_from_html(html):
-    m = _RESOURCE_PATH_PATTERN.search(html)
-    if m is None:
-        return None
-    respath_url =  get_absolute_path('/' + m.groupdict()['resource_path'])
-    return respath_url
-
-
 
 def make_request(url):
     response = session.get(url)
     if response.status_code != 200:
         LOGGER.error("NOT FOUND: %s" % (url))
     return response
-
-
-def get_page(path):
-    url = get_absolute_path(path)
-    resp = make_request(url)
-    return BeautifulSoup(resp.content, 'html.parser')
-
-def get_text(element):
-    """
-    Extract text contents of `element`, normalizing newlines to spaces and stripping.
-    """
-    if element is None:
-        return ''
-    else:
-        return element.get_text().replace('\r', '').replace('\n', ' ').strip()
-
-def get_source_id(path):
-    return path.strip('/').split('/')[-1]
-
-
-def get_content_link(content):
-    """
-    The link to a content has an onclick attribute that executes
-    the res_click function. This function has 4 parameters:
-    - The main file (e.g. an mp4 file, an entry html page to a game).
-    - The type of resource (video, internal link, ...).
-    - A description.
-    - A master file (e.g. for a game, it is a zip file).
-    """
-    link = content.find('a', {'id': 'navigate'})
-    source_id = link['href'][1:]
-    regex = re.compile(r"res_click\('(.*)','.*','.*','(.*)'\)")
-    match = regex.search(link['onclick'])
-    link = match.group(1)
-    main_file = get_absolute_path(link)
-    master_file = match.group(2)
-    if master_file:
-        master_file = get_absolute_path(master_file)
-    return main_file, master_file, source_id
-
-
-
-
-def get_fun_content_link(content):
-    """
-    Same as the above but works for resources on the Fun page.
-    """
-
-
 
 def get_zip_file(zip_file_url, main_file):
     """HTML games are provided as zip files, the entry point of the game is
@@ -938,36 +448,216 @@ def get_zip_file(zip_file_url, main_file):
         return None
 
 
+
+
+
+# RICECOOKER JSON TRANSFORMATIONS
+################################################################################
+
+def get_subtree_by_subject_en(lang, subject, topic=None):
+    if lang not in ['mr', 'hi']:
+        raise ValueError('Language `lang` must mr or hi (only two langs on website)')
+    wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
+    with open(wrt_filename) as jsonfile:
+        web_resource_tree = json.load(wrt_filename)
+    subjects = web_resource_tree['children']
+    for subject in subjects:
+        if subject['subject_en'] == subject:
+            return subject
+    return None
+
+
+def _only_videos(node):
+    """
+    Set this as the `filter_fn` to `wrt_to_ricecooker_tree` to select only videos.
+    """
+    allowed = ['lang_page', 'topic_page', 'subtopic_page', 'lesson_page',
+               'fun_page', 'story_page', 'PrathamVideoResource']
+    return node['kind'] in allowed_kinds
+
+
+def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
+    """
+    Transforms web resource subtree `tree` into a riccecooker tree of topics nodes,
+    and content nodes, using `filter_fn` to determine if each node should be included or not.
+    """
+    kind = tree['kind']
+    if kind in ['topic_page', 'subtopic_page', 'lesson_page', 'story_page']:
+        thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
+        topic_node = dict(
+            kind=content_kinds.TOPIC,
+            source_id=tree['source_id'],
+            language=lang,
+            title=tree['title'],  # or could get from Strings based on subject_en...
+            description='',
+            thumbnail=thumbnail,
+            license=PRADIGI_LICENSE,
+            children=[],
+        )
+        for child in tree['children']:
+            if filter_fn(child):
+                ricocooker_node = wrt_to_ricecooker_tree(child, lang, filter_fn=filter_fn)
+                topic_node['children'].append(ricocooker_node)
+                
+    elif kind == 'PrathamVideoResource':
+        thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
+        video_node = dict(
+            kind=content_kinds.TOPIC,
+            source_id=tree['source_id'],
+            language=lang,
+            title=tree['title'],  # or could get from Strings based on subject_en...
+            description='',
+            thumbnail=thumbnail,
+            license=PRADIGI_LICENSE,
+            files=[],
+        )
+        video_file = dict(
+            file_type=file_types.VIDEO,
+            path=tree['url'],
+            language=lang,
+            ffmpeg_settings={"crf": 24},
+        )
+        video_node['files'].append(video_file)
+
+    elif kind == 'PrathamZipResource':
+        pass
+
+    elif kind == 'PrathamPdfResource' or kind == 'story_resource_page':
+        pass
+
+    else:
+        raise ValueError('Uknown web resource kind ' + kind + ' encountered.')
+    
+    
+
+
+
+
+
+def game_info_to_ricecooker_node(lang, title, game_info):
+    """
+    Create Ricecooker Json structure for game with human-readable title `title`
+    and gamesrepo info in `game_info`.
+    """
+    game_node = dict(
+        kind=content_kinds.HTML5,
+        source_id=game_info['title'],
+        language=lang,
+        title=title,
+        description='',
+        license=PRADIGI_LICENSE,
+        thumbnail=game_info.get('thumbnail_url'),
+        files=[],
+    )
+    zip_file = dict(
+        file_type=file_types.HTML5,
+        path=game_info['url'],
+        language=lang,
+    )
+    game_node['files'].append(zip_file)
+    LOGGER.debug('Created HTML5AppNode for game ' + game_info['title'])
+    return game_node
+
+
+
+
+
+
+
+
 # CHEF
 ################################################################################
 
-class PraDigiChef(SushiChef):
+class PraDigiChef(JsonTreeChef):
+    """
+    SushiChef script for importing and merging the content from these two sites:
+      - Videos from http://www.prathamopenschool.org/
+      - Games from http://www.gamerepo.prathamcms.org/index.html
+    """
+    RICECOOKER_JSON_TREE = 'pradigi_ricecooker_json_tree.json'
+    
+    
+    def crawl(self, args, options):
+        """
+        Crawl website and gamerepo. Save web resource trees in chefdata/trees/.
+        """
+        pass  # HOOK UP crawlers
 
-    def validate_language(self, language):
-        if language not in LANGUAGES:
-            l = ', '.join(LANGUAGES)
-            raise ValueError('Invalid language, valid values: {}'.format(l))
 
-    def get_channel(self, *args, **kwargs):
-        global DEBUG_MODE
-        DEBUG_MODE = 'debug' in kwargs
-        language = kwargs['language']
-        self.validate_language(language)
-        channel = ChannelNode(
+    def get_game_rows_for_age_group_and_subject(self, age_group, subject_en):
+        """
+        Get the relevant rows from the PraDigi structure CSV.
+        """
+        results = []
+        for game_row in self.games_info:
+            if game_row[AGE_GROUP_KEY] == age_group and game_row[SUBJECT_KEY] == subject_en:
+                results.append(game_row)
+        return results
+
+
+    def build_subtree_for_lang(self, lang):
+        print('Building subtree for lang', lang)
+        # A. Go through template and populate children with outputs from
+        lang_subtree = copy.deepcopy(TEMPLATE_FOR_LANG)
+        lang_obj = getlang(lang)
+        first_native_name = lang_obj.native_name.split(',')[0].split('(')[0]
+        lang_subtree['title'] = first_native_name
+        lang_subtree['language'] = lang
+        lang_subtree['source_id'] = 'pradigi_'+str(lang)
+        age_groups_subtrees = lang_subtree['children']
+        for age_groups_subtree in age_groups_subtrees:
+            age_group = age_groups_subtree['title']
+            age_groups_subtree['kind'] = content_kinds.TOPIC
+            age_groups_subtree['source_id'] = 'pradigi_'+str(lang)+'_'+age_group
+            subject_subtrees = age_groups_subtree['children']
+            for subject_subtree in subject_subtrees:
+                subject_subtree['kind'] = content_kinds.TOPIC
+                subject_en = subject_subtree['title']
+                subject_subtree['source_id'] = 'pradigi_'+str(lang)+'_'+age_group+'_'+subject_en
+                if subject_en in PRADIGI_STRINGS[lang]['subjects']:  # localize subject titles
+                    subject_subtree['title'] = PRADIGI_STRINGS[lang]['subjects'][subject_en]
+                game_rows = self.get_game_rows_for_age_group_and_subject(age_group, subject_en)
+                for game_row in game_rows:
+                    game_title = game_row[NAME_KEY]
+                    game_name = game_row[CODENAME_KEY]
+                    games = find_games_for_lang(game_name, lang)
+                    for game in games:
+                        node = game_info_to_ricecooker_node(lang, game_title, game)
+                        subject_subtree['children'].append(node)
+        return lang_subtree
+
+
+    def pre_run(self, args, options):
+        """
+        Build the ricecooker json tree for the entire channel
+        """
+        # download_structure_csv()
+        # self.crawl(args, options)
+
+        # this is used for lookups by `get_games_for_age_group_and_subject` so pre-load here
+        self.games_info = load_pradigi_structure()
+
+        ricecooker_json_tree = dict(
             title='PraDigi',
             source_domain=DOMAIN,
             source_id='pradigi-videos-and-games',
-            thumbnail=None, # get_absolute_path('img/logop.png'),
-            language='en', # language
+            description='Combined PraDigi channel with all languages',
+            thumbnail='https://learningequality.org/static/img/kickstarter/pratham-open-school.png',
+            language='en',   # Using EN as top-level language because mixed content
+            children=[],
         )
-        return channel
+        for lang in PRADIGI_LANGUAGES:
+            lang_subtree = self.build_subtree_for_lang(lang)
+            ricecooker_json_tree['children'].append(lang_subtree)
+        json_tree_path = self.get_json_tree_path()
+        write_tree_to_json_tree(json_tree_path, ricecooker_json_tree)
 
 
-    def construct_channel(self, *args, **kwargs):
-        channel = self.get_channel(*args, **kwargs)
-        language = kwargs['language']
-        get_topics(channel, language)
-        return channel
+    # def run(self, args, options):
+    #     print('Not running for real...')
+
+
+
 
 
 # CLI

@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 
 from ricecooker.config import LOGGER
-LOGGER.setLevel(logging.INFO)
+LOGGER.setLevel(logging.DEBUG)
 from le_utils.constants.languages import getlang, getlang_by_name
 from ricecooker.utils import downloader
 
@@ -31,7 +31,7 @@ PRADIGI_LANG_URL_MAP = {
 }
 
 
-class PrathamGamesRepoCrawler(BasicCrawler):
+class PrathamGameRepoCrawler(BasicCrawler):
     """
     Get links fro all games from http://www.gamerepo.prathamcms.org/index.html
     """
@@ -212,7 +212,7 @@ class PraDigiCrawler(BasicCrawler):
         try:
             menu_row = page.find('div', {'id': 'menu-row'})
         except Exception as e:
-            LOGGER.error('on_lang_page: %s : %s' % (e, page))
+            LOGGER.error('ERROR on_lang_page: %s : %s' % (e, url))
             return
         for topic in menu_row.find_all('a'):
             try:
@@ -222,7 +222,7 @@ class PraDigiCrawler(BasicCrawler):
                 
                 # metadata
                 topic_url = urljoin(url, topic['href'])
-                title = topic.get_text().strip()
+                title = get_text(topic)
                 source_id = get_source_id(topic['href'])
                 subject_en = source_id    # short string to match on top-level categories
                 context = dict(
@@ -264,13 +264,14 @@ class PraDigiCrawler(BasicCrawler):
         try:
             body_row = page.find('div', {'id': 'body-row'})
             menu_row = body_row.find('div', {'class': 'col-md-2'})
+            subtopics = menu_row.find_all('a')
         except Exception as e:
-            LOGGER.error('get_subtopics: %s : %s' % (e, page))
+            LOGGER.error('ERROR get_subtopics: %s : %s' % (e, url))
             return
-        for subtopic in menu_row.find_all('a'):
+        for subtopic in subtopics:
             try:
                 subtopic_url = urljoin(url, subtopic['href'])
-                title = subtopic.get_text().strip()
+                title = get_text(subtopic)
                 source_id = get_source_id(subtopic['href'])
                 LOGGER.info('  found subtopic: %s: %s' % (source_id, title))
                 context = dict(
@@ -305,7 +306,7 @@ class PraDigiCrawler(BasicCrawler):
             try:
                 title = lesson.find('div', {'class': 'txtline'}).get_text().strip()
                 caption = lesson.find('div', class_='caption')
-                description = caption.get_text().strip() if caption else ''
+                description = get_text(caption) if caption else ''
                 lesson_url = urljoin(url, lesson.find('a')['href'])
                 thumbnail_src = lesson.find('a').find('img')['src']
                 thumbnail_url = urljoin(url, thumbnail_src)
@@ -348,7 +349,7 @@ class PraDigiCrawler(BasicCrawler):
         contents = menu_row.find_all('div', {'class': 'col-md-3'})
         for content in contents:
             try:
-                title = content.find('div', {'class': 'txtline'}).get_text()
+                title = get_text(content.find('div', {'class': 'txtline'}))
                 # TODO: description
                 thumbnail = content.find('a').find('img')['src']
                 thumbnail = get_absolute_path(thumbnail)
@@ -364,6 +365,7 @@ class PraDigiCrawler(BasicCrawler):
                         thumbnail_url=thumbnail,
                         children=[],
                     )
+                    video.update(self.get_video_metadata(main_file))
                     page_dict['children'].append(video)
 
                 elif main_file.endswith('pdf'):
@@ -391,6 +393,17 @@ class PraDigiCrawler(BasicCrawler):
 
                 else:
                     LOGGER.error('Content not supported: %s, %s' % (main_file, master_file))
+                    unsupported_rsrc = dict(
+                        url=main_file,
+                        referring_url=url,
+                        kind='UnsupportedPrathamWebResource',
+                        title=title,
+                        source_id=source_id,
+                        thumbnail_url=thumbnail,
+                        children=[],
+                    )
+                    page_dict['children'].append(unsupported_rsrc)
+                    
             except Exception as e:
                 LOGGER.error('zz _process_contents: %s : %s' % (e, content))
 
@@ -413,7 +426,7 @@ class PraDigiCrawler(BasicCrawler):
             body_row = page.find('div', {'id': 'body-row'})
             contents_row = body_row.find('div', {'class': 'row'})
         except Exception as e:
-            LOGGER.error('on_fun_page: %s : %s' % (e, page))
+            LOGGER.error('ERROR on_fun_page: %s : %s' % (e, url))
             return
         contents = contents_row.find_all('div', {'class': 'col-md-3'})
 
@@ -428,25 +441,34 @@ class PraDigiCrawler(BasicCrawler):
                 link = content.find('a')
                 source_id = link['href'][1:]
                 fun_resource_url = get_absolute_path(link['href'])
-                download_href = content.find('a', class_='dnlinkfunstory')['href']
-                download_url = get_absolute_path(download_href)
+                download_url = None
+                download_link = content.find('a', class_='dnlinkfunstory')
+                if download_link:
+                    download_href = download_link['href']
+                    download_url = get_absolute_path(download_href)
 
-                LOGGER.info('      content: %s: %s' % (source_id, title))
+                # Need to GET the FunResource detail page since main_file is not in avail. in listing
+                fun_rsrc_html = requests.get(fun_resource_url).text
+                respath_url = get_respath_url_from_html(fun_rsrc_html)
+                respath_path = urlparse(respath_url).path
 
-                if download_url.endswith('mp4'):
+                LOGGER.info('      Fun content: %s: %s at %s' % (source_id, title, respath_url))
+                
+                if respath_path.endswith('mp4'):
                     video = dict(
-                        url=download_url,
+                        url=respath_url,
                         kind='PrathamVideoResource',
                         title=title,
                         source_id=source_id,
                         thumbnail_url=thumbnail,
                         children=[],
                     )
+                    video.update(self.get_video_metadata(respath_url))
                     page_dict['children'].append(video)
 
-                elif download_url.endswith('pdf'):
+                elif respath_path.endswith('pdf'):
                     pdf = dict(
-                        url=download_url,
+                        url=respath_url,
                         kind='PrathamPdfResource',
                         title=title,
                         source_id=source_id,
@@ -455,10 +477,7 @@ class PraDigiCrawler(BasicCrawler):
                     )
                     page_dict['children'].append(pdf)
 
-                elif download_url.endswith('zip'):
-                    # Need to go get the actual page since main_file is not in avail. in list
-                    html = requests.get(fun_resource_url).content.decode('utf-8')
-                    respath_url = get_respath_url_from_html(html)
+                elif download_url and download_url.endswith('zip'):
                     zipfile = dict(
                         url=download_url,
                         kind='PrathamZipResource',
@@ -469,9 +488,30 @@ class PraDigiCrawler(BasicCrawler):
                         children=[],
                     )
                     page_dict['children'].append(zipfile)
+                
+                elif respath_path.endswith('html'):
+                    html_rsrc = dict(
+                        url=respath_url,
+                        kind='PrathamHtmlResource',
+                        title=title,
+                        source_id=source_id,
+                        thumbnail_url=thumbnail,
+                        children=[],
+                    )
+                    page_dict['children'].append(html_rsrc)
 
                 else:
                     LOGGER.error('Fun resource not supported: %s, %s' % (fun_resource_url, download_url))
+                    unsupported_rsrc = dict(
+                        url=respath_url,
+                        referring_url=url,
+                        kind='UnsupportedPrathamWebResource',
+                        title=title,
+                        source_id=source_id,
+                        thumbnail_url=thumbnail,
+                        children=[],
+                    )
+                    page_dict['children'].append(unsupported_rsrc)
 
             except Exception as e:
                 LOGGER.error('on_fun_page: %s : %s' % (e, content))
@@ -495,7 +535,7 @@ class PraDigiCrawler(BasicCrawler):
             body_row = page.find('div', {'id': 'body-row'})
             contents_row = body_row.find('div', {'class': 'row'})
         except Exception as e:
-            LOGGER.error('on_story_page: %s : %s' % (e, page))
+            LOGGER.error('ERROR on_story_page: %s : %s' % (e, url))
             return
         contents = contents_row.find_all('div', {'class': 'col-md-3'})
 
@@ -537,6 +577,23 @@ class PraDigiCrawler(BasicCrawler):
         else:
             LOGGER.error('Failed to find story_resource_url on page %s' % url)
 
+
+    def get_video_metadata(self, video_url):
+        """
+        Make HEAD request to obtain 'content-length' for video files
+        """
+        head_response = self.make_request(video_url, method='HEAD')
+        if head_response:
+            video_metadata = {}
+            content_type = head_response.headers.get('content-type', None)
+            if content_type:
+                video_metadata['content-type'] = content_type
+            content_length = head_response.headers.get('content-length', None)
+            if content_length:
+                video_metadata['content-length'] = content_length
+            return video_metadata
+        else:
+            return {}
 
 
 

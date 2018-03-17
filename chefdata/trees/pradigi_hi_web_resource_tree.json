@@ -5668,44 +5668,7 @@
         {
           "kind": "subtopic_page",
           "url": "http://www.prathamopenschool.org/hn/Course/Beauty/CRS95",
-          "children": [
-            {
-              "kind": "lesson_page",
-              "url": "http://www.prathamopenschool.org/hn/Lesson/LES904",
-              "children": [
-                {
-                  "url": "http://www.prathamopenschool.org/CourseContent/Beauty/Video/H_Sanghmitra.mp4",
-                  "kind": "PrathamVideoResource",
-                  "title": "\u0938\u0902\u0918\u092e\u093f\u0924\u094d\u0930\u093e \u0915\u0940 \u0915\u0939\u093e\u0928\u0940",
-                  "source_id": "1450",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1450.png",
-                  "children": []
-                }
-              ],
-              "title": "\u092c\u0947\u0921\u0938\u093e\u0907\u0921 \u0938\u0939\u093e\u092f\u0915 \u0909\u0926\u094d\u092f\u094b\u0917 \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902 \u091c\u093e\u0928\u0947\u0902",
-              "description": "\u092c\u094d\u092f\u0942\u091f\u0940 \u0909\u0926\u094d\u092f\u094b\u0917 \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902 \u091c\u093e\u0928\u0947\u0902",
-              "source_id": "LES904",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/LES904.png"
-            },
-            {
-              "kind": "lesson_page",
-              "url": "http://www.prathamopenschool.org/hn/Lesson/LES905",
-              "children": [
-                {
-                  "url": "http://www.prathamopenschool.org/CourseContent/Beauty/Video/H_Learn threading.mp4",
-                  "kind": "PrathamVideoResource",
-                  "title": "\u0925\u094d\u0930\u0947\u0921\u093f\u0902\u0917 \u0938\u0940\u0916\u0928\u093e",
-                  "source_id": "1451",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1451.png",
-                  "children": []
-                }
-              ],
-              "title": "\u092a\u094d\u0930\u0924\u094d\u092f\u0915\u094d\u0937-\u0915\u093e\u0930\u094d\u092f",
-              "description": "\u092c\u094d\u092f\u0942\u091f\u0940 \u0915\u0947 \u0915\u0941\u091b \u092a\u094d\u0930\u0948\u0915\u094d\u091f\u093f\u0915\u0932 \u0926\u0947\u0916\u0947\u0902",
-              "source_id": "LES905",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/LES905.png"
-            }
-          ],
+          "children": [],
           "title": "\u092c\u094d\u092f\u0942\u091f\u093f\u0936\u093f\u092f\u0928",
           "source_id": "CRS95"
         }

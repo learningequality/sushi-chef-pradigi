@@ -20,7 +20,7 @@ Install
     virtualenv -p python3 venv
     source venv/bin/activate
     pip install -r requirements.txt
-
+    npm install phantomjs  # needed for scraping gamerepo
 
 
 
@@ -28,5 +28,6 @@ Running
 -------
 
     source venv/bin/activate
-    python -m ricecooker uploadchannel chef.py -v --token=<your_token>
+    ./chef.py -v --token=<your_token>
+
 

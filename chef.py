@@ -13,14 +13,15 @@ PRATHAM Open School (PraDigi) content is organized as follow:
 
 import copy
 import csv
+from itertools import groupby
 import json
 import logging
+from operator import itemgetter
 import os
 import re
 import requests
 import shutil
 import tempfile
-from urllib.parse import urljoin, urlparse
 import zipfile
 
 
@@ -34,94 +35,35 @@ from ricecooker.utils.jsontrees import write_tree_to_json_tree
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
 
+
+
 DOMAIN = 'prathamopenschool.org'
 FULL_DOMAIN_URL = 'http://www.' + DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
 PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
+PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
 
 
 
+# In debug mode, only one topic is downloaded.
+LOGGER.setLevel(logging.INFO)
+DEBUG_MODE = False
+
+# Cache logic.
+cache = FileCache('.webcache')
+basic_adapter = CacheControlAdapter(cache=cache)
+forever_adapter = CacheControlAdapter(heuristic=CacheForeverHeuristic(),
+                                      cache=cache)
+session = requests.Session()
+session.mount('http://', basic_adapter)
+session.mount('https://', basic_adapter)
+session.mount('http://www.' + DOMAIN, forever_adapter)
+session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
 
-
-
-# CSV EXPORT AND PARSING for the Google Sheet: Kolibri- Content structure 
+# LOCALIZATION AND TRANSLATION STRINGS
 ################################################################################
-GSHEETS_BASE = 'https://docs.google.com/spreadsheets/d/'
-PRADIGI_SHEET_ID = '1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg'
-PRADIGI_STRUCTURE_SHEET_GID = '342105160'
-PRADIGI_SHEET_CSV_URL = GSHEETS_BASE + PRADIGI_SHEET_ID + '/export?format=csv&gid=' + PRADIGI_STRUCTURE_SHEET_GID
-PRADIGI_SHEET_CSV_PATH = 'chefdata/pradigi_structure.csv'
-AGE_GROUP_KEY = 'Age Group'
-SUBJECT_KEY = 'Subject'
-RESOURCE_TYPE_KEY = 'Resource Type'
-NAME_KEY = 'Name'
-CODENAME_KEY = 'Name on gamerepo (before lang underscore)'
-PRATHAM_COMMENTS_KEY = 'Pratham'
-LE_COMMENTS_KEY = 'LE Comments'
-PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
-PRADIGI_SUBJECTS = ['Math', 'Language', 'English', 'Fun', 'Science',
-                    'Automotive', 'Beauty', 'Construction', 'Electrical', 'Healthcare', 'Hospitality']
-PRADIGI_SHEET_CSV_FILEDNAMES = [
-    AGE_GROUP_KEY,
-    SUBJECT_KEY,
-    RESOURCE_TYPE_KEY,
-    NAME_KEY,
-    CODENAME_KEY,
-    PRATHAM_COMMENTS_KEY,
-    LE_COMMENTS_KEY,
-]
-
-
-def download_structure_csv():
-    response = requests.get(PRADIGI_SHEET_CSV_URL)
-    csv_data = response.content.decode('utf-8')
-    with open(PRADIGI_SHEET_CSV_PATH, 'w') as csvfile:
-        csvfile.write(csv_data)
-        LOGGER.info('Succesfully saved ' + PRADIGI_SHEET_CSV_PATH)
-
-def _clean_dict(row):
-    """
-    Transform empty strings values of dict `row` to None.
-    """
-    row_cleaned = {}
-    for key, val in row.items():
-        if val is None or val == '':
-            row_cleaned[key] = None
-        else:
-            row_cleaned[key] = val.strip()
-    return row_cleaned
-
-def load_pradigi_structure():
-    games_info = []
-    with open(PRADIGI_SHEET_CSV_PATH, 'r') as csvfile:
-        reader = csv.DictReader(csvfile, fieldnames=PRADIGI_SHEET_CSV_FILEDNAMES)
-        for row in reader:
-            clean_row = _clean_dict(row)
-            if clean_row[AGE_GROUP_KEY] in PRADIGI_AGE_GROUPS and clean_row[SUBJECT_KEY] in PRADIGI_SUBJECTS:
-                games_info.append(clean_row)
-    return games_info
-
-
-def get_all_game_names():
-    """
-    Used for debugging chef
-    """
-    game_names = []
-    games_info = load_pradigi_structure()
-    for game in games_info:
-        codename = game[CODENAME_KEY]
-        if codename is not None and codename not in game_names:
-            game_names.append(game[CODENAME_KEY])
-    return game_names
-
-
-################################################################################
-
-
-
-
 
 PRADIGI_STRINGS = {
     'hi': {
@@ -135,9 +77,7 @@ PRADIGI_STRINGS = {
             "Hospitality": "अतिथी सत्कार",
             "Construction": "भवन-निर्माण",
             "Automobile": "वाहन",
-            "Automotive": "वाहन",      # alt spelling used in spreadsheet
             "Electric": "इलेक्ट्रिक",
-            "Electrical": "इलेक्ट्रिक",   # alt spelling used in spreadsheet
             "Beauty": "ब्युटी",
             "Healthcare": "स्वास्थ्य सेवा",
             "Std8": "8 वी कक्षा",
@@ -153,7 +93,7 @@ PRADIGI_STRINGS = {
             "English": "English",
             "Health": "Health",
             "Science": "Science",
-            "Hospitality": "Hospitality",            
+            "Hospitality": "Hospitality",
             "Construction": "Construction",
             "Automobile": "Automobile",
             "Electric": "Electric",
@@ -216,71 +156,181 @@ PRADIGI_STRINGS = {
 
 
 
-# In debug mode, only one topic is downloaded.
-LOGGER.setLevel(logging.INFO)
-DEBUG_MODE = False
-
-# Cache logic.
-cache = FileCache('.webcache')
-basic_adapter = CacheControlAdapter(cache=cache)
-forever_adapter = CacheControlAdapter(heuristic=CacheForeverHeuristic(),
-                                      cache=cache)
-session = requests.Session()
-session.mount('http://', basic_adapter)
-session.mount('https://', basic_adapter)
-session.mount('http://www.' + DOMAIN, forever_adapter)
-session.mount('https://www.' + DOMAIN, forever_adapter)
 
 
 
-TEMPLATE_FOR_LANG = {
-    'kind': content_kinds.TOPIC,
-    'children': [
-        {   'title': '3-6 years',
-            'children': [
-                {'title': 'Language',       'children': []},
-                {'title': 'Mathematics',    'children': []},
-                {'title': 'Story',          'children': []},  # should include here?
-                {'title': 'Fun',            'children': []},
-            ],
-        },
-        {   'title': '6-10 years',
-            'children': [
-                {'title': 'Mathematics',    'children': []},
-                {'title': 'Language',       'children': []},
-                {'title': 'English',        'children': []},
-                {'title': 'Story',          'children': []},
-                {'title': 'Fun',            'children': []},
-            ],
-        },
-        {   'title': '8-14 years',
-            'children': [
-                {'title': 'Mathematics',    'children': []},
-                {'title': 'Language',       'children': []},
-                {'title': 'English',        'children': []},
-                {'title': 'Health',         'children': []},
-                {'title': 'Science',        'children': []},
-                {'title': 'Std8',           'children': []},
-                {'title': 'Fun',            'children': []},
-            ],
-        },
-        {   'title': '14 and above',
-            'children': [
-                {'title': 'English',        'children': []},
-                {'title': 'Beauty',         'children': []}, 
-                {'title': 'Automotive',     'children': []},
-                {'title': 'Healthcare',     'children': []},
-                {'title': 'Construction',   'children': []},
-                {'title': 'Hospitality',    'children': []},
-                {'title': 'Electrical',     'children': []},
-                {'title': 'Fun',            'children': []},
-            ],
-        },
-    ]
-}
+# STRUCTURE = CSV EXPORT of the Google Sheet titled "Kolibri- Content structure"
+################################################################################
+GSHEETS_BASE = 'https://docs.google.com/spreadsheets/d/'
+PRADIGI_SHEET_ID = '1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg'
+PRADIGI_STRUCTURE_SHEET_GID = '342105160'
+PRADIGI_SHEET_CSV_URL = GSHEETS_BASE + PRADIGI_SHEET_ID + '/export?format=csv&gid=' + PRADIGI_STRUCTURE_SHEET_GID
+PRADIGI_SHEET_CSV_PATH = 'chefdata/pradigi_structure.csv'
+AGE_GROUP_KEY = 'Age Group'
+SUBJECT_KEY = 'Subject'
+RESOURCE_TYPE_KEY = 'Resource Type'
+NAME_KEY = 'Name'
+CODENAME_KEY = 'Name on gamerepo (before lang underscore)'
+PRATHAM_COMMENTS_KEY = 'Pratham'
+LE_COMMENTS_KEY = 'LE Comments'
+PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
+PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science',
+                    'Automobile', 'Beauty', 'Construction', 'Electric', 'Healthcare', 'Hospitality']
+PRADIGI_RESOURCE_TYPES = ['Game', 'Video Resources']  # English- Hindi?
+PRADIGI_SHEET_CSV_FILEDNAMES = [
+    AGE_GROUP_KEY,
+    SUBJECT_KEY,
+    RESOURCE_TYPE_KEY,
+    NAME_KEY,
+    CODENAME_KEY,
+    PRATHAM_COMMENTS_KEY,
+    LE_COMMENTS_KEY,
+]
+
+def download_structure_csv():
+    response = requests.get(PRADIGI_SHEET_CSV_URL)
+    csv_data = response.content.decode('utf-8')
+    with open(PRADIGI_SHEET_CSV_PATH, 'w') as csvfile:
+        csvfile.write(csv_data)
+        LOGGER.info('Succesfully saved ' + PRADIGI_SHEET_CSV_PATH)
+
+def _clean_dict(row):
+    """
+    Transform empty strings values of dict `row` to None.
+    """
+    row_cleaned = {}
+    for key, val in row.items():
+        if val is None or val == '':
+            row_cleaned[key] = None
+        else:
+            row_cleaned[key] = val.strip()
+    return row_cleaned
+
+def load_pradigi_structure():
+    download_structure_csv()
+    struct_list = []
+    with open(PRADIGI_SHEET_CSV_PATH, 'r') as csvfile:
+        reader = csv.DictReader(csvfile, fieldnames=PRADIGI_SHEET_CSV_FILEDNAMES)
+        next(reader)  # Skip Headers row
+        next(reader)  # Skip info line
+        for row in reader:
+            clean_row = _clean_dict(row)
+            if clean_row[SUBJECT_KEY] is None:
+                continue  # skip blank lines (identified by missing subject col)
+            if clean_row[AGE_GROUP_KEY] in PRADIGI_AGE_GROUPS and clean_row[SUBJECT_KEY] in PRADIGI_SUBJECTS:
+                struct_list.append(clean_row)
+            else:
+                print('Unrecognized structure row', clean_row)
+    return struct_list
+
+PRADIGI_STRUCT_LIST = load_pradigi_structure()
 
 
+def get_tree_for_lang_from_structure():
+    """
+    Build the template structure for language-subtree based on structure in CSV.
+    """
+    struct_list = PRADIGI_STRUCT_LIST
+    struct_list = sorted(struct_list, key=itemgetter(AGE_GROUP_KEY, SUBJECT_KEY))
+    lang_tree = dict(
+        kind=content_kinds.TOPIC,
+        children=[],
+    )
+    age_groups_dict = dict((k, list(g)) for k, g in groupby(struct_list, key=itemgetter(AGE_GROUP_KEY)))
+    for age_group_title in PRADIGI_AGE_GROUPS:
+        age_groups_subtree = dict(
+            title=age_group_title,
+            kind=content_kinds.TOPIC,
+            children=[],
+        )
+        lang_tree['children'].append(age_groups_subtree)
+        items_in_age_group = list(age_groups_dict[age_group_title])
+        subjects_dict = dict((k, list(g)) for k, g in groupby(items_in_age_group, key=itemgetter(SUBJECT_KEY)))
+        for subject_en in PRADIGI_SUBJECTS:
+            if subject_en in subjects_dict:
+                subject_subtree = dict(
+                    title=subject_en,
+                    kind=content_kinds.TOPIC,
+                    children=[],
+                )
+                age_groups_subtree['children'].append(subject_subtree)
+    return lang_tree
 
+def get_resources_for_age_group_and_subject(age_group, subject_en):
+    """
+    Select the rows from the PraDigi structure CSV with matching age_group and subject_en.
+    Returns a dictionary:
+    { 
+        'videos': [subject_en, ...],  # Include all videos from /subject_en on website
+        'games': [{game struct row}, {anothe game row}, ...]   # Include localized verison of games in this list
+    }
+    """
+    struct_list = PRADIGI_STRUCT_LIST
+    videos = []
+    games = []
+    for row in struct_list: # self.struct_list:
+        if row[AGE_GROUP_KEY] == age_group and row[SUBJECT_KEY] == subject_en:
+            if row[RESOURCE_TYPE_KEY] == 'Game':
+                games.append(row)
+            elif row[RESOURCE_TYPE_KEY] == 'Video Resources':
+                videos.append(subject_en)
+            else:
+                print('Unknown resource type', row[RESOURCE_TYPE_KEY], 'in row', row)
+    return {'videos':videos, 'games':games}
+
+
+TEMPLATE_FOR_LANG = get_tree_for_lang_from_structure()
+# 
+# TEMPLATE_FOR_LANG = {
+#     'kind': content_kinds.TOPIC,
+#     'children': [
+#         {   'title': '3-6 years',
+#             'children': [
+#                 {'title': 'Language',       'children': []},
+#                 {'title': 'Mathematics',    'children': []},
+#                 {'title': 'Story',          'children': []},  # should include here?
+#                 {'title': 'Fun',            'children': []},
+#             ],
+#         },
+#         {   'title': '6-10 years',
+#             'children': [
+#                 {'title': 'Mathematics',    'children': []},
+#                 {'title': 'Language',       'children': []},
+#                 {'title': 'English',        'children': []},
+#                 {'title': 'Story',          'children': []},
+#                 {'title': 'Fun',            'children': []},
+#             ],
+#         },
+#         {   'title': '8-14 years',
+#             'children': [
+#                 {'title': 'Mathematics',    'children': []},
+#                 {'title': 'Language',       'children': []},
+#                 {'title': 'English',        'children': []},
+#                 {'title': 'Health',         'children': []},
+#                 {'title': 'Science',        'children': []},
+#                 {'title': 'Std5',           'children': []},
+#                 {'title': 'Std6',           'children': []},
+#                 {'title': 'Std7',           'children': []},
+#                 {'title': 'Std8',           'children': []},
+#                 {'title': 'Fun',            'children': []},
+#             ],
+#         },
+#         {   'title': '14 and above',
+#             'children': [
+#                 {'title': 'English',        'children': []},
+#                 {'title': 'Std9',           'children': []},
+#                 {'title': 'Std10',          'children': []},
+#                 {'title': 'Automobile',     'children': []},
+#                 {'title': 'Beauty',         'children': []}, 
+#                 {'title': 'Construction',   'children': []},
+#                 {'title': 'Healthcare',     'children': []},
+#                 {'title': 'Hospitality',    'children': []},
+#                 {'title': 'Electric',       'children': []},
+#                 {'title': 'Fun',            'children': []},
+#             ],
+#         },
+#     ]
+# }
 
 
 
@@ -307,94 +357,6 @@ def find_games_for_lang(name, lang):
             return games 
     return None
 
-def flatten_tree(tree):
-    if len(tree['children'])==0:
-        return [tree]
-    else:
-        result = []
-        for child in tree['children']:
-            flat_child = flatten_tree(child)
-            result.extend(flat_child)
-        return result
-
-
-def compute_games_by_language_csv(game_names):
-    """
-    Checks which game names exist in all the PraDigi languages
-    Matching is performed based on language code suffix, e.g. _MR for Marathi.
-    Returns list of all languages matched.
-    """
-    languages_matches = []
-    languages_en = [PRADIGI_STRINGS[lang]['language_en'] for lang in PRADIGI_LANGUAGES]
-    fieldnames = ['Name on gamerepo'] + languages_en
-    
-    with open('games_by_language_matrix.csv', 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-        
-        for game_name in game_names:
-            row_dict = {}
-            row_dict['Name on gamerepo'] = game_name
-            for lang in PRADIGI_LANGUAGES:
-                games = find_games_for_lang(game_name, lang)
-                if games:
-                    value = ' and '.join([game['title'] for game in games])
-                    languages_matches.extend(games)
-                else:
-                    value = "N/A"
-                languages_en = PRADIGI_STRINGS[lang]['language_en']
-                row_dict[languages_en] = value
-            writer.writerow(row_dict)
-    return languages_matches
-
-
-def getlang_by_language_en(language_en):
-    """
-    Convert language names used on PraDigi websites to le_utils language object.
-    """
-    if language_en == 'Odiya' or language_en == 'Odisa':
-        language_en = 'Oriya'
-    elif language_en == 'Bangali':
-        language_en = 'Bengali'
-    elif language_en == 'Telagu':
-        language_en = 'Telugu'
-    lang_obj = getlang_by_name(language_en)
-    return lang_obj
-
-
-def find_undocumented_games():
-    # all games
-    data = json.load(open('chefdata/trees/pradigi_games_all_langs.json','r'))
-    gamelist = flatten_tree(data)
-    all_set = set([game['url'] for game in gamelist])
-    
-    # the ones in TEST_GAMENAMES
-    game_names = get_all_game_names()
-    found_gamelist = compute_games_by_language_csv(game_names)
-    found_set = set([game['url'] for game in found_gamelist])
-    
-    diff_set = all_set.difference(found_set)
-    diff_gamelist = []
-    for diff_url in diff_set:
-        for game in gamelist:
-            if game['url'] == diff_url:
-                diff_gamelist.append(game)
-    
-    sorted_by_lang = sorted(diff_gamelist, key=lambda s:s['title'])
-    for game in sorted_by_lang:
-        print(game['title']+'\t'+game['language_en']+'\t'+game['url'])
-    
-    # Print just names
-    # diff_game_names = set()
-    # for game in sorted_by_lang:
-    #     title = game['title']
-    #     if '_' in title:
-    #         root = '_'.join(title.split('_')[0:-1])
-    #     else:
-    #         root = title
-    #     diff_game_names.add(root)
-    # for name in sorted(diff_game_names):
-    #     print(name)
 
 
 
@@ -473,8 +435,8 @@ def _only_videos(node):
     """
     Set this as the `filter_fn` to `wrt_to_ricecooker_tree` to select only videos.
     """
-    allowed = ['lang_page', 'topic_page', 'subtopic_page', 'lesson_page',
-               'fun_page', 'story_page', 'PrathamVideoResource']
+    allowed_kinds = ['lang_page', 'topic_page', 'subtopic_page', 'lesson_page', 'fun_page', 'story_page',
+                     'PrathamVideoResource']
     return node['kind'] in allowed_kinds
 
 
@@ -484,7 +446,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
     and content nodes, using `filter_fn` to determine if each node should be included or not.
     """
     kind = tree['kind']
-    if kind in ['topic_page', 'subtopic_page', 'lesson_page', 'story_page']:
+    if kind in ['topic_page', 'subtopic_page', 'lesson_page', 'fun_page', 'story_page']:
         thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
         topic_node = dict(
             kind=content_kinds.TOPIC,
@@ -500,15 +462,16 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             if filter_fn(child):
                 ricocooker_node = wrt_to_ricecooker_tree(child, lang, filter_fn=filter_fn)
                 topic_node['children'].append(ricocooker_node)
+        return topic_node
                 
     elif kind == 'PrathamVideoResource':
         thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
         video_node = dict(
-            kind=content_kinds.TOPIC,
+            kind=content_kinds.VIDEO,
             source_id=tree['source_id'],
             language=lang,
-            title=tree['title'],  # or could get from Strings based on subject_en...
-            description='',
+            title=tree['title'],
+            description=tree.get('description', ''),
             thumbnail=thumbnail,
             license=PRADIGI_LICENSE,
             files=[],
@@ -517,24 +480,57 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             file_type=file_types.VIDEO,
             path=tree['url'],
             language=lang,
-            ffmpeg_settings={"crf": 24},
         )
+        if should_compress_video(tree):
+            video_node['ffmpeg_settings']={"crf": 28}  # average quality
         video_node['files'].append(video_file)
+        return video_node
 
     elif kind == 'PrathamZipResource':
-        pass
+        pass  # TODO(handle games and interactives)
+
 
     elif kind == 'PrathamPdfResource' or kind == 'story_resource_page':
-        pass
+        thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
+        pdf_node = dict(
+            kind=content_kinds.DOCUMENT,
+            source_id=tree['source_id'],
+            language=lang,
+            title=tree['title'],
+            description=tree.get('description', ''),
+            thumbnail=thumbnail,
+            license=PRADIGI_LICENSE,
+            files=[],
+        )
+        pdf_file = dict(
+            file_type=file_types.DOCUMENT,
+            path=tree['url'],
+            language=lang,
+        )
+        pdf_node['files'].append(pdf_file)
+        return pdf_node
 
     else:
         raise ValueError('Uknown web resource kind ' + kind + ' encountered.')
-    
-    
+
+
+def should_compress_video(video_web_resource):
+    """
+    Web-optimized videos do not need to be re-encoded and compressed: it's better
+    to upload to Studio the original files. We compress large vidoes (> 30MB) in
+    order to limit storage and transfers needs.
+    """
+    size_bytes = video_web_resource['content-length']
+    size_mb = int(size_bytes)/1024/1024
+    if size_mb > 30:
+        return True
+    else:
+        return False
 
 
 
-
+# GAME REPO JSON to RICECOOKER JSON
+################################################################################
 
 def game_info_to_ricecooker_node(lang, title, game_info):
     """
@@ -564,7 +560,6 @@ def game_info_to_ricecooker_node(lang, title, game_info):
 
 
 
-
 # CHEF
 ################################################################################
 
@@ -581,18 +576,20 @@ class PraDigiChef(JsonTreeChef):
         """
         Crawl website and gamerepo. Save web resource trees in chefdata/trees/.
         """
-        pass  # HOOK UP crawlers
+        return
+        
+        from pradigi_crawlers import PraDigiCrawler, PrathamGameRepoCrawler
+        
+        # website
+        for lang in ['hi', 'mr']:
+            website_crawler = PraDigiCrawler(lang=lang)
+            wrt = website_crawler.crawl()
 
+        # gamerepo
+        gamerepo_start_page = 'http://www.gamerepo.prathamcms.org/index.html'
+        gamerepo_crawler = PrathamGameRepoCrawler(start_page=gamerepo_start_page)
+        gamerepo_crawler.crawl()
 
-    def get_game_rows_for_age_group_and_subject(self, age_group, subject_en):
-        """
-        Get the relevant rows from the PraDigi structure CSV.
-        """
-        results = []
-        for game_row in self.games_info:
-            if game_row[AGE_GROUP_KEY] == age_group and game_row[SUBJECT_KEY] == subject_en:
-                results.append(game_row)
-        return results
 
 
     def build_subtree_for_lang(self, lang):
@@ -605,22 +602,37 @@ class PraDigiChef(JsonTreeChef):
         lang_subtree['language'] = lang
         lang_subtree['source_id'] = 'pradigi_'+str(lang)
 
-        # A. Populate children with resources from website
-
-        # B. Go through template and populate children with games
+        # Go through template age groups and subjects
         age_groups_subtrees = lang_subtree['children']
         for age_groups_subtree in age_groups_subtrees:
             age_group = age_groups_subtree['title']
-            age_groups_subtree['kind'] = content_kinds.TOPIC
             age_groups_subtree['source_id'] = 'pradigi_'+str(lang)+'_'+age_group
             subject_subtrees = age_groups_subtree['children']
             for subject_subtree in subject_subtrees:
-                subject_subtree['kind'] = content_kinds.TOPIC
                 subject_en = subject_subtree['title']
                 subject_subtree['source_id'] = 'pradigi_'+str(lang)+'_'+age_group+'_'+subject_en
-                if subject_en in PRADIGI_STRINGS[lang]['subjects']:  # localize subject titles
+                
+                # localize subject titles when translation is available
+                if subject_en in PRADIGI_STRINGS[lang]['subjects']:
                     subject_subtree['title'] = PRADIGI_STRINGS[lang]['subjects'][subject_en]
-                game_rows = self.get_game_rows_for_age_group_and_subject(age_group, subject_en)
+                
+                # MAIN LOOKUP FUNCTION -- GETS INFOR FORM CSV
+                resources = get_resources_for_age_group_and_subject(age_group,subject_en)
+                print('In main loop', lang, age_group, subject_en)
+                
+                # A. Load video resources
+                if lang in PRADIGI_WEBSITE_LANGUAGES:
+                    for desired_subject_en in resources['videos']:
+                        wrt_subtree = get_subtree_by_subject_en(lang, desired_subject_en)
+                        if wrt_subtree:
+                            # print('wrt_subtree=', wrt_subtree)
+                            ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang, filter_fn=_only_videos)
+                            # print('ricecooker_subtree=', ricecooker_subtree)
+                            for ch in ricecooker_subtree['children']:
+                                subject_subtree['children'].append(ch)
+
+                # B. Load game resources
+                game_rows = resources['games']
                 for game_row in game_rows:
                     game_title = game_row[NAME_KEY]
                     game_name = game_row[CODENAME_KEY]
@@ -635,11 +647,11 @@ class PraDigiChef(JsonTreeChef):
         """
         Build the ricecooker json tree for the entire channel
         """
-        # download_structure_csv()
-        # self.crawl(args, options)
+        print('in pre_run...')
+        self.crawl(args, options)
 
         # this is used for lookups by `get_games_for_age_group_and_subject` so pre-load here
-        self.games_info = load_pradigi_structure()
+        self.struct_list = load_pradigi_structure()
 
         ricecooker_json_tree = dict(
             title='PraDigi',
@@ -658,6 +670,7 @@ class PraDigiChef(JsonTreeChef):
 
 
     # def run(self, args, options):
+    #     self.pre_run(args, options)
     #     print('Not running for real...')
 
 
@@ -674,3 +687,115 @@ if __name__ == '__main__':
     #     raise ValueError('Need to specify command line option `lang=XY`, where XY in en, fr, ar, sw.')
     pradigi_chef.main()
 
+
+
+
+
+
+
+
+
+
+
+# STRUCTURE DIAGNOSE AND DEBUG TOOLS
+################################################################################
+
+def getlang_by_language_en(language_en):
+    """
+    Convert language names used on PraDigi websites to le_utils language object.
+    """
+    if language_en == 'Odiya' or language_en == 'Odisa':
+        language_en = 'Oriya'
+    elif language_en == 'Bangali':
+        language_en = 'Bengali'
+    elif language_en == 'Telagu':
+        language_en = 'Telugu'
+    lang_obj = getlang_by_name(language_en)
+    return lang_obj
+
+def get_all_game_names():
+    """
+    Used for debugging chef
+    """
+    game_names = []
+    struct_list = load_pradigi_structure()
+    for struct_row in struct_list:
+        codename = struct_row[CODENAME_KEY]
+        if codename is not None and codename not in game_names:
+            game_names.append(struct_row[CODENAME_KEY])
+    return game_names
+
+def compute_games_by_language_csv(game_names):
+    """
+    Checks which game names exist in all the PraDigi languages
+    Matching is performed based on language code suffix, e.g. _MR for Marathi.
+    Returns list of all languages matched.
+    """
+    languages_matches = []
+    languages_en = [PRADIGI_STRINGS[lang]['language_en'] for lang in PRADIGI_LANGUAGES]
+    fieldnames = ['Name on gamerepo'] + languages_en
+    
+    with open('games_by_language_matrix.csv', 'w') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        
+        for game_name in game_names:
+            row_dict = {}
+            row_dict['Name on gamerepo'] = game_name
+            for lang in PRADIGI_LANGUAGES:
+                games = find_games_for_lang(game_name, lang)
+                if games:
+                    value = ' and '.join([game['title'] for game in games])
+                    languages_matches.extend(games)
+                else:
+                    value = "N/A"
+                languages_en = PRADIGI_STRINGS[lang]['language_en']
+                row_dict[languages_en] = value
+            writer.writerow(row_dict)
+    return languages_matches
+
+
+def flatten_tree(tree):
+    if len(tree['children'])==0:
+        return [tree]
+    else:
+        result = []
+        for child in tree['children']:
+            flat_child = flatten_tree(child)
+            result.extend(flat_child)
+        return result
+
+
+def find_undocumented_games():
+    # all games
+    data = json.load(open('chefdata/trees/pradigi_games_all_langs.json','r'))
+    gamelist = flatten_tree(data)
+    all_set = set([game['url'] for game in gamelist])
+    
+    # the ones in TEST_GAMENAMES
+    game_names = get_all_game_names()
+    found_gamelist = compute_games_by_language_csv(game_names)
+    found_set = set([game['url'] for game in found_gamelist])
+    
+    diff_set = all_set.difference(found_set)
+    diff_gamelist = []
+    for diff_url in diff_set:
+        for game in gamelist:
+            if game['url'] == diff_url:
+                diff_gamelist.append(game)
+    
+    sorted_by_lang = sorted(diff_gamelist, key=lambda s:s['title'])
+    for game in sorted_by_lang:
+        print(game['title']+'\t'+game['language_en']+'\t'+game['url'])
+    
+    # Print just names
+    # diff_game_names = set()
+    # for game in sorted_by_lang:
+    #     title = game['title']
+    #     if '_' in title:
+    #         root = '_'.join(title.split('_')[0:-1])
+    #     else:
+    #         root = title
+    #     diff_game_names.add(root)
+    # for name in sorted(diff_game_names):
+    #     print(name)

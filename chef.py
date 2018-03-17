@@ -482,7 +482,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             language=lang,
         )
         if should_compress_video(tree):
-            video_node['ffmpeg_settings']={"crf": 28}  # average quality
+            video_file['ffmpeg_settings'] = {"crf": 28}   # average quality
         video_node['files'].append(video_file)
         return video_node
 

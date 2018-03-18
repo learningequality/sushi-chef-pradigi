@@ -4,9 +4,14 @@ Import content from prathamopenschool.org and the Pratham gamerepo into Studio.
 
 
 
+
 TODO
 ----
-
+  - run with --thumbnail
+  - remove empty folders (post process tree)
+  - Get game thumbnails from
+    http://www.prodigi.openiscool.org/repository/Images/AwazPehchano_KN.png
+  - skip mp4 that have 404 (two beauty videoes)
   - How to get thumbnails for games?
   - get subject strings for all other languages (shared spreadsheet workflow)
 
@@ -28,6 +33,6 @@ Running
 -------
 
     source venv/bin/activate
-    ./chef.py -v --token=<your_token>
+    ./chef.py -v --thumbnails --token=<your_token>
 
 

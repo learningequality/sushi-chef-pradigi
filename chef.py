@@ -23,6 +23,7 @@ import requests
 import shutil
 import tempfile
 import zipfile
+from urllib.parse import urlparse
 
 
 from le_utils.constants import content_kinds, file_types, licenses
@@ -799,3 +800,51 @@ def find_undocumented_games():
     #     diff_game_names.add(root)
     # for name in sorted(diff_game_names):
     #     print(name)
+
+
+
+# WEBSITE DIAGNOSE AND DEBUG TOOLS
+################################################################################
+
+
+def find_large_video_files(tree, parent):
+    if tree['kind'] == 'PrathamVideoResource':
+        url_p = urlparse(tree['url'])
+        filename = os.path.basename(url_p.path)
+        if 'content-length' in tree:
+            size_bytes = tree['content-length']
+            size_mb = int(size_bytes)/1024/1024
+            if size_mb > 100:
+                print('Large video file' + '\t' + filename + '\t'+ tree['url'] + \
+                    '\t' + parent['url'] + '\t' + 'File size is %.2fMB, so not good for web' % size_mb)
+        else:
+            print('404 video file' + '\t' + filename + '\t' + tree['url'] + '\t' + parent['url'])
+
+
+
+
+def find_missing_zip_resources(tree, parent):
+    if tree['kind'] == 'PrathamZipResource':
+        url = tree['url']
+        url_p = urlparse(url)
+        filename = os.path.basename(url_p.path)
+        
+        resp = requests.head(url)
+        if resp.status_code == 404:
+            print('404 zip file' + '\t' + filename + '\t' + url + '\t' + parent['url'])
+
+
+
+def walk_tree(tree, parent={'url':None}, el_fn=lambda x: x):
+    el_fn(tree,parent)
+    for child in tree['children']:
+        walk_tree(child, parent=tree, el_fn=el_fn)
+
+
+def find_problem_resources_files():
+    for lang in ['hi', 'mr']:
+        wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
+        with open(wrt_filename) as jsonfile:
+            web_resource_tree = json.load(jsonfile)
+            # walk_tree(web_resource_tree, el_fn=find_large_video_files)
+            walk_tree(web_resource_tree, el_fn=find_missing_zip_resources)

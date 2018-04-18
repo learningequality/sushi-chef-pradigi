@@ -1,3 +1,5 @@
+notebooks/node_modules
+
 .idea/
 .ipynb_checkpoints/
 .webcache/

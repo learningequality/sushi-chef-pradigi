@@ -10,7 +10,7 @@ env.hosts = [
     'eslgenie.com:1',  # vader runs ssh on port 1
 ]
 env.user = os.environ.get('USER')
-env.password = os.environ.get('VADER_PASSWORD')
+env.password = os.environ.get('SUDO_PASSWORD')
 
 STUDIO_TOKEN = os.environ.get('STUDIO_TOKEN')
 
@@ -23,9 +23,10 @@ CHEFS_DATA_DIR = '/data'
 CHEF_PROJECT_SLUG = 'sushi-chef-pradigi'
 CHEF_DATA_DIR = os.path.join(CHEFS_DATA_DIR, CHEF_PROJECT_SLUG)
 
-CRAWLING_STAGE_OUTPUT = 'web_resource_tree.json'
-SCRAPING_STAGE_OUTPUT = 'ricecooker_json_tree.json'
 
+CRAWLING_STAGE_OUTPUT_TMPL = 'pradigi_{}_web_resource_tree.json'
+SCRAPING_STAGE_OUTPUT = 'pradigi_ricecooker_json_tree.json'
+WEBSITE_LANG_CODES = ['hi', 'mr']
 
 @task
 def chef_info():
@@ -53,15 +54,26 @@ def run_pradigi():
 ################################################################################
 
 @task
-def get_trees(lang='all'):
+def get_trees(langs='all'):
     trees_dir = os.path.join(CHEF_DATA_DIR, 'chefdata', 'trees')
     local_dir = os.path.join('chefdata', 'vader', 'trees')
-    web_resource_tree_filename = CRAWLING_STAGE_OUTPUT
+    if langs == 'all':
+        langs = WEBSITE_LANG_CODES
+    # crawling trees
+    for lang in langs:
+        web_resource_tree_filename = CRAWLING_STAGE_OUTPUT_TMPL.format(lang)
+        get(os.path.join(trees_dir, web_resource_tree_filename),
+            os.path.join(local_dir, web_resource_tree_filename))
+
+    # ricecooker tree
     ricecooker_json_tree_filename = SCRAPING_STAGE_OUTPUT
-    get(os.path.join(trees_dir, web_resource_tree_filename),
-        os.path.join(local_dir, web_resource_tree_filename))
     get(os.path.join(trees_dir, ricecooker_json_tree_filename),
         os.path.join(local_dir, ricecooker_json_tree_filename))
+    
+    # games
+    games_filename = 'pradigi_games_all_langs.json'
+    get(os.path.join(trees_dir, games_filename),
+        os.path.join(local_dir, games_filename))
 
 
 

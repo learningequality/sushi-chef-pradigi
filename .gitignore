@@ -1,5 +1,6 @@
 notebooks/node_modules
 
+chefdata/*vader
 .idea/
 .ipynb_checkpoints/
 .webcache/

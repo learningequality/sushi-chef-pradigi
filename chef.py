@@ -666,6 +666,16 @@ class PraDigiChef(JsonTreeChef):
                     for game in games:
                         node = game_info_to_ricecooker_node(lang, game_title, game)
                         subject_subtree['children'].append(node)
+            
+            # Remove empty subject_tree topic nodes
+            nonempty_subject_subtrees = []
+            for subject_subtree in subject_subtrees:
+                if len(subject_subtree['children']) == 0:
+                    pass
+                else:
+                    nonempty_subject_subtrees.append(subject_subtree)
+            age_groups_subtree['children'] = nonempty_subject_subtrees
+
         return lang_subtree
 
 

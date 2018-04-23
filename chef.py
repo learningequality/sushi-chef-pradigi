@@ -176,8 +176,10 @@ PRATHAM_COMMENTS_KEY = 'Pratham'
 LE_COMMENTS_KEY = 'LE Comments'
 PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
 PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science',
+                    'Health', 'Std5', 'Std6', 'Std7', 'Std8', 'Std9', 'Std10', 'Story',
                     'Automobile', 'Beauty', 'Construction', 'Electric', 'Healthcare', 'Hospitality']
 PRADIGI_RESOURCE_TYPES = ['Game', 'Video Resources']  # English- Hindi?
+# TODO(ivan): add 'Interactive Resoruces' and 'Book Resources' as separate resoruce type categories
 PRADIGI_SHEET_CSV_FILEDNAMES = [
     AGE_GROUP_KEY,
     SUBJECT_KEY,
@@ -375,9 +377,9 @@ def make_request(url):
     return response
 
 def get_zip_file(zip_file_url, main_file):
-    """HTML games are provided as zip files, the entry point of the game is
-     main_file. main_file needs to be renamed to index.html to make it
-     compatible with Kolibri.
+    """
+    HTML games are provided as zip files, the entry point of the game is `main_file`.
+    THe `main_file` needs to be renamed to index.html to make it compatible with Kolibri.
     """
     destpath = tempfile.mkdtemp()
     try:
@@ -461,10 +463,14 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
         )
         for child in tree['children']:
             if filter_fn(child):
-                ricocooker_node = wrt_to_ricecooker_tree(child, lang, filter_fn=filter_fn)
-                topic_node['children'].append(ricocooker_node)
+                try:
+                    ricocooker_node = wrt_to_ricecooker_tree(child, lang, filter_fn=filter_fn)
+                    topic_node['children'].append(ricocooker_node)
+                except Exception as e:
+                    LOGGER.error("Failed to generate node for %s in %s %s " % (child['title'], lang, e) )
+                    pass
         return topic_node
-                
+
     elif kind == 'PrathamVideoResource':
         thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
         video_node = dict(
@@ -488,8 +494,25 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
         return video_node
 
     elif kind == 'PrathamZipResource':
-        pass  # TODO(handle games and interactives)
-
+        thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
+        html5_node = dict(
+            kind=content_kinds.HTML5,
+            source_id=tree['source_id'],
+            language=lang,
+            title=tree['title'],
+            description=tree.get('description', ''),
+            thumbnail=thumbnail,
+            license=PRADIGI_LICENSE,
+            files=[],
+        )
+        zip_tmp_path  = get_zip_file(tree['url'], tree['main_file'])
+        html5zip_file = dict(
+            file_type=file_types.HTML5,
+            path=zip_tmp_path,
+            language=lang,
+        )
+        html5_node['files'].append(html5zip_file)
+        return html5_node
 
     elif kind == 'PrathamPdfResource' or kind == 'story_resource_page':
         thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
@@ -627,7 +650,9 @@ class PraDigiChef(JsonTreeChef):
                         wrt_subtree = get_subtree_by_subject_en(lang, desired_subject_en)
                         if wrt_subtree:
                             # print('wrt_subtree=', wrt_subtree)
-                            ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang, filter_fn=_only_videos)
+                            # ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang, filter_fn=_only_videos)
+                            # Apr 23, get all resources and not just videos
+                            ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)
                             # print('ricecooker_subtree=', ricecooker_subtree)
                             for ch in ricecooker_subtree['children']:
                                 subject_subtree['children'].append(ch)

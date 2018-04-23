@@ -3,6 +3,10 @@ PraDigi Sushi Chef
 Import content from prathamopenschool.org and the Pratham gamerepo into Studio.
 
 
+Fixes TODO
+----------
+
+    [eslgenie.com:1] out: Unknown resource type English- Hindi in row {'Name on gamerepo (before lang underscore)': None, 'Pratham': None, 'Age Group': '14 and above', 'Subject': 'English', 'LE Comments': 'What does "English- Hindi" refer to?', 'Name': None, 'Resource Type': 'English- Hindi'}
 
 
 TODO

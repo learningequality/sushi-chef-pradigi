@@ -620,7 +620,6 @@ def get_source_id(path):
 
 
 
-
 def get_content_link(content):
     """
     The link to a content has an onclick attribute that executes

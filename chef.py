@@ -506,6 +506,8 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             files=[],
         )
         zip_tmp_path  = get_zip_file(tree['url'], tree['main_file'])
+        if zip_tmp_path is None:
+            raise ValueError('Could not get zip file from %s' % tree['url'])
         html5zip_file = dict(
             file_type=file_types.HTML5,
             path=zip_tmp_path,

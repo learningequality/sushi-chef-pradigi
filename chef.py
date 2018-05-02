@@ -270,7 +270,7 @@ def get_tree_for_lang_from_structure():
                     children=[],
                 )
                 age_groups_subtree['children'].append(subject_subtree)
-    print(lang_tree, flush=True)
+    # print('lang_tree=', lang_tree, flush=True)
     return lang_tree
 
 def get_resources_for_age_group_and_subject(age_group, subject_en):
@@ -713,7 +713,9 @@ class PraDigiChef(JsonTreeChef):
         Build the ricecooker json tree for the entire channel
         """
         print('in pre_run...')
-        self.crawl(args, options)
+
+        if 'nocrawl' not in options:
+            self.crawl(args, options)
 
         # this is used for lookups by `get_games_for_age_group_and_subject` so pre-load here
         self.struct_list = load_pradigi_structure()
@@ -734,10 +736,13 @@ class PraDigiChef(JsonTreeChef):
         write_tree_to_json_tree(json_tree_path, ricecooker_json_tree)
 
 
-    # def run(self, args, options):
-    #     self.pre_run(args, options)
-    #     print('Not running for real...')
-
+    def run(self, args, options):
+        print('options=', options, flush=True)
+        self.pre_run(args, options)
+        if 'crawlonly' in options:
+            print('Crawling done. Skipping rest of chef run since `crawlonly` is set.')
+            return
+        super(PraDigiChef, self).ruu(args, options)
 
 
 
@@ -747,9 +752,6 @@ class PraDigiChef(JsonTreeChef):
 
 if __name__ == '__main__':
     pradigi_chef = PraDigiChef()
-    # args, options = pradigi_chef.parse_args_and_options()
-    # if 'lang' not in options:
-    #     raise ValueError('Need to specify command line option `lang=XY`, where XY in en, fr, ar, sw.')
     pradigi_chef.main()
 
 

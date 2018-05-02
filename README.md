@@ -13,7 +13,8 @@ TODO
 ----
   - Get game thumbnails from
     http://www.prodigi.openiscool.org/repository/Images/AwazPehchano_KN.png
-  - load  subject strings for all other languages (shared spreadsheet workflow)
+  - load string translations for all languages from shared spreadsheet
+  - Handle `PrathamHtmlResource` resources
   - Handle `PrathamHtmlResource` resources
   - Exclude games from HI and MR web resources to avoid duplication (prefer gamerepo versions)
   - Create temp zip files under chefdata/ instead of /tmp (make sure files identical so no re-upload)
@@ -39,7 +40,7 @@ Install
     virtualenv -p python3 venv
     source venv/bin/activate
     pip install -r requirements.txt
-    npm install phantomjs  # needed for scraping gamerepo
+    npm install phantomjs-prebuilt  # needed for scraping gamerepo
 
 
 

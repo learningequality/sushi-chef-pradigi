@@ -8,7 +8,7 @@ PRATHAM Open School (PraDigi) content is organized as follow:
     - The Fun/ page contains various videos and HTML5 visaulisations
     - The Stories/ page contains PDFs
     - The gamelist/ contains various HTML5 games
-      (not used, instead use games form http://www.gamerepo.prathamcms.org/)
+      (not used, instead use games form http://repository.prathamopenschool.org)
 """
 
 import copy
@@ -60,6 +60,14 @@ session.mount('https://', basic_adapter)
 session.mount('http://www.' + DOMAIN, forever_adapter)
 session.mount('https://www.' + DOMAIN, forever_adapter)
 
+
+# SOURCE WEBSITES
+################################################################################
+PRADIGI_LANG_URL_MAP = {
+    'hi': 'http://www.prathamopenschool.org/hn/',
+    'mr': 'http://www.prathamopenschool.org/mr/',
+}
+GAMEREPO_MAIN_SOURCE_DOMAIN = 'http://repository.prathamopenschool.org'
 
 
 # LOCALIZATION AND TRANSLATION STRINGS
@@ -274,7 +282,7 @@ def get_resources_for_age_group_and_subject(age_group, subject_en):
         'games': [{game struct row}, {anothe game row}, ...]   # Include localized verison of games in this list
     }
     """
-    print('in get_resources_for_age_group_and_subject with', age_group, subject_en, flush=True)
+    # print('in get_resources_for_age_group_and_subject with', age_group, subject_en, flush=True)
     struct_list = PRADIGI_STRUCT_LIST
     videos = []
     games = []
@@ -612,7 +620,7 @@ class PraDigiChef(JsonTreeChef):
     """
     SushiChef script for importing and merging the content from these two sites:
       - Videos from http://www.prathamopenschool.org/
-      - Games from http://www.gamerepo.prathamcms.org/index.html
+      - Games from http://repository.prathamopenschool.org
     """
     RICECOOKER_JSON_TREE = 'pradigi_ricecooker_json_tree.json'
     
@@ -621,8 +629,6 @@ class PraDigiChef(JsonTreeChef):
         """
         Crawl website and gamerepo. Save web resource trees in chefdata/trees/.
         """
-        return
-        
         from pradigi_crawlers import PraDigiCrawler, PrathamGameRepoCrawler
         
         # website
@@ -631,7 +637,7 @@ class PraDigiChef(JsonTreeChef):
             wrt = website_crawler.crawl()
 
         # gamerepo
-        gamerepo_start_page = 'http://www.gamerepo.prathamcms.org/index.html'
+        gamerepo_start_page = GAMEREPO_MAIN_SOURCE_DOMAIN
         gamerepo_crawler = PrathamGameRepoCrawler(start_page=gamerepo_start_page)
         gamerepo_crawler.crawl()
 

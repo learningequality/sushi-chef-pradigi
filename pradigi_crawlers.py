@@ -35,7 +35,7 @@ class PrathamGameRepoCrawler(BasicCrawler):
     """
     Get links fro all games from http://www.gamerepo.prathamcms.org/index.html
     """
-    MAIN_SOURCE_DOMAIN = 'http://www.gamerepo.prathamcms.org'
+    MAIN_SOURCE_DOMAIN = 'http://repository.prathamopenschool.org'
     CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_games_all_langs.json'
     START_PAGE_CONTEXT = {'kind': 'index_page'}
     kind_handlers = {

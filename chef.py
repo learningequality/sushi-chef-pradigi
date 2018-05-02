@@ -45,7 +45,6 @@ PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu'
 PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
 
 
-
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.INFO)
 DEBUG_MODE = False
@@ -152,7 +151,11 @@ PRADIGI_STRINGS = {
     },
 }
 
-
+# lookup helper function, e.g. English --> en
+LANGUAGE_EN_TO_LANG = {}
+for lang, lang_data in PRADIGI_STRINGS.items():
+    language_en = lang_data['language_en']
+    LANGUAGE_EN_TO_LANG[language_en] = lang
 
 
 
@@ -172,6 +175,7 @@ SUBJECT_KEY = 'Subject'
 RESOURCE_TYPE_KEY = 'Resource Type'
 NAME_KEY = 'Name'
 CODENAME_KEY = 'Name on gamerepo (before lang underscore)'
+TAKE_FROM_KEY = 'Take From Repo'
 PRATHAM_COMMENTS_KEY = 'Pratham'
 LE_COMMENTS_KEY = 'LE Comments'
 PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
@@ -186,6 +190,7 @@ PRADIGI_SHEET_CSV_FILEDNAMES = [
     RESOURCE_TYPE_KEY,
     NAME_KEY,
     CODENAME_KEY,
+    TAKE_FROM_KEY,
     PRATHAM_COMMENTS_KEY,
     LE_COMMENTS_KEY,
 ]
@@ -257,6 +262,7 @@ def get_tree_for_lang_from_structure():
                     children=[],
                 )
                 age_groups_subtree['children'].append(subject_subtree)
+    print(lang_tree, flush=True)
     return lang_tree
 
 def get_resources_for_age_group_and_subject(age_group, subject_en):
@@ -268,6 +274,7 @@ def get_resources_for_age_group_and_subject(age_group, subject_en):
         'games': [{game struct row}, {anothe game row}, ...]   # Include localized verison of games in this list
     }
     """
+    print('in get_resources_for_age_group_and_subject with', age_group, subject_en, flush=True)
     struct_list = PRADIGI_STRUCT_LIST
     videos = []
     games = []
@@ -279,6 +286,7 @@ def get_resources_for_age_group_and_subject(age_group, subject_en):
                 videos.append(subject_en)
             else:
                 print('Unknown resource type', row[RESOURCE_TYPE_KEY], 'in row', row)
+    print('games=', games, flush=True)
     return {'videos':videos, 'games':games}
 
 
@@ -342,25 +350,36 @@ TEMPLATE_FOR_LANG = get_tree_for_lang_from_structure()
 # GAMESREPO UTILS
 ################################################################################
 
-def find_games_for_lang(name, lang):
+def find_games_for_lang(name, lang, take_from=None):
     data = json.load(open('chefdata/trees/pradigi_games_all_langs.json','r'))
     language_en = PRADIGI_STRINGS[lang]['language_en']
     suffixes = PRADIGI_STRINGS[lang]['gamesrepo_suffixes']
     assert data["kind"] == "index_page", 'wrong web resource tree loaded'
     games = []
+    # Get game from pradigi_games json by ignoring _LANG suffixes
     for gameslang_page in data['children']:
         if gameslang_page['language_en'] == language_en:
-            for game in gameslang_page['children']:                
+            for game in gameslang_page['children']:
                 title = game['title']
                 for suffix in suffixes:
                     if title.strip().endswith(suffix):
                         title = title.replace(suffix, '').strip()
                 if name == title:
                     games.append(game)
-            return games 
-    return None
-
-
+    # Extra pass to get English games to be included in other languages
+    if len(games) == 0 and take_from is not None:
+        take_lang = LANGUAGE_EN_TO_LANG[take_from]
+        take_suffixes = PRADIGI_STRINGS[take_lang]['gamesrepo_suffixes']
+        for gameslang_page in data['children']:
+            if gameslang_page['language_en'] == take_from:
+                for game in gameslang_page['children']:
+                    title = game['title']
+                    for suffix in take_suffixes:
+                        if title.strip().endswith(suffix):
+                            title = title.replace(suffix, '').strip()
+                    if name == title:
+                        games.append(game)
+    return games
 
 
 
@@ -643,7 +662,7 @@ class PraDigiChef(JsonTreeChef):
                     subject_subtree['title'] = PRADIGI_STRINGS[lang]['subjects'][subject_en]
                 
                 # MAIN LOOKUP FUNCTION -- GETS INFOR FORM CSV
-                resources = get_resources_for_age_group_and_subject(age_group,subject_en)
+                resources = get_resources_for_age_group_and_subject(age_group, subject_en)
                 print('In main loop', lang, age_group, subject_en)
                 
                 # A. Load video resources
@@ -664,7 +683,9 @@ class PraDigiChef(JsonTreeChef):
                 for game_row in game_rows:
                     game_title = game_row[NAME_KEY]
                     game_name = game_row[CODENAME_KEY]
-                    games = find_games_for_lang(game_name, lang)
+                    take_from = game_row[TAKE_FROM_KEY]
+                    games = find_games_for_lang(game_name, lang, take_from=take_from)
+                    # print('Processing games', games, 'under game_title', game_title, 'for lang', lang, 'found take_from=', take_from, flush=True)
                     for game in games:
                         node = game_info_to_ricecooker_node(lang, game_title, game)
                         subject_subtree['children'].append(node)

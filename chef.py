@@ -294,7 +294,7 @@ def get_resources_for_age_group_and_subject(age_group, subject_en):
                 videos.append(subject_en)
             else:
                 print('Unknown resource type', row[RESOURCE_TYPE_KEY], 'in row', row)
-    print('games=', games, flush=True)
+    # print('games=', games, flush=True)
     return {'videos':videos, 'games':games}
 
 
@@ -742,7 +742,7 @@ class PraDigiChef(JsonTreeChef):
         if 'crawlonly' in options:
             print('Crawling done. Skipping rest of chef run since `crawlonly` is set.')
             return
-        super(PraDigiChef, self).ruu(args, options)
+        super(PraDigiChef, self).run(args, options)
 
 
 

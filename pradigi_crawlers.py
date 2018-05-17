@@ -1,8 +1,11 @@
 import logging
 import os
+from PIL import Image
 import re
 import requests
+import tempfile
 from urllib.parse import urljoin, urlparse
+
 
 
 
@@ -24,7 +27,35 @@ from chef import (
     DEBUG_MODE,
     PRADIGI_LANG_URL_MAP,
     GAMEREPO_MAIN_SOURCE_DOMAIN,
+    GAME_THUMBS_REMOTE_DIR,
+    GAME_THUMBS_LOCAL_DIR,
 )
+
+
+def downlaod_game_thumbnail(title):
+    """
+    Download and resize game thumbnail from `GAME_THUMBS_DIR`.
+    Returns path to thumbnial, or `None` in case of failure.
+    """
+    # 1. GET LARGE IMAGE
+    imgurl = GAME_THUMBS_REMOTE_DIR + title + '.png'
+    try:
+        response = requests.get(imgurl)
+        response.raise_for_status()
+    except Exception as e:
+        print('HTTP ERROR:', e)
+        return None
+    with tempfile.NamedTemporaryFile(suffix='.png') as origf:
+        origf.write(response.content)
+        origf.flush()
+        # 2. RESIZE and SAVE image to chefdata/
+        THUMB_SIZE = (420, 236)
+        im = Image.open(origf)
+        im.thumbnail(THUMB_SIZE)
+        thumbnail_path = os.path.join(GAME_THUMBS_LOCAL_DIR, title + '.thumbnail.png')
+        im.save(thumbnail_path, "png")
+    return thumbnail_path
+
 
 
 class PrathamGameRepoCrawler(BasicCrawler):
@@ -94,6 +125,7 @@ class PrathamGameRepoCrawler(BasicCrawler):
                 last_modified=last_modified,
                 main_file=main_file,
                 language_en=context['language_en'],
+                thumbnial=downlaod_game_thumbnail(title),
                 children=[],
             )
             page_dict['children'].append(game_dict)

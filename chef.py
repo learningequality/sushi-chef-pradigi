@@ -68,7 +68,8 @@ PRADIGI_LANG_URL_MAP = {
     'mr': 'http://www.prathamopenschool.org/mr/',
 }
 GAMEREPO_MAIN_SOURCE_DOMAIN = 'http://repository.prathamopenschool.org'
-
+GAME_THUMBS_REMOTE_DIR = 'http://www.prodigi.openiscool.org/repository/Images/'
+GAME_THUMBS_LOCAL_DIR = 'chefdata/gamethumbnails'
 
 # LOCALIZATION AND TRANSLATION STRINGS
 ################################################################################

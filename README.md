@@ -11,8 +11,6 @@ Fixes TODO
 
 TODO
 ----
-  - Get game thumbnails from
-    http://www.prodigi.openiscool.org/repository/Images/AwazPehchano_KN.png
   - load string translations for all languages from shared spreadsheet
   - Handle `PrathamHtmlResource` resources
   - Handle `PrathamHtmlResource` resources

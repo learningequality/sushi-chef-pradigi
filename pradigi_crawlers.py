@@ -463,7 +463,7 @@ class PraDigiCrawler(BasicCrawler):
                 fun_resource_url = get_absolute_path(link['href'])
                 direct_download_url = None
                 direct_download_link = content.find('a', class_='dnlinkfunstory')
-                if download_link:
+                if direct_download_link:
                     direct_download_href = direct_download_link['href']
                     direct_download_url = get_absolute_path(direct_download_href)
 

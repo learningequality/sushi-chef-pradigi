@@ -12,9 +12,12 @@ Fixes TODO
 TODO
 ----
   - load string translations for all languages from shared spreadsheet
-  - Handle `PrathamHtmlResource` resources
-  - Handle `PrathamHtmlResource` resources
-  - Exclude games from HI and MR web resources to avoid duplication (prefer gamerepo versions)
+  - Fix html + zip files that are tagged ad `UnsupportedPrathamWebResource` resources
+  - Fix html + zip files that are tagged ad `PrathamHtmlResource` resources
+  - Handle PhET `PrathamHtmlResource` resources (manual download)
+    - download url html file and save as index.html
+    - downnload recusrively all links and assets
+  - Exclude list for games for HI and MR web resources to avoid duplication (prefer gamerepo versions)
   - Create temp zip files under chefdata/ instead of /tmp (make sure files identical so no re-upload)
   - Handle English- Hindi edge case
   

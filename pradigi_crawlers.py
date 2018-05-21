@@ -412,7 +412,7 @@ class PraDigiCrawler(BasicCrawler):
                     page_dict['children'].append(zipfile)
 
                 else:
-                    LOGGER.error('Content not supported: %s, %s' % (main_file, master_file))
+                    LOGGER.error('ZZZZ>>> Content not supported: onpage=%s main_file=%s master_file=%s' % (url, main_file, master_file))
                     unsupported_rsrc = dict(
                         url=main_file,
                         referring_url=url,
@@ -456,6 +456,10 @@ class PraDigiCrawler(BasicCrawler):
                 # TODO: description
                 thumbnail = content.find('a').find('img')['src']
                 thumbnail = get_absolute_path(thumbnail)
+
+                main_file, master_file, _ = get_content_link(content)
+                LOGGER.info('      fun content: %s: %s' % (source_id, title))
+
 
                 # get_fun_content_link
                 link = content.find('a')
@@ -508,11 +512,23 @@ class PraDigiCrawler(BasicCrawler):
                         children=[],
                     )
                     page_dict['children'].append(zipfile)
-                
+
+                elif respath_path.endswith('html') and master_file.endswith('zip'):
+                    zipfile = dict(
+                        url=master_file,
+                        kind='PrathamZipResource',
+                        title=title,
+                        source_id=source_id,
+                        thumbnail_url=thumbnail,
+                        main_file=main_file,     # needed to rename to index.html if different
+                        children=[],
+                    )
+                    page_dict['children'].append(zipfile)
+
                 elif respath_path.endswith('html'):
                     html_rsrc = dict(
                         url=respath_url,
-                        kind='PrathamHtmlResource',
+                        kind='OtherPrathamHtmlResource',
                         title=title,
                         source_id=source_id,
                         thumbnail_url=thumbnail,
@@ -521,7 +537,7 @@ class PraDigiCrawler(BasicCrawler):
                     page_dict['children'].append(html_rsrc)
 
                 else:
-                    LOGGER.error('Fun resource not supported: %s, %s' % (fun_resource_url, download_url))
+                    LOGGER.error('ZZZZ>>> Fun resource not supported: onpage=%s main_file=%s master_file=%s' % (url, main_file, master_file))
                     unsupported_rsrc = dict(
                         url=respath_url,
                         referring_url=url,

@@ -470,7 +470,8 @@ class PraDigiCrawler(BasicCrawler):
                 # Need to GET the FunResource detail page since main_file is not in avail. in listing
                 fun_rsrc_html = requests.get(fun_resource_url).text
                 respath_url = get_respath_url_from_html(fun_rsrc_html)
-                download_url = get_download_url_from_doc(url, BeautifulSoup(fun_rsrc_html))
+                fun_doc = BeautifulSoup(fun_rsrc_html, "html.parser")
+                download_url = get_download_url_from_doc(url, fun_doc)
                 respath_path = urlparse(respath_url).path
 
                 LOGGER.info('      Fun content: %s: %s at %s' % (source_id, title, respath_url))

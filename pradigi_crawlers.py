@@ -376,7 +376,7 @@ class PraDigiCrawler(BasicCrawler):
                 main_file, master_file, source_id = get_content_link(content)
                 LOGGER.info('      content: %s: %s' % (source_id, title))
 
-                if main_file.endswith('mp4'):
+                if main_file and main_file.endswith('mp4'):
                     video = dict(
                         url=main_file,
                         kind='PrathamVideoResource',
@@ -388,7 +388,7 @@ class PraDigiCrawler(BasicCrawler):
                     video.update(self.get_video_metadata(main_file))
                     page_dict['children'].append(video)
 
-                elif main_file.endswith('pdf'):
+                elif main_file and main_file.endswith('pdf'):
                     pdf = dict(
                         url=main_file,
                         kind='PrathamPdfResource',
@@ -399,7 +399,7 @@ class PraDigiCrawler(BasicCrawler):
                     )
                     page_dict['children'].append(pdf)
 
-                elif main_file.endswith('html') and master_file.endswith('zip'):
+                elif main_file and main_file.endswith('html') and master_file.endswith('zip'):
                     zipfile = dict(
                         url=master_file,
                         kind='PrathamZipResource',
@@ -524,7 +524,7 @@ class PraDigiCrawler(BasicCrawler):
                     page_dict['children'].append(html_rsrc)
 
                 else:
-                    LOGGER.error('ZZZZ>>> Fun resource not supported: onpage=%s main_file=%s master_file=%s' % (url, main_file, master_file))
+                    LOGGER.error('ZZZZ>>> Fun resource not supported: onpage=%s  respath_path=%s download_url=%s' % (url, respath_path, download_url))
                     unsupported_rsrc = dict(
                         url=respath_url,
                         referring_url=url,

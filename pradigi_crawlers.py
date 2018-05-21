@@ -376,7 +376,7 @@ class PraDigiCrawler(BasicCrawler):
                 main_file, master_file, source_id = get_content_link(content)
                 LOGGER.info('      content: %s: %s' % (source_id, title))
 
-                if main_file and main_file.endswith('mp4'):
+                if main_file.endswith('mp4'):
                     video = dict(
                         url=main_file,
                         kind='PrathamVideoResource',
@@ -388,7 +388,7 @@ class PraDigiCrawler(BasicCrawler):
                     video.update(self.get_video_metadata(main_file))
                     page_dict['children'].append(video)
 
-                elif main_file and main_file.endswith('pdf'):
+                elif main_file.endswith('pdf'):
                     pdf = dict(
                         url=main_file,
                         kind='PrathamPdfResource',
@@ -399,7 +399,7 @@ class PraDigiCrawler(BasicCrawler):
                     )
                     page_dict['children'].append(pdf)
 
-                elif main_file and main_file.endswith('html') and master_file.endswith('zip'):
+                elif main_file.endswith('html') and master_file.endswith('zip'):
                     zipfile = dict(
                         url=master_file,
                         kind='PrathamZipResource',
@@ -635,7 +635,7 @@ def get_respath_url_from_html(html):
     return respath_url
 
 def get_download_url_from_doc(url, doc):
-    download_button = doc.find('a#btndownload')
+    download_button = doc.find('a', {'id': 'btndownload'} )
     if download_button:
         href = download_button['href']
         download_url = urljoin(url, href)

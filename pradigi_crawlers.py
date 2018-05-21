@@ -457,27 +457,24 @@ class PraDigiCrawler(BasicCrawler):
                 thumbnail = content.find('a').find('img')['src']
                 thumbnail = get_absolute_path(thumbnail)
 
-                main_file, master_file, _ = get_content_link(content)
-                LOGGER.info('      fun content: %s: %s' % (source_id, title))
-
-
                 # get_fun_content_link
                 link = content.find('a')
                 source_id = link['href'][1:]
                 fun_resource_url = get_absolute_path(link['href'])
-                download_url = None
-                download_link = content.find('a', class_='dnlinkfunstory')
+                direct_download_url = None
+                direct_download_link = content.find('a', class_='dnlinkfunstory')
                 if download_link:
-                    download_href = download_link['href']
-                    download_url = get_absolute_path(download_href)
+                    direct_download_href = direct_download_link['href']
+                    direct_download_url = get_absolute_path(direct_download_href)
 
                 # Need to GET the FunResource detail page since main_file is not in avail. in listing
                 fun_rsrc_html = requests.get(fun_resource_url).text
                 respath_url = get_respath_url_from_html(fun_rsrc_html)
+                download_url = get_download_url_from_doc(url, BeautifulSoup(fun_rsrc_html))
                 respath_path = urlparse(respath_url).path
 
                 LOGGER.info('      Fun content: %s: %s at %s' % (source_id, title, respath_url))
-                
+
                 if respath_path.endswith('mp4'):
                     video = dict(
                         url=respath_url,
@@ -513,17 +510,6 @@ class PraDigiCrawler(BasicCrawler):
                     )
                     page_dict['children'].append(zipfile)
 
-                elif respath_path.endswith('html') and master_file.endswith('zip'):
-                    zipfile = dict(
-                        url=master_file,
-                        kind='PrathamZipResource',
-                        title=title,
-                        source_id=source_id,
-                        thumbnail_url=thumbnail,
-                        main_file=main_file,     # needed to rename to index.html if different
-                        children=[],
-                    )
-                    page_dict['children'].append(zipfile)
 
                 elif respath_path.endswith('html'):
                     html_rsrc = dict(
@@ -647,6 +633,13 @@ def get_respath_url_from_html(html):
     respath_url =  get_absolute_path('/' + m.groupdict()['resource_path'])
     return respath_url
 
+def get_download_url_from_doc(url, doc):
+    download_button = doc.find('a#btndownload')
+    if download_button:
+        href = download_button['href']
+        download_url = urljoin(url, href)
+        return download_url
+    return None
 
 
 def get_text(element):

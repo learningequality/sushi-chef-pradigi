@@ -125,7 +125,7 @@ class PrathamGameRepoCrawler(BasicCrawler):
                 last_modified=last_modified,
                 main_file=main_file,
                 language_en=context['language_en'],
-                thumbnial=downlaod_game_thumbnail(title),
+                thumbnail_url=downlaod_game_thumbnail(title),
                 children=[],
             )
             page_dict['children'].append(game_dict)

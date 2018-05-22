@@ -264,8 +264,8 @@ class PraDigiCrawler(BasicCrawler):
                     context['kind'] = 'topic_page'
                 self.enqueue_url_and_context(topic_url, context)
 
-                if DEBUG_MODE:
-                    return
+                # if DEBUG_MODE:
+                #     return
 
             except Exception as e:
                 LOGGER.error('on_lang_page: %s : %s' % (e, topic))
@@ -374,7 +374,7 @@ class PraDigiCrawler(BasicCrawler):
                 thumbnail = content.find('a').find('img')['src']
                 thumbnail = get_absolute_path(thumbnail)
                 main_file, master_file, source_id = get_content_link(content)
-                LOGGER.info('      content: %s: %s' % (source_id, title))
+                LOGGER.info('         content: %s: %s' % (source_id, title))
 
                 if main_file.endswith('mp4'):
                     video = dict(

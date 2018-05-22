@@ -380,6 +380,7 @@ class PraDigiCrawler(BasicCrawler):
                     video = dict(
                         url=main_file,
                         kind='PrathamVideoResource',
+                        description='source_url=' + main_file if DEBUG_MODE else '',
                         title=title,
                         source_id=source_id,
                         thumbnail_url=thumbnail,
@@ -393,6 +394,7 @@ class PraDigiCrawler(BasicCrawler):
                         url=main_file,
                         kind='PrathamPdfResource',
                         title=title,
+                        description='source_url=' + main_file if DEBUG_MODE else '',
                         source_id=source_id,
                         thumbnail_url=thumbnail,
                         children=[],
@@ -404,6 +406,7 @@ class PraDigiCrawler(BasicCrawler):
                         url=master_file,
                         kind='PrathamZipResource',
                         title=title,
+                        description='source_url=' + master_file if DEBUG_MODE else '',
                         source_id=source_id,
                         thumbnail_url=thumbnail,
                         main_file=main_file,     # needed to rename to index.html if different
@@ -481,6 +484,7 @@ class PraDigiCrawler(BasicCrawler):
                         url=respath_url,
                         kind='PrathamVideoResource',
                         title=title,
+                        description='source_url=' + respath_url if DEBUG_MODE else '',
                         source_id=source_id,
                         thumbnail_url=thumbnail,
                         children=[],
@@ -492,6 +496,7 @@ class PraDigiCrawler(BasicCrawler):
                     pdf = dict(
                         url=respath_url,
                         kind='PrathamPdfResource',
+                        description='source_url=' + respath_url if DEBUG_MODE else '',
                         title=title,
                         source_id=source_id,
                         thumbnail_url=thumbnail,
@@ -504,6 +509,7 @@ class PraDigiCrawler(BasicCrawler):
                         url=download_url,
                         kind='PrathamZipResource',
                         title=title,
+                        description='source_url=' + download_url if DEBUG_MODE else '',
                         source_id=source_id,
                         thumbnail_url=thumbnail,
                         main_file=respath_url,   # needed to rename to index.html if different

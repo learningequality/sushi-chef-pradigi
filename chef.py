@@ -47,7 +47,7 @@ PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
 
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.INFO)
-DEBUG_MODE = False
+DEBUG_MODE = True  # source_urls in content desriptions
 
 # Cache logic.
 cache = FileCache('.webcache')
@@ -546,7 +546,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             source_id=tree['source_id'],
             language=lang,
             title=tree['title'],  # or could get from Strings based on subject_en...
-            description='',
+            description='source_id=' + tree['source_id'] if DEBUG_MODE else '',
             thumbnail=thumbnail,
             license=PRADIGI_LICENSE,
             children=[],
@@ -661,7 +661,7 @@ def game_info_to_ricecooker_node(lang, title, game_info):
         source_id=game_info['title'],
         language=lang,
         title=title,
-        description='',
+        description='source_url=' + game_info['url'] if DEBUG_MODE else '',
         license=PRADIGI_LICENSE,
         thumbnail=game_info.get('thumbnail_url'),
         files=[],

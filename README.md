@@ -5,22 +5,15 @@ Import content from prathamopenschool.org and the Pratham gamerepo into Studio.
 
 Fixes TODO
 ----------
-
-
+  - Exclude list for games for HI and MR web resources to avoid duplication (prefer gamerepo versions)
 
 
 TODO
 ----
   - load string translations for all languages from shared spreadsheet
-  - Fix html + zip files that are tagged ad `UnsupportedPrathamWebResource` resources
-  - Fix html + zip files that are tagged ad `PrathamHtmlResource` resources
-  - Handle PhET `PrathamHtmlResource` resources (manual download)
-    - download url html file and save as index.html
-    - downnload recusrively all links and assets
-  - Exclude list for games for HI and MR web resources to avoid duplication (prefer gamerepo versions)
   - Create temp zip files under chefdata/ instead of /tmp (make sure files identical so no re-upload)
-  - Handle English- Hindi edge case
-  
+  - Add 'All Resources' and change logic (might be needed to skip games from Fun/ page)
+  - Clairfy and handle English- Hindi edge case
       [eslgenie.com:1] out: Unknown resource type English- Hindi in row {'Name on gamerepo (before lang underscore)': None, 'Pratham': None, 'Age Group': '14 and above', 'Subject': 'English', 'LE Comments': 'What does "English- Hindi" refer to?', 'Name': None, 'Resource Type': 'English- Hindi'}
 
 

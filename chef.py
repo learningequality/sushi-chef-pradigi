@@ -191,7 +191,7 @@ PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
 PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science',
                     'Health', 'Std5', 'Std6', 'Std7', 'Std8', 'Std9', 'Std10', 'Story',
                     'Automobile', 'Beauty', 'Construction', 'Electric', 'Healthcare', 'Hospitality']
-PRADIGI_RESOURCE_TYPES = ['Game', 'Video Resources']  # English- Hindi?
+PRADIGI_RESOURCE_TYPES = ['Game', 'Video Resources', 'All Resources']  # English- Hindi?
 # TODO(ivan): add 'Interactive Resoruces' and 'Book Resources' as separate resoruce type categories
 PRADIGI_SHEET_CSV_FILEDNAMES = [
     AGE_GROUP_KEY,
@@ -444,6 +444,68 @@ def get_zip_file(zip_file_url, main_file):
 
 
 
+PHET_INDEX_HTML_TEMPLATE = """
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+  <div><p>Redirecting to phet simulation {sim_id} now...</p></div>
+</body>
+<script type="text/javascript">
+    window.location.href = "phetindex.html?id={sim_id}";
+</script>
+</html>
+"""
+
+
+def get_phet_zip_file(zip_file_url, main_file_and_query):
+    """
+    Phet simulations are provided in the zip file `phet.zip`, and the entry point
+    is passed as a GET parameter in `main_file_and_query`. To make these compatible
+    with Kolibri's default behaviour of loading index.html, we will:
+      - Rename index.html to phetindex.thml
+      - Add a custom index.html that uses javascrpt redirect to phetindex.thml?{sim_id}
+    """
+    u = urlparse(main_file_and_query)
+    idk, sim_id = u.query.split('=')
+    assert idk == 'id', 'unknown query sting format found' + main_file_and_query
+    main_file = u.scheme + '://' + u.netloc + u.path  # skip querystring
+    
+    destpath = tempfile.mkdtemp()
+    LOGGER.info('saving phet zip file in dir ' + destpath)
+    try:
+        download_file(zip_file_url, destpath, request_fn=make_request)
+
+        zip_filename = zip_file_url.split('/')[-1]
+        zip_basename = zip_filename.rsplit('.', 1)[0]
+        zip_folder = os.path.join(destpath, zip_basename)
+
+        # Extract zip file contents.
+        local_zip_file = os.path.join(destpath, zip_filename)
+        with zipfile.ZipFile(local_zip_file) as zf:
+            zf.extractall(destpath)
+
+        # Rename main_file to phetindex.html.
+        main_file = main_file.split('/')[-1]
+        src = os.path.join(zip_folder, main_file)
+        dest = os.path.join(zip_folder, 'phetindex.html')
+        os.rename(src, dest)
+        
+        # Create the 
+        index_html = PHET_INDEX_HTML_TEMPLATE.format(sim_id=sim_id)
+        with open(os.path.join(zip_folder, 'index.html'), 'w') as indexf:
+            indexf.write(index_html)
+        
+        # Always be zipping!
+        return create_predictable_zip(zip_folder)
+
+    except Exception as e:
+        # LOGGER.error
+        print("get_phet_zip_file: %s, %s, %s, %s" %
+                     (zip_file_url, main_file_and_query, destpath, e))
+        return None
+
 
 
 # RICECOOKER JSON TRANSFORMATIONS
@@ -533,7 +595,10 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             license=PRADIGI_LICENSE,
             files=[],
         )
-        zip_tmp_path  = get_zip_file(tree['url'], tree['main_file'])
+        if 'phet.zip' in tree['url']:
+            zip_tmp_path  = get_phet_zip_file(tree['url'], tree['main_file'])
+        else:
+            zip_tmp_path  = get_zip_file(tree['url'], tree['main_file'])
         if zip_tmp_path is None:
             raise ValueError('Could not get zip file from %s' % tree['url'])
         html5zip_file = dict(

@@ -3,7 +3,7 @@ This table contains the information for which age group and subject each of the 
 ,,,,,,,
 3-6 years,English,Game,ABCD,ABCD,English,,
 3-6 years,English,Game,Fix-up Mix-up,fixUpMixUp,English,,
-3-6 years,Fun,Game,Aakar,Aakar,,,
+,,,,,,,
 3-6 years,Fun,Game,Color,Color,,,
 3-6 years,Fun,Game,Colour / Rang,Coloring,,,
 3-6 years,Fun,Game,Golmaal,Golmaal,,,
@@ -33,7 +33,7 @@ This table contains the information for which age group and subject each of the 
 6-10 years,English,Game,Guess who,GuessWho,English,,
 6-10 years,English,Game,Letterbox,LetterBox,English,,
 6-10 years,English,Game,Point me out,PointMeOut,,,
-6-10 years,English,Game,You said,YouSaid,,,This game should be taken from the English gamelist (not in Hindi list)
+6-10 years,English,Game,You said,YouSaid,English,,This game should be taken from the English gamelist (not in Hindi list)
 6-10 years,Fun,Game,Awaz pehchano,AwazPehchano,,,
 6-10 years,Fun,Game,Color,Color,,,
 6-10 years,Fun,Game,Colour / Rang,Coloring,,,
@@ -80,6 +80,14 @@ This table contains the information for which age group and subject each of the 
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
+8-14 years,Language,Game,ABCD,ABCD,English,,
+8-14 years,Language,Game,Crumble Tumble,CrumbleTumble,English,,
+8-14 years,Language,Game,Fix-up Mix-up,fixUpMixUp,English,,
+8-14 years,Language,Game,Flip It,FlipIt,English,,
+8-14 years,Language,Game,Guess who,GuessWho,English,,
+8-14 years,Language,Game,Jumble Tumble,JumbleTumble,English,,
+8-14 years,Language,Game,Letterbox,LetterBox,English,,
+8-14 years,Language,Game,You said,YouSaid,English,,
 8-14 years,English,Game,ABCD,ABCD,English,,
 8-14 years,English,Game,Crumble Tumble,CrumbleTumble,English,,
 8-14 years,English,Game,Fix-up Mix-up,fixUpMixUp,English,,
@@ -96,13 +104,15 @@ This table contains the information for which age group and subject each of the 
 8-14 years,Language,Game,Aakar,Aakar,,,
 8-14 years,Language,Game,Akshar Matra Shabd Yatra,AksharMatra,,,
 8-14 years,Language,Game,Correct Pair,CorrectPair,,,
-8-14 years,Language,Game,Crumble Tumble,CrumbleTumble,,,
-8-14 years,Language,Game,Fix-up Mix-up,fixUpMixUp,,,
-8-14 years,Language,Game,Flip It,FlipIt,,,
-8-14 years,Language,Game,Guess who,GuessWho,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
 8-14 years,Language,Game,Jano Number,JaanoNumber,,,
-8-14 years,Language,Game,Jumble Tumble,JumbleTumble,,,
+,,,,,,,
 8-14 years,Language,Game,Point me out,PointMeOut,,,
+8-14 years,Language,Game,Count & know,CountAndKnow,,,
+8-14 years,Language,Game,Count it,CountIt,,,
 8-14 years,Mathematics,Game,Count & know,CountAndKnow,,,
 8-14 years,Mathematics,Game,Count it,CountIt,,,
 8-14 years,Mathematics,Game,De Dana Dan,Cricket,,,
@@ -114,13 +124,13 @@ This table contains the information for which age group and subject each of the 
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
-,,,,,,,
-14 and above,Automobile,Video Resources,,,,,
-14 and above,Beauty,Video Resources,,,,,
-14 and above,Construction,Video Resources,,,,,
-14 and above,Healthcare,Video Resources,,,,,
-14 and above,Hospitality,Video Resources,,,,,
-14 and above,Electric,Video Resources,,,,,
+14 and above,English,Game,Jumble Tumble,JumbleTumble,English,,
+14 and above,Automobile,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJybb22EtsajzufpozEo5vLE,,,,,Only for Hindi
+14 and above,Beauty,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJwl4V1eiVyH31JMXFIJAyIa,,,,,Only for Hindi
+14 and above,Construction,YouTubePlaylist:https://www.youtube.com/playlist?list=PLPGnG5XRmtsePxE8Y4Y5byoMm3cXLB-Ok,,,,,Only for Hindi
+14 and above,Healthcare,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJx4Dqi3z3phwOYzZG-XTMAe,,,,,Only for Hindi
+14 and above,Hospitality,YoutubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJx9GvNPnmCEOCzEWrcnhYlt,,,,,Only for Hindi
+14 and above,Electric,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJz1jxUHOqEefiz-jh2av7TW,,,,,Only for Hindi
 14 and above,English,Game,ABCD,ABCD,English,,
 14 and above,English,Game,Crumble Tumble,CrumbleTumble,English,,
 14 and above,English,Game,Fix-up Mix-up,fixUpMixUp,English,,
@@ -145,3 +155,8 @@ This table contains the information for which age group and subject each of the 
 8-14 years,Std10,Video Resources,,,,,
 14 and above,Std10,Video Resources,,,,,
 8-14 years,Story,Book Resources,,,,,
+,,,,,,,
+,,,,,,,
+6-10 years,Langauge,Game,City Of Stories,City Of Stories,,,http://repository.prathamopenschool.org/Zip/English/City Of Stories_English.zip
+3-6 years,Langauge,Game,ECE Story Game,ECE_Story_Game,,,http://repository.prathamopenschool.org/Zip/Marathi/ECE_Story_Game_MR_Marathi.zip
+8-14 years,Fun,Game,Palat,Palat,,,http://repository.prathamopenschool.org/Zip/Hindi/Palat_HI_Hindi.zip

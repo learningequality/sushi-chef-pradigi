@@ -1,0 +1,22 @@
+Correction ID,Bug Type,Game Name,Source URL (Regular Expression),Action,Comment
+"This sheet lists corrective actions that PraDigi chef should take based on RE-pattern matching the Source URL of the content node. If a problem with a game is encountered during QA, can be added to this sheet with SKIP GAME action to skip it from the next chef run. Conversely, if a game is fixed (i.e. not more Android API issues) can be removed form this list so it will be imported on the next chef run.",,,,,
+1,ENTER FULLSCREEN,Number kas,http://repository.prathamopenschool.org/Zip/.*/NumberKas_.*.zip,ADD MARGIN-TOP,The button ENTER/EXIT FULLSCREEN hides part of content
+18,ENTER FULLSCREEN,multiple,http://www.prathamopenschool.org/CourseContent/Games/Mathematics.zip,ADD MARGIN-TOP,All the math games from Mathemtics.zip in that folder have this issue
+13,ENTER FULLSCREEN,Chitra Vichitra,http://repository.prathamopenschool.org/Zip/.*/ChitraVichitra_.*.zip,ADD MARGIN-TOP,
+42,ENTER FULLSCREEN,Colour/Rang (3-6),http://repository.prathamopenschool.org/Zip/.*/Coloring_.*.zip,ADD MARGIN-TOP,
+,,,,,
+,,,,,
+3,MISSING AUDIO,Crumble Tumble,http://repository.prathamopenschool.org/Zip/English/CrumbleTumble_English.zip,SKIP GAME,Can't hear the audio
+6,Android API needed,Jumble Tumble,http://repository.prathamopenschool.org/Zip/.*/JumbleTumble_.*.zip,SKIP GAME,Can't hear the audio or click on the next button Android.playTts(sentence.sentence); 
+8,Android API needed,You Said,http://repository.prathamopenschool.org/Zip/English/YouSaid_English.zip,SKIP GAME,Error at Object.YouSaid.record (YouSaidScript.js:108)
+10,Android API needed,Count and Know,http://repository.prathamopenschool.org/Zip/English/CountAndKnow_English.zip,SKIP GAME,
+11,Android API needed,Count It,http://repository.prathamopenschool.org/Zip/English/CountIt_English.zip,SKIP GAME,
+26,Android API needed,Letterbox,http://repository.prathamopenschool.org/Zip/.*/LetterBox_.*.zip,SKIP GAME,
+28,Clicking on link doesn't lead to next frame,Translation Machine 1,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglish.zip,SKIP GAME,Uncaught DOMException: Failed to read the 'localStorage' property from 'Window': The document is sandboxed and lacks the 'allow-same-origin' flag.
+29,Clicking on link doesn't lead to next frame,Translation Machine 2,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel2.zip,SKIP GAME,Uncaught DOMException: Failed to read the 'localStorage' property from 'Window': The document is sandboxed and lacks the 'allow-same-origin' flag.
+30,Clicking on link doesn't lead to next frame,Translation Machine 3,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel3.zip,SKIP GAME,Uncaught DOMException (see screenshot for error message)
+31,Clicking on link doesn't lead to next frame,Translation Machine 4,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel4.zip,SKIP GAME,Uncaught DOMException (see screenshot for error message)
+32,Android API needed,Jigsaw (Marathi),http://repository.prathamopenschool.org/Zip/English/Jigsaw_English.zip,SKIP GAME,
+36,Android API needed,Ulat Palat Science 2 (Marathi),http://repository.prathamopenschool.org/Zip/English/UlatPalat2Science_English.zip,SKIP GAME,
+37,Android API needed,Ulat Palat Science (Marathi),http://repository.prathamopenschool.org/Zip/English/UlatPalatScience_English.zip,SKIP GAME,
+49,Android API needed,Flip it,http://repository.prathamopenschool.org/Zip/English/FlipIt_English.zip,SKIP GAME,

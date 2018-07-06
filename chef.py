@@ -185,6 +185,7 @@ RESOURCE_TYPE_KEY = 'Resource Type'
 NAME_KEY = 'Name'
 CODENAME_KEY = 'Name on gamerepo (before lang underscore)'
 TAKE_FROM_KEY = 'Take From Repo'
+USE_ONLY_IN_KEY = 'Use Only In'
 PRATHAM_COMMENTS_KEY = 'Pratham'
 LE_COMMENTS_KEY = 'LE Comments'
 PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
@@ -200,6 +201,7 @@ PRADIGI_SHEET_CSV_FILEDNAMES = [
     NAME_KEY,
     CODENAME_KEY,
     TAKE_FROM_KEY,
+    USE_ONLY_IN_KEY,
     PRATHAM_COMMENTS_KEY,
     LE_COMMENTS_KEY,
 ]

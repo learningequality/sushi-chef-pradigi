@@ -53,14 +53,19 @@ Install
     virtualenv -p python3 venv
     source venv/bin/activate
     pip install -r requirements.txt
-    npm install phantomjs-prebuilt  # needed for scraping gamerepo
-
+    #npm install phantomjs-prebuilt  # needed for scraping gamerepo
+    # wget phantomjs...
 
 
 Running
 -------
 
-    source venv/bin/activate
-    ./chef.py -v --thumbnails --token=<your_token>
+    ssh chef@vader
+      cd sushi-chef-pradigi
+      export PHANTOMJS_PATH=/data/sushi-chef-pradigi/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+      source venv/bin/activate
+      nohup ./chef.py -v --reset --thumbnails --token=<your_token> &
+
+
 
 

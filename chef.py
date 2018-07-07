@@ -10,7 +10,6 @@ PRATHAM Open School (PraDigi) content is organized as follow:
     - The gamelist/ contains various HTML5 games
       (not used, instead use games form http://repository.prathamopenschool.org)
 """
-
 import copy
 import csv
 from itertools import groupby
@@ -25,7 +24,7 @@ import tempfile
 import zipfile
 from urllib.parse import urlparse
 
-
+from bs4 import BeautifulSoup
 from le_utils.constants import content_kinds, file_types, licenses
 from le_utils.constants.languages import getlang, getlang_by_name
 from ricecooker.chefs import JsonTreeChef
@@ -47,7 +46,7 @@ PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
 
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.INFO)
-DEBUG_MODE = False  # source_urls in content desriptions
+DEBUG_MODE = True  # source_urls in content desriptions
 
 # Cache logic.
 cache = FileCache('.webcache')
@@ -239,7 +238,7 @@ def load_pradigi_structure():
             if clean_row[AGE_GROUP_KEY] in PRADIGI_AGE_GROUPS and clean_row[SUBJECT_KEY] in PRADIGI_SUBJECTS:
                 struct_list.append(clean_row)
             else:
-                print('Unrecognized structure row', clean_row)
+                LOGGER.warning('Unrecognized structure row {}'.format(str(clean_row)))
     return struct_list
 
 PRADIGI_STRUCT_LIST = load_pradigi_structure()
@@ -498,7 +497,37 @@ def get_zip_file(zip_file_url, main_file):
         dest = os.path.join(zip_folder, 'index.html')
         os.rename(src, dest)
 
+        # Logic to add margin-top:44px; for games that match in Corrections
+        add_margin_top = False
+        for row in PRADIGI_CORRECTIONS_LIST:
+            if row[CORRECTIONS_ACTION_KEY] == ADD_MARGIN_TOP_ACTION:
+                pat = row[CORRECTIONS_SOURCE_URL_PAT_KEY]
+                m = pat.match(zip_file_url)
+                if m:
+                    add_margin_top = True
+        if add_margin_top:
+            LOGGER.info("adding body.margin-top:44px; to index.html in: %s" % zip_file_url)
+            index_path = os.path.join(zip_folder, 'index.html')
+            with open(index_path, 'r') as inf:
+                html = inf.read()
+            page = BeautifulSoup(html, "html.parser")  # Load index.html as BS4
+            body = page.find('body')
+            body['style'] = "margin-top:44px;"         # add margin-top
+            with open(index_path, 'w') as outf:
+                outf.write(str(page))
+
+        # Replace occurences of `main_file` with index.html to avoid broken links
+        for root, dirs, files in os.walk(zip_folder):
+            for file in files:
+                if file.endswith(".html") or file.endswith(".js"):
+                    file_path = os.path.join(root, file)
+                    text_in = open(file_path, 'r').read()
+                    text_out = text_in.replace(main_file, 'index.html')
+                    open(file_path, 'w').write(text_out)
+
+        # do the zip thing
         return create_predictable_zip(zip_folder)
+
     except Exception as e:
         LOGGER.error("get_zip_file: %s, %s, %s, %s" %
                      (zip_file_url, main_file, destpath, e))
@@ -564,7 +593,7 @@ def get_phet_zip_file(zip_file_url, main_file_and_query):
 
     except Exception as e:
         # LOGGER.error
-        print("get_phet_zip_file: %s, %s, %s, %s" %
+        LOGGER.error("get_phet_zip_file: %s, %s, %s, %s" %
                      (zip_file_url, main_file_and_query, destpath, e))
         return None
 
@@ -728,9 +757,10 @@ def game_info_to_ricecooker_node(lang, title, game_info):
         thumbnail=game_info.get('thumbnail_url'),
         files=[],
     )
+    zip_tmp_path  = get_zip_file(game_info['url'], game_info['main_file'])
     zip_file = dict(
         file_type=file_types.HTML5,
-        path=game_info['url'],
+        path=zip_tmp_path,
         language=lang,
     )
     game_node['files'].append(zip_file)
@@ -772,7 +802,7 @@ class PraDigiChef(JsonTreeChef):
 
 
     def build_subtree_for_lang(self, lang):
-        print('Building subtree for lang', lang)
+        LOGGER.info('Building subtree for lang {}'.format(lang))
         
         lang_subtree = copy.deepcopy(TEMPLATE_FOR_LANG)
         lang_obj = getlang(lang)

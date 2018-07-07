@@ -25,6 +25,7 @@ CHEF_DATA_DIR = os.path.join(CHEFS_DATA_DIR, CHEF_PROJECT_SLUG)
 
 
 STUCTURE_CACHE_FILENAME = 'pradigi_structure.csv'
+CORRECTIONS_CACHE_FILENAME = 'pradigi_corrections.csv'
 GAMES_JSON_FILENAME = 'pradigi_games_all_langs.json'
 CRAWLING_STAGE_OUTPUT_TMPL = 'pradigi_{}_web_resource_tree.json'
 SCRAPING_STAGE_OUTPUT = 'pradigi_ricecooker_json_tree.json'
@@ -82,6 +83,13 @@ def get_trees(langs='all'):
     structure_filename = STUCTURE_CACHE_FILENAME
     get(os.path.join(chefdata_dir, structure_filename),
         os.path.join(local_dir, structure_filename))
+
+    # corrections
+    corrections_filename = CORRECTIONS_CACHE_FILENAME
+    get(os.path.join(chefdata_dir, corrections_filename),
+        os.path.join(local_dir, corrections_filename))
+
+
 
 # SETUP
 ################################################################################

@@ -25,6 +25,7 @@ https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr85
 
 import copy
 import csv
+import hashlib
 from itertools import groupby
 import json
 import logging
@@ -82,6 +83,8 @@ PRADIGI_LANG_URL_MAP = {
 GAMEREPO_MAIN_SOURCE_DOMAIN = 'http://repository.prathamopenschool.org'
 GAME_THUMBS_REMOTE_DIR = 'http://www.prodigi.openiscool.org/repository/Images/'
 GAME_THUMBS_LOCAL_DIR = 'chefdata/gamethumbnails'
+HTML5APP_ZIPS_LOCAL_DIR = 'chefdata/zipfiles'
+
 
 # LOCALIZATION AND TRANSLATION STRINGS
 ################################################################################
@@ -304,7 +307,7 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
     for row in struct_list: # self.struct_list:
         if row[AGE_GROUP_KEY] == age_group and row[SUBJECT_KEY] == subject_en:
             if row[USE_ONLY_IN_KEY] and not row[USE_ONLY_IN_KEY] == language_en:
-                # skip row if USE_ONLY directive present and different from current language_en
+                # skip row if USE_ONLY set and different from current language
                 continue
             if row[RESOURCE_TYPE_KEY] == 'Game':
                 games.append(row)
@@ -523,15 +526,36 @@ def find_games_for_lang(name, lang, take_from=None):
 def make_request(url):
     response = session.get(url)
     if response.status_code != 200:
-        LOGGER.error("NOT FOUND: %s" % (url))
+        LOGGER.error("ERROR when GETting: %s" % (url))
     return response
+
+def make_temporary_dir_from_key(key_str):
+    """
+    Creates a subdirectory of HTML5APP_ZIPS_LOCAL_DIR to store
+    the downloded, unzipped, and final version of each HTML5Zip file.
+    """
+    key_bytes = key_str.encode('utf-8')
+    m = hashlib.md5()
+    m.update(key_bytes)
+    subdir = m.hexdigest()
+    dest = os.path.join(HTML5APP_ZIPS_LOCAL_DIR, subdir)
+    if not os.path.exists(dest):
+        os.mkdir(dest)
+    return dest
 
 def get_zip_file(zip_file_url, main_file):
     """
     HTML games are provided as zip files, the entry point of the game is `main_file`.
     THe `main_file` needs to be renamed to index.html to make it compatible with Kolibri.
     """
-    destpath = tempfile.mkdtemp()
+    key = zip_file_url + main_file
+    destpath = make_temporary_dir_from_key(key)
+    
+    # return cached version if already there
+    final_webroot_path = os.path.join(destpath, 'webroot.zip')
+    if os.path.exists(final_webroot_path):
+        return final_webroot_path
+
     try:
         download_file(zip_file_url, destpath, request_fn=make_request)
 
@@ -539,6 +563,10 @@ def get_zip_file(zip_file_url, main_file):
         zip_basename = zip_filename.rsplit('.', 1)[0]      # e.g. Mathematics/
         zip_folder = os.path.join(destpath, zip_basename)  # e.g. destpath/Mathematics/
         main_file = main_file.split('/')[-1]               # e.g. activity_name.html or index.html
+        
+        # Jul 8th: handle weird case-insensitive webserver main_file
+        if main_file == 'mainexpand.html':
+            main_file = 'mainExpand.html'  # <-- this is the actual filename in the zip
 
         # Zip files from Pratham website have the web content inside subfolder
         # of the same as the zip filename. We need to recreate these zip files
@@ -590,12 +618,15 @@ def get_zip_file(zip_file_url, main_file):
             for file in files:
                 if file.endswith(".html") or file.endswith(".js"):
                     file_path = os.path.join(root, file)
-                    text_in = open(file_path, 'r').read()
-                    text_out = text_in.replace(main_file, 'index.html')
-                    open(file_path, 'w').write(text_out)
+                    # use bytes to avoid Unicode errors "invalid start/continuation byte"
+                    bytes_in = open(file_path, 'rb').read()
+                    bytes_out = bytes_in.replace(main_file.encode('utf-8'), b'index.html')
+                    open(file_path, 'wb').write(bytes_out)
 
-        # do the zip thing
-        return create_predictable_zip(zip_folder)
+        # create the zip file and copy it to 
+        tmp_predictable_zip_path = create_predictable_zip(zip_folder)
+        shutil.copyfile(tmp_predictable_zip_path, final_webroot_path)
+        return final_webroot_path
 
     except Exception as e:
         LOGGER.error("get_zip_file: %s, %s, %s, %s" %
@@ -844,17 +875,19 @@ def game_info_to_ricecooker_node(lang, title, game_info):
         thumbnail=game_info.get('thumbnail_url'),
         files=[],
     )
-    zip_tmp_path  = get_zip_file(game_info['url'], game_info['main_file'])
-    zip_file = dict(
-        file_type=file_types.HTML5,
-        path=zip_tmp_path,
-        language=lang,
-    )
-    game_node['files'].append(zip_file)
-    LOGGER.debug('Created HTML5AppNode for game ' + game_info['title'])
-    return game_node
-
-
+    zip_tmp_path = get_zip_file(game_info['url'], game_info['main_file'])
+    if zip_tmp_path:
+        zip_file = dict(
+            file_type=file_types.HTML5,
+            path=zip_tmp_path,
+            language=lang,
+        )
+        game_node['files'].append(zip_file)
+        LOGGER.debug('Created HTML5AppNode for game ' + game_info['title'])
+        return game_node
+    else:
+        LOGGER.error('Failed to create zip for game at url=' + game_info['url'])
+        return None
 
 
 
@@ -863,13 +896,14 @@ def game_info_to_ricecooker_node(lang, title, game_info):
 
 class PraDigiChef(JsonTreeChef):
     """
-    SushiChef script for importing and merging the content from these two sites:
-      - Videos from http://www.prathamopenschool.org/
+    SushiChef script for importing and merging the content from these sources:
+      - Video, PDFs, and interactive demos from http://www.prathamopenschool.org/
       - Games from http://repository.prathamopenschool.org
+      - Vocational videos from YouTube playlists
     """
     RICECOOKER_JSON_TREE = 'pradigi_ricecooker_json_tree.json'
-    
-    
+
+
     def crawl(self, args, options):
         """
         Crawl website and gamerepo. Save web resource trees in chefdata/trees/.
@@ -885,7 +919,6 @@ class PraDigiChef(JsonTreeChef):
         gamerepo_start_page = GAMEREPO_MAIN_SOURCE_DOMAIN
         gamerepo_crawler = PrathamGameRepoCrawler(start_page=gamerepo_start_page)
         gamerepo_crawler.crawl()
-
 
 
     def build_subtree_for_lang(self, lang):
@@ -954,7 +987,8 @@ class PraDigiChef(JsonTreeChef):
                     # print('Processing games', games, 'under game_title', game_title, 'for lang', lang, 'found take_from=', take_from, flush=True)
                     for game in games:
                         node = game_info_to_ricecooker_node(lang, game_title, game)
-                        subject_subtree['children'].append(node)
+                        if node:
+                            subject_subtree['children'].append(node)
 
             # Remove empty subject_tree topic nodes
             nonempty_subject_subtrees = []
@@ -972,7 +1006,14 @@ class PraDigiChef(JsonTreeChef):
         """
         Build the ricecooker json tree for the entire channel
         """
-        print('in pre_run...')
+        LOGGER.info('in pre_run...')
+
+        if args['update']:
+            LOGGER.info('Deleting all zips in cache dir {}'.format(HTML5APP_ZIPS_LOCAL_DIR))
+            for rel_path in os.listdir(HTML5APP_ZIPS_LOCAL_DIR):
+                abs_path = os.path.join(HTML5APP_ZIPS_LOCAL_DIR, rel_path)
+                if os.path.isdir(abs_path):
+                    shutil.rmtree(abs_path)
 
         if 'nocrawl' not in options:
             self.crawl(args, options)

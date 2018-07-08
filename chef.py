@@ -286,7 +286,7 @@ def get_tree_for_lang_from_structure():
     # print('lang_tree=', lang_tree, flush=True)
     return lang_tree
 
-def get_resources_for_age_group_and_subject(age_group, subject_en):
+def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
     """
     Select the rows from the PraDigi structure CSV with matching age_group and subject_en.
     Returns a dictionary:
@@ -303,6 +303,9 @@ def get_resources_for_age_group_and_subject(age_group, subject_en):
     playlists = []
     for row in struct_list: # self.struct_list:
         if row[AGE_GROUP_KEY] == age_group and row[SUBJECT_KEY] == subject_en:
+            if row[USE_ONLY_IN_KEY] and not row[USE_ONLY_IN_KEY] == language_en:
+                # skip row if USE_ONLY directive present and different from current language_en
+                continue
             if row[RESOURCE_TYPE_KEY] == 'Game':
                 games.append(row)
             elif row[RESOURCE_TYPE_KEY] == 'Video Resources':
@@ -890,6 +893,7 @@ class PraDigiChef(JsonTreeChef):
         
         lang_subtree = copy.deepcopy(TEMPLATE_FOR_LANG)
         lang_obj = getlang(lang)
+        language_en = PRADIGI_STRINGS[lang]['language_en']
         first_native_name = lang_obj.native_name.split(',')[0].split('(')[0]
         lang_subtree['title'] = first_native_name
         lang_subtree['language'] = lang
@@ -910,7 +914,7 @@ class PraDigiChef(JsonTreeChef):
                     subject_subtree['title'] = PRADIGI_STRINGS[lang]['subjects'][subject_en]
 
                 # MAIN LOOKUP FUNCTION -- GETS CHANNEL STRUCTURE FROM CSV
-                resources = get_resources_for_age_group_and_subject(age_group, subject_en)
+                resources = get_resources_for_age_group_and_subject(age_group, subject_en, language_en)
                 assert 'videos' in resources, 'Missing videos key in resources dict'
                 assert 'games' in resources, 'Missing games key in resources dict'
                 assert 'playlists' in resources, 'Missing playlists key in resources dict'

@@ -474,13 +474,22 @@ def get_zip_file(zip_file_url, main_file):
     try:
         download_file(zip_file_url, destpath, request_fn=make_request)
 
-        zip_filename = zip_file_url.split('/')[-1]
-        zip_basename = zip_filename.rsplit('.', 1)[0]
-        zip_folder = os.path.join(destpath, zip_basename)
+        zip_filename = zip_file_url.split('/')[-1]         # e.g. Mathematics.zip
+        zip_basename = zip_filename.rsplit('.', 1)[0]      # e.g. Mathematics/
+        zip_folder = os.path.join(destpath, zip_basename)  # e.g. destpath/Mathematics/
+        main_file = main_file.split('/')[-1]               # e.g. activity_name.html or index.html
 
-        # Extract zip file contents.
+        # Zip files from Pratham website have the web content inside subfolder
+        # of the same as the zip filename. We need to recreate these zip files
+        # to make sure the index.html is in the root of the zip.
         local_zip_file = os.path.join(destpath, zip_filename)
         with zipfile.ZipFile(local_zip_file) as zf:
+            # If main_file is in the root (like zips from the game repository)
+            # then we need to extract the zip contents to subfolder zip_basename/
+            for zfileinfo in zf.filelist:
+                if zfileinfo.filename == main_file:
+                    destpath = os.path.join(destpath, zip_basename)
+            # Extract zip so main file will be in destpath/zip_basename/index.html
             zf.extractall(destpath)
 
         # In some cases, the files are under the www directory,
@@ -491,8 +500,7 @@ def get_zip_file(zip_file_url, main_file):
             for f in files:
                 shutil.move(os.path.join(www_dir, f), zip_folder)
 
-        # Rename main_file to index.html.
-        main_file = main_file.split('/')[-1]
+        # Rename `main_file` to index.html
         src = os.path.join(zip_folder, main_file)
         dest = os.path.join(zip_folder, 'index.html')
         os.rename(src, dest)
@@ -532,7 +540,6 @@ def get_zip_file(zip_file_url, main_file):
         LOGGER.error("get_zip_file: %s, %s, %s, %s" %
                      (zip_file_url, main_file, destpath, e))
         return None
-
 
 
 PHET_INDEX_HTML_TEMPLATE = """

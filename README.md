@@ -66,6 +66,6 @@ Running
       source venv/bin/activate
       nohup ./chef.py -v --reset --thumbnails --token=<your_token> &
 
-
-
+Use the `--update` option to force re-downloading all files and clear the local
+cache directory of zip files (`chefdata/zipfiles`).
 

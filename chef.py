@@ -480,6 +480,20 @@ def load_pradigi_corrections():
 PRADIGI_CORRECTIONS_LIST = load_pradigi_corrections()
 
 
+def should_skip_file(url):
+    """
+    Checks `url` against list of SKIP GAME corrections.
+    Returns True if `url` should be skipped, False otherwise
+    """
+    should_skip = False
+    for row in PRADIGI_CORRECTIONS_LIST:
+        if row[CORRECTIONS_ACTION_KEY] == SKIP_GAME_ACTION:
+            pat = row[CORRECTIONS_SOURCE_URL_PAT_KEY]
+            m = pat.match(url)
+            if m:
+                should_skip = True
+    return should_skip
+
 
 # GAMESREPO UTILS
 ################################################################################
@@ -500,8 +514,9 @@ def find_games_for_lang(name, lang, take_from=None):
                         title = title.replace(suffix, '').strip()
                 if name == title:
                     games.append(game)
+    #
     # Extra pass to get English games to be included in other languages
-    if len(games) == 0 and take_from is not None:
+    if take_from is not None:
         take_lang = LANGUAGE_EN_TO_LANG[take_from]
         take_suffixes = PRADIGI_STRINGS[take_lang]['gamesrepo_suffixes']
         for gameslang_page in data['children']:
@@ -513,14 +528,22 @@ def find_games_for_lang(name, lang, take_from=None):
                             title = title.replace(suffix, '').strip()
                     if name == title:
                         games.append(game)
-    return games
+    #
+    # Final pass to check if we filter out games in the action='SKIP GAME' list
+    final_games = []
+    for game in games:
+        if not should_skip_file(game['url']):
+            final_games.append(game)
+    #
+    return final_games
 
 
 
 
 
 
-# ZIP FILE TRANFORMS AND FIXUPS
+
+# ZIP FILE DOWNLOADING, TRANFORMS, AND FIXUPS
 ################################################################################
 
 def make_request(url):
@@ -563,7 +586,7 @@ def get_zip_file(zip_file_url, main_file):
         zip_basename = zip_filename.rsplit('.', 1)[0]      # e.g. Mathematics/
         zip_folder = os.path.join(destpath, zip_basename)  # e.g. destpath/Mathematics/
         main_file = main_file.split('/')[-1]               # e.g. activity_name.html or index.html
-        
+
         # Jul 8th: handle weird case-insensitive webserver main_file
         if main_file == 'mainexpand.html':
             main_file = 'mainExpand.html'  # <-- this is the actual filename in the zip
@@ -744,7 +767,8 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             if filter_fn(child):
                 try:
                     ricocooker_node = wrt_to_ricecooker_tree(child, lang, filter_fn=filter_fn)
-                    topic_node['children'].append(ricocooker_node)
+                    if ricocooker_node:
+                        topic_node['children'].append(ricocooker_node)
                 except Exception as e:
                     LOGGER.error("Failed to generate node for %s in %s %s " % (child['title'], lang, e) )
                     pass
@@ -793,6 +817,8 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
         return video_node
 
     elif kind == 'PrathamZipResource':
+        if should_skip_file(tree['url']):
+            return None  # Skip games marked with the `SKIP GAME` correction actions
         thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
         html5_node = dict(
             kind=content_kinds.HTML5,

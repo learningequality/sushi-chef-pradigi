@@ -465,7 +465,7 @@ def load_pradigi_corrections():
             if clean_row[CORRECTIONS_ACTION_KEY] is None:
                 continue  # skip blank lines (identified by missing action col)
             action = clean_row[CORRECTIONS_ACTION_KEY]
-            if action in PRADIGI_CORRECTIONS_ACTIONS:
+            if action in PRADIGI_CORRECTIONS_ACTIONS or action.startswith('REPLACE WITH:'):
                 try:
                     pat_str = clean_row[CORRECTIONS_SOURCE_URL_PAT_KEY]
                     pat = re.compile(pat_str)
@@ -495,11 +495,20 @@ def should_skip_file(url):
     return should_skip
 
 
-
-
-
-
-
+def should_replace_with(url):
+    """
+    Checks `url` against list of REPLACE WITH: corrections and returns the
+    replaceement url if match found. Used to replace zips with manual fixes.
+    """
+    for row in PRADIGI_CORRECTIONS_LIST:
+        action = row[CORRECTIONS_ACTION_KEY]
+        if action.startswith('REPLACE WITH:'):
+            pat = row[CORRECTIONS_SOURCE_URL_PAT_KEY]
+            m = pat.match(url)
+            if m:
+                replacement_url = action.replace('REPLACE WITH:', '')
+                return replacement_url.strip()
+    return None
 
 
 # ZIP FILE DOWNLOADING, TRANFORMS, AND FIXUPS
@@ -533,6 +542,11 @@ def get_zip_file(zip_file_url, main_file):
     key = zip_file_url + main_file
     destpath = make_temporary_dir_from_key(key)
     
+    # Check for "REPLACE WITH:" correction rule for the current `zip_file_url`
+    replacement_url = should_replace_with(zip_file_url)
+    if replacement_url:
+        zip_file_url = replacement_url
+
     # return cached version if already there
     final_webroot_path = os.path.join(destpath, 'webroot.zip')
     if os.path.exists(final_webroot_path):

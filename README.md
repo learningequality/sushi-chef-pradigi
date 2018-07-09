@@ -7,7 +7,7 @@ Fixes TODO
 ----------
   - Add 'All Resources' and change logic (might be needed to skip games from Fun/ page)
 
-  - Investigate what is wrong with the localStorage errors in the translation games
+  - Investigate what is wrong with the localStorage errors in the translation games [WIP]
     `Uncaught DOMException: Failed to read the 'localStorage' property from 'Window':`
     `The document is sandboxed and lacks the 'allow-same-origin' flag.`
     - http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglish.zip
@@ -18,20 +18,6 @@ Fixes TODO
 
   - Exclude list for games for HI and MR web resources to avoid duplication (prefer gamerepo versions)
     - Doesn't seem to be much overlap, so will do this later if needed
-
-  - Add two folders under English channel, under English subject folder
-  - 8-14 years and 14 and above years
-
-    - English
-      - 8-14 years
-        - English
-          - For Hindi Speakers
-            http://pradigi-demo.learningequality.org/learn/#/topics/t/c739f6c5680054d1b11b24529eae6277
-            http://pradigi-demo.learningequality.org/learn/#/topics/t/ab9abf5c6d3952ff8efb5f8b4903e0ef
-
-          - For Marathi speakers
-            http://pradigi-demo.learningequality.org/learn/#/topics/t/3e010574571d56408053f9c24aa296ce
-
 
   - load string translations for all languages from shared spreadsheet (not needed)
 

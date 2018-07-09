@@ -5,7 +5,20 @@ Import content from prathamopenschool.org and the Pratham gamerepo into Studio.
 
 Fixes TODO
 ----------
+  - Add 'All Resources' and change logic (might be needed to skip games from Fun/ page)
+
+  - Investigate what is wrong with the localStorage errors in the translation games
+    `Uncaught DOMException: Failed to read the 'localStorage' property from 'Window':`
+    `The document is sandboxed and lacks the 'allow-same-origin' flag.`
+    - http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglish.zip
+    - http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel2.zip
+    - http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel3.zip
+    - http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel4.zip
+    - http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglish.zip
+
   - Exclude list for games for HI and MR web resources to avoid duplication (prefer gamerepo versions)
+    - Doesn't seem to be much overlap, so will do this later if needed
+
   - Add two folders under English channel, under English subject folder
   - 8-14 years and 14 and above years
 
@@ -19,30 +32,8 @@ Fixes TODO
           - For Marathi speakers
             http://pradigi-demo.learningequality.org/learn/#/topics/t/3e010574571d56408053f9c24aa296ce
 
-  - Skip from Marathi Channel
-    http://pradigi-demo.learningequality.org/learn/#/topics/t/3ef03910a8a55edf9965f65bcedfa42c
-    Channels PraDigi मराठी 8-14 years English अंग्रेजी ओके प्लीज 
-    http://pradigi-demo.learningequality.org/learn/#/topics/t/a0978c1842e953938453895ae77197d4
-    ChannelsPraDigiमराठी14 and aboveEnglish
 
-
-
-TODO
-----
-  - load string translations for all languages from shared spreadsheet
-  - Create temp zip files under chefdata/ instead of /tmp (make sure files identical so no re-upload)
-  - Add 'All Resources' and change logic (might be needed to skip games from Fun/ page)
-  - Clairfy and handle English- Hindi edge case
-
-      Unknown resource type English- Hindi in row {'Name': None, 'Pratham': None, 'Subject': 'English', 'Age Group': '14 and above', 'Take From Repo': None, 'Name on gamerepo (before lang underscore)': None, 'LE Comments': 'What does "English- Hindi" refer to?', 'Resource Type': 'English- Hindi'}
-
-  - What is wrong with this one: http://studio.learningequality.org/channels/f9da12749d995fa197f8b4c0192e7b2c/view/1dd158c/5b37112
-
-        Failed to load resource: the server responded with a status of 404 (Not Found)
-        NumberScript.js Failed to load resource: the server responded with a status of 404 (Not Found)
-        NumberData.js Failed to load resource: the server responded with a status of 404 (Not Found)
-        NumberScript.js Failed to load resource: the server responded with a status of 404 (Not Found)
-        NumberData.js Failed to load resource: the server responded with a status of 404 (Not Found)
+  - load string translations for all languages from shared spreadsheet (not needed)
 
 
 Install

@@ -161,6 +161,9 @@ class PrathamGameRepoCrawler(BasicCrawler):
 class PraDigiCrawler(BasicCrawler):
     MAIN_SOURCE_DOMAIN = FULL_DOMAIN_URL
     START_PAGE_CONTEXT = {'kind': 'lang_page'}
+    IGNORE_URLS = [
+        'http://www.prathamopenschool.org/mr/Course/English/CRS97',  # Hindi game show in Marathi channel
+    ]
     kind_handlers = {
         'lang_page': 'on_lang_page',
         'topic_page': 'on_topic_page',

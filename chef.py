@@ -819,6 +819,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
         video_file = dict(
             file_type=file_types.VIDEO,
             youtube_id=tree['youtube_id'],
+            maxheight=480,
             language=lang,
         )
         video_node['files'].append(video_file)

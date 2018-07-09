@@ -1028,7 +1028,7 @@ class PraDigiChef(JsonTreeChef):
                 assert 'playlists' in resources, 'Missing playlists key in resources dict'
 
                 ################################################################
-                LOGGER.info('In main loop', lang, age_group, subject_en)
+                LOGGER.info('In main loop lang={} age_group={} subject_en={}'.format(lang, age_group, subject_en))
 
                 # A. Load website resources
                 if lang in PRADIGI_WEBSITE_LANGUAGES:

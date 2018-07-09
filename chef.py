@@ -504,6 +504,8 @@ def find_games_for_lang(name, lang, take_from=None):
     suffixes = PRADIGI_STRINGS[lang]['gamesrepo_suffixes']
     assert data["kind"] == "index_page", 'wrong web resource tree loaded'
     games = []
+    game_source_ids = []
+    #
     # Get game from pradigi_games json by ignoring _LANG suffixes
     for gameslang_page in data['children']:
         if gameslang_page['language_en'] == language_en:
@@ -513,7 +515,10 @@ def find_games_for_lang(name, lang, take_from=None):
                     if title.strip().endswith(suffix):
                         title = title.replace(suffix, '').strip()
                 if name == title:
-                    games.append(game)
+                    source_id = game['title']
+                    if source_id not in game_source_ids:
+                        games.append(game)
+                        game_source_ids.append(source_id)
     #
     # Extra pass to get English games to be included in other languages
     if take_from is not None:
@@ -527,7 +532,10 @@ def find_games_for_lang(name, lang, take_from=None):
                         if title.strip().endswith(suffix):
                             title = title.replace(suffix, '').strip()
                     if name == title:
-                        games.append(game)
+                        source_id = game['title']
+                        if source_id not in game_source_ids:
+                            games.append(game)
+                            game_source_ids.append(source_id)
     #
     # Final pass to check if we filter out games in the action='SKIP GAME' list
     final_games = []

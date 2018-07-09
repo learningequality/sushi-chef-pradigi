@@ -3,7 +3,6 @@ This table contains the information for which age group and subject each of the 
 ,,,,,,,,
 3-6 years,English,Game,ABCD,ABCD,English,,,
 3-6 years,English,Game,Fix-up Mix-up,fixUpMixUp,English,,,
-,,,,,,,,
 3-6 years,Fun,Game,Color,Color,,,,
 3-6 years,Fun,Game,Colour / Rang,Coloring,,,,
 3-6 years,Fun,Game,Golmaal,Golmaal,,,,
@@ -17,11 +16,13 @@ This table contains the information for which age group and subject each of the 
 3-6 years,Language,Game,Bol Baccha Bol,BolBacchaBol,,,,
 3-6 years,Language,Game,Guess Me,GuessMe,,,,
 3-6 years,Language,Game,Mujhe Pehchano,MujhePehchano,,,,
+3-6 years,Language,Game,ECE Story Game,ECE_Story_Game,,,,http://repository.prathamopenschool.org/Zip/Marathi/ECE_Story_Game_MR_Marathi.zip
 3-6 years,Mathematics,Game,Chitra Vichitra,ChitraVichitra,,,,
 3-6 years,Mathematics,Game,Curious cases,CuriousCases?,,,,
 3-6 years,Mathematics,Game,Ding Dang Ding,DingDangDing,,,,
 3-6 years,Mathematics,Game,Number kas,NumberKas,,,,
 3-6 years,Mathematics,Game,Rail Gadi,RailGadi,,,,
+,,,,,,,,
 ,,,,,,,,
 ,,,,,,,,
 ,,,,,,,,
@@ -69,6 +70,7 @@ This table contains the information for which age group and subject each of the 
 6-10 years,Language,Game,Thik Thak,ThikThak,,,,
 6-10 years,Language,Game,Aakar,TracingGame,,,,
 6-10 years,Language,Game,Ulat palat,UlatPalat,,,,
+6-10 years,Language,Game,City Of Stories,City Of Stories,,,,http://repository.prathamopenschool.org/Zip/English/City Of Stories_English.zip
 6-10 years,Mathematics,Game,Dhoom 1,Dhoom_1,,,,
 6-10 years,Mathematics,Game,Jano Number,JaanoNumber,,,,
 6-10 years,Mathematics,Game,LineLagao,LineLagao,,,,
@@ -96,20 +98,16 @@ This table contains the information for which age group and subject each of the 
 8-14 years,English,Game,Jumble Tumble,JumbleTumble,English,,,Use _HI version for Hindi; all other languages get from English repo
 8-14 years,English,Game,Letterbox,LetterBox,English,,,Use _HI version for Hindi; all other languages get from English repo
 8-14 years,English,Game,You said,YouSaid,English,,,This game should be taken from the English gamelist (not in Hindi list)
-8-14 years,English,Video Resources,,,,Hindi,,
+8-14 years,English,Video Resources,,,,,,
 8-14 years,Fun,Game,Atulya Bharat,Atulya Bharat,,,,(double check name)
 8-14 years,Fun,Game,Jigsaw (Marathi),Jigsaw,,,,
 8-14 years,Fun,Game,Palat,UlatPalat,,,,
+8-14 years,Fun,Game,Palat,Palat,,,,http://repository.prathamopenschool.org/Zip/Hindi/Palat_HI_Hindi.zip
 8-14 years,Fun,Video Resources,,,,,,Fun/ contains many games etc not just videos
 8-14 years,Language,Game,Aakar,Aakar,,,,
 8-14 years,Language,Game,Akshar Matra Shabd Yatra,AksharMatra,,,,
 8-14 years,Language,Game,Correct Pair,CorrectPair,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
 8-14 years,Language,Game,Jano Number,JaanoNumber,,,,
-,,,,,,,,
 8-14 years,Language,Game,Point me out,PointMeOut,,,,
 8-14 years,Language,Game,Count & know,CountAndKnow,,,,
 8-14 years,Language,Game,Count it,CountIt,,,,
@@ -121,15 +119,20 @@ This table contains the information for which age group and subject each of the 
 8-14 years,Science,Game,Ulat Palat (Marathi),UlatPalat2Science,,,,
 8-14 years,Science,Game,Ulat Palat (Marathi),UlatPalatScience,,,,
 8-14 years,Science,Video Resources,,,,,,
+8-14 years,Health,Video Resources,,,,,,
+8-14 years,Story,Video Resources,,,,,,
 ,,,,,,,,
 ,,,,,,,,
 ,,,,,,,,
-14 and above,English,Game,Jumble Tumble,JumbleTumble,English,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
 14 and above,Automobile,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJybb22EtsajzufpozEo5vLE,,,,Hindi,,Only for Hindi
 14 and above,Beauty,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJwl4V1eiVyH31JMXFIJAyIa,,,,Hindi,,Only for Hindi
 14 and above,Construction,YouTubePlaylist:https://www.youtube.com/playlist?list=PLPGnG5XRmtsePxE8Y4Y5byoMm3cXLB-Ok,,,,Hindi,,Only for Hindi
 14 and above,Healthcare,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJx4Dqi3z3phwOYzZG-XTMAe,,,,Hindi,,Only for Hindi
-14 and above,Hospitality,YoutubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJx9GvNPnmCEOCzEWrcnhYlt,,,,Hindi,,Only for Hindi
+14 and above,Hospitality,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJx9GvNPnmCEOCzEWrcnhYlt,,,,Hindi,,Only for Hindi
 14 and above,Electric,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJz1jxUHOqEefiz-jh2av7TW,,,,Hindi,,Only for Hindi
 14 and above,English,Game,ABCD,ABCD,English,,,
 14 and above,English,Game,Crumble Tumble,CrumbleTumble,English,,,
@@ -138,25 +141,6 @@ This table contains the information for which age group and subject each of the 
 14 and above,English,Game,Guess who,GuessWho,English,,,
 14 and above,English,Game,Letterbox,LetterBox,English,,,Use _HI version for Hindi; all other languages get from English repo
 14 and above,English,Game,You said,YouSaid,English,,,
-14 and above,English,Video Resources,,,,Hindi,,
-14 and above,English,English- Hindi,,,,,,"What does ""English- Hindi"" refer to?"
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-8-14 years,Health,Video Resources,,,,,,
+14 and above,English,Video Resources,,,,,,
+14 and above,English,Game,Jumble Tumble,JumbleTumble,English,,,
 14 and above,Health,Video Resources,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-,,,,,,,,
-8-14 years,Story,Book Resources,,,,,,
-,,,,,,,,
-,,,,,,,,
-6-10 years,Language,Game,City Of Stories,City Of Stories,,,,http://repository.prathamopenschool.org/Zip/English/City Of Stories_English.zip
-3-6 years,Language,Game,ECE Story Game,ECE_Story_Game,,,,http://repository.prathamopenschool.org/Zip/Marathi/ECE_Story_Game_MR_Marathi.zip
-8-14 years,Fun,Game,Palat,Palat,,,,http://repository.prathamopenschool.org/Zip/Hindi/Palat_HI_Hindi.zip

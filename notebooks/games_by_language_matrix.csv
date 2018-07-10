@@ -25,7 +25,7 @@ GuessWho,N/A,GuessWho,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 LetterBox,LetterBox_HI,LetterBox,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 PointMeOut,N/A,PointMeOut,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 YouSaid,N/A,YouSaid,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
-Jigsaw,N/A,Jigsaw,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+Jigsaw,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Jigsaw,N/A,N/A
 Nadiya Ke Paar,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 GuessMe?,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 Aakar,Aakar_KKS,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Aakar_KKS,N/A
@@ -64,5 +64,8 @@ CountAndKnow,N/A,CountAndKnow,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 CountIt,N/A,CountIt,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 Cricket,Cricket_HI,N/A,Cricket_OD,Cricket_BN,Cricket_PN,Cricket_KN,Cricket_TM,Cricket_TL,Cricket_MR,Cricket_GJ,Cricket_AS
 Dhoom_2,Dhoom_2_HI,N/A,Dhoom_2_OD,Dhoom_2_BN,Dhoom_2_PN,Dhoom_2_KN,Dhoom_2_TM,Dhoom_2_TL,Dhoom_2_MR,Dhoom_2_GJ,Dhoom_2_AS
-UlatPalat2Science,N/A,UlatPalat2Science,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
-UlatPalatScience,N/A,UlatPalatScience,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+UlatPalat2Science,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,UlatPalat2Science,N/A,N/A
+UlatPalatScience,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,UlatPalatScience,N/A,N/A
+City Of Stories,N/A,City Of Stories,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+ECE_Story_Game,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,ECE_Story_Game_MR,N/A,N/A
+Palat,Palat_HI,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A

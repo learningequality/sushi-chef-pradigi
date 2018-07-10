@@ -21,8 +21,9 @@ from ricecooker.utils import downloader
 
 
 from chef import (
-    DOMAIN,
+    PRADIGI_DOMAIN,
     FULL_DOMAIN_URL,
+    PRADIGI_DESCRIPTION,
     PRADIGI_LANGUAGES,
     DEBUG_MODE,
     PRADIGI_LANG_URL_MAP,
@@ -201,8 +202,8 @@ class PraDigiCrawler(BasicCrawler):
         lang_obj = getlang(self.lang)
         channel_metadata = dict(
             title='PraDigi ({})'.format(lang_obj.native_name),
-            description = 'PraDigi video lessons and games.',  # TODO(ivan): what should be the longer descitpiton?
-            source_domain = DOMAIN,
+            description = PRADIGI_DESCRIPTION,
+            source_domain = PRADIGI_DOMAIN,
             source_id='pratham-open-school-{}'.format(self.lang),
             language=self.lang,
             thumbnail=None, # get_absolute_path('img/logop.png'),
@@ -632,7 +633,7 @@ class PraDigiCrawler(BasicCrawler):
 # Helper functions
 ################################################################################
 def get_absolute_path(path):
-    return urljoin('http://www.' + DOMAIN, path)
+    return urljoin('http://www.' + PRADIGI_DOMAIN, path)
 
 
 _RESOURCE_PATH_PATTERN = re.compile('var respath = "(?P<resource_path>.*?)";')

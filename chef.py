@@ -51,11 +51,16 @@ from ricecooker.utils.zip import create_predictable_zip
 import youtube_helper
 
 
-DOMAIN = 'prathamopenschool.org'
-FULL_DOMAIN_URL = 'http://www.' + DOMAIN
+PRADIGI_DOMAIN = 'prathamopenschool.org'
+FULL_DOMAIN_URL = 'http://www.' + PRADIGI_DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
 PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
 PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
+PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational '   \
+    + 'games, videos, and ebooks on language learning, math, science, English, '  \
+    + 'health, and vocational training. The learning material, available for '    \
+    + 'children and youth, is offered in multiple languages: Punjabi, Assamese, ' \
+    + 'Bengali, Odiya, Telugu, Tamil, Kannada, Marathi, Gujarati, Hindi, and English.'
 
 
 # In debug mode, only one topic is downloaded.
@@ -70,8 +75,8 @@ forever_adapter = CacheControlAdapter(heuristic=CacheForeverHeuristic(),
 session = requests.Session()
 session.mount('http://', basic_adapter)
 session.mount('https://', basic_adapter)
-session.mount('http://www.' + DOMAIN, forever_adapter)
-session.mount('https://www.' + DOMAIN, forever_adapter)
+session.mount('http://www.' + PRADIGI_DOMAIN, forever_adapter)
+session.mount('https://www.' + PRADIGI_DOMAIN, forever_adapter)
 
 
 # SOURCE WEBSITES
@@ -966,6 +971,7 @@ def game_info_to_ricecooker_node(lang, title, game_info):
 
 
 
+
 # CHEF
 ################################################################################
 
@@ -1132,16 +1138,13 @@ class PraDigiChef(JsonTreeChef):
         if 'nocrawl' not in options:
             self.crawl(args, options)
 
-        # this is used for lookups by `get_games_for_age_group_and_subject` so pre-load here
-        self.struct_list = load_pradigi_structure()
-
         ricecooker_json_tree = dict(
             title='PraDigi',
-            source_domain=DOMAIN,
+            source_domain=PRADIGI_DOMAIN,
             source_id='pradigi-videos-and-games',
-            description='Combined PraDigi channel with all languages',
+            description=PRADIGI_DESCRIPTION,
             thumbnail='https://learningequality.org/static/img/kickstarter/pratham-open-school.png',
-            language='en',   # Using EN as top-level language because mixed content
+            language='mul',   # Using mul as top-level language because mixed content
             children=[],
         )
         for lang in PRADIGI_LANGUAGES:

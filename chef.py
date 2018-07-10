@@ -1057,6 +1057,7 @@ class PraDigiChef(JsonTreeChef):
                     # B2.hi: add "For Hindi speakers" subfolder
                     en_hi_topic = dict(
                         title='For Hindi speakers',
+                        source_id='en_hi_topic',
                         kind=content_kinds.TOPIC,
                         language='hi',
                         children=[],
@@ -1077,6 +1078,7 @@ class PraDigiChef(JsonTreeChef):
                     # B2.mr: add "For Marathi speakers" subfolder
                     en_mr_topic = dict(
                         title='For Marathi speakers',
+                        source_id='en_mr_topic',
                         kind=content_kinds.TOPIC,
                         language='mr',
                         children=[],

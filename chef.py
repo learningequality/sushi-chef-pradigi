@@ -20,7 +20,6 @@ The PraDigi chef uses a mix of content from three sources:
 We use an Spreadsheet in order to unify and organize the content from these three
 sources into a single channel:
 https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=342105160
-
 """
 
 import copy
@@ -210,8 +209,9 @@ PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
 PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science',
                     'Health', 'Std5', 'Std6', 'Std7', 'Std8', 'Std9', 'Std10', 'Story',
                     'Automobile', 'Beauty', 'Construction', 'Electric', 'Healthcare', 'Hospitality']
-PRADIGI_RESOURCE_TYPES = ['Game', 'Video Resources', 'All Resources']  # English- Hindi?
-# TODO(ivan): add 'Interactive Resoruces' and 'Book Resources' as separate resoruce type categories
+PRADIGI_RESOURCE_TYPES = ['Game', 'Website Resources']
+# Note: can add 'Video Resources', 'Interactive Resoruces' and 'Book Resources'
+# as separate categories for more flexibility in the future
 PRADIGI_SHEET_CSV_FILEDNAMES = [
     AGE_GROUP_KEY,
     SUBJECT_KEY,
@@ -299,14 +299,14 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
     Select the rows from the PraDigi structure CSV with matching age_group and subject_en.
     Returns a dictionary:
     { 
-        'videos': [subject_en, ...],  # Include all videos from /subject_en on website
+        'website': [subject_en, ...],  # Include all from /subject_en on website
         'games': [{game struct row}, {anothe game row}, ...]   # Include localized verison of games in this list
         'playlists': [{subtree of kind youtube_playlist with YouTubeVideoResource children}, ]
     }
     """
     # print('in get_resources_for_age_group_and_subject with', age_group, subject_en, flush=True)
     struct_list = PRADIGI_STRUCT_LIST
-    videos = []
+    website = []
     games = []
     playlists = []
     for row in struct_list: # self.struct_list:
@@ -316,8 +316,8 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
                 continue
             if row[RESOURCE_TYPE_KEY] == 'Game':
                 games.append(row)
-            elif row[RESOURCE_TYPE_KEY] == 'Video Resources':
-                videos.append(subject_en)
+            elif row[RESOURCE_TYPE_KEY] == 'Website Resources':
+                website.append(subject_en)
             elif row[RESOURCE_TYPE_KEY].startswith('YouTubePlaylist:'):
                 playlist_url = row[RESOURCE_TYPE_KEY].replace('YouTubePlaylist:', '')
                 playlist_subtree = get_youtube_playlist_subtree(playlist_url)
@@ -325,7 +325,7 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
             else:
                 print('Unknown resource type', row[RESOURCE_TYPE_KEY], 'in row', row)
     # print('games=', games, flush=True)
-    return {'videos':videos, 'games':games, 'playlists': playlists}
+    return {'website':website, 'games':games, 'playlists': playlists}
 
 
 TEMPLATE_FOR_LANG = get_tree_for_lang_from_structure()
@@ -447,6 +447,7 @@ PRADIGI_CORRECTIONS_CSV_FILEDNAMES = [
 ]
 SKIP_GAME_ACTION = 'SKIP GAME'
 ADD_MARGIN_TOP_ACTION = 'ADD MARGIN-TOP'
+# Third possible action 'REPLACE WITH:{URL}' handled manually in code
 PRADIGI_CORRECTIONS_ACTIONS = [SKIP_GAME_ACTION, ADD_MARGIN_TOP_ACTION]
 
 
@@ -755,9 +756,11 @@ def get_subtree_by_source_id(lang, source_id):
 def _only_videos(node):
     """
     Set this as the `filter_fn` to `wrt_to_ricecooker_tree` to select only videos.
+    NOT USED RIGHT NOW --- getting all website resources instead.
+    Use blacklist approach in Corrections if you want to ignore/skip specific resource.
     """
-    allowed_kinds = ['lang_page', 'topic_page', 'subtopic_page', 'lesson_page', 'fun_page', 'story_page',
-                     'PrathamVideoResource']
+    allowed_kinds = ['lang_page', 'topic_page', 'subtopic_page', 'lesson_page',
+                     'fun_page', 'story_page', 'PrathamVideoResource']
     return node['kind'] in allowed_kinds
 
 
@@ -1044,7 +1047,7 @@ class PraDigiChef(JsonTreeChef):
 
                 # MAIN LOOKUP FUNCTION -- GETS CHANNEL STRUCTURE FROM CSV
                 resources = get_resources_for_age_group_and_subject(age_group, subject_en, language_en)
-                assert 'videos' in resources, 'Missing videos key in resources dict'
+                assert 'website' in resources, 'Missing website key in resources dict'
                 assert 'games' in resources, 'Missing games key in resources dict'
                 assert 'playlists' in resources, 'Missing playlists key in resources dict'
 
@@ -1053,12 +1056,11 @@ class PraDigiChef(JsonTreeChef):
 
                 # A. Load website resources
                 if lang in PRADIGI_WEBSITE_LANGUAGES:
-                    for desired_subject_en in resources['videos']:
+                    for desired_subject_en in resources['website']:
                         wrt_subtree = get_subtree_by_subject_en(lang, desired_subject_en)
                         if wrt_subtree:
                             # print('wrt_subtree=', wrt_subtree)
                             # ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang, filter_fn=_only_videos)
-                            # Apr 23, get all resources and not just videos
                             ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)
                             # print('ricecooker_subtree=', ricecooker_subtree)
                             for child in ricecooker_subtree['children']:

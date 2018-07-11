@@ -65,7 +65,7 @@ PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational ' 
 
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.INFO)
-DEBUG_MODE = True  # source_urls in content desriptions
+DEBUG_MODE = False  # source_urls in content desriptions
 
 # Cache logic.
 cache = FileCache('.webcache')
@@ -539,6 +539,21 @@ def make_temporary_dir_from_key(key_str):
         os.mkdir(dest)
     return dest
 
+def add_body_margin_top(zip_folder, filename, margin='44px'):
+    file_path = os.path.join(zip_folder, filename)
+    with open(file_path, 'r') as inf:
+        html = inf.read()
+    page = BeautifulSoup(html, "html.parser")  # Load index.html as BS4
+    body = page.find('body')
+    if body.has_attr('style'):
+        prev_style_str = body['style']
+    else:
+        prev_style_str = ''
+    body['style'] = prev_style_str + " margin-top:" + margin + ";"
+    with open(file_path, 'w') as outf:
+        outf.write(str(page))
+
+
 def get_zip_file(zip_file_url, main_file):
     """
     HTML games are provided as zip files, the entry point of the game is `main_file`.
@@ -595,7 +610,7 @@ def get_zip_file(zip_file_url, main_file):
         dest = os.path.join(zip_folder, 'index.html')
         os.rename(src, dest)
 
-        # Logic to add margin-top:44px; for games that match in Corrections
+        # Logic to add margin-top:44px; for games that match Corrections tab
         add_margin_top = False
         for row in PRADIGI_CORRECTIONS_LIST:
             if row[CORRECTIONS_ACTION_KEY] == ADD_MARGIN_TOP_ACTION:
@@ -604,15 +619,15 @@ def get_zip_file(zip_file_url, main_file):
                 if m:
                     add_margin_top = True
         if add_margin_top:
-            LOGGER.info("adding body.margin-top:44px; to index.html in: %s" % zip_file_url)
-            index_path = os.path.join(zip_folder, 'index.html')
-            with open(index_path, 'r') as inf:
-                html = inf.read()
-            page = BeautifulSoup(html, "html.parser")  # Load index.html as BS4
-            body = page.find('body')
-            body['style'] = "margin-top:44px;"         # add margin-top
-            with open(index_path, 'w') as outf:
-                outf.write(str(page))
+            if zip_file_url.endswith('CourseContent/Games/Mathematics.zip'):
+                LOGGER.info("adding body.margin-top:44px; to ALL .html files in: %s" % zip_file_url)
+                for root, dirs, files in os.walk(zip_folder):
+                    for file in files:
+                        if file.endswith(".html"):
+                            add_body_margin_top(root, file)
+            else:
+                LOGGER.info("adding body.margin-top:44px; to index.html in: %s" % zip_file_url)
+                add_body_margin_top(zip_folder, 'index.html')
 
         # Replace occurences of `main_file` with index.html to avoid broken links
         for root, dirs, files in os.walk(zip_folder):

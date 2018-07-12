@@ -7,8 +7,6 @@ import tempfile
 from urllib.parse import urljoin, urlparse
 
 
-
-
 from basiccrawler.crawler import BasicCrawler
 from bs4 import BeautifulSoup
 
@@ -244,8 +242,12 @@ class PraDigiCrawler(BasicCrawler):
                     print('skipping', topic)
                     continue
                 
-                # metadata
                 topic_url = urljoin(url, topic['href'])
+                if self.should_ignore_url(topic_url):
+                    print('ignoring topic', topic_url)
+                    continue
+
+                # metadata
                 title = get_text(topic)
                 source_id = get_source_id(topic['href'])
                 subject_en = source_id    # short string to match on top-level categories
@@ -295,6 +297,11 @@ class PraDigiCrawler(BasicCrawler):
         for subtopic in subtopics:
             try:
                 subtopic_url = urljoin(url, subtopic['href'])
+
+                if self.should_ignore_url(subtopic_url):
+                    print('ignoring subtopic', subtopic_url)
+                    continue
+
                 title = get_text(subtopic)
                 source_id = get_source_id(subtopic['href'])
                 LOGGER.info('  found subtopic: %s: %s' % (source_id, title))
@@ -332,6 +339,11 @@ class PraDigiCrawler(BasicCrawler):
                 caption = lesson.find('div', class_='caption')
                 description = get_text(caption) if caption else ''
                 lesson_url = urljoin(url, lesson.find('a')['href'])
+
+                if self.should_ignore_url(lesson_url):
+                    print('ignoring lesson', lesson_url)
+                    continue
+
                 thumbnail_src = lesson.find('a').find('img')['src']
                 thumbnail_url = urljoin(url, thumbnail_src)
                 source_id = get_source_id(lesson.find('a')['href'])
@@ -379,6 +391,10 @@ class PraDigiCrawler(BasicCrawler):
                 thumbnail = get_absolute_path(thumbnail)
                 main_file, master_file, source_id = get_content_link(content)
                 LOGGER.info('         content: %s: %s' % (source_id, title))
+
+                if self.should_ignore_url(main_file) or self.should_ignore_url(master_file):
+                    print('ignoring content', title, main_file)
+                    continue
 
                 if main_file.endswith('mp4'):
                     video = dict(
@@ -480,6 +496,10 @@ class PraDigiCrawler(BasicCrawler):
                 fun_doc = BeautifulSoup(fun_rsrc_html, "html.parser")
                 download_url = get_download_url_from_doc(url, fun_doc)
                 respath_path = urlparse(respath_url).path
+
+                if self.should_ignore_url(respath_url):
+                    print('ignoring fun content', title, respath_url)
+                    continue
 
                 LOGGER.info('      Fun content: %s: %s at %s' % (source_id, title, respath_url))
 
@@ -583,6 +603,11 @@ class PraDigiCrawler(BasicCrawler):
                 link = content.find('a')
                 source_id = link['href'][1:]
                 story_resource_url = get_absolute_path(link['href'])
+
+                if self.should_ignore_url(story_resource_url):
+                    print('ignoring story content', title, story_resource_url)
+                    continue
+
                 LOGGER.info('      story_resource_page: %s: %s' % (source_id, title))
                 context = dict(
                     parent = page_dict,
@@ -687,4 +712,3 @@ def get_content_link(content):
     if master_file:
         master_file = get_absolute_path(master_file)
     return main_file, master_file, source_id
-

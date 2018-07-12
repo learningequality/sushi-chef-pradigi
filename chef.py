@@ -64,7 +64,7 @@ PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational ' 
 
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.INFO)
-DEBUG_MODE = True  # source_urls in content desriptions
+DEBUG_MODE = False  # source_urls in content desriptions
 
 # Cache logic.
 cache = FileCache('.webcache')
@@ -224,12 +224,27 @@ PRADIGI_SHEET_CSV_FILEDNAMES = [
     LE_COMMENTS_KEY,
 ]
 
-def download_structure_csv():
-    response = requests.get(PRADIGI_SHEET_CSV_URL)
-    csv_data = response.content.decode('utf-8')
-    with open(PRADIGI_SHEET_CSV_PATH, 'w') as csvfile:
-        csvfile.write(csv_data)
-        LOGGER.info('Succesfully saved ' + PRADIGI_SHEET_CSV_PATH)
+# NEW: July 12 load data from separate sheet for English folder structure
+PRADIGI_ENGLISH_STRUCTURE_SHEET_GID = '1812185465'
+PRADIGI_ENGLISH_SHEET_CSV_URL = GSHEETS_BASE + PRADIGI_SHEET_ID + '/export?format=csv&gid=' + PRADIGI_ENGLISH_STRUCTURE_SHEET_GID
+PRADIGI_ENGLISH_SHEET_CSV_PATH = 'chefdata/pradigi_english_structure.csv'
+
+
+def download_structure_csv(which=None):
+    if which == 'English':
+        response = requests.get(PRADIGI_ENGLISH_SHEET_CSV_URL)
+        csv_data = response.content.decode('utf-8')
+        with open(PRADIGI_ENGLISH_SHEET_CSV_PATH, 'w') as csvfile:
+            csvfile.write(csv_data)
+            LOGGER.info('Succesfully saved ' + PRADIGI_ENGLISH_SHEET_CSV_PATH)
+        return PRADIGI_ENGLISH_SHEET_CSV_PATH
+    else:
+        response = requests.get(PRADIGI_SHEET_CSV_URL)
+        csv_data = response.content.decode('utf-8')
+        with open(PRADIGI_SHEET_CSV_PATH, 'w') as csvfile:
+            csvfile.write(csv_data)
+            LOGGER.info('Succesfully saved ' + PRADIGI_SHEET_CSV_PATH)
+        return PRADIGI_SHEET_CSV_PATH
 
 def _clean_dict(row):
     """
@@ -243,10 +258,10 @@ def _clean_dict(row):
             row_cleaned[key] = val.strip()
     return row_cleaned
 
-def load_pradigi_structure():
-    download_structure_csv()
+def load_pradigi_structure(which=None):
+    csv_path = download_structure_csv(which=which)
     struct_list = []
-    with open(PRADIGI_SHEET_CSV_PATH, 'r') as csvfile:
+    with open(csv_path, 'r') as csvfile:
         reader = csv.DictReader(csvfile, fieldnames=PRADIGI_SHEET_CSV_FILEDNAMES)
         next(reader)  # Skip Headers row
         next(reader)  # Skip info line
@@ -260,7 +275,13 @@ def load_pradigi_structure():
                 LOGGER.warning('Unrecognized structure row {}'.format(str(clean_row)))
     return struct_list
 
+
 PRADIGI_STRUCT_LIST = load_pradigi_structure()
+PRADIGI_ENGLISH_STRUCT_LIST = load_pradigi_structure(which='English')
+
+
+
+
 
 
 def get_tree_for_lang_from_structure():
@@ -294,9 +315,50 @@ def get_tree_for_lang_from_structure():
     # print('lang_tree=', lang_tree, flush=True)
     return lang_tree
 
+TEMPLATE_FOR_LANG = get_tree_for_lang_from_structure()
+# == 
+# {'kind': 'topic',
+#  'children': [
+#       {'title': '3-6 years',
+#        'kind': 'topic',
+#        'children': [
+#             {'title': 'Mathematics', 'kind': 'topic', 'children': []},
+#             {'title': 'Language', 'kind': 'topic', 'children': []},
+#             {'title': 'English', 'kind': 'topic', 'children': []},
+#             {'title': 'Fun', 'kind': 'topic', 'children': []}]},
+#       {'title': '6-10 years',
+#        'kind': 'topic',
+#        'children': [
+#             {'title': 'Mathematics', 'kind': 'topic', 'children': []},
+#             {'title': 'Language', 'kind': 'topic', 'children': []},
+#             {'title': 'English', 'kind': 'topic', 'children': []},
+#             {'title': 'Fun', 'kind': 'topic', 'children': []}]},
+#       {'title': '8-14 years',
+#        'kind': 'topic',
+#        'children': [
+#             {'title': 'Mathematics', 'kind': 'topic', 'children': []},
+#             {'title': 'Language', 'kind': 'topic', 'children': []},
+#             {'title': 'English', 'kind': 'topic', 'children': []},
+#             {'title': 'Fun', 'kind': 'topic', 'children': []},
+#             {'title': 'Science', 'kind': 'topic', 'children': []},
+#             {'title': 'Health', 'kind': 'topic', 'children': []},
+#             {'title': 'Story', 'kind': 'topic', 'children': []}]},
+#       {'title': '14 and above',
+#        'kind': 'topic',
+#        'children': [
+#             {'title': 'English', 'kind': 'topic', 'children': []},
+#             {'title': 'Health', 'kind': 'topic', 'children': []},
+#             {'title': 'Automobile', 'kind': 'topic', 'children': []},
+#             {'title': 'Beauty', 'kind': 'topic', 'children': []},
+#             {'title': 'Construction', 'kind': 'topic', 'children': []},
+#             {'title': 'Electric', 'kind': 'topic', 'children': []},
+#             {'title': 'Healthcare', 'kind': 'topic', 'children': []},
+#             {'title': 'Hospitality', 'kind': 'topic', 'children': []}]}]}
+
+
 def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
     """
-    Select the rows from the PraDigi structure CSV with matching age_group and subject_en.
+    Select the rows from the structure CSV with matching age_group and subject_en.
     Returns a dictionary:
     { 
         'website': [subject_en, ...],  # Include all from /subject_en on website
@@ -305,11 +367,14 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
     }
     """
     # print('in get_resources_for_age_group_and_subject with', age_group, subject_en, flush=True)
-    struct_list = PRADIGI_STRUCT_LIST
+    if language_en == 'English':
+        struct_list = PRADIGI_ENGLISH_STRUCT_LIST
+    else:
+        struct_list = PRADIGI_STRUCT_LIST
     website = []
     games = []
     playlists = []
-    for row in struct_list: # self.struct_list:
+    for row in struct_list:
         if row[AGE_GROUP_KEY] == age_group and row[SUBJECT_KEY] == subject_en:
             if row[USE_ONLY_IN_KEY] and not row[USE_ONLY_IN_KEY] == language_en:
                 # skip row if USE_ONLY set and different from current language
@@ -326,60 +391,6 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
                 print('Unknown resource type', row[RESOURCE_TYPE_KEY], 'in row', row)
     # print('games=', games, flush=True)
     return {'website':website, 'games':games, 'playlists': playlists}
-
-
-TEMPLATE_FOR_LANG = get_tree_for_lang_from_structure()
-# 
-# TEMPLATE_FOR_LANG = {
-#     'kind': content_kinds.TOPIC,
-#     'children': [
-#         {   'title': '3-6 years',
-#             'children': [
-#                 {'title': 'Language',       'children': []},
-#                 {'title': 'Mathematics',    'children': []},
-#                 {'title': 'Story',          'children': []},  # should include here?
-#                 {'title': 'Fun',            'children': []},
-#             ],
-#         },
-#         {   'title': '6-10 years',
-#             'children': [
-#                 {'title': 'Mathematics',    'children': []},
-#                 {'title': 'Language',       'children': []},
-#                 {'title': 'English',        'children': []},
-#                 {'title': 'Story',          'children': []},
-#                 {'title': 'Fun',            'children': []},
-#             ],
-#         },
-#         {   'title': '8-14 years',
-#             'children': [
-#                 {'title': 'Mathematics',    'children': []},
-#                 {'title': 'Language',       'children': []},
-#                 {'title': 'English',        'children': []},
-#                 {'title': 'Health',         'children': []},
-#                 {'title': 'Science',        'children': []},
-#                 {'title': 'Std5',           'children': []},
-#                 {'title': 'Std6',           'children': []},
-#                 {'title': 'Std7',           'children': []},
-#                 {'title': 'Std8',           'children': []},
-#                 {'title': 'Fun',            'children': []},
-#             ],
-#         },
-#         {   'title': '14 and above',
-#             'children': [
-#                 {'title': 'English',        'children': []},
-#                 {'title': 'Std9',           'children': []},
-#                 {'title': 'Std10',          'children': []},
-#                 {'title': 'Automobile',     'children': []},
-#                 {'title': 'Beauty',         'children': []}, 
-#                 {'title': 'Construction',   'children': []},
-#                 {'title': 'Healthcare',     'children': []},
-#                 {'title': 'Hospitality',    'children': []},
-#                 {'title': 'Electric',       'children': []},
-#                 {'title': 'Fun',            'children': []},
-#             ],
-#         },
-#     ]
-# }
 
 
 
@@ -753,15 +764,16 @@ def get_subtree_by_source_id(lang, source_id):
     return recursive_find_by_source_id(web_resource_tree, source_id)
 
 
-def _only_videos(node):
-    """
-    Set this as the `filter_fn` to `wrt_to_ricecooker_tree` to select only videos.
-    NOT USED RIGHT NOW --- getting all website resources instead.
-    Use blacklist approach in Corrections if you want to ignore/skip specific resource.
-    """
-    allowed_kinds = ['lang_page', 'topic_page', 'subtopic_page', 'lesson_page',
-                     'fun_page', 'story_page', 'PrathamVideoResource']
-    return node['kind'] in allowed_kinds
+# NOT USED RIGHT NOW --- getting all website resources instead.
+# Use blacklist approach in Corrections if you want to ignore/skip specific resource.
+#
+# def _only_videos(node):
+#     """
+#     Set this as the `filter_fn` to `wrt_to_ricecooker_tree` to select only videos.
+#     """
+#     allowed_kinds = ['lang_page', 'topic_page', 'subtopic_page', 'lesson_page',
+#                      'fun_page', 'story_page', 'PrathamVideoResource']
+#     return node['kind'] in allowed_kinds
 
 
 def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):

@@ -288,7 +288,7 @@ def get_tree_for_lang_from_structure():
     """
     Build the template structure for language-subtree based on structure in CSV.
     """
-    struct_list = PRADIGI_STRUCT_LIST
+    struct_list = PRADIGI_STRUCT_LIST + PRADIGI_ENGLISH_STRUCT_LIST
     struct_list = sorted(struct_list, key=itemgetter(AGE_GROUP_KEY, SUBJECT_KEY))
     lang_tree = dict(
         kind=content_kinds.TOPIC,
@@ -319,41 +319,45 @@ TEMPLATE_FOR_LANG = get_tree_for_lang_from_structure()
 # == 
 # {'kind': 'topic',
 #  'children': [
-#       {'title': '3-6 years',
-#        'kind': 'topic',
-#        'children': [
-#             {'title': 'Mathematics', 'kind': 'topic', 'children': []},
-#             {'title': 'Language', 'kind': 'topic', 'children': []},
-#             {'title': 'English', 'kind': 'topic', 'children': []},
-#             {'title': 'Fun', 'kind': 'topic', 'children': []}]},
-#       {'title': '6-10 years',
-#        'kind': 'topic',
-#        'children': [
-#             {'title': 'Mathematics', 'kind': 'topic', 'children': []},
-#             {'title': 'Language', 'kind': 'topic', 'children': []},
-#             {'title': 'English', 'kind': 'topic', 'children': []},
-#             {'title': 'Fun', 'kind': 'topic', 'children': []}]},
-#       {'title': '8-14 years',
-#        'kind': 'topic',
-#        'children': [
-#             {'title': 'Mathematics', 'kind': 'topic', 'children': []},
-#             {'title': 'Language', 'kind': 'topic', 'children': []},
-#             {'title': 'English', 'kind': 'topic', 'children': []},
-#             {'title': 'Fun', 'kind': 'topic', 'children': []},
-#             {'title': 'Science', 'kind': 'topic', 'children': []},
-#             {'title': 'Health', 'kind': 'topic', 'children': []},
-#             {'title': 'Story', 'kind': 'topic', 'children': []}]},
-#       {'title': '14 and above',
-#        'kind': 'topic',
-#        'children': [
-#             {'title': 'English', 'kind': 'topic', 'children': []},
-#             {'title': 'Health', 'kind': 'topic', 'children': []},
-#             {'title': 'Automobile', 'kind': 'topic', 'children': []},
-#             {'title': 'Beauty', 'kind': 'topic', 'children': []},
-#             {'title': 'Construction', 'kind': 'topic', 'children': []},
-#             {'title': 'Electric', 'kind': 'topic', 'children': []},
-#             {'title': 'Healthcare', 'kind': 'topic', 'children': []},
-#             {'title': 'Hospitality', 'kind': 'topic', 'children': []}]}]}
+#   {'title': '3-6 years',
+#    'kind': 'topic',
+#    'children': [
+#         {'title': 'Mathematics', 'kind': 'topic', 'children': []},
+#         {'title': 'Language', 'kind': 'topic', 'children': []},
+#         {'title': 'English', 'kind': 'topic', 'children': []},
+#         {'title': 'Fun', 'kind': 'topic', 'children': []}]},
+#   {'title': '6-10 years',
+#    'kind': 'topic',
+#    'children': [
+#         {'title': 'Mathematics', 'kind': 'topic', 'children': []},
+#         {'title': 'Language', 'kind': 'topic', 'children': []},
+#         {'title': 'English', 'kind': 'topic', 'children': []},
+#         {'title': 'Fun', 'kind': 'topic', 'children': []}]},
+#   {'title': '8-14 years',
+#    'kind': 'topic',
+#    'children': [
+#         {'title': 'Mathematics', 'kind': 'topic', 'children': []},
+#         {'title': 'Language', 'kind': 'topic', 'children': []},
+#         {'title': 'English', 'kind': 'topic', 'children': []},
+#         {'title': 'Fun', 'kind': 'topic', 'children': []},
+#         {'title': 'Science', 'kind': 'topic', 'children': []},
+#         {'title': 'Health', 'kind': 'topic', 'children': []},
+#         {'title': 'Story', 'kind': 'topic', 'children': []}]},
+#   {'title': '14 and above',
+#    'kind': 'topic',
+#    'children': [
+#         {'title': 'Mathematics', 'kind': 'topic', 'children': []},
+#         {'title': 'Language', 'kind': 'topic', 'children': []},
+#         {'title': 'English', 'kind': 'topic', 'children': []},
+#         {'title': 'Fun', 'kind': 'topic', 'children': []},
+#         {'title': 'Health', 'kind': 'topic', 'children': []},
+#         {'title': 'Automobile', 'kind': 'topic', 'children': []},
+#         {'title': 'Beauty', 'kind': 'topic', 'children': []},
+#         {'title': 'Construction', 'kind': 'topic', 'children': []},
+#         {'title': 'Electric', 'kind': 'topic', 'children': []},
+#         {'title': 'Healthcare', 'kind': 'topic', 'children': []},
+#         {'title': 'Hospitality', 'kind': 'topic', 'children': []}]}]}
+
 
 
 def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):

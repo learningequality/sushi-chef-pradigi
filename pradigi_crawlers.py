@@ -347,7 +347,7 @@ class PraDigiCrawler(BasicCrawler):
                 thumbnail_src = lesson.find('a').find('img')['src']
                 thumbnail_url = urljoin(url, thumbnail_src)
                 source_id = get_source_id(lesson.find('a')['href'])
-                LOGGER.info('     lesson: %s: %s' % (source_id, title))
+                LOGGER.info('         lesson: %s: %s' % (source_id, title))
                 context = dict(
                     parent=page_dict,
                     kind='lesson_page',

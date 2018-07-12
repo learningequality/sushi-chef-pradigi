@@ -1076,7 +1076,7 @@ class PraDigiChef(JsonTreeChef):
                             subject_subtree['children'].append(child)
 
                 # B2. Copy English learning videos from HI and MR subtrees to English subtree
-                if lang == 'en' and subject_en == 'English' and age_group in ['8-14 years', '14 and above']:
+                if lang == 'en' and subject_en == 'Language' and age_group in ['8-14 years', '14 and above']:
                     # B2.hi: add "For Hindi speakers" subfolder
                     en_hi_topic = dict(
                         title='For Hindi speakers',

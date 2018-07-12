@@ -3,7 +3,7 @@ Correction ID,Bug Type,Game Name,Source URL (Regular Expression),Action,Comment
 1,ENTER FULLSCREEN,Number kas,http://repository.prathamopenschool.org/Zip/.*/NumberKas_.*.zip,ADD MARGIN-TOP,The button ENTER/EXIT FULLSCREEN hides part of content
 18,ENTER FULLSCREEN,multiple,http://www.prathamopenschool.org/CourseContent/Games/Mathematics.zip,ADD MARGIN-TOP,All the math games from Mathemtics.zip in that folder have this issue
 13,ENTER FULLSCREEN,Chitra Vichitra,http://repository.prathamopenschool.org/Zip/.*/ChitraVichitra_.*.zip,ADD MARGIN-TOP,
-42,ENTER FULLSCREEN,Colour/Rang (3-6),http://repository.prathamopenschool.org/Zip/.*/Coloring_.*.zip,ADD MARGIN-TOP,
+,,,,,
 ,,,,,
 ,,,,,
 3,MISSING AUDIO,Crumble Tumble,http://repository.prathamopenschool.org/Zip/English/CrumbleTumble_English.zip,SKIP GAME,Can't hear the audio
@@ -13,14 +13,18 @@ Correction ID,Bug Type,Game Name,Source URL (Regular Expression),Action,Comment
 10,Android API needed,Count and Know,http://repository.prathamopenschool.org/Zip/English/CountAndKnow_English.zip,SKIP GAME,
 11,Android API needed,Count It,http://repository.prathamopenschool.org/Zip/English/CountIt_English.zip,SKIP GAME,
 26,Android API needed,Letterbox,http://repository.prathamopenschool.org/Zip/.*/LetterBox_.*.zip,SKIP GAME,
-28,sandboxed localStorage,Translation Machine 1,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglish.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglish.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
-29,sandboxed localStorage,Translation Machine 2,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel2.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglishLevel2.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
-30,sandboxed localStorage,Translation Machine 3,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel3.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglishLevel3.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
-31,sandboxed localStorage,Translation Machine 4,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel4.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglishLevel4.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 32,Android API needed,Jigsaw (Marathi),http://repository.prathamopenschool.org/Zip/Marathi/Jigsaw_English.zip,SKIP GAME,
 36,Android API needed,Ulat Palat Science 2 (Marathi),http://repository.prathamopenschool.org/Zip/Marathi/UlatPalat2Science_Marathi.zip,SKIP GAME,
 37,Android API needed,Ulat Palat Science (Marathi),http://repository.prathamopenschool.org/Zip/Marathi/UlatPalatScience_Marathi.zip,SKIP GAME,
 49,Android API needed,Flip it,http://repository.prathamopenschool.org/Zip/English/FlipIt_English.zip,SKIP GAME,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+28,sandboxed localStorage,Translation Machine 1,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglish.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglish.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
+29,sandboxed localStorage,Translation Machine 2,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel2.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglishLevel2.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
+30,sandboxed localStorage,Translation Machine 3,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel3.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglishLevel3.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
+31,sandboxed localStorage,Translation Machine 4,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel4.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglishLevel4.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 50,sandboxed localStorage,MR Translation Machine 1,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglish.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglish.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 51,sandboxed localStorage,MR Translation Machine 2,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel2.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel2.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 52,sandboxed localStorage,MR Translation Machine 3,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel3.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel3.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe

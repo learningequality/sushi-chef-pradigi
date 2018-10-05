@@ -392,9 +392,11 @@ class PraDigiCrawler(BasicCrawler):
                 main_file, master_file, source_id = get_content_link(content)
                 LOGGER.info('         content: %s: %s' % (source_id, title))
 
-                if self.should_ignore_url(main_file) or self.should_ignore_url(master_file):
+                if self.should_ignore_url(main_file):
                     print('ignoring content', title, main_file)
                     continue
+                if self.should_ignore_url(master_file):
+                    print('previously would have ignored title, main_file, master_file ', title, main_file, master_file)
 
                 if main_file.endswith('mp4'):
                     video = dict(

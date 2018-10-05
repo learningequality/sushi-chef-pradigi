@@ -110,6 +110,7 @@ PRADIGI_STRINGS = {
             "Healthcare": "स्वास्थ्य सेवा",
             "Fun": "मौज",
             "Story": "कहानियाँ",
+            "LanguageAndCommunication": "भाषा और संवाद",
         }
     },
     'en': {
@@ -208,7 +209,7 @@ LE_COMMENTS_KEY = 'LE Comments'
 PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
 PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science',
                     'Health', 'Std5', 'Std6', 'Std7', 'Std8', 'Std9', 'Std10', 'Story',
-                    'Automobile', 'Beauty', 'Construction', 'Electric', 'Healthcare', 'Hospitality']
+                    'Automobile', 'Beauty', 'Construction', 'Electric', 'Health', 'Hospitality', 'LanguageAndCommunication']
 PRADIGI_RESOURCE_TYPES = ['Game', 'Website Resources']
 # Note: can add 'Video Resources', 'Interactive Resoruces' and 'Book Resources'
 # as separate categories for more flexibility in the future

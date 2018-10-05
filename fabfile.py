@@ -25,19 +25,12 @@ CHEF_DATA_DIR = os.path.join(CHEFS_DATA_DIR, CHEF_PROJECT_SLUG)
 
 
 STUCTURE_CACHE_FILENAME = 'pradigi_structure.csv'
+ENGLISH_STUCTURE_CACHE_FILENAME = 'pradigi_english_structure.csv'
 CORRECTIONS_CACHE_FILENAME = 'pradigi_corrections.csv'
 GAMES_JSON_FILENAME = 'pradigi_games_all_langs.json'
 CRAWLING_STAGE_OUTPUT_TMPL = 'pradigi_{}_web_resource_tree.json'
 SCRAPING_STAGE_OUTPUT = 'pradigi_ricecooker_json_tree.json'
 WEBSITE_LANG_CODES = ['hi', 'mr']
-
-@task
-def chef_info():
-    with cd(CHEF_DATA_DIR):
-        sudo("ls")
-        sudo("whoami")
-        run("ls")
-        run("whoami")
 
 
 
@@ -48,9 +41,8 @@ def chef_info():
 def run_pradigi():
     with cd(CHEF_DATA_DIR):
         with prefix('source ' + os.path.join(CHEF_DATA_DIR, 'venv/bin/activate')):
-            cmd = 'nohup ./chef.py  -v --reset --token={} &'.format(STUDIO_TOKEN)
+            cmd = 'export STUDIO_URL="http://develop.studio.learningequality.org"; export PHANTOMJS_PATH=/data/sushi-chef-pradigi/phantomjs-2.1.1-linux-x86_64/bin/phantomjs && nohup ./chef.py  -v --reset --stage --token={} crawlonly=t &'.format(STUDIO_TOKEN)
             sudo(cmd, user=CHEF_USER)
-
 
 
 # GET RUN TREE OUTPUTS
@@ -83,6 +75,9 @@ def get_trees(langs='all'):
     structure_filename = STUCTURE_CACHE_FILENAME
     get(os.path.join(chefdata_dir, structure_filename),
         os.path.join(local_dir, structure_filename))
+    english_structure_filename = ENGLISH_STUCTURE_CACHE_FILENAME
+    get(os.path.join(chefdata_dir, english_structure_filename),
+        os.path.join(local_dir, english_structure_filename))
 
     # corrections
     corrections_filename = CORRECTIONS_CACHE_FILENAME

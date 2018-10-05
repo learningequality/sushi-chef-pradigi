@@ -29,3 +29,6 @@ Correction ID,Bug Type,Game Name,Source URL (Regular Expression),Action,Comment
 51,sandboxed localStorage,MR Translation Machine 2,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel2.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel2.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 52,sandboxed localStorage,MR Translation Machine 3,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel3.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel3.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 53,sandboxed localStorage,MR Translation Machine 4,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel4.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel4.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
+,,,,,
+,,,,,
+1001,Duplicate Game,Palat,http://www.prathamopenschool.org/CourseContent/Games/Palat_HI.zip,SKIP GAME,This game appears both on website Fun/ and in game repo; we manually skip website version to prefer the game repo version

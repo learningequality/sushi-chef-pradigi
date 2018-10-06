@@ -111,6 +111,20 @@ PRADIGI_STRINGS = {
             "Fun": "मौज",
             "Story": "कहानियाँ",
             "LanguageAndCommunication": "भाषा और संवाद",
+            "CRS128": "आदरातिथ्य",      # Hospitality
+            "CRS129": "ऑटोमोटिव्ह",      # Automobile
+            "CRS130": "ब्युटी",          # Beauty
+            "CRS131": "इलेक्ट्रिकल",      # Electric
+            #
+            # Hindi games pages =  खेल
+            "CRS122": "खेल-बाड़ी",      # Playground
+            "CRS124": "देखो और करों",   # Look and
+            "CRS123": "खेल-पुरी",       # Games
+            #
+            # Marathi games pages = खेळ
+            "CRS125": "खेळ-वाडी",
+            "CRS127": "बघा आणि शिका",
+            "CRS126": "खेळ-पुरी",
         }
     },
     'en': {
@@ -207,9 +221,10 @@ USE_ONLY_IN_KEY = 'Use Only In'
 PRATHAM_COMMENTS_KEY = 'Pratham'
 LE_COMMENTS_KEY = 'LE Comments'
 PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
-PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science',
-                    'Health', 'Std5', 'Std6', 'Std7', 'Std8', 'Std9', 'Std10', 'Story',
-                    'Automobile', 'Beauty', 'Construction', 'Electric', 'Health', 'Hospitality', 'LanguageAndCommunication']
+PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science', 'Health', 'Story',
+                    'Beauty', 'Automobile', 'Hospitality', 'Electric', 
+                    'Healthcare', 'Construction',
+                    'LanguageAndCommunication']
 PRADIGI_RESOURCE_TYPES = ['Game', 'Website Resources']
 # Note: can add 'Video Resources', 'Interactive Resoruces' and 'Book Resources'
 # as separate categories for more flexibility in the future

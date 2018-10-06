@@ -1,4 +1,5 @@
-le-utils>=0.1.4
+# le-utils>=0.1.4
+git+https://github.com/ivanistheone/le-utils@master
 ricecooker>=0.6.15
 #basiccrawler>=0.1.0
 git+https://github.com/learningequality/BasicCrawler@master

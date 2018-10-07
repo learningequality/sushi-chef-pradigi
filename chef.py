@@ -64,7 +64,7 @@ PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational ' 
 
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.INFO)
-DEBUG_MODE = False  # source_urls in content desriptions
+DEBUG_MODE = True  # source_urls in content desriptions
 
 # Cache logic.
 cache = FileCache('.webcache')
@@ -222,7 +222,7 @@ PRATHAM_COMMENTS_KEY = 'Pratham'
 LE_COMMENTS_KEY = 'LE Comments'
 PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
 PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science', 'Health', 'Story',
-                    'Beauty', 'Automobile', 'Hospitality', 'Electric', 
+                    'Beauty', 'Automobile', 'Hospitality', 'Electric',
                     'Healthcare', 'Construction',
                     'LanguageAndCommunication']
 PRADIGI_RESOURCE_TYPES = ['Game', 'Website Resources']

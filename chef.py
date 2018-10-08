@@ -177,7 +177,7 @@ PRADIGI_STRINGS = {
     },
     "mr": {
         "language_en": "Marathi",
-        "gamesrepo_suffixes": ['_MR'],
+        "gamesrepo_suffixes": ['_KKS', '_MR'],
         "subjects": {}
     },
     "gu": {

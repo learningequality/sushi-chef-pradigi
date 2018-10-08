@@ -1,3 +1,4 @@
+import json
 import logging
 import os
 from PIL import Image
@@ -166,15 +167,11 @@ class PraDigiCrawler(BasicCrawler):
     kind_handlers = {
         'lang_page': 'on_lang_page',
         'topic_page': 'on_topic_page',
-        'subtopic_page': 'on_subtopic_page', 
+        'subtopic_page': 'on_subtopic_page',
         'lesson_page': 'on_lesson_page',
-        #
         'fun_page': 'on_fun_page',
-        #
         'story_page': 'on_story_page',
         'story_resource_page': 'on_story_resource_page',
-        #
-        # 'CRS_page': 'on_CRS_page',        # reuse Fun logic
     }
 
     # CRALWING
@@ -216,7 +213,11 @@ class PraDigiCrawler(BasicCrawler):
         # restructure_web_resource_tree(web_resource_tree)
         # remove_sections(web_resource_tree)
         self.write_web_resource_tree_json(web_resource_tree)
-        return web_resource_tree
+
+
+        # remove extra nesting
+        flatten_web_resource_tree(self.lang)
+
 
 
 
@@ -265,7 +266,7 @@ class PraDigiCrawler(BasicCrawler):
 
                 # what type of tab is it?
                 if 'Fun' in topic['href']:
-                    LOGGER.info('found fun  page: %s: %s' % (source_id, title))
+                    LOGGER.info('found fun page: %s: %s' % (source_id, title))
                     context['kind'] = 'fun_page'
                 elif 'Story' in topic['href']:
                     LOGGER.info('found story page: %s: %s' % (source_id, title))
@@ -406,7 +407,7 @@ class PraDigiCrawler(BasicCrawler):
                 if len(main_file) < 10:
                     print('something strage --- short main file url with   title - main_file - master_file ', title, '-', main_file, '-', master_file)
 
-                if main_file.endswith('mp4'):
+                if main_file.endswith('mp4') or main_file.endswith('MP4'):
                     video = dict(
                         url=main_file,
                         kind='PrathamVideoResource',
@@ -495,6 +496,10 @@ class PraDigiCrawler(BasicCrawler):
     ############################################################################
     
     def on_fun_page(self, url, page, context):
+        """
+        This handles pages of the form gamelist/CRS??? and hn/Fun that contain
+        direct links to resources without the topics and subtopic hierarchy.
+        """
         print('     in on_fun_page', url)
         page_dict = dict(
             kind='fun_page',
@@ -542,7 +547,7 @@ class PraDigiCrawler(BasicCrawler):
 
                 LOGGER.info('      Fun content: %s: %s at %s' % (source_id, title, respath_url))
 
-                if respath_path.endswith('mp4'):
+                if respath_path.endswith('mp4') or respath_path.endswith('MP4'):
                     video = dict(
                         url=respath_url,
                         kind='PrathamVideoResource',
@@ -751,3 +756,44 @@ def get_content_link(content):
     if master_file:
         master_file = get_absolute_path(master_file)
     return main_file, master_file, source_id
+
+
+
+def flatten_web_resource_tree(lang):
+    """
+    If encounter `parent --> LES --> Resource` with LES.title == Resource.title,
+    hoist resource up to the parent: `parent --> Resource`.
+    This avoids extra subdirectories.
+    """
+    if lang not in ['mr', 'hi']:
+        raise ValueError('Language `lang` must mr or hi (only two langs on website)')
+    # READ IN
+    wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
+    with open(wrt_filename) as jsonfile:
+        web_resource_tree = json.load(jsonfile)
+    # PROCESS
+    def recursive_flatten_web_resource_tree(subtree):
+        if 'children' in subtree:
+            # 1. do replacment if matches conditions
+            new_children = []
+            for child in subtree['children']:
+                child_title = child['title']
+                if 'children' in child and len(child['children']) == 1:
+                    grandchild = child['children'][0]
+                    grandchild_title = grandchild['title']
+                    # REPLACEMENT CONDITION
+                    if child_title == grandchild_title:
+                        new_children.append(grandchild)
+                    else:
+                        new_children.append(child)
+                else:
+                    new_children.append(child)
+            subtree['children'] = new_children
+            #
+            # 2. continue recusively
+            for child in subtree['children']:
+                recursive_flatten_web_resource_tree(child)
+    recursive_flatten_web_resource_tree(web_resource_tree)
+    # WRITOUT
+    with open(wrt_filename, 'w') as wrt_file:
+        json.dump(web_resource_tree, wrt_file, indent=2, sort_keys=True)

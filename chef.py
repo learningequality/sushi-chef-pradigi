@@ -403,7 +403,7 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
                 games.append(row)
             elif row[RESOURCE_TYPE_KEY] == 'Website Resources':
                 website.append(subject_en)
-            # TODO
+            # TODO: handle 
             elif row[RESOURCE_TYPE_KEY].startswith('YouTubePlaylist:'):
                 playlist_url = row[RESOURCE_TYPE_KEY].replace('YouTubePlaylist:', '')
                 playlist_subtree = get_youtube_playlist_subtree(playlist_url)
@@ -1046,10 +1046,11 @@ class PraDigiChef(JsonTreeChef):
             website_crawler = PraDigiCrawler(lang=lang)
             wrt = website_crawler.crawl()
 
-        # gamerepo
-        gamerepo_start_page = GAMEREPO_MAIN_SOURCE_DOMAIN
-        gamerepo_crawler = PrathamGameRepoCrawler(start_page=gamerepo_start_page)
-        gamerepo_crawler.crawl()
+        # ## TEMPORARILY DISABLES FOR FASTER DEV ########################################################################################
+        # # gamerepo
+        # gamerepo_start_page = GAMEREPO_MAIN_SOURCE_DOMAIN
+        # gamerepo_crawler = PrathamGameRepoCrawler(start_page=gamerepo_start_page)
+        # gamerepo_crawler.crawl()
 
 
     def build_subtree_for_lang(self, lang):

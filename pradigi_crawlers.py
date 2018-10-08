@@ -166,11 +166,15 @@ class PraDigiCrawler(BasicCrawler):
     kind_handlers = {
         'lang_page': 'on_lang_page',
         'topic_page': 'on_topic_page',
-        'subtopic_page': 'on_subtopic_page',
+        'subtopic_page': 'on_subtopic_page', 
         'lesson_page': 'on_lesson_page',
+        #
         'fun_page': 'on_fun_page',
+        #
         'story_page': 'on_story_page',
         'story_resource_page': 'on_story_resource_page',
+        #
+        # 'CRS_page': 'on_CRS_page',        # reuse Fun logic
     }
 
     # CRALWING
@@ -261,14 +265,14 @@ class PraDigiCrawler(BasicCrawler):
 
                 # what type of tab is it?
                 if 'Fun' in topic['href']:
-                    LOGGER.info('found fun page: %s: %s' % (source_id, title))
+                    LOGGER.info('found fun  page: %s: %s' % (source_id, title))
                     context['kind'] = 'fun_page'
                 elif 'Story' in topic['href']:
                     LOGGER.info('found story page: %s: %s' % (source_id, title))
                     context['kind'] = 'story_page'
                 elif 'gamelist/CRS' in topic['href']:
-                    LOGGER.info('found top-level subtopic page: %s: %s' % (source_id, title))
-                    context['kind'] = 'subtopic_page'
+                    LOGGER.info('found top-level CRS page: %s: %s' % (source_id, title))
+                    context['kind'] = 'fun_page'
                 else:
                     LOGGER.info('found topic: %s: %s' % (source_id, title))
                     context['kind'] = 'topic_page'
@@ -455,6 +459,35 @@ class PraDigiCrawler(BasicCrawler):
                     
             except Exception as e:
                 LOGGER.error('zz _process_contents: %s : %s' % (e, content))
+
+
+
+
+
+    # # LESSONS
+    # ############################################################################
+    # 
+    # def on_CRS_page(self, url, page, context):
+    #     print('      in on_CRS_page', url)
+    #     page_dict = dict(
+    #         kind='CRS_page',
+    #         url=url,
+    #         children=[],
+    #     )
+    #     page_dict.update(context)
+    #     context['parent']['children'].append(page_dict)
+    # 
+    #     try:
+    #         main_row = page.find('div', {'id': 'body-row'})
+    #     except Exception as e:
+    #         LOGGER.error('on_CRS_page: %s : %s' % (e, page))
+    #         return
+    # 
+    #     contents = main_row.find_all('div', {'class': 'col-md-3'})
+    #     for content in contents:
+    # 
+    # 
+
 
 
 

@@ -1021,7 +1021,6 @@ def game_info_to_ricecooker_node(lang, title, game_info):
 
 
 
-
 # CHEF
 ################################################################################
 

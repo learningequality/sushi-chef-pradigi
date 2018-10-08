@@ -41,9 +41,11 @@ WEBSITE_LANG_CODES = ['hi', 'mr']
 def run_pradigi():
     with cd(CHEF_DATA_DIR):
         with prefix('source ' + os.path.join(CHEF_DATA_DIR, 'venv/bin/activate')):
-            cmd = 'export STUDIO_URL="http://develop.studio.learningequality.org" && export PHANTOMJS_PATH=/data/sushi-chef-pradigi/phantomjs-2.1.1-linux-x86_64/bin/phantomjs && nohup ./chef.py  -v --reset --stage --token={} crawlonly=t &'.format(STUDIO_TOKEN)
-            output = sudo(cmd, user=CHEF_USER)
-            print(output.stdout)
+            with shell_env(STUDIO_URL="http://develop.studio.learningequality.org",
+                           PHANTOMJS_PATH="/data/sushi-chef-pradigi/phantomjs-2.1.1-linux-x86_64/bin/phantomjs"):
+                cmd = 'nohup ./chef.py  -v --reset --stage --token={} crawlonly=t &'.format(STUDIO_TOKEN)
+                output = sudo(cmd, user=CHEF_USER)
+                print(output.stdout)
 
 
 # GET RUN TREE OUTPUTS

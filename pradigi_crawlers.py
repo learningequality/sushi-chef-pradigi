@@ -257,7 +257,8 @@ class PraDigiCrawler(BasicCrawler):
                     source_id=source_id,
                     subject_en=subject_en,
                 )
-                
+                print('in on_lang_page topic.title=', title, 'topic_subject_id=', source_id, 'subject_en=', subject_en)
+
                 # what type of tab is it?
                 if 'Fun' in topic['href']:
                     LOGGER.info('found fun page: %s: %s' % (source_id, title))

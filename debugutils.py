@@ -33,6 +33,7 @@ def get_all_game_names():
     """
     game_names = []
     struct_list = load_pradigi_structure()
+    struct_list.extend(load_pradigi_structure(which='English'))
     for struct_row in struct_list:
         codename = struct_row[CODENAME_KEY]
         if codename is not None and codename not in game_names:

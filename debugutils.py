@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 
 from le_utils.constants.languages import getlang_by_name
 
-from chef import load_pradigi_structure, find_games_for_lang
+from chef import load_pradigi_structure, find_games_for_lang, get_all_game_names
 from chef import CODENAME_KEY, PRADIGI_LANGUAGES, PRADIGI_STRINGS
 
 
@@ -27,18 +27,7 @@ def getlang_by_language_en(language_en):
     lang_obj = getlang_by_name(language_en)
     return lang_obj
 
-def get_all_game_names():
-    """
-    Used for debugging chef
-    """
-    game_names = []
-    struct_list = load_pradigi_structure()
-    struct_list.extend(load_pradigi_structure(which='English'))
-    for struct_row in struct_list:
-        codename = struct_row[CODENAME_KEY]
-        if codename is not None and codename not in game_names:
-            game_names.append(struct_row[CODENAME_KEY])
-    return game_names
+
 
 def compute_games_by_language_csv(game_names):
     """

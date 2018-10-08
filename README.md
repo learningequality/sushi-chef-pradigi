@@ -3,12 +3,11 @@ PraDigi Sushi Chef
 Import content from prathamopenschool.org and the Pratham gamerepo into Studio.
 
 TODO
-  - why are videos and games not being crawled from here? http://www.prathamopenschool.org/mr/gamelist/CRS125
-  - triage new games https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=975191127
-  - design tree building logic
-    - hi and mr
-    - english
-    - other
+----
+  - add missing top-level CRS pages manually to tree
+  - Cross check games on website http://www.prathamopenschool.org/CourseContent/Games/
+    vs combined list of games from gamerepo
+
 
 
 Install
@@ -59,19 +58,12 @@ Content Merging Design
 ----------------------
 
 New excel structure with "source info" columns
-  - Resource Type
-  - Web Folder
-  - Game Name (instead of Name and Name on gamerepo (before lang underscore)
-  - Take From Repo
-
-Destination columns:
-  - Use Only In
-  - Age Group	
-  - Subject
-
-This will allow for many Web Folder to one dest. folder mapping.
-Use case: get games from all three folders:
-  - "CRS122": "खेल-बाड़ी",      # Playground
-  - "CRS124": "देखो और करों",   # Look and
-  - "CRS123": "खेल-पुरी",       # Games
+  - Game Name instead of Name on gamerepo (before lang underscore)
+  - Get full game namelist
+  - Extract known games from webpage
+  - Combine tree
+    - web resources
+    - pyalysts
+    - games from (website > repo > take from lang in repo)
+  - Manually add special CRS folders [TODO]
 

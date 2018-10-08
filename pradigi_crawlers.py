@@ -262,7 +262,7 @@ class PraDigiCrawler(BasicCrawler):
                     source_id=source_id,
                     subject_en=subject_en,
                 )
-                print('in on_lang_page topic.title=', title, 'topic_subject_id=', source_id, 'subject_en=', subject_en)
+                # print('in on_lang_page topic.title=', title, 'topic_subject_id=', source_id, 'subject_en=', subject_en)
 
                 # what type of tab is it?
                 if 'Fun' in topic['href']:
@@ -797,3 +797,4 @@ def flatten_web_resource_tree(lang):
     # WRITOUT
     with open(wrt_filename, 'w') as wrt_file:
         json.dump(web_resource_tree, wrt_file, indent=2, sort_keys=True)
+

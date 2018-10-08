@@ -266,6 +266,9 @@ class PraDigiCrawler(BasicCrawler):
                 elif 'Story' in topic['href']:
                     LOGGER.info('found story page: %s: %s' % (source_id, title))
                     context['kind'] = 'story_page'
+                elif 'gamelist/CRS' in topic['href']:
+                    LOGGER.info('found top-level subtopic page: %s: %s' % (source_id, title))
+                    context['kind'] = 'subtopic_page'
                 else:
                     LOGGER.info('found topic: %s: %s' % (source_id, title))
                     context['kind'] = 'topic_page'
@@ -321,7 +324,7 @@ class PraDigiCrawler(BasicCrawler):
     def on_subtopic_page(self, url, page, context):
         print('     in on_subtopic_page', url)
         page_dict = dict(
-            kind='subtopic_page',
+            kind='subtopic_page',  # redundant...
             url=url,
             children=[],
         )

@@ -120,11 +120,6 @@ PRADIGI_STRINGS = {
             "CRS122": "खेल-बाड़ी",      # Playground
             "CRS124": "देखो और करों",   # Look and
             "CRS123": "खेल-पुरी",       # Games
-            #
-            # Marathi games pages = खेळ
-            "CRS125": "खेळ-वाडी",
-            "CRS127": "बघा आणि शिका",
-            "CRS126": "खेळ-पुरी",
         }
     },
     'en': {
@@ -178,7 +173,12 @@ PRADIGI_STRINGS = {
     "mr": {
         "language_en": "Marathi",
         "gamesrepo_suffixes": ['_KKS', '_MR', '_M'],
-        "subjects": {}
+        "subjects": {
+            # Marathi games pages = खेळ
+            "CRS125": "खेळ-वाडी",
+            "CRS127": "बघा आणि शिका",
+            "CRS126": "खेळ-पुरी",
+        }
     },
     "gu": {
         "language_en": "Gujarati",
@@ -223,6 +223,20 @@ PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
 PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science', 'Health', 'Story',
                     'Beauty', 'Automobile', 'Hospitality', 'Electric',
                     'Healthcare', 'Construction',
+                    "CRS128", #  "आदरातिथ्य",      # Hospitality
+                    "CRS129", # "ऑटोमोटिव्ह",      # Automobile
+                    "CRS130", # "ब्युटी",          # Beauty
+                    "CRS131", # "इलेक्ट्रिकल",      # Electric
+                    #
+                    # Hindi games pages =  खेल
+                    "CRS122", # "खेल-बाड़ी",      # Playground
+                    "CRS124", # "देखो और करों",   # Look and
+                    "CRS123", # "खेल-पुरी",       # Games
+                    #
+                    # Marathi games pages = खेळ
+                    "CRS125", # "खेळ-वाडी",
+                    "CRS127", # "बघा आणि शिका",
+                    "CRS126", # "खेळ-पुरी",
                     'LanguageAndCommunication']
 PRADIGI_RESOURCE_TYPES = ['Game', 'Website Resources']
 # Note: can add 'Video Resources', 'Interactive Resoruces' and 'Book Resources'

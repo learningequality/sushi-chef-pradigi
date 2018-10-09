@@ -836,12 +836,18 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             license=PRADIGI_LICENSE,
             children=[],
         )
+        source_ids_seen_so_far = []
         for child in tree['children']:
             if filter_fn(child):
                 try:
                     ricocooker_node = wrt_to_ricecooker_tree(child, lang, filter_fn=filter_fn)
                     if ricocooker_node:
-                        topic_node['children'].append(ricocooker_node)
+                        new_source_id = ricocooker_node['source_id']
+                        if new_source_id not in source_ids_seen_so_far:
+                            topic_node['children'].append(ricocooker_node)
+                            source_ids_seen_so_far.append(new_source_id)
+                        else:
+                            print('Skipping node with duplicate source_id', ricocooker_node)
                 except Exception as e:
                     LOGGER.error("Failed to generate node for %s in %s %s " % (child['title'], lang, e) )
                     pass

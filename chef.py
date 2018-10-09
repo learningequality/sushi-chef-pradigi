@@ -859,9 +859,12 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             license=PRADIGI_LICENSE,
             files=[],
         )
+        video_url = tree['url']
+        if video_url.endswith('.MP4'):
+            video_url = video_url.replace('.MP4', '.mp4')
         video_file = dict(
             file_type=file_types.VIDEO,
-            path=tree['url'],
+            path=video_url,
             language=lang,
         )
         if should_compress_video(tree):

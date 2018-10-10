@@ -7,17 +7,19 @@ Correction ID,Bug Type,Game Name,Source URL (Regular Expression),Action,Comment
 ,,,,,
 ,,,,,
 3,MISSING AUDIO,Crumble Tumble,http://repository.prathamopenschool.org/Zip/English/CrumbleTumble_English.zip,SKIP GAME,Can't hear the audio
-6,Android API needed,Jumble Tumble,http://repository.prathamopenschool.org/Zip/.*/JumbleTumble_.*.zip,SKIP GAME,Can't hear the audio or click on the next button Android.playTts(sentence.sentence); 
+6,Android API needed,Jumble Tumble,http://repository.prathamopenschool.org/Zip/.*/JumbleTumble_.*.zip,FIXED,Can't hear the audio or click on the next button Android.playTts(sentence.sentence); 
 8,Android API needed,You Said,http://repository.prathamopenschool.org/Zip/English/YouSaid_English.zip,SKIP GAME,Error at Object.YouSaid.record (YouSaidScript.js:108)
 8b,Android API needed,You Said,http://www.prathamopenschool.org/CourseContent/Games/YouSaid.zip,SKIP GAME,Error at Object.YouSaid.record (YouSaidScript.js:108)
-10,Android API needed,Count and Know,http://repository.prathamopenschool.org/Zip/English/CountAndKnow_English.zip,SKIP GAME,
-11,Android API needed,Count It,http://repository.prathamopenschool.org/Zip/English/CountIt_English.zip,SKIP GAME,
+10,Android API needed,Count and Know,http://repository.prathamopenschool.org/Zip/English/CountAndKnow_English.zip,FIXED,
+11,Android API needed,Count It,http://repository.prathamopenschool.org/Zip/English/CountIt_English.zip,FIXED,
 26,Android API needed,Letterbox,http://repository.prathamopenschool.org/Zip/.*/LetterBox_.*.zip,SKIP GAME,
-32,Android API needed,Jigsaw (Marathi),http://repository.prathamopenschool.org/Zip/Marathi/Jigsaw_English.zip,SKIP GAME,
-36,Android API needed,Ulat Palat Science 2 (Marathi),http://repository.prathamopenschool.org/Zip/Marathi/UlatPalat2Science_Marathi.zip,SKIP GAME,
-37,Android API needed,Ulat Palat Science (Marathi),http://repository.prathamopenschool.org/Zip/Marathi/UlatPalatScience_Marathi.zip,SKIP GAME,
+32,Android API needed,Jigsaw (English),http://repository.prathamopenschool.org/Zip/Marathi/Jigsaw_English.zip,SKIP GAME,
+32b,404,Jigsaw_HI,http://www.prathamopenschool.org/CourseContent/Games/Jigsaw_HI.zip,SKIP GAME,
+32c,Android API needed,Jigsaw (Marathi),http://repository.prathamopenschool.org/Zip/Marathi/Jigsaw_Marathi.zip,SKIP GAME,
+36,Android API needed,Ulat Palat Science 2 (Marathi),http://repository.prathamopenschool.org/Zip/Marathi/UlatPalat2Science_Marathi.zip,FIXED,
+37,Android API needed,Ulat Palat Science (Marathi),http://repository.prathamopenschool.org/Zip/Marathi/UlatPalatScience_Marathi.zip,FIXED,
 49,Android API needed,Flip it,http://repository.prathamopenschool.org/Zip/English/FlipIt_English.zip,SKIP GAME,
-,,,,,
+50,Android API needed,Flip it,http://www.prathamopenschool.org/CourseContent/Games/FlipIt.zip,SKIP GAME,
 ,,,,,
 ,,,,,
 ,,,,,
@@ -29,6 +31,3 @@ Correction ID,Bug Type,Game Name,Source URL (Regular Expression),Action,Comment
 51,sandboxed localStorage,MR Translation Machine 2,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel2.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel2.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 52,sandboxed localStorage,MR Translation Machine 3,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel3.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel3.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 53,sandboxed localStorage,MR Translation Machine 4,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel4.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel4.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
-,,,,,
-,,,,,
-1001,Duplicate Game,Palat,http://www.prathamopenschool.org/CourseContent/Games/Palat_HI.zip,SKIP GAME,This game appears both on website Fun/ and in game repo; we manually skip website version to prefer the game repo version

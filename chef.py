@@ -1279,12 +1279,17 @@ class PraDigiChef(JsonTreeChef):
                     for desired_subject_en in resources['website']:
                         wrt_subtree = get_subtree_by_subject_en(lang, desired_subject_en)
                         if wrt_subtree:
-                            # print('wrt_subtree=', wrt_subtree)
-                            # ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang, filter_fn=_only_videos)
                             ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)
-                            # print('ricecooker_subtree=', ricecooker_subtree)
                             for child in ricecooker_subtree['children']:
                                 subject_subtree['children'].append(child)
+
+                # A bonus: add LanguageAndCommunication sign language course to Tamil and English channels as well
+                if lang in ['ta', 'en']:
+                    wrt_subtree = get_subtree_by_subject_en('hi', 'LanguageAndCommunication')
+                    if wrt_subtree:
+                        ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)  # tagging same content node as different lang...
+                        for child in ricecooker_subtree['children']:
+                            subject_subtree['children'].append(child)
 
                 # B1. Load Vocational videos from youtube playlists (only available in Hindi)
                 if lang == 'hi':

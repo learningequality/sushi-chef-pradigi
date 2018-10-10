@@ -1399,7 +1399,7 @@ class PraDigiChef(JsonTreeChef):
             source_domain=PRADIGI_DOMAIN,
             source_id='pradigi-videos-and-games',
             description=PRADIGI_DESCRIPTION,
-            thumbnail='https://learningequality.org/static/img/kickstarter/pratham-open-school.png',
+            thumbnail='chefdata/pradigi_logo_square.png',
             language='mul',   # Using mul as top-level language because mixed content
             children=[],
         )

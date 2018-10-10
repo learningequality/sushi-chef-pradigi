@@ -1,6 +1,7 @@
 notebooks/node_modules
 
 
+
 # chef run files --- will be stored under vader instead
 chefdata/pradigi_structure.csv
 chefdata/pradigi_english_structure.csv
@@ -9,6 +10,9 @@ chefdata/trees/pradigi_mr_web_resource_tree.json
 chefdata/trees/pradigi_games_all_langs.json
 chefdata/trees/pradigi_ricecooker_json_tree.json
 chefdata/pradigi_corrections.csv
+
+# content debug
+notebooks/games_by_language_matrix.csv
 
 chefdata/gamethumbnails
 chefdata/zipfiles

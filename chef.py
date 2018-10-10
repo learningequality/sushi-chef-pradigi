@@ -1284,12 +1284,17 @@ class PraDigiChef(JsonTreeChef):
                                 subject_subtree['children'].append(child)
 
                 # A bonus: add LanguageAndCommunication sign language course to Tamil and English channels as well
-                if lang in ['ta', 'en']:
+                if subject_en == 'LanguageAndCommunication' and lang in ['ta', 'en']:
                     wrt_subtree = get_subtree_by_subject_en('hi', 'LanguageAndCommunication')
                     if wrt_subtree:
                         ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)  # tagging same content node as different lang...
                         for child in ricecooker_subtree['children']:
-                            subject_subtree['children'].append(child)
+                            child_copy = child.copy()
+                            if child_copy['title'] == 'संकेत भाषा' and lang == 'en':
+                                child_copy['title'] = 'Sign Language'
+                            elif child_copy['title'] == 'संकेत भाषा' and lang == 'ta':
+                                child_copy['title'] = 'சைகை மொழி'
+                            subject_subtree['children'].append(child_copy)
 
                 # B1. Load Vocational videos from youtube playlists (only available in Hindi)
                 if lang == 'hi':

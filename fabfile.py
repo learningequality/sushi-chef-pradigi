@@ -11,6 +11,7 @@ env.hosts = [
 ]
 env.user = os.environ.get('USER')
 env.password = os.environ.get('SUDO_PASSWORD')
+env.timeout = 100
 
 STUDIO_TOKEN = os.environ.get('STUDIO_TOKEN')
 

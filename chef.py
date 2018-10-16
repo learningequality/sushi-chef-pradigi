@@ -64,7 +64,7 @@ PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational ' 
 
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.INFO)
-DEBUG_MODE = True  # source_urls in content desriptions
+DEBUG_MODE = False  # source_urls in content desriptions
 
 # Cache logic.
 cache = FileCache('.webcache')

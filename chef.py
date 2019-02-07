@@ -53,7 +53,7 @@ import youtube_helper
 PRADIGI_DOMAIN = 'prathamopenschool.org'
 FULL_DOMAIN_URL = 'http://www.' + PRADIGI_DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
-PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
+# PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
 # PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
 PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
 PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational '   \
@@ -94,7 +94,7 @@ PRADIGI_LANG_URL_MAP = {
     'ta': 'http://www.prathamopenschool.org/Tm/',
     'te': 'http://www.prathamopenschool.org/Tl/',
 }
-
+assert set(PRADIGI_WEBSITE_LANGUAGES) == set(PRADIGI_LANG_URL_MAP.keys()), 'need url for lang'
 
 GAMEREPO_MAIN_SOURCE_DOMAIN = 'http://repository.prathamopenschool.org'
 GAME_THUMBS_REMOTE_DIR = 'http://www.prodigi.openiscool.org/repository/Images/'
@@ -991,7 +991,7 @@ def find_games_for_lang(name, lang, take_from=None):
     """
     suffixes = PRADIGI_STRINGS[lang]['gamesrepo_suffixes']
     suffixes = suffixes*2   # Double list to implement two-passes (needed for multi-suffix games)
-    language_en = PRADIGI_STRINGS[lang]['language_en']
+    language_en = PRADIGI_STRINGS[lang]['language_en'] # ???
 
     # load website game web resource data
     WEBSITE_GAMES_OUTPUT = 'chefdata/trees/website_games_all_langs.json'
@@ -1002,11 +1002,8 @@ def find_games_for_lang(name, lang, take_from=None):
         website_data_lang = []
 
     # load gamrewpo game infos
-    gamerepo_data = json.load(open('chefdata/trees/pradigi_games_all_langs.json','r'))
-
-
-    assert gamerepo_data["kind"] == "index_page", 'wrong web resource tree loaded'
-
+    # gamerepo_data = json.load(open('chefdata/trees/pradigi_games_all_langs.json','r'))
+    # assert gamerepo_data["kind"] == "index_page", 'wrong web resource tree loaded'
 
     games = []
     # game_source_ids = []
@@ -1018,7 +1015,7 @@ def find_games_for_lang(name, lang, take_from=None):
             if title.strip().endswith(suffix):
                 title = title.replace(suffix, '').strip()
         if name == title:
-            source_id = game_resource['source_id']
+            # source_id = game_resource['source_id']
             if len(games) == 0:
                 games.append(game_resource)
                 # game_source_ids.append(source_id)
@@ -1027,70 +1024,47 @@ def find_games_for_lang(name, lang, take_from=None):
                 print('>>>>> skipping game_resource', game_resource)
 
     if len(games) == 0:
-        # Get game from pradigi_games json by ignoring _LANG suffixes
-        for gameslang_page in gamerepo_data['children']:
-            if gameslang_page['language_en'] == language_en:
-                for game in gameslang_page['children']:
-                    title = game['title']
-                    for suffix in suffixes:
-                        if title.strip().endswith(suffix):
-                            title = title.replace(suffix, '').strip()
-                    if name == title:
-                        source_id = game['title']
-                        if len(games) == 0:
-                            games.append(game)
-                            # game_source_ids.append(source_id)
-
-    if take_from is not None and len(games) == 0:
-        # Extra pass to get English games to be included in other languages
-        take_lang = LANGUAGE_EN_TO_LANG[take_from]
-        take_suffixes = PRADIGI_STRINGS[take_lang]['gamesrepo_suffixes']
-        take_suffixes = take_suffixes*2
-        for gameslang_page in gamerepo_data['children']:
-            if gameslang_page['language_en'] == take_from:
-                for game in gameslang_page['children']:
-                    title = game['title']
-                    for suffix in take_suffixes:
-                        if title.strip().endswith(suffix):
-                            title = title.replace(suffix, '').strip()
-                    if name == title and len(games) == 0:
-                        games.append(game)
-                        # game_source_ids.append(source_id)
+        pass
+        # print('game', name, 'not found for lang', lang)
 
     return games
 
+    # if len(games) == 0:
+    #     # Get game from pradigi_games json by ignoring _LANG suffixes
+    #     for gameslang_page in gamerepo_data['children']:
+    #         if gameslang_page['language_en'] == language_en:
+    #             for game in gameslang_page['children']:
+    #                 title = game['title']
+    #                 for suffix in suffixes:
+    #                     if title.strip().endswith(suffix):
+    #                         title = title.replace(suffix, '').strip()
+    #                 if name == title:
+    #                     source_id = game['title']
+    #                     if len(games) == 0:
+    #                         games.append(game)
+    #                         # game_source_ids.append(source_id)
+    # 
+    # if take_from is not None and len(games) == 0:
+    #     # Extra pass to get English games to be included in other languages
+    #     take_lang = LANGUAGE_EN_TO_LANG[take_from]
+    #     take_suffixes = PRADIGI_STRINGS[take_lang]['gamesrepo_suffixes']
+    #     take_suffixes = take_suffixes*2
+    #     for gameslang_page in gamerepo_data['children']:
+    #         if gameslang_page['language_en'] == take_from:
+    #             for game in gameslang_page['children']:
+    #                 title = game['title']
+    #                 for suffix in take_suffixes:
+    #                     if title.strip().endswith(suffix):
+    #                         title = title.replace(suffix, '').strip()
+    #                 if name == title and len(games) == 0:
+    #                     games.append(game)
+    #                     # game_source_ids.append(source_id)
 
-# GAME REPO JSON to RICECOOKER JSON
+
+
+
+# WEBSITE GAME JSON to RICECOOKER JSON
 ################################################################################
-
-def game_info_to_ricecooker_node(lang, title, game_info):
-    """
-    Create Ricecooker Json structure for game with human-readable title `title`
-    and gamesrepo info in `game_info`.
-    """
-    game_node = dict(
-        kind=content_kinds.HTML5,
-        source_id=game_info['title'],
-        language=lang,
-        title=title,
-        description='source_url=' + game_info['url'] if DEBUG_MODE else '',
-        license=PRADIGI_LICENSE,
-        thumbnail=game_info.get('thumbnail_url'),
-        files=[],
-    )
-    zip_tmp_path = get_zip_file(game_info['url'], game_info['main_file'])
-    if zip_tmp_path:
-        zip_file = dict(
-            file_type=file_types.HTML5,
-            path=zip_tmp_path,
-            language=lang,
-        )
-        game_node['files'].append(zip_file)
-        LOGGER.debug('Created HTML5AppNode for game ' + game_info['title'])
-        return game_node
-    else:
-        LOGGER.error('Failed to create zip for game at url=' + game_info['url'])
-        return None
 
 def website_game_webresouce_to_ricecooker_node(lang, web_resource):
     """
@@ -1219,31 +1193,24 @@ class PraDigiChef(JsonTreeChef):
 
     def crawl(self, args, options):
         """
-        Crawl website and gamerepo. Save web resource trees in chefdata/trees/.
+        Crawl website and save web resource trees in chefdata/trees/.
         """
-        from pradigi_crawlers import PraDigiCrawler, PrathamGameRepoCrawler
+        from pradigi_crawlers import PraDigiCrawler
         
         # website
-        for lang in ['hi', 'mr']:
+        for lang in PRADIGI_WEBSITE_LANGUAGES:
             website_crawler = PraDigiCrawler(lang=lang)
             website_crawler.crawl()    # Output is saved to appropriate wrt file
 
-        # extract 
-        hi_website_games = extract_website_games_from_tree('hi')
-        mr_website_games = extract_website_games_from_tree('mr')
-        website_games = {
-            'hi': hi_website_games,
-            'mr': mr_website_games,
-        }
+        # extract
+        website_games = {}
+        for lang in PRADIGI_WEBSITE_LANGUAGES:
+            lang_games = extract_website_games_from_tree(lang)
+            website_games[lang] = lang_games
         WEBSITE_GAMES_OUTPUT = 'chefdata/trees/website_games_all_langs.json'
         # Save website games
         with open(WEBSITE_GAMES_OUTPUT, 'w') as json_file:
-            json.dump(website_games, json_file, indent=2, sort_keys=True)
-
-        # gamerepo
-        gamerepo_start_page = GAMEREPO_MAIN_SOURCE_DOMAIN
-        gamerepo_crawler = PrathamGameRepoCrawler(start_page=gamerepo_start_page)
-        gamerepo_crawler.crawl()
+            json.dump(website_games, json_file,  ensure_ascii=False, indent=2, sort_keys=True)
 
 
     def build_subtree_for_lang(self, lang):
@@ -1288,19 +1255,6 @@ class PraDigiChef(JsonTreeChef):
                             ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)
                             for child in ricecooker_subtree['children']:
                                 subject_subtree['children'].append(child)
-
-                # A bonus: add LanguageAndCommunication sign language course to Tamil and English channels as well
-                if subject_en == 'LanguageAndCommunication' and lang in ['ta', 'en']:
-                    wrt_subtree = get_subtree_by_subject_en('hi', 'LanguageAndCommunication')
-                    if wrt_subtree:
-                        ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)  # tagging same content node as different lang...
-                        for child in ricecooker_subtree['children']:
-                            child_copy = child.copy()
-                            if child_copy['title'] == 'संकेत भाषा' and lang == 'en':
-                                child_copy['title'] = 'Sign Language'
-                            elif child_copy['title'] == 'संकेत भाषा' and lang == 'ta':
-                                child_copy['title'] = 'சைகை மொழி'
-                            subject_subtree['children'].append(child_copy)
 
                 # B1. Load Vocational videos from youtube playlists (only available in Hindi)
                 if lang == 'hi':
@@ -1366,9 +1320,8 @@ class PraDigiChef(JsonTreeChef):
                             node = website_game_webresouce_to_ricecooker_node(lang, game)
                         # CASE gamerepo game
                         else:
-                            # gamerepo games:
-                            game_title = game_row[GAMENAME_KEY]
-                            node = game_info_to_ricecooker_node(lang, game_title, game)
+                            # gamerepo games
+                            raise ValueError('Should be processing only website games now...')
                         #
                         if node:
                             subject_subtree['children'].append(node)
@@ -1411,7 +1364,7 @@ class PraDigiChef(JsonTreeChef):
             language='mul',   # Using mul as top-level language because mixed content
             children=[],
         )
-        for lang in PRADIGI_LANGUAGES:
+        for lang in PRADIGI_WEBSITE_LANGUAGES:
             lang_subtree = self.build_subtree_for_lang(lang)
             ricecooker_json_tree['children'].append(lang_subtree)
         json_tree_path = self.get_json_tree_path()

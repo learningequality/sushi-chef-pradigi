@@ -1,10 +1,12 @@
 import json
 import logging
-import os
-from PIL import Image
+# import os
+# from PIL import Image
 import re
 import requests
-import tempfile
+import requests_cache
+requests_cache.install_cache('prathamopenshcool_org', expire_after=60*60*24)
+# import tempfile
 from urllib.parse import urljoin, urlparse
 
 
@@ -15,145 +17,18 @@ from bs4 import BeautifulSoup
 
 from ricecooker.config import LOGGER
 LOGGER.setLevel(logging.INFO)
-from le_utils.constants.languages import getlang, getlang_by_name
-from ricecooker.utils import downloader
+from le_utils.constants.languages import getlang
+#from ricecooker.utils import downloader
 
 
 from chef import (
     PRADIGI_DOMAIN,
     FULL_DOMAIN_URL,
     PRADIGI_DESCRIPTION,
-    PRADIGI_LANGUAGES,
+    PRADIGI_WEBSITE_LANGUAGES,
     DEBUG_MODE,
     PRADIGI_LANG_URL_MAP,
-    GAMEREPO_MAIN_SOURCE_DOMAIN,
-    GAME_THUMBS_REMOTE_DIR,
-    GAME_THUMBS_LOCAL_DIR,
 )
-
-
-def downlaod_game_thumbnail(title):
-    """
-    Download and resize game thumbnail from `GAME_THUMBS_DIR`.
-    Returns path to thumbnial, or `None` in case of failure.
-    """
-    # 1. GET LARGE IMAGE
-    imgurl = GAME_THUMBS_REMOTE_DIR + title + '.png'
-    try:
-        response = requests.get(imgurl)
-        response.raise_for_status()
-    except Exception as e:
-        print('HTTP ERROR:', e)
-        return None
-    with tempfile.NamedTemporaryFile(suffix='.png') as origf:
-        origf.write(response.content)
-        origf.flush()
-        # 2. RESIZE and SAVE image to chefdata/
-        THUMB_SIZE = (420, 236)
-        im = Image.open(origf)
-        im.thumbnail(THUMB_SIZE)
-        thumbnail_path = os.path.join(GAME_THUMBS_LOCAL_DIR, title + '.thumbnail.png')
-        im.save(thumbnail_path, "png")
-    return thumbnail_path
-
-
-
-class PrathamGameRepoCrawler(BasicCrawler):
-    """
-    Get links fro all games from http://repository.prathamopenschool.org
-    """
-    MAIN_SOURCE_DOMAIN = GAMEREPO_MAIN_SOURCE_DOMAIN
-    CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_games_all_langs.json'
-    START_PAGE_CONTEXT = {'kind': 'index_page'}
-    kind_handlers = {
-        'index_page': 'on_index_page',
-        'gameslang_page': 'on_gameslang_page',
-    }
-
-    def on_index_page(self, url, page, context):
-        LOGGER.info('in on_index_page ' + url)
-        page_dict = dict(
-            kind='index_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-        
-        languagelist_divs = page.find_all('div', attrs={'ng-repeat': "lang in languagelist"})
-        for languagelist_div in languagelist_divs:
-            link = languagelist_div.find('a')
-            language_en = get_text(link)
-            language_url = urljoin(url, link['href'])
-            context = dict(
-                parent=page_dict,
-                kind='gameslang_page',
-                language_en=language_en,
-            )
-            self.enqueue_url_and_context(language_url, context)
-
-    def on_gameslang_page(self, url, page, context):
-        LOGGER.info('in on_gameslang_page ' + url)
-        page_dict = dict(
-            kind='gameslang_page',
-            url=url,
-            children=[],
-        )
-        page_dict.update(context)
-        context['parent']['children'].append(page_dict)
-        
-        gamelist = page.find_all('div', attrs={'ng-repeat':"gamedata in gamelist|filter:gametitle|filter:gamedata.gameurl.length"})
-        for game in gamelist:
-            title = get_text(game.find('h3'))
-            last_modified = get_text(game.find('h6')).replace('Last modified : ', '')
-            links = game.find_all('a')
-            game_link, zipfile_link = links[0], links[1]
-            main_file = urljoin(url, game_link['href'])
-            zipfile_url = urljoin(url, zipfile_link['href'])
-
-            # Handle special case of broken links (no title, and not main file)
-            if len(title) == 0:
-                zip_path = urlparse(zipfile_url).path
-                zip_filename = os.path.basename(zip_path)
-                title, _ = os.path.splitext(zip_filename)
-                main_file = None
-
-            game_dict = dict(
-                url=zipfile_url,
-                kind='PradigiGameZipResource',
-                title=title,
-                last_modified=last_modified,
-                main_file=main_file,
-                language_en=context['language_en'],
-                thumbnail_url=downlaod_game_thumbnail(title),
-                children=[],
-            )
-            page_dict['children'].append(game_dict)
-
-
-    def download_page(self, url, *args, **kwargs):
-        """
-        Download `url` using a JS-enabled web client.
-        """
-        LOGGER.info('Downloading ' +  url + ' then pausing for 15 secs for JS to run.')
-        html = downloader.read(url, loadjs=True, loadjs_wait_time=25)
-        page = BeautifulSoup(html, "html.parser")
-        LOGGER.debug('Downloaded page ' + str(url) + ' using PhantomJS. Title:' + self.get_title(page))
-        return (url, page)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -183,8 +58,8 @@ class PraDigiCrawler(BasicCrawler):
         """
         if lang is None:
             raise ValueError('Must specify `lang` argument for PraDigiCrawler.')
-        if lang not in PRADIGI_LANGUAGES:
-            raise ValueError('Bad lang. Use one of ' + str(PRADIGI_LANGUAGES))
+        if lang not in PRADIGI_WEBSITE_LANGUAGES:
+            raise ValueError('Bad lang. Use one of ' + str(PRADIGI_WEBSITE_LANGUAGES))
         self.lang = lang
         start_page = PRADIGI_LANG_URL_MAP[self.lang]
         self.CRAWLING_STAGE_OUTPUT = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
@@ -528,11 +403,11 @@ class PraDigiCrawler(BasicCrawler):
                 link = content.find('a')
                 source_id = link['href'][1:]
                 fun_resource_url = get_absolute_path(link['href'])
-                direct_download_url = None
+                # direct_download_url = None
                 direct_download_link = content.find('a', class_='dnlinkfunstory')
                 if direct_download_link:
                     direct_download_href = direct_download_link['href']
-                    direct_download_url = get_absolute_path(direct_download_href)
+                    # direct_download_url = get_absolute_path(direct_download_href)
 
                 # Need to GET the FunResource detail page since main_file is not in avail. in listing
                 fun_rsrc_html = requests.get(fun_resource_url).text

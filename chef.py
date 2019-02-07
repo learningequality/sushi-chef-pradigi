@@ -1044,14 +1044,8 @@ def find_games_for_lang(name, lang, take_from=None):
                     if name == title and len(games) == 0:
                         games.append(game)
                         # game_source_ids.append(source_id)
-    #
-    # Final pass to check if we filter out games in the action='SKIP GAME' list
-    final_games = []
-    for game in games:
-        if not should_skip_file(game['url']):
-            final_games.append(game)
-    #
-    return final_games
+
+    return games
 
 
 # GAME REPO JSON to RICECOOKER JSON
@@ -1349,7 +1343,9 @@ class PraDigiChef(JsonTreeChef):
                 for game_row in game_rows:
                     game_name = game_row[GAMENAME_KEY]
                     take_from = game_row[TAKE_FROM_KEY]
-                    games = find_games_for_lang(game_name, lang, take_from=take_from)
+                    unfiltered_games = find_games_for_lang(game_name, lang, take_from=take_from)
+                    # check if we filter out games in the action='SKIP GAME' list
+                    games = [game for game in unfiltered_games if not should_skip_file(game['url'])]
                     # print('Processing games', games, 'under game_title', game_title, 'for lang', lang, 'found take_from=', take_from, flush=True)
                     for game in games:
                         # CASE website game

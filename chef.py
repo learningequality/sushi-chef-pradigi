@@ -54,7 +54,8 @@ PRADIGI_DOMAIN = 'prathamopenschool.org'
 FULL_DOMAIN_URL = 'http://www.' + PRADIGI_DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
 PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
-PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
+# PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
+PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
 PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational '   \
     + 'games, videos, and ebooks on language learning, math, science, English, '  \
     + 'health, and vocational training. The learning material, available for '    \
@@ -83,7 +84,18 @@ session.mount('https://www.' + PRADIGI_DOMAIN, forever_adapter)
 PRADIGI_LANG_URL_MAP = {
     'hi': 'http://www.prathamopenschool.org/hn/',
     'mr': 'http://www.prathamopenschool.org/mr/',
+    'en': 'http://www.prathamopenschool.org/en/',
+    'gu': 'http://www.prathamopenschool.org/Gj',
+    'kn': 'http://www.prathamopenschool.org/kn/',
+    'bn': 'http://www.prathamopenschool.org/bn/',
+    'ur': 'http://www.prathamopenschool.org/ur/',
+    'or': 'http://www.prathamopenschool.org/Od/',
+    'pnb': 'http://www.prathamopenschool.org/pn/',
+    'ta': 'http://www.prathamopenschool.org/Tm/',
+    'te': 'http://www.prathamopenschool.org/Tl/',
 }
+
+
 GAMEREPO_MAIN_SOURCE_DOMAIN = 'http://repository.prathamopenschool.org'
 GAME_THUMBS_REMOTE_DIR = 'http://www.prodigi.openiscool.org/repository/Images/'
 GAME_THUMBS_LOCAL_DIR = 'chefdata/gamethumbnails'
@@ -771,8 +783,8 @@ def get_phet_zip_file(zip_file_url, main_file_and_query):
 ################################################################################
 
 def get_subtree_by_subject_en(lang, subject):
-    if lang not in ['mr', 'hi']:
-        raise ValueError('Language `lang` must mr or hi (only two langs on website)')
+    if lang not in PRADIGI_LANG_URL_MAP:
+        raise ValueError('Language `lang` must be in PRADIGI_LANG_URL_MAP')
     wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
     with open(wrt_filename) as jsonfile:
         web_resource_tree = json.load(jsonfile)
@@ -787,8 +799,8 @@ def get_subtree_by_source_id(lang, source_id):
     """
     Walk the `lang` web resouce tree and finds the subtree that has `source_id`.
     """
-    if lang not in ['mr', 'hi']:
-        raise ValueError('Language `lang` must mr or hi (only two langs on website)')
+    if lang not in PRADIGI_LANG_URL_MAP:
+        raise ValueError('Language `lang` must be in PRADIGI_LANG_URL_MAP')
     wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
     with open(wrt_filename) as jsonfile:
         web_resource_tree = json.load(jsonfile)
@@ -1152,8 +1164,8 @@ def extract_website_games_from_tree(lang):
     deduplicated with gamerepo games and manually placed within subject folders.
     Modifies tree in place + returns `website_games` (list) for given `lang`.
     """
-    if lang not in ['mr', 'hi']:
-        raise ValueError('Language `lang` must mr or hi (only two langs on website)')
+    if lang not in PRADIGI_LANG_URL_MAP:
+        raise ValueError('Language `lang` must be in PRADIGI_LANG_URL_MAP')
     # READ IN
     wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
     with open(wrt_filename) as jsonfile:

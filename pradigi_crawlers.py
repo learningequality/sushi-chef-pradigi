@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 
 
 from ricecooker.config import LOGGER
-LOGGER.setLevel(logging.DEBUG)
+LOGGER.setLevel(logging.INFO)
 from le_utils.constants.languages import getlang, getlang_by_name
 from ricecooker.utils import downloader
 
@@ -765,8 +765,8 @@ def flatten_web_resource_tree(lang):
     hoist resource up to the parent: `parent --> Resource`.
     This avoids extra subdirectories.
     """
-    if lang not in ['mr', 'hi']:
-        raise ValueError('Language `lang` must mr or hi (only two langs on website)')
+    if lang not in PRADIGI_LANG_URL_MAP:
+        raise ValueError('Language `lang` must be in PRADIGI_LANG_URL_MAP')
     # READ IN
     wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
     with open(wrt_filename) as jsonfile:

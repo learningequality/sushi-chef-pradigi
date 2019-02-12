@@ -800,9 +800,13 @@ def get_subtree_by_subject_en(lang, subject):
     with open(wrt_filename) as jsonfile:
         web_resource_tree = json.load(jsonfile)
     subject_subtrees = web_resource_tree['children']
-    for subject_subtree in subject_subtrees:
-        if subject_subtree['subject_en'] == subject:
-            return subject_subtree
+    try:
+        for subject_subtree in subject_subtrees:
+            if subject_subtree['subject_en'] == subject:
+                return subject_subtree
+    except Exception as e:
+        LOGGER.error("in get_subtree_by_subject_en: %s, %s, %s, %s" %
+                     (lang, subject, subject_subtree, e))
     return None
 
 

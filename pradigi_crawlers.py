@@ -34,6 +34,7 @@ class PraDigiCrawler(BasicCrawler):
     START_PAGE_CONTEXT = {'kind': 'lang_page'}
     IGNORE_URLS = [
         'http://www.prathamopenschool.org/mr/Course/English/CRS97',  # Hindi game show in Marathi channel
+        'http://www.prathamopenschool.org/mr/Course/Construction',   # Borken link Feb 12
     ]
     kind_handlers = {
         'lang_page': 'on_lang_page',
@@ -648,6 +649,9 @@ def flatten_web_resource_tree(lang):
             # 1. do replacment if matches conditions
             new_children = []
             for child in subtree['children']:
+                if 'title' not in child:
+                    print('|||| >>>>', 'NO TITLE', child)
+                    continue
                 child_title = child['title']
                 if 'children' in child and len(child['children']) == 1:
                     grandchild = child['children'][0]

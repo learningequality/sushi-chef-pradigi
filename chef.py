@@ -65,7 +65,7 @@ PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational ' 
 
 
 # In debug mode, only one topic is downloaded.
-LOGGER.setLevel(logging.INFO)
+LOGGER.setLevel(logging.DEBUG)
 DEBUG_MODE = True  # source_urls in content desriptions
 
 # Cache logic.
@@ -85,15 +85,15 @@ session.mount('https://www.' + PRADIGI_DOMAIN, forever_adapter)
 PRADIGI_LANG_URL_MAP = {
     'hi': 'http://www.prathamopenschool.org/hn/',
     'mr': 'http://www.prathamopenschool.org/mr/',
-    'en': 'http://www.prathamopenschool.org/en/',
-    'gu': 'http://www.prathamopenschool.org/Gj',
+    # 'en': 'http://www.prathamopenschool.org/en/',
+    # 'gu': 'http://www.prathamopenschool.org/Gj',
     'kn': 'http://www.prathamopenschool.org/kn/',
-    'bn': 'http://www.prathamopenschool.org/bn/',
-    'ur': 'http://www.prathamopenschool.org/ur/',
-    'or': 'http://www.prathamopenschool.org/Od/',
-    'pnb': 'http://www.prathamopenschool.org/pn/',
-    'ta': 'http://www.prathamopenschool.org/Tm/',
-    'te': 'http://www.prathamopenschool.org/Tl/',
+    # 'bn': 'http://www.prathamopenschool.org/bn/',
+    # 'ur': 'http://www.prathamopenschool.org/ur/',
+    # 'or': 'http://www.prathamopenschool.org/Od/',
+    # 'pnb': 'http://www.prathamopenschool.org/pn/',
+    # 'ta': 'http://www.prathamopenschool.org/Tm/',
+    # 'te': 'http://www.prathamopenschool.org/Tl/',
 }
 assert set(PRADIGI_WEBSITE_LANGUAGES) == set(PRADIGI_LANG_URL_MAP.keys()), 'need url for lang'
 

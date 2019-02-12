@@ -198,7 +198,7 @@ class PraDigiCrawler(BasicCrawler):
 
 
     def on_subtopic_page(self, url, page, context):
-        LOGGER.debug('     in on_subtopic_page', url)
+        LOGGER.debug('     in on_subtopic_page ' + url)
         page_dict = dict(
             kind='subtopic_page',  # redundant...
             url=url,
@@ -221,7 +221,7 @@ class PraDigiCrawler(BasicCrawler):
                 lesson_url = urljoin(url, lesson.find('a')['href'])
 
                 if self.should_ignore_url(lesson_url):
-                    LOGGER.info('ignoring lesson', lesson_url)
+                    LOGGER.info('ignoring lesson' + lesson_url)
                     continue
 
                 thumbnail_src = lesson.find('a').find('img')['src']
@@ -247,7 +247,7 @@ class PraDigiCrawler(BasicCrawler):
     ############################################################################
 
     def on_lesson_page(self, url, page, context):
-        LOGGER.debug('      in on_lesson_page', url)
+        LOGGER.debug('      in on_lesson_page' + url)
         page_dict = dict(
             kind='lessons_page',
             url=url,
@@ -371,7 +371,7 @@ class PraDigiCrawler(BasicCrawler):
         This handles pages of the form gamelist/CRS??? and hn/Fun that contain
         direct links to resources without the topics and subtopic hierarchy.
         """
-        LOGGER.debug('     in on_fun_page', url)
+        LOGGER.debug('     in on_fun_page' + url)
         page_dict = dict(
             kind='fun_page',
             url=url,
@@ -490,7 +490,7 @@ class PraDigiCrawler(BasicCrawler):
     ############################################################################
 
     def on_story_page(self, url, page, context):
-        LOGGER.debug('     in on_story_page', url)
+        LOGGER.debug('     in on_story_page' + url)
         page_dict = dict(
             kind='story_page',
             url=url,
@@ -537,7 +537,7 @@ class PraDigiCrawler(BasicCrawler):
                 LOGGER.error('on_story_page: %s : %s' % (e, content))
 
     def on_story_resource_page(self, url, page, context):
-        LOGGER.debug('     in on_story_resource_page', url)
+        LOGGER.debug('     in on_story_resource_page' + url)
         html = str(page)
         story_resource_url = get_respath_url_from_html(html)
         if story_resource_url:

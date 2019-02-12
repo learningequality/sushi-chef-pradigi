@@ -10,13 +10,6 @@ The PraDigi chef uses a mix of content from three sources:
         - The Fun/ page contains various videos and HTML5 visaulisations
         - The Stories/ page contains PDFs
 
-2/ The game repository http://repository.prathamopenschool.org has this structure:
-    - Index page that links to different languages
-        - Each language lists games
-            - Each game consists of a zip to a Kolibri-compliant HTML5Zip file
-
-3/ The recent vocational training videos are organized into YouTube playlists
-
 We use an Spreadsheet in order to unify and organize the content from these three
 sources into a single channel:
 https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=342105160
@@ -47,7 +40,6 @@ from ricecooker.utils.caching import (CacheForeverHeuristic, FileCache, CacheCon
 from ricecooker.utils.jsontrees import write_tree_to_json_tree
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
-import youtube_helper
 
 
 PRADIGI_DOMAIN = 'prathamopenschool.org'
@@ -418,7 +410,6 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
     { 
         'website': [subject_en, ...],  # Include all from /subject_en on website
         'games': [{game struct row}, {anothe game row}, ...]   # Include localized verison of games in this list
-        'playlists': [{subtree of kind youtube_playlist with YouTubeVideoResource children}, ]
     }
     """
     # print('in get_resources_for_age_group_and_subject with', age_group, subject_en, flush=True)
@@ -428,7 +419,6 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
         struct_list = PRADIGI_STRUCT_LIST
     website = []
     games = []
-    playlists = []
     for row in struct_list:
         if row[AGE_GROUP_KEY] == age_group and row[SUBJECT_KEY] == subject_en:
             if row[USE_ONLY_IN_KEY] and not row[USE_ONLY_IN_KEY] == language_en:
@@ -438,57 +428,11 @@ def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
                 games.append(row)
             elif row[RESOURCE_TYPE_KEY] == 'Website Resources':
                 website.append(subject_en)
-            # TODO: handle 
-            elif row[RESOURCE_TYPE_KEY].startswith('YouTubePlaylist:'):
-                playlist_url = row[RESOURCE_TYPE_KEY].replace('YouTubePlaylist:', '')
-                playlist_subtree = get_youtube_playlist_subtree(playlist_url)
-                playlists.append(playlist_subtree)
             else:
                 print('Unknown resource type', row[RESOURCE_TYPE_KEY], 'in row', row)
     # print('games=', games, flush=True)
-    return {'website':website, 'games':games, 'playlists': playlists}
+    return {'website':website, 'games':games}
 
-
-
-# YouTube playlist download helper
-################################################################################
-
-def get_youtube_playlist_subtree(playlist_url):
-    """
-    Uses the `get_youtube_info` helper method to download the complete
-    list of videos from a youtube playlist and create web resource tree.
-    """
-    data = youtube_helper.get_youtube_info(playlist_url)
-
-    # STEP 1: Create main dict for playlist
-    playlist_description = data['description']
-    if DEBUG_MODE:
-        playlist_description += 'source_url=' + playlist_url
-    subtree = dict(
-        kind='youtube_playlist',
-        source_id=data['id'],
-        title=data['title'],
-        description=playlist_description,
-        # thumbnail_url=None,  # intentinally not set
-        children=[],
-    )
-
-    # STEP 2. Process each video in playlist
-    for video_data in data['children']:
-        video_description = video_data['description']
-        if DEBUG_MODE:
-            video_description += 'source_url=' + video_data['source_url']
-        video_dict = dict(
-            kind='YouTubeVideoResource',
-            source_id=video_data['id'],
-            title=video_data['title'],
-            description=video_description,
-            thumbnail_url=video_data['thumbnail'],
-            youtube_id=video_data['id'],
-        )
-        subtree['children'].append(video_dict)
-
-    return subtree
 
 
 
@@ -851,7 +795,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
     and content nodes, using `filter_fn` to determine if each node should be included or not.
     """
     kind = tree['kind']
-    if kind in ['topic_page', 'subtopic_page', 'lesson_page', 'fun_page', 'story_page', 'youtube_playlist']:
+    if kind in ['topic_page', 'subtopic_page', 'lesson_page', 'fun_page', 'story_page']:
         thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
         topic_node = dict(
             kind=content_kinds.TOPIC,
@@ -1200,8 +1144,7 @@ class PraDigiChef(JsonTreeChef):
     """
     SushiChef script for importing and merging the content from these sources:
       - Video, PDFs, and interactive demos from http://www.prathamopenschool.org/
-      - Games from http://repository.prathamopenschool.org
-      - Vocational videos from YouTube playlists
+      - Games from http://www.prathamopenschool.org/ 
     """
     RICECOOKER_JSON_TREE = 'pradigi_ricecooker_json_tree.json'
 
@@ -1257,7 +1200,6 @@ class PraDigiChef(JsonTreeChef):
                 resources = get_resources_for_age_group_and_subject(age_group, subject_en, language_en)
                 assert 'website' in resources, 'Missing website key in resources dict'
                 assert 'games' in resources, 'Missing games key in resources dict'
-                assert 'playlists' in resources, 'Missing playlists key in resources dict'
 
                 ################################################################
                 LOGGER.info('In main loop lang={} age_group={} subject_en={}'.format(lang, age_group, subject_en))
@@ -1271,16 +1213,7 @@ class PraDigiChef(JsonTreeChef):
                             for child in ricecooker_subtree['children']:
                                 subject_subtree['children'].append(child)
 
-                # B1. Load Vocational videos from youtube playlists (only available in Hindi)
-                if lang == 'hi':
-                    for playlist in resources['playlists']:
-                        ricecooker_subtree = wrt_to_ricecooker_tree(playlist, lang)
-                        subject_subtree['source_id'] = ricecooker_subtree['source_id']
-                        subject_subtree['description'] = ricecooker_subtree['description']
-                        for child in ricecooker_subtree['children']:
-                            subject_subtree['children'].append(child)
-
-                # B2. Copy English learning videos from HI and MR subtrees to English subtree
+                # B. Copy English learning videos from HI and MR subtrees to English subtree
                 if lang == 'en' and subject_en == 'Language' and age_group in ['8-14 years', '14 and above']:
                     # B2.hi: add "For Hindi speakers" subfolder
                     en_hi_topic = dict(

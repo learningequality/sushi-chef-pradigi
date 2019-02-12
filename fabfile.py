@@ -32,7 +32,7 @@ GAMES_JSON_FILENAME = 'pradigi_games_all_langs.json'
 WEBSITE_GAMES_JSON_FILENAME = 'website_games_all_langs.json'
 CRAWLING_STAGE_OUTPUT_TMPL = 'pradigi_{}_web_resource_tree.json'
 SCRAPING_STAGE_OUTPUT = 'pradigi_ricecooker_json_tree.json'
-WEBSITE_LANG_CODES = ['hi', 'mr']
+from chef import PRADIGI_WEBSITE_LANGUAGES
 
 
 
@@ -59,7 +59,7 @@ def get_trees(langs='all'):
     trees_dir = os.path.join(CHEF_DATA_DIR, 'chefdata', 'trees')
     local_dir = os.path.join('chefdata', 'vader', 'trees')
     if langs == 'all':
-        langs = WEBSITE_LANG_CODES
+        langs = PRADIGI_WEBSITE_LANGUAGES
     # crawling trees
     for lang in langs:
         web_resource_tree_filename = CRAWLING_STAGE_OUTPUT_TMPL.format(lang)
@@ -91,6 +91,19 @@ def get_trees(langs='all'):
     ricecooker_json_tree_filename = SCRAPING_STAGE_OUTPUT
     get(os.path.join(trees_dir, ricecooker_json_tree_filename),
         os.path.join(local_dir, ricecooker_json_tree_filename))
+
+
+
+# CLEAR CACHES
+################################################################################
+
+@task
+def clear_caches():
+    with cd(CHEF_DATA_DIR):
+        sudo('rm -rf cache.sqlite')
+        sudo('rm -rf prathamopenshcool_org.sqlite')
+        sudo('rm -rf .webcache')
+        sudo('rm -rf chefdata/zipfiles')
 
 
 # SETUP

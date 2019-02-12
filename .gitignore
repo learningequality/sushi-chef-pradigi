@@ -9,9 +9,8 @@ chefdata/vader
 chefdata/archiveFeb7
 chefdata/pradigi_structure.csv
 chefdata/pradigi_english_structure.csv
-chefdata/trees/pradigi_hi_web_resource_tree.json
-chefdata/trees/pradigi_mr_web_resource_tree.json
-chefdata/trees/pradigi_games_all_langs.json
+# chefdata/trees/pradigi_*_web_resource_tree.json
+# chefdata/trees/pradigi_games_all_langs.json
 chefdata/trees/pradigi_ricecooker_json_tree.json
 chefdata/pradigi_corrections.csv
 

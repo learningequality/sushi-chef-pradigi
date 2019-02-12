@@ -55,7 +55,8 @@ FULL_DOMAIN_URL = 'http://www.' + PRADIGI_DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
 # PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
 # PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
-PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
+# PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
+PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'kn']
 PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational '   \
     + 'games, videos, and ebooks on language learning, math, science, English, '  \
     + 'health, and vocational training. The learning material, available for '    \
@@ -65,7 +66,7 @@ PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational ' 
 
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.INFO)
-DEBUG_MODE = False  # source_urls in content desriptions
+DEBUG_MODE = True  # source_urls in content desriptions
 
 # Cache logic.
 cache = FileCache('.webcache')
@@ -132,6 +133,10 @@ PRADIGI_STRINGS = {
             "CRS122": "खेल-बाड़ी",      # Playground
             "CRS124": "देखो और करों",   # Look and
             "CRS123": "खेल-पुरी",       # Games
+        },
+        #   Subject -->  topic_page id lookup table
+        'subject_lookup': {
+            'Health': 'Health',
         }
     },
     'en': {
@@ -249,6 +254,12 @@ PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science', 'Hea
                     "CRS125", # "खेळ-वाडी",
                     "CRS127", # "बघा आणि शिका",
                     "CRS126", # "खेळ-पुरी",
+                    #
+                    # Kannada 
+                    'CRS153',
+                    'CRS168',
+                    'CRS170',
+                    'CRS169',
                     'LanguageAndCommunication']
 PRADIGI_RESOURCE_TYPES = ['Game', 'Website Resources']
 # Note: can add 'Video Resources', 'Interactive Resoruces' and 'Book Resources'
@@ -1171,7 +1182,7 @@ def extract_website_games_from_tree(lang):
     recursive_extract_website_games(web_resource_tree)
     # WRITOUT
     with open(wrt_filename, 'w') as wrt_file:
-        json.dump(web_resource_tree, wrt_file, indent=2, sort_keys=True)
+        json.dump(web_resource_tree, wrt_file, ensure_ascii=False, indent=2, sort_keys=True)
     return website_games
 
 
@@ -1210,7 +1221,7 @@ class PraDigiChef(JsonTreeChef):
         WEBSITE_GAMES_OUTPUT = 'chefdata/trees/website_games_all_langs.json'
         # Save website games
         with open(WEBSITE_GAMES_OUTPUT, 'w') as json_file:
-            json.dump(website_games, json_file,  ensure_ascii=False, indent=2, sort_keys=True)
+            json.dump(website_games, json_file, ensure_ascii=False, indent=2, sort_keys=True)
 
 
     def build_subtree_for_lang(self, lang):

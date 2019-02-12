@@ -1,12 +1,9 @@
 import json
 import logging
-# import os
-# from PIL import Image
 import re
 import requests
 import requests_cache
 requests_cache.install_cache('prathamopenshcool_org', expire_after=60*60*24)
-# import tempfile
 from urllib.parse import urljoin, urlparse
 
 
@@ -16,9 +13,8 @@ from bs4 import BeautifulSoup
 
 
 from ricecooker.config import LOGGER
-LOGGER.setLevel(logging.INFO)
+LOGGER.setLevel(logging.WARNING)
 from le_utils.constants.languages import getlang
-#from ricecooker.utils import downloader
 
 
 from chef import (
@@ -188,7 +184,7 @@ class PraDigiCrawler(BasicCrawler):
 
                 title = get_text(subtopic)
                 source_id = get_source_id(subtopic['href'])
-                LOGGER.info('  found subtopic: %s: %s' % (source_id, title))
+                LOGGER.debug('  found subtopic: %s: %s' % (source_id, title))
                 context = dict(
                     parent=page_dict,
                     kind='subtopic_page',
@@ -202,7 +198,7 @@ class PraDigiCrawler(BasicCrawler):
 
 
     def on_subtopic_page(self, url, page, context):
-        print('     in on_subtopic_page', url)
+        LOGGER.debug('     in on_subtopic_page', url)
         page_dict = dict(
             kind='subtopic_page',  # redundant...
             url=url,
@@ -225,13 +221,13 @@ class PraDigiCrawler(BasicCrawler):
                 lesson_url = urljoin(url, lesson.find('a')['href'])
 
                 if self.should_ignore_url(lesson_url):
-                    print('ignoring lesson', lesson_url)
+                    LOGGER.info('ignoring lesson', lesson_url)
                     continue
 
                 thumbnail_src = lesson.find('a').find('img')['src']
                 thumbnail_url = urljoin(url, thumbnail_src)
                 source_id = get_source_id(lesson.find('a')['href'])
-                LOGGER.info('         lesson: %s: %s' % (source_id, title))
+                LOGGER.debug('         lesson: %s: %s' % (source_id, title))
                 context = dict(
                     parent=page_dict,
                     kind='lesson_page',
@@ -251,7 +247,7 @@ class PraDigiCrawler(BasicCrawler):
     ############################################################################
 
     def on_lesson_page(self, url, page, context):
-        print('      in on_lesson_page', url)
+        LOGGER.debug('      in on_lesson_page', url)
         page_dict = dict(
             kind='lessons_page',
             url=url,
@@ -274,7 +270,7 @@ class PraDigiCrawler(BasicCrawler):
                 thumbnail = content.find('a').find('img')['src']
                 thumbnail = get_absolute_path(thumbnail)
                 main_file, master_file, source_id = get_content_link(content)
-                LOGGER.info('         content: %s: %s' % (source_id, title))
+                LOGGER.debug('         content: %s: %s' % (source_id, title))
 
                 if self.should_ignore_url(main_file):
                     print('ignoring content', title, main_file)
@@ -375,7 +371,7 @@ class PraDigiCrawler(BasicCrawler):
         This handles pages of the form gamelist/CRS??? and hn/Fun that contain
         direct links to resources without the topics and subtopic hierarchy.
         """
-        print('     in on_fun_page', url)
+        LOGGER.debug('     in on_fun_page', url)
         page_dict = dict(
             kind='fun_page',
             url=url,
@@ -420,7 +416,7 @@ class PraDigiCrawler(BasicCrawler):
                     print('ignoring fun content', title, respath_url)
                     continue
 
-                LOGGER.info('      Fun content: %s: %s at %s' % (source_id, title, respath_url))
+                LOGGER.debug('      Fun content: %s: %s at %s' % (source_id, title, respath_url))
 
                 if respath_path.endswith('mp4') or respath_path.endswith('MP4'):
                     video = dict(
@@ -494,7 +490,7 @@ class PraDigiCrawler(BasicCrawler):
     ############################################################################
 
     def on_story_page(self, url, page, context):
-        print('     in on_story_page', url)
+        LOGGER.debug('     in on_story_page', url)
         page_dict = dict(
             kind='story_page',
             url=url,
@@ -527,7 +523,7 @@ class PraDigiCrawler(BasicCrawler):
                     print('ignoring story content', title, story_resource_url)
                     continue
 
-                LOGGER.info('      story_resource_page: %s: %s' % (source_id, title))
+                LOGGER.debug('      story_resource_page: %s: %s' % (source_id, title))
                 context = dict(
                     parent = page_dict,
                     kind='story_resource_page',
@@ -541,7 +537,7 @@ class PraDigiCrawler(BasicCrawler):
                 LOGGER.error('on_story_page: %s : %s' % (e, content))
 
     def on_story_resource_page(self, url, page, context):
-        print('     in on_story_resource_page', url)
+        LOGGER.debug('     in on_story_resource_page', url)
         html = str(page)
         story_resource_url = get_respath_url_from_html(html)
         if story_resource_url:
@@ -671,5 +667,5 @@ def flatten_web_resource_tree(lang):
     recursive_flatten_web_resource_tree(web_resource_tree)
     # WRITOUT
     with open(wrt_filename, 'w') as wrt_file:
-        json.dump(web_resource_tree, wrt_file, indent=2, sort_keys=True)
+        json.dump(web_resource_tree, wrt_file, ensure_ascii=False, indent=2, sort_keys=True)
 

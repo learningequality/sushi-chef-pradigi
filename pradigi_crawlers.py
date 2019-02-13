@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 import json
 import logging
 import re
@@ -8,14 +9,9 @@ from urllib.parse import urljoin, urlparse
 
 
 from basiccrawler.crawler import BasicCrawler
-from bs4 import BeautifulSoup
-
-
-
 from ricecooker.config import LOGGER
 LOGGER.setLevel(logging.WARNING)
 from le_utils.constants.languages import getlang
-
 
 from chef import (
     PRADIGI_DOMAIN,
@@ -34,7 +30,7 @@ class PraDigiCrawler(BasicCrawler):
     START_PAGE_CONTEXT = {'kind': 'lang_page'}
     IGNORE_URLS = [
         'http://www.prathamopenschool.org/mr/Course/English/CRS97',  # Hindi game show in Marathi channel
-        'http://www.prathamopenschool.org/mr/Course/Construction',   # Borken link Feb 12
+        # 'http://www.prathamopenschool.org/mr/Course/Construction',   # Borken link Feb 12
     ]
     kind_handlers = {
         'lang_page': 'on_lang_page',

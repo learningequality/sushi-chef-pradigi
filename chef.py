@@ -36,7 +36,7 @@ from le_utils.constants.languages import getlang
 from ricecooker.chefs import JsonTreeChef
 from ricecooker.classes.licenses import get_license
 from ricecooker.config import LOGGER
-from ricecooker.utils.caching import (CacheForeverHeuristic, FileCache, CacheControlAdapter)
+from ricecooker.utils.caching import (OneDayCache, FileCache, CacheControlAdapter)
 from ricecooker.utils.jsontrees import write_tree_to_json_tree
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
@@ -63,13 +63,12 @@ DEBUG_MODE = True  # source_urls in content desriptions
 # Cache logic.
 cache = FileCache('.webcache')
 basic_adapter = CacheControlAdapter(cache=cache)
-forever_adapter = CacheControlAdapter(heuristic=CacheForeverHeuristic(),
-                                      cache=cache)
+develop_adapter = CacheControlAdapter(heuristic=OneDayCache(), cache=cache)
 session = requests.Session()
 session.mount('http://', basic_adapter)
 session.mount('https://', basic_adapter)
-session.mount('http://www.' + PRADIGI_DOMAIN, forever_adapter)
-session.mount('https://www.' + PRADIGI_DOMAIN, forever_adapter)
+session.mount('http://www.' + PRADIGI_DOMAIN, develop_adapter)
+session.mount('https://www.' + PRADIGI_DOMAIN, develop_adapter)
 
 
 # SOURCE WEBSITES
@@ -1115,24 +1114,25 @@ def extract_website_games_from_tree(lang):
                     if is_website_game(child_url):
                         # extract all game names referenced in manual curation Excel file to process separately...
                         child['title_en'] = child_url.replace('http://www.prathamopenschool.org/CourseContent/Games/', '').replace('.zip', '')
+                        print('EXTRACTED game name', child['title_en'], 'form url', child['url'])
                         website_games.append(child)
                     else:
                         # leave other games where they are
+                        LOGGER.error('Found non-website game ' + child['url'])
                         new_children.append(child)
                 else:
                     # leave other content as is
                     new_children.append(child)
-            subtree['children'] = new_children
+            # DISABLE subtree['children'] = new_children
             #
             # recurse
             for child in subtree['children']:
                 recursive_extract_website_games(child)
     recursive_extract_website_games(web_resource_tree)
-    # WRITOUT
-    with open(wrt_filename, 'w') as wrt_file:
-        json.dump(web_resource_tree, wrt_file, ensure_ascii=False, indent=2, sort_keys=True)
+    # DISABLE WRITOUT
+    # DISABLE with open(wrt_filename, 'w') as wrt_file:
+    # DISABLE     json.dump(web_resource_tree, wrt_file, ensure_ascii=False, indent=2, sort_keys=True)
     return website_games
-
 
 
 
@@ -1336,7 +1336,5 @@ class PraDigiChef(JsonTreeChef):
 if __name__ == '__main__':
     pradigi_chef = PraDigiChef()
     pradigi_chef.main()
-
-
 
 

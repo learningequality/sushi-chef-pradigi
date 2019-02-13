@@ -48,7 +48,7 @@ PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').
 # PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
 # PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
 # PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
-PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'kn']
+PRADIGI_WEBSITE_LANGUAGES = ['hi']
 PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational '   \
     + 'games, videos, and ebooks on language learning, math, science, English, '  \
     + 'health, and vocational training. The learning material, available for '    \
@@ -86,7 +86,7 @@ PRADIGI_LANG_URL_MAP = {
     # 'ta': 'http://www.prathamopenschool.org/Tm/',
     # 'te': 'http://www.prathamopenschool.org/Tl/',
 }
-assert set(PRADIGI_WEBSITE_LANGUAGES) == set(PRADIGI_LANG_URL_MAP.keys()), 'need url for lang'
+# assert set(PRADIGI_WEBSITE_LANGUAGES) == set(PRADIGI_LANG_URL_MAP.keys()), 'need url for lang'
 
 GAMEREPO_MAIN_SOURCE_DOMAIN = 'http://repository.prathamopenschool.org'
 GAME_THUMBS_REMOTE_DIR = 'http://www.prodigi.openiscool.org/repository/Images/'

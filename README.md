@@ -4,14 +4,17 @@ Import content from prathamopenschool.org and the Pratham gamerepo into Studio.
 
 Design
 ------
-This chef combines data from both the prathamopenschool.org website and the gamerepo:
+This chef combines data from both the prathamopenschool.org website:
   - Hindi
     - mix of website resource and games (games taken from website preferentially)
     - some extra vocational material taken from youtube playlists
   - Marathi
     - mix of website resource and games (games taken from website preferentially)
-  - English and other languages
-    - games taken from gamerepo
+  - Other languages
+    - Not all folders present, and a few videos of here and there
+    - Reuse English from Hindi
+  - English
+    - Special structure because we must put English stuff in the `Language` topic
 
 The following google spreadhseet are used to determine placement of content nodes within the channel:
   - English https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=1812185465
@@ -19,7 +22,6 @@ The following google spreadhseet are used to determine placement of content node
 
 The following corrections are applied to content before uploading to Kolibri:
 https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=93933238
-
 
 
 
@@ -35,11 +37,7 @@ Install
     virtualenv -p python3 venv
     source venv/bin/activate
     pip install -r requirements.txt
-    
-    # 3. phantoms
-    wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
-    tar -xjf phantomjs-2.1.1-linux-x86_64.tar.bz2
-    rm phantomjs-2.1.1-linux-x86_64.tar.bz2
+
 
 
 
@@ -66,25 +64,45 @@ Future Updates
 
 
 
-
-Content Merging Design
-----------------------
-
-New excel structure with "source info" columns
+Content Structure Logic
+-----------------------
+Excel document provides the template for the `Age Group > Subject` structure that
+is repeated within each language. The columns in the sheet are:
   - Game Name instead of Name on gamerepo (before lang underscore)
   - Get full game namelist
   - Extract known games from webpage
-  - Combine tree
-    - web resources
-    - pyalysts
-    - games from (website > repo > take from lang in repo)
-  - Manually add special CRS folders [TODO]
+  - Take from (if a resource needs to be taken from the wrt of another language)
+  - 
+
+The content of each subject folder is taken from the top-level website menu,
+the yelllo horizontal bar with links:
+![](./pradigi_subject_structure.png)
+
+Special treatment is required for dropdown menus--we ignore the dropdown parent
+and instead treat the submenu items as top-level subjects.
+
+The resources under Games are handled differently depending on the age group:
+  - `Game-box==CRS122` and `WatchAndDo==CRS124` (Look and Taxes???) only in the `3-6 years` subfolder
+  - `Sports-Puri==CRS123` are included only in the `6-10 years` subfolder
+
+For age groups where one or more of the Games subfolders `WatchAndDo`, Game-box, Sports-Puri 
+is not included, the games are "extracted" from these folders are extracted and
+included in the `Fun`, `Mathematics`, `Language`, and `English` subjects as needed,
+according to the structure gsheet.
 
 
 
 
-TODO
-----
+
+
+
+
+
+
+
+
+Backlog
+-------
 
 Check what's wrong with these:
 

@@ -30,7 +30,6 @@ class PraDigiCrawler(BasicCrawler):
     START_PAGE_CONTEXT = {'kind': 'lang_page'}
     IGNORE_URLS = [
         'http://www.prathamopenschool.org/mr/Course/English/CRS97',  # Hindi game show in Marathi channel
-        'http://www.prathamopenschool.org/mr/Course/Construction',   # Borken link Feb 12 ??? opens fine in Firefox
     ]
     kind_handlers = {
         'lang_page': 'on_lang_page',
@@ -116,14 +115,14 @@ class PraDigiCrawler(BasicCrawler):
                     print('skipping', topic)
                     continue
                 
-                topic_url = urljoin(url, topic['href'])
+                topic_url = urljoin(url, topic['href'].strip())
                 if self.should_ignore_url(topic_url):
                     print('ignoring topic', topic_url)
                     continue
 
                 # metadata
                 title = get_text(topic)
-                source_id = get_source_id(topic['href'])
+                source_id = get_source_id(topic['href'].strip())
                 subject_en = source_id    # short string to match on top-level categories
                 context = dict(
                     parent=page_dict,
@@ -400,7 +399,7 @@ class PraDigiCrawler(BasicCrawler):
                 # direct_download_url = None
                 direct_download_link = content.find('a', class_='dnlinkfunstory')
                 if direct_download_link:
-                    direct_download_href = direct_download_link['href']
+                    direct_download_href = direct_download_link['href'].strip()
                     # direct_download_url = get_absolute_path(direct_download_href)
 
                 # Need to GET the FunResource detail page since main_file is not in avail. in listing

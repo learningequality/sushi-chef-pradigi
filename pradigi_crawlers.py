@@ -455,12 +455,15 @@ class PraDigiCrawler(BasicCrawler):
 
 
                 elif respath_path.endswith('html'):
+                    download_url = respath_url.replace('/index.html', '.zip')
                     html_rsrc = dict(
-                        url=respath_url,
-                        kind='OtherPrathamHtmlResource',
+                        url=download_url,
+                        kind='PrathamZipResource', # used to be OtherPrathamHtmlResource
                         title=title,
+                        description='source_url=' + download_url if DEBUG_MODE else '',
                         source_id=source_id,
                         thumbnail_url=thumbnail,
+                        main_file=respath_url,
                         children=[],
                     )
                     page_dict['children'].append(html_rsrc)

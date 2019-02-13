@@ -233,43 +233,51 @@ USE_ONLY_IN_KEY = 'Use Only In'
 PRATHAM_COMMENTS_KEY = 'Pratham'
 LE_COMMENTS_KEY = 'LE Comments'
 PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
-PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science', 'Health', 'Story',
-                    #
-                    'Hospitality',
-                    'Automobile',
-                    'Beauty',
-                    'Electric',
-                    'Healthcare',
-                    'Construction',
-                    #
-                    "CRS128", # "आदरातिथ्य",      # Hospitality
-                    "CRS129", # "ऑटोमोटिव्ह",      # Automobile
-                    "CRS130", # "ब्युटी",          # Beauty
-                    "CRS131", # "इलेक्ट्रिकल",      # Electric
-                    "CRS91",  # "स्वास्थ्य सेवा",     # Healthcare
-                    "CRS93",  # "भवन निर्माण",     # Construction -- URL broken!!!!!!!!!
-                    #
-                    "CRS136", # "खेलकूद",         # Sports
-                    #
-                    # Hindi games pages =  खेल
-                    "CRS122", # "खेल-बाड़ी",      # Game-box
-                    "CRS124", # "देखो और करों",   # Watch and Do
-                    "CRS123", # "खेल-पुरी",       # Games Sport-puri
-                    #
-                    #
-                    #
-                    #
-                    # Marathi games pages = खेळ
-                    "CRS125", # "खेळ-वाडी",
-                    "CRS127", # "बघा आणि शिका",
-                    "CRS126", # "खेळ-पुरी",
-                    #
-                    # Kannada 
-                    'CRS153',
-                    'CRS168',
-                    'CRS170',
-                    'CRS169',
-                    'LanguageAndCommunication']
+PRADIGI_SUBJECTS = [
+    'Mathematics',
+    'Language',
+    'English',
+    'Science',
+    'Health',
+    'Fun',
+    'Story',
+    #
+    'Hospitality',
+    'Automobile',
+    'Beauty',
+    'Electric',
+    'Healthcare',
+    'Construction',
+    #
+    "CRS128", # "आदरातिथ्य",      # Hospitality
+    "CRS129", # "ऑटोमोटिव्ह",      # Automobile
+    "CRS130", # "ब्युटी",          # Beauty
+    "CRS131", # "इलेक्ट्रिकल",      # Electric
+    "CRS91",  # "स्वास्थ्य सेवा",     # Healthcare
+    "CRS93",  # "भवन निर्माण",     # Construction -- URL broken!!!!!!!!!
+    #
+    "CRS136", # "खेलकूद",         # Sports
+    #
+    # Hindi games pages =  खेल
+    "CRS122", # "खेल-बाड़ी",      # Game-box
+    "CRS124", # "देखो और करों",   # Watch and Do
+    "CRS123", # "खेल-पुरी",       # Games Sport-puri
+    #
+    #
+    #
+    #
+    # Marathi games pages = खेळ
+    "CRS125", # "खेळ-वाडी",
+    "CRS127", # "बघा आणि शिका",
+    "CRS126", # "खेळ-पुरी",
+    #
+    # Kannada 
+    'CRS153',
+    'CRS168',
+    'CRS170',
+    'CRS169',
+    'LanguageAndCommunication',
+]
 PRADIGI_RESOURCE_TYPES = ['Game', 'Website Resources']
 # Note: can add 'Video Resources', 'Interactive Resoruces' and 'Book Resources'
 # as separate categories for more flexibility in the future
@@ -348,12 +356,12 @@ def get_tree_for_lang_from_structure():
     """
     Build the template structure for language-subtree based on structure in CSV.
     """
-    struct_list = PRADIGI_STRUCT_LIST + PRADIGI_ENGLISH_STRUCT_LIST
-    struct_list = sorted(struct_list, key=itemgetter(AGE_GROUP_KEY, SUBJECT_KEY))
     lang_tree = dict(
         kind=content_kinds.TOPIC,
         children=[],
     )
+    struct_list = PRADIGI_STRUCT_LIST + PRADIGI_ENGLISH_STRUCT_LIST
+    struct_list = sorted(struct_list, key=itemgetter(AGE_GROUP_KEY, SUBJECT_KEY))
     age_groups_dict = dict((k, list(g)) for k, g in groupby(struct_list, key=itemgetter(AGE_GROUP_KEY)))
     for age_group_title in PRADIGI_AGE_GROUPS:
         age_groups_subtree = dict(
@@ -363,6 +371,7 @@ def get_tree_for_lang_from_structure():
         )
         lang_tree['children'].append(age_groups_subtree)
         items_in_age_group = list(age_groups_dict[age_group_title])
+        items_in_age_group = sorted(items_in_age_group, key=itemgetter(SUBJECT_KEY))
         subjects_dict = dict((k, list(g)) for k, g in groupby(items_in_age_group, key=itemgetter(SUBJECT_KEY)))
         for subject_en in PRADIGI_SUBJECTS:
             if subject_en in subjects_dict:
@@ -765,8 +774,11 @@ def get_subtree_by_subject_en(lang, subject):
         for subject_subtree in subject_subtrees:
             if 'subject_en' in subject_subtree and subject_subtree['subject_en'] == subject:
                 return subject_subtree
+            elif 'source_id' in subject_subtree and subject_subtree['source_id'] == subject:
+                return subject_subtree
             else:
-                print('no subject_en in '+ subject_subtree['source_id'])
+                pass
+                # print('no subject_en in '+ subject_subtree['source_id'])
     except Exception as e:
         LOGGER.error("in get_subtree_by_subject_en: %s, %s, %s, %s" %
                      (lang, subject, subject_subtree, e))
@@ -1085,7 +1097,7 @@ def get_all_game_names():
     """
     game_names = []
     struct_list = load_pradigi_structure()
-        struct_list.extend(load_pradigi_structure(which='English'))
+    struct_list.extend(load_pradigi_structure(which='English'))
     for struct_row in struct_list:
         codename = struct_row[GAMENAME_KEY]
         if codename is not None and codename not in game_names:

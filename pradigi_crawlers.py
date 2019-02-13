@@ -39,6 +39,7 @@ class PraDigiCrawler(BasicCrawler):
         'fun_page': 'on_fun_page',
         'story_page': 'on_story_page',
         'story_resource_page': 'on_story_resource_page',
+        'special_subtopic_page': 'on_special_subtopic_page',
     }
     # ALLOW_BROKEN_HEAD_URLS = ['http://www.prathamopenschool.org/hn/Course/Construction']
 
@@ -139,6 +140,9 @@ class PraDigiCrawler(BasicCrawler):
                 elif 'Story' in topic['href']:
                     LOGGER.info('found story page: %s: %s' % (source_id, title))
                     context['kind'] = 'story_page'
+                elif 'gamelist/CRS124' in topic['href']:
+                    LOGGER.info('FOUND CRS124 three-tab subtopic_page page: %s: %s' % (source_id, title))
+                    context['kind'] = 'special_subtopic_page'
                 elif 'gamelist/CRS' in topic['href']:
                     LOGGER.info('found top-level CRS page: %s: %s' % (source_id, title))
                     context['kind'] = 'fun_page'
@@ -146,7 +150,6 @@ class PraDigiCrawler(BasicCrawler):
                     LOGGER.info('found topic: %s: %s' % (source_id, title))
                     context['kind'] = 'topic_page'
                 self.enqueue_url_and_context(topic_url, context)
-
                 # if DEBUG_MODE:
                 #     return
 
@@ -238,6 +241,50 @@ class PraDigiCrawler(BasicCrawler):
                 # get_contents(node, link)
             except Exception as e:
                 LOGGER.error('on_subtopic_page: %s : %s' % (e, lesson))
+
+
+
+    def on_special_subtopic_page(self, url, page, context):
+        LOGGER.debug('     in on_special_subtopic_page ' + url)
+        page_dict = dict(
+            kind='special_subtopic_page',  # redundant... -- mismatc with original special_subtopic_page
+            url=url,
+            children=[],
+        )
+        page_dict.update(context)
+        context['parent']['children'].append(page_dict)
+        try:
+            menu_row = page.find('div', {'id': 'body-row'})
+            menu_row = menu_row.find('div', {'class': 'col-md-2'})
+            print(str(menu_row))
+        except Exception as e:
+            LOGGER.error('on_subtopic_page: %s : %s' % (e, page))
+            return
+        for link in menu_row.find_all('a', {'class': 'list-group-item'}):
+            try:
+                title = link.get_text().strip()
+                description = ''
+                lesson_url = urljoin(url, link['href'])
+
+                if self.should_ignore_url(lesson_url):
+                    LOGGER.info('ignoring lesson' + lesson_url)
+                    continue
+
+                source_id = get_source_id(link['href'])
+                LOGGER.debug('         special lesson: %s: %s' % (source_id, title))
+                context = dict(
+                    parent=page_dict,
+                    kind='fun_page',
+                    title=title,
+                    description=description,
+                    source_id=source_id,
+                    thumbnail_url=None,
+                    children=[],
+                )
+                self.enqueue_url_and_context(lesson_url, context)
+                # get_contents(node, link)
+            except Exception as e:
+                LOGGER.error('on_special_subtopic_page: %s : %s' % (e, link))
 
 
     # LESSONS

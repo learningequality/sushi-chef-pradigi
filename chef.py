@@ -66,8 +66,8 @@ cache = FileCache('.webcache')
 basic_adapter = CacheControlAdapter(cache=cache)
 develop_adapter = CacheControlAdapter(heuristic=OneDayCache(), cache=cache)
 session = requests.Session()
-session.mount('http://', basic_adapter)
-session.mount('https://', basic_adapter)
+# session.mount('http://', basic_adapter)
+# session.mount('https://', basic_adapter)
 session.mount('http://www.' + PRADIGI_DOMAIN, develop_adapter)
 session.mount('https://www.' + PRADIGI_DOMAIN, develop_adapter)
 
@@ -106,6 +106,7 @@ PRADIGI_STRINGS = {
             "Mathematics": "गणित",
             "English": "अंग्रेजी",
             "Health": "स्वास्थ्य",
+            "CRS68": "स्वास्थ्य",
             "Science": "विज्ञान",
             "Hospitality": "अतिथी सत्कार",
             "Construction": "भवन-निर्माण",
@@ -239,6 +240,7 @@ PRADIGI_SUBJECTS = [
     'English',
     'Science',
     'Health',
+    "CRS68",  # "स्वास्थ्य",        # Health
     'Fun',
     'Story',
     #
@@ -826,7 +828,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
     and content nodes, using `filter_fn` to determine if each node should be included or not.
     """
     kind = tree['kind']
-    if kind in ['topic_page', 'subtopic_page', 'lesson_page', 'fun_page', 'story_page']:
+    if kind in ['topic_page', 'subtopic_page', 'lesson_page', 'fun_page', 'story_page', 'special_subtopic_page']:
         thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
         topic_node = dict(
             kind=content_kinds.TOPIC,

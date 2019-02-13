@@ -36,7 +36,8 @@ from le_utils.constants.languages import getlang
 from ricecooker.chefs import JsonTreeChef
 from ricecooker.classes.licenses import get_license
 from ricecooker.config import LOGGER
-from ricecooker.utils.caching import (OneDayCache, FileCache, CacheControlAdapter)
+from cachecontrol.heuristics import OneDayCache
+from ricecooker.utils.caching import (FileCache, CacheControlAdapter)
 from ricecooker.utils.jsontrees import write_tree_to_json_tree
 from ricecooker.utils.html import download_file
 from ricecooker.utils.zip import create_predictable_zip
@@ -119,11 +120,15 @@ PRADIGI_STRINGS = {
             "CRS129": "ऑटोमोटिव्ह",      # Automobile
             "CRS130": "ब्युटी",          # Beauty
             "CRS131": "इलेक्ट्रिकल",      # Electric
+            "CRS91": "स्वास्थ्य सेवा",      # Healthcare
+            "CRS93": "भवन निर्माण",      # Construction -- URL broken
             #
             # Hindi games pages =  खेल
-            "CRS122": "खेल-बाड़ी",      # Playground
-            "CRS124": "देखो और करों",   # Look and
-            "CRS123": "खेल-पुरी",       # Games
+            "CRS122": "खेल-बाड़ी",      # Game-box
+            "CRS124": "देखो और करों",   # Watch and Do
+            "CRS123": "खेल-पुरी",       # Games Sport-puri
+            #
+            "CRS136": "खेलकूद",         # Sports
         },
         #   Subject -->  topic_page id lookup table
         'subject_lookup': {
@@ -236,10 +241,22 @@ PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science', 'Hea
                     "CRS130", # "ब्युटी",          # Beauty
                     "CRS131", # "इलेक्ट्रिकल",      # Electric
                     #
+                    "CRS128", # "आदरातिथ्य",      # Hospitality
+                    "CRS129", # "ऑटोमोटिव्ह",      # Automobile
+                    "CRS130", # "ब्युटी",          # Beauty
+                    "CRS131", # "इलेक्ट्रिकल",      # Electric
+                    "CRS91",  # "स्वास्थ्य सेवा",     # Healthcare
+                    "CRS93",  # "भवन निर्माण",     # Construction -- URL broken!!!!!!!!!
+                    #
+                    "CRS136", # "खेलकूद",         # Sports
+                    #
                     # Hindi games pages =  खेल
-                    "CRS122", # "खेल-बाड़ी",      # Playground
-                    "CRS124", # "देखो और करों",   # Look and
-                    "CRS123", # "खेल-पुरी",       # Games
+                    "CRS122", # "खेल-बाड़ी",      # Game-box
+                    "CRS124", # "देखो और करों",   # Watch and Do
+                    "CRS123", # "खेल-पुरी",       # Games Sport-puri
+                    #
+                    #
+                    #
                     #
                     # Marathi games pages = खेळ
                     "CRS125", # "खेळ-वाडी",

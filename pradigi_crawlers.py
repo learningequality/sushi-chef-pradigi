@@ -30,7 +30,7 @@ class PraDigiCrawler(BasicCrawler):
     START_PAGE_CONTEXT = {'kind': 'lang_page'}
     IGNORE_URLS = [
         'http://www.prathamopenschool.org/mr/Course/English/CRS97',  # Hindi game show in Marathi channel
-        # 'http://www.prathamopenschool.org/mr/Course/Construction',   # Borken link Feb 12
+        'http://www.prathamopenschool.org/mr/Course/Construction',   # Borken link Feb 12 ??? opens fine in Firefox
     ]
     kind_handlers = {
         'lang_page': 'on_lang_page',
@@ -41,6 +41,7 @@ class PraDigiCrawler(BasicCrawler):
         'story_page': 'on_story_page',
         'story_resource_page': 'on_story_resource_page',
     }
+    # ALLOW_BROKEN_HEAD_URLS = ['http://www.prathamopenschool.org/hn/Course/Construction']
 
     # CRALWING
     ############################################################################

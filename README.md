@@ -124,5 +124,7 @@ skipping <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="backg
 ```
 
 
-- Cross check games on website http://www.prathamopenschool.org/CourseContent/Games/
-  vs combined list of games from gamerepo
+
+check this:
+
+>>>>> skipping game_resource {'children': [], 'description': 'source_url=http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_Hi.zip', 'kind': 'PrathamZipResource', 'main_file': 'http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_Hi/index.html', 'source_id': 'hn/game/5609', 'thumbnail_url': 'http://www.prathamopenschool.org/CourseContent/coverImages/RES5609.png', 'title': 'भालू की बारहखड़ी', 'title_en': 'BhalooKiBarakhadi_KKS_Hi', 'url': 'http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_Hi.zip'}

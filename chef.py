@@ -234,12 +234,13 @@ PRATHAM_COMMENTS_KEY = 'Pratham'
 LE_COMMENTS_KEY = 'LE Comments'
 PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
 PRADIGI_SUBJECTS = ['Mathematics', 'Language', 'English', 'Fun', 'Science', 'Health', 'Story',
-                    'Beauty', 'Automobile', 'Hospitality', 'Electric',
-                    'Healthcare', 'Construction',
-                    "CRS128", #  "आदरातिथ्य",      # Hospitality
-                    "CRS129", # "ऑटोमोटिव्ह",      # Automobile
-                    "CRS130", # "ब्युटी",          # Beauty
-                    "CRS131", # "इलेक्ट्रिकल",      # Electric
+                    #
+                    'Hospitality',
+                    'Automobile',
+                    'Beauty',
+                    'Electric',
+                    'Healthcare',
+                    'Construction',
                     #
                     "CRS128", # "आदरातिथ्य",      # Hospitality
                     "CRS129", # "ऑटोमोटिव्ह",      # Automobile
@@ -762,8 +763,10 @@ def get_subtree_by_subject_en(lang, subject):
     subject_subtrees = web_resource_tree['children']
     try:
         for subject_subtree in subject_subtrees:
-            if subject_subtree['subject_en'] == subject:
+            if 'subject_en' in subject_subtree and subject_subtree['subject_en'] == subject:
                 return subject_subtree
+            else:
+                print('no subject_en in '+ subject_subtree['source_id'])
     except Exception as e:
         LOGGER.error("in get_subtree_by_subject_en: %s, %s, %s, %s" %
                      (lang, subject, subject_subtree, e))
@@ -961,8 +964,6 @@ def find_games_for_lang(name, lang, take_from=None):
     """
     Find first game from the following sources:
       1. flattended website games list for `lang`
-      2. gamerepo page for `lang`
-      3. gamerepo page for lang specified i take_from field
     """
     suffixes = PRADIGI_STRINGS[lang]['gamesrepo_suffixes']
     suffixes = suffixes*2   # Double list to implement two-passes (needed for multi-suffix games)
@@ -1084,7 +1085,7 @@ def get_all_game_names():
     """
     game_names = []
     struct_list = load_pradigi_structure()
-    struct_list.extend(load_pradigi_structure(which='English'))
+        struct_list.extend(load_pradigi_structure(which='English'))
     for struct_row in struct_list:
         codename = struct_row[GAMENAME_KEY]
         if codename is not None and codename not in game_names:
@@ -1122,6 +1123,10 @@ def extract_website_games_from_tree(lang):
     # PROCESS
     website_games = []
     def recursive_extract_website_games(subtree):
+        """
+        Processes all child nodes of the subtree then calls itself on any folder-like
+        child nodes. Weird, I know, but it works so I'm not touching it.
+        """
         if 'children' in subtree:
             # do processing
             new_children = []
@@ -1135,7 +1140,7 @@ def extract_website_games_from_tree(lang):
                         website_games.append(child)
                     else:
                         # leave other games where they are
-                        LOGGER.error('Found non-website game ' + child['url'])
+                        LOGGER.info('Undocumented game-like web resource ' + child['url'])
                         new_children.append(child)
                 else:
                     # leave other content as is
@@ -1229,6 +1234,8 @@ class PraDigiChef(JsonTreeChef):
                             ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)
                             for child in ricecooker_subtree['children']:
                                 subject_subtree['children'].append(child)
+                        else:
+                            print('no wrt for subject ' + desired_subject_en + ' in language ' + lang)
 
                 # B. Copy English learning videos from HI and MR subtrees to English subtree
                 if lang == 'en' and subject_en == 'Language' and age_group in ['8-14 years', '14 and above']:

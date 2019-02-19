@@ -99,11 +99,13 @@ def get_trees(langs='all'):
 
 @task
 def clear_caches():
+    zipfiles = (zipfiles == 'True' or zipfiles == 'true')  # defaults to False
     with cd(CHEF_DATA_DIR):
         sudo('rm -rf cache.sqlite')
         sudo('rm -rf prathamopenshcool_org.sqlite')
         sudo('rm -rf .webcache')
-        sudo('rm -rf chefdata/zipfiles')
+        if zipfiles:
+            sudo('rm -rf chefdata/zipfiles')
 
 
 # SETUP

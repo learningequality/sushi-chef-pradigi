@@ -3,8 +3,6 @@ import json
 import logging
 import re
 import requests
-import requests_cache
-requests_cache.install_cache('prathamopenshcool_org', expire_after=60*60*24)
 from urllib.parse import urljoin, urlparse
 
 

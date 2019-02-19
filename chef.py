@@ -46,10 +46,7 @@ from ricecooker.utils.zip import create_predictable_zip
 PRADIGI_DOMAIN = 'prathamopenschool.org'
 FULL_DOMAIN_URL = 'http://www.' + PRADIGI_DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
-# PRADIGI_LANGUAGES = ['hi', 'en', 'or', 'bn', 'pnb', 'kn', 'ta', 'te', 'mr', 'gu', 'as']
-# PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr']
-# PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
-PRADIGI_WEBSITE_LANGUAGES = ['hi']
+PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
 PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational '   \
     + 'games, videos, and ebooks on language learning, math, science, English, '  \
     + 'health, and vocational training. The learning material, available for '    \
@@ -77,15 +74,15 @@ session.mount('https://www.' + PRADIGI_DOMAIN, develop_adapter)
 PRADIGI_LANG_URL_MAP = {
     'hi': 'http://www.prathamopenschool.org/hn/',
     'mr': 'http://www.prathamopenschool.org/mr/',
-    # 'en': 'http://www.prathamopenschool.org/en/',
-    # 'gu': 'http://www.prathamopenschool.org/Gj',
+    'en': 'http://www.prathamopenschool.org/en/',
+    'gu': 'http://www.prathamopenschool.org/Gj',
     'kn': 'http://www.prathamopenschool.org/kn/',
-    # 'bn': 'http://www.prathamopenschool.org/bn/',
-    # 'ur': 'http://www.prathamopenschool.org/ur/',
-    # 'or': 'http://www.prathamopenschool.org/Od/',
-    # 'pnb': 'http://www.prathamopenschool.org/pn/',
-    # 'ta': 'http://www.prathamopenschool.org/Tm/',
-    # 'te': 'http://www.prathamopenschool.org/Tl/',
+    'bn': 'http://www.prathamopenschool.org/bn/',
+    'ur': 'http://www.prathamopenschool.org/ur/',
+    'or': 'http://www.prathamopenschool.org/Od/',
+    'pnb': 'http://www.prathamopenschool.org/pn/',
+    'ta': 'http://www.prathamopenschool.org/Tm/',
+    'te': 'http://www.prathamopenschool.org/Tl/',
 }
 # assert set(PRADIGI_WEBSITE_LANGUAGES) == set(PRADIGI_LANG_URL_MAP.keys()), 'need url for lang'
 
@@ -132,7 +129,7 @@ PRADIGI_STRINGS = {
             "CRS136": "खेलकूद",         # Sports
         },
         #   Subject -->  topic_page id lookup table
-        'subject_lookup': {
+        'source_ids_by_subject_en': {
             'Health': 'Health',
         }
     },
@@ -162,6 +159,11 @@ PRADIGI_STRINGS = {
     "bn": {
         "language_en": "Bangali",
         "gamesrepo_suffixes": ['_BN'],
+        "subjects": {}
+    },
+    "ur": {
+        "language_en": "Urdu",
+        "gamesrepo_suffixes": ['_UD'],
         "subjects": {}
     },
     "pnb": {

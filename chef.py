@@ -122,9 +122,9 @@ PRADIGI_STRINGS = {
             "CRS93": "भवन निर्माण",      # Construction -- URL broken
             #
             # Hindi games pages =  खेल
-            "CRS122": "खेल-बाड़ी",      # Game-box
-            "CRS124": "देखो और करों",   # Watch and Do
-            "CRS123": "खेल-पुरी",       # Games Sport-puri
+            "CRS122": "खेल-बाड़ी",      # Game-box              KhelBadi
+            "CRS124": "देखो और करों",   # Watch and Do          WatchAndDo
+            "CRS123": "खेल-पुरी",       # Games Sport-puri      KhelPuri
             #
             "CRS136": "खेलकूद",         # Sports
         },

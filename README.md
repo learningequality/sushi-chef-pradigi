@@ -82,10 +82,10 @@ Special treatment is required for dropdown menus--we ignore the dropdown parent
 and instead treat the submenu items as top-level subjects.
 
 The resources under Games are handled differently depending on the age group:
-  - `Game-box==CRS122` and `WatchAndDo==CRS124` (Look and Taxes???) only in the `3-6 years` subfolder
-  - `Sports-Puri==CRS123` are included only in the `6-10 years` subfolder
+  - `KhelBadi==CRS122` and `WatchAndDo==CRS124` only in the `3-6 years` subfolder
+  - `KhelPuri==CRS123` are included only in the `6-10 years` subfolder
 
-For age groups where one or more of the Games subfolders `WatchAndDo`, Game-box, Sports-Puri 
+For age groups where one or more of the Games subfolders `WatchAndDo`, `KhelBadi`, `KhelPuri`
 is not included, the games are "extracted" from these folders are extracted and
 included in the `Fun`, `Mathematics`, `Language`, and `English` subjects as needed,
 according to the structure gsheet.

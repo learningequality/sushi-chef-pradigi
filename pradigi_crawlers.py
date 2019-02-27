@@ -138,8 +138,8 @@ class PraDigiCrawler(BasicCrawler):
                 elif 'Story' in topic['href']:
                     LOGGER.info('found story page: %s: %s' % (source_id, title))
                     context['kind'] = 'story_page'
-                elif 'gamelist/CRS124' in topic['href']:
-                    LOGGER.info('FOUND CRS124 three-tab subtopic_page page: %s: %s' % (source_id, title))
+                elif 'gamelist/CRS124' in topic['href'] or 'gamelist/CRS127' in topic['href']:
+                    LOGGER.info('FOUND three-tab special_subtopic_page page: %s: %s' % (source_id, title))
                     context['kind'] = 'special_subtopic_page'
                 elif 'gamelist/CRS' in topic['href']:
                     LOGGER.info('found top-level CRS page: %s: %s' % (source_id, title))

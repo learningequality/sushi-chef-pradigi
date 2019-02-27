@@ -2,6 +2,8 @@ notebooks/node_modules
 notebooks/prathamopenshcool_org.sqlite
 prathamopenshcool_org.sqlite
 
+credentials
+
 
 
 # chef run files --- will be stored under vader instead

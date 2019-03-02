@@ -191,6 +191,10 @@ PRADIGI_STRINGS = {
             "Healthcare": "Healthcare",
             "Fun": "Fun",
             "Story": "Story",
+            "WatchAndDo": "Games",
+        },
+        'course_ids_by_subject_en': {
+            'WatchAndDo': "CRS157",     # the Game menu on English
         },
     },
     "or": {

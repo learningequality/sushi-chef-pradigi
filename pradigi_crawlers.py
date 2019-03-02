@@ -13,6 +13,7 @@ from le_utils.constants.languages import getlang
 
 from chef import (
     PRADIGI_DOMAIN,
+    PRADIGI_STRINGS,
     FULL_DOMAIN_URL,
     PRADIGI_DESCRIPTION,
     PRADIGI_WEBSITE_LANGUAGES,

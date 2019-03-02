@@ -131,6 +131,10 @@ PRADIGI_STRINGS = {
             'KhelBadi': "CRS122",           # "खेल-बाड़ी"       3-6    # Game-box
             'WatchAndDo': "CRS124",         # "देखो और करों     3-6,   # Watch and Do
             'KhelPuri': "CRS123",           # "खेल-पुरी",       6-10   # Games Sport-puri
+            #
+            # Health and Sport for webscraping
+            'Health': 'CRS68',
+            'Sports': 'CRS136',
         }
     },
     "mr": {
@@ -165,6 +169,10 @@ PRADIGI_STRINGS = {
             'KhelBadi': "CRS125",       # "खेळ-वाडी",
             'WatchAndDo': "CRS127",     # "बघा आणि शिका",
             'KhelPuri': "CRS126",       # "खेळ-पुरी",
+            #
+            # Health and Sport for webscraping
+            'Health': 'CRS73',
+            'Sports': 'CRS138',
         }
     },
     'en': {
@@ -257,6 +265,9 @@ PRADIGI_STRINGS = {
             'KhelBadi': "CRS168",
             'WatchAndDo': "CRS170",
             'KhelPuri': "CRS169",
+            #
+            # Health and Sport for webscraping
+            'Health': 'CRS153',
         }
     },
     "ta": {
@@ -1333,6 +1344,11 @@ class PraDigiChef(JsonTreeChef):
                 # A. Load website resources
                 if lang in PRADIGI_WEBSITE_LANGUAGES:
                     for desired_subject_en in resources['website']:
+                        # manual course_id rename for courses where subject_en not the same as cateogy_id
+                        lookup_table = PRADIGI_STRINGS[lang]['course_ids_by_subject_en']
+                        if desired_subject_en in lookup_table:
+                            desired_subject_en = lookup_table[desired_subject_en]
+                        #
                         wrt_subtree = get_subtree_by_subject_en(lang, desired_subject_en)
                         if wrt_subtree:
                             ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)

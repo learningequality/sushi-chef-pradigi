@@ -9,7 +9,7 @@ This table contains the information for which age group and subject each of the 
 3-6 years,Fun,Game,Sangeet,,,,
 3-6 years,Fun,Game,Aakar,,,,
 3-6 years,Fun,Game,JigsawGame,,,,Website only
-3-6 years,Fun,Game,Shabdkhel,,,,NEW
+,,,,,,,
 3-6 years,Language,Game,Aakar,,,,
 3-6 years,Language,Game,Aksharkhadi,,,,
 3-6 years,Language,Game,AwazChitra,,,,
@@ -17,7 +17,7 @@ This table contains the information for which age group and subject each of the 
 3-6 years,Language,Game,Barakhadi,,,,
 3-6 years,Language,Game,BolBacchaBol,,,,
 ,,,,,,,
-3-6 years,Language,Game,Awazchitra,,,,Available only on website
+,,,,,,,Available only on website
 3-6 years,Language,Game,MujhePehchano,,,,
 3-6 years,Mathematics,Game,ChitraVichitra,,,,
 3-6 years,Mathematics,Game,DingDangDing,,,,
@@ -36,15 +36,15 @@ This table contains the information for which age group and subject each of the 
 6-10 years,English,Game,LetterBox,English,,,
 6-10 years,English,Game,PointMeOut,English,,,
 6-10 years,English,Game,YouSaid,English,,,
-6-10 years,English,Game,Estimation,Hindi,,,NEW
+6-10 years,English,Game,Estimation,Hindi,,,
 6-10 years,Fun,Game,JigsawGame,,,,Website only
 6-10 years,Fun,Game,AwazPehchano,,,,
 6-10 years,Fun,Game,Coloring,,,,
 6-10 years,Fun,Game,Jigsaw,,,,
 6-10 years,Fun,Game,MujhePehchano,,,,
 6-10 years,Fun,Game,Sangeet,,,,
-6-10 years,Fun,Game,TikTok,,,,NEW
-6-10 years,Fun,Game,Memorygame,,,,NEW
+,,,,,,,
+,,,,,,,
 6-10 years,Language,Game,Awazchitra,,,,Available only on website
 6-10 years,Language,Game,Aksharkhel,,,,Available in MR only
 6-10 years,Language,Game,AbKahanHai,,,,
@@ -57,7 +57,7 @@ This table contains the information for which age group and subject each of the 
 6-10 years,Language,Game,BarakhadiBanao,,,,
 6-10 years,Language,Game,BarakhadiSeekho,,,,
 6-10 years,Language,Game,Bhaloo_ki_Barakhadi,,,,
-6-10 years,Language,Game,BhalooKiBarakhadi,,,,
+,,,,,,,
 6-10 years,Language,Game,EkSeAnek,,,,
 6-10 years,Language,Game,GaltiMaafSudharo,,,,
 6-10 years,Language,Game,Gubbare,,,,
@@ -102,7 +102,7 @@ This table contains the information for which age group and subject each of the 
 8-14 years,English,Game,YouSaid,English,,,Use _HI version for Hindi; all other languages get from English repo
 8-14 years,English,Game,CorrectPair,English,,,This game should be taken from the English gamelist (not in Hindi list)
 8-14 years,English,Game,PointMeOut,English,,,
-8-14 years,English,Website Resources,,,,,
+8-14 years,English,Website Resources,,,,,CHECK WHAT IS HAPPENING
 ,,,,,,,
 8-14 years,English,Game,CountAndKnow,English,,,
 8-14 years,English,Game,CountIt,English,,,
@@ -110,7 +110,7 @@ This table contains the information for which age group and subject each of the 
 8-14 years,Fun,Game,Jigsaw,,,,
 8-14 years,Fun,Game,Chhupne Waale saamne aa,,,,This will be added to repository soon; double check name when added
 8-14 years,Fun,Game,Palat,,,,http://repository.prathamopenschool.org/Zip/Hindi/Palat_HI_Hindi.zip
-8-14 years,Fun,Website Resources,,,,,Fun/ contains many games etc not just videos
+8-14 years,Fun,Website Resources,,,,,Missing web content -- only games in Folder
 ,,,,,,,
 ,,,,,,,
 8-14 years,Language,Game,CountAndKnow,English,,,
@@ -125,19 +125,19 @@ This table contains the information for which age group and subject each of the 
 8-14 years,Science,Game,UlatPalat2Science,,,,
 8-14 years,Science,Game,UlatPalatScience,,,,
 8-14 years,Science,Website Resources,,,,,
-8-14 years,Health,Website Resources,,,,,
+8-14 years,Health,Website Resources,,,,,Health
 8-14 years,Story,Website Resources,,,,,
 ,,,,,,,
+6-10 years,Sports,Website Resources,,,,,Football
+8-14 years,Sports,Website Resources,,,,,Football
 ,,,,,,,
 ,,,,,,,
-,,,,,,,
-,,,,,,,
-14 and above,CRS128,Website Resources,,,Hindi,,Hospitality
-14 and above,CRS129,Website Resources,,,Hindi,,Automobile
-14 and above,CRS130,Website Resources,,,Hindi,,Beauty
-14 and above,CRS131,Website Resources,,,Hindi,,Electric
-14 and above,Construction,YouTubePlaylist:https://www.youtube.com/playlist?list=PLPGnG5XRmtsePxE8Y4Y5byoMm3cXLB-Ok,,,Hindi,,1 video manually uploaded to youtube playlist so can be treated like others. Only for Hindi
-14 and above,Healthcare,YouTubePlaylist:https://www.youtube.com/playlist?list=PLHSER0n5wjJx4Dqi3z3phwOYzZG-XTMAe,,,Hindi,,Only for Hindi
+14 and above,Hospitality,Website Resources,,,,CRS128,Hospitality
+14 and above,Automobile,Website Resources,,,,CRS129,Automobile
+14 and above,Beauty,Website Resources,,,,CRS130,Beauty
+14 and above,Electric,Website Resources,,,,CRS131,Electric
+14 and above,Construction,Website Resources,,,,CRS93,Construction
+14 and above,Healthcare,Website Resources,,,,CRS91,Healthcare
 ,,,,,,,
 14 and above,English,Game,ABCD,English,,,
 14 and above,English,Game,CrumbleTumble,English,,,
@@ -148,7 +148,7 @@ This table contains the information for which age group and subject each of the 
 14 and above,English,Game,YouSaid,English,,,
 14 and above,English,Website Resources,,,,,
 14 and above,English,Game,JumbleTumble,English,,,
-14 and above,Health,Website Resources,,,,,
+14 and above,Health,Website Resources,,,,,Health
 ,,,,,,,
 14 and above,English,Game,CorrectPair,English,,,
 14 and above,English,Game,PointMeOut,English,,,
@@ -174,21 +174,51 @@ New LanguageAndCommunication tab with sign language,,,,,,,
 ,,,,,,,
 ,,,,,,,
 Hindi games tabs,,,,,,,
-3-6 years,CRS122,Website Resources,,,,,"# ""खेल-बाड़ी"", # Playground"
-3-6 years,CRS124,Website Resources,,,,,", # ""देखो और करों"",   # Look and"
-3-6 years,CRS123,Website Resources,,,,,", # ""खेल-पुरी"", # Games"
-,,,,,,,
-6-10 years,CRS122,Website Resources,,,,,"# ""खेल-बाड़ी"", # Playground"
-6-10 years,CRS124,Website Resources,,,,,", # ""देखो और करों"",   # Look and"
-6-10 years,CRS123,Website Resources,,,,,", # ""खेल-पुरी"", # Games"
+3-6 years,KhelBadi,Website Resources,,,,,3-6 games
+3-6 years,WatchAndDo,Website Resources,,,,,WatchAndDo
+6-10 years,KhelPuri,Website Resources,,,,,6-10 games
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
-Marathi games tabs,,,,,,,
-3-6 years,CRS125,Website Resources,,,,,"# ""खेळ-वाडी"","
-3-6 years,CRS127,Website Resources,,,,,"""बघा आणि शिका"","
-3-6 years,CRS126,Website Resources,,,,,", # ""खेळ-पुरी"","
 ,,,,,,,
-6-10 years,CRS125,Website Resources,,,,,"# ""खेळ-वाडी"","
-6-10 years,CRS127,Website Resources,,,,,"""बघा आणि शिका"","
-6-10 years,CRS126,Website Resources,,,,,", # ""खेळ-पुरी"","
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+New Games as of Jan 12 --- need to determine age group an subject,,,,,,,
+3-6 years,Mathematics,Game,CountingInTheKitchen,,,,
+,,,,,,,
+6-10 years,Mathematics,Game,MakeUpShakeUp,,,http://prathamopenschool.org/hn/game/7608,"# ""खेळ-पुरी"""
+3-6 years,Mathematics,Game,Manmauji,,,http://prathamopenschool.org/hn/game/7936,"# ""मौज"""
+3-6 years,Fun,Game,Manmauji,,,http://prathamopenschool.org/hn/game/7936,"# ""खेळ-वाडी"","
+3-6 years,Mathematics,Game,Nembaaz,,,http://prathamopenschool.org/hn/game/7604,"# ""खेळ-वाडी"","
+3-6 years,Fun,Game,Nembaaz,,,http://prathamopenschool.org/hn/game/7604,"# ""खेळ-वाडी"","
+3-6 years,Mathematics,Game,Nishanebaaz,,,,same as Nembaaz
+3-6 years,Fun,Game,Nishanebaaz,,,,same as Nembaaz
+3-6 years,Mathematics,Game,Daud,,,http://prathamopenschool.org/hn/game/7602,"# ""खेळ-वाडी"","
+6-10 years,Mathematics,Game,Daud,,,http://prathamopenschool.org/hn/game/7602,"# ""खेळ-वाडी"","
+3-6 years,Fun,Game,Daud,,,,
+6-10 years,Fun,Game,Daud,,,,
+,,,,,,,
+,,,,,,,
+6-10 years,Language,Game,BhalooKiBarakhadi,,,,
+6-10 years,Fun,Game,TikTok,,,http://prathamopenschool.org/hn/game/7611,
+6-10 years,Mathematics,Game,TikTok,,,http://prathamopenschool.org/hn/game/7611,"# ""खेळ-वाडी"","
+6-10 years,Fun,Game,MemoryGame,,,http://prathamopenschool.org/hn/FunResource/7612,"# ""खेळ-वाडी"","
+,,,,,,,
+3-6 years,Fun,Game,Memorygamekb,,,,
+,,,,,,,
+3-6 years,Fun,Game,ShabdKhel,,,http://prathamopenschool.org/hn/game/7610,"# ""खेल-पुरी"","
+3-6 years,Language,Game,Aksharkhel,,,http://prathamopenschool.org/hn/game/7609,"# ""खेळ-वाडी"","

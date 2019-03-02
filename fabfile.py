@@ -98,7 +98,7 @@ def get_trees(langs='all'):
 ################################################################################
 
 @task
-def clear_caches():
+def clear_caches(zipfiles='False'):
     zipfiles = (zipfiles == 'True' or zipfiles == 'true')  # defaults to False
     with cd(CHEF_DATA_DIR):
         sudo('rm -rf cache.sqlite')

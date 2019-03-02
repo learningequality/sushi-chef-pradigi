@@ -98,39 +98,73 @@ HTML5APP_ZIPS_LOCAL_DIR = 'chefdata/zipfiles'
 PRADIGI_STRINGS = {
     'hi': {
         'language_en': 'Hindi',
+        'website_lang': 'hn',
         'gamesrepo_suffixes': ['_KKS', '_HI', '_Hi'],
         'subjects': {
             "Mathematics": "गणित",
             "English": "अंग्रेजी",
-            "Health": "स्वास्थ्य",
-            "CRS68": "स्वास्थ्य",
             "Science": "विज्ञान",
+            #
+            "Health": "स्वास्थ्य",
+            "Sports": "खेलकूद",
+            #
+            "Fun": "मौज",
+            "Story": "कहानियाँ",
+            #
             "Hospitality": "अतिथी सत्कार",
             "Construction": "भवन-निर्माण",
             "Automobile": "वाहन",
             "Electric": "इलेक्ट्रिक",
             "Beauty": "ब्युटी",
             "Healthcare": "स्वास्थ्य सेवा",
+            #
+            "KhelBadi": "खेळ-वाडी",
+            "WatchAndDo": "बघा आणि शिका",
+            "KhelPuri": "खेळ-पुरी",
+            #
+            "LanguageAndCommunication": "भाषा और संवाद",
+        },
+        # Subject (a.k.a. cat_name)  -->  course_id  lookup table
+        # this is necessary for special handing of games and visibility in different age groups
+        'course_ids_by_subject_en': {
+            # Hindi games pages = खेल
+            'KhelBadi': "CRS122",           # "खेल-बाड़ी"       3-6    # Game-box
+            'WatchAndDo': "CRS124",         # "देखो और करों     3-6,   # Watch and Do
+            'KhelPuri': "CRS123",           # "खेल-पुरी",       6-10   # Games Sport-puri
+        }
+    },
+    "mr": {
+        "language_en": "Marathi",
+        'website_lang': 'mr',
+        "gamesrepo_suffixes": ['_KKS', '_MR', '_M'],
+        "subjects": {
+            "Mathematics": "गणित",
+            "English": "अंग्रेजी",
+            "Science": "विज्ञान",
+            #
+            "Health": "स्वास्थ्य",
+            "Sports": "खेलकूद",
+            #
             "Fun": "मौज",
             "Story": "कहानियाँ",
+            #
+            "Hospitality": "अतिथी सत्कार",
+            "Construction": "भवन-निर्माण",
+            "Automobile": "वाहन",
+            "Electric": "इलेक्ट्रिक",
+            "Beauty": "ब्युटी",
+            "Healthcare": "स्वास्थ्य सेवा",
+            #
+            "KhelBadi": "खेळ-वाडी",
+            "WatchAndDo": "बघा आणि शिका",
+            "KhelPuri": "खेळ-पुरी",
+            #
             "LanguageAndCommunication": "भाषा और संवाद",
-            "CRS128": "आदरातिथ्य",      # Hospitality
-            "CRS129": "ऑटोमोटिव्ह",      # Automobile
-            "CRS130": "ब्युटी",          # Beauty
-            "CRS131": "इलेक्ट्रिकल",      # Electric
-            "CRS91": "स्वास्थ्य सेवा",      # Healthcare
-            "CRS93": "भवन निर्माण",      # Construction -- URL broken
-            #
-            # Hindi games pages =  खेल
-            "CRS122": "खेल-बाड़ी",      # Game-box              KhelBadi
-            "CRS124": "देखो और करों",   # Watch and Do          WatchAndDo
-            "CRS123": "खेल-पुरी",       # Games Sport-puri      KhelPuri
-            #
-            "CRS136": "खेलकूद",         # Sports
         },
-        #   Subject -->  topic_page id lookup table
-        'source_ids_by_subject_en': {
-            'Health': 'Health',
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS125",       # "खेळ-वाडी",
+            'WatchAndDo': "CRS127",     # "बघा आणि शिका",
+            'KhelPuri': "CRS126",       # "खेळ-पुरी",
         }
     },
     'en': {
@@ -149,62 +183,124 @@ PRADIGI_STRINGS = {
             "Healthcare": "Healthcare",
             "Fun": "Fun",
             "Story": "Story",
-        }
+        },
     },
     "or": {
-        "language_en": "Odiya",
+        "language_en": "Odia",     # also appears as Odia in CntResource.lang_name
+        'website_lang': 'Od',
         "gamesrepo_suffixes": ['_OD'],
-        "subjects": {}
+        "subjects": {},
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS110",
+            'WatchAndDo': "CRS188",
+            'KhelPuri': "CRS189",
+        }
     },
     "bn": {
-        "language_en": "Bangali",
+        "language_en": "Bengali",   # Bengali in CntResource.lang_name
         "gamesrepo_suffixes": ['_BN'],
-        "subjects": {}
+        "subjects": {},
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS107",
+            'WatchAndDo': "CRS186",
+            'KhelPuri': "CRS187",
+        }
     },
     "ur": {
         "language_en": "Urdu",
         "gamesrepo_suffixes": ['_UD'],
-        "subjects": {}
+        "subjects": {},
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS149",
+            'English': "Angrezi",  # technically a cat_name, not a course_id ...
+        }
     },
     "pnb": {
         "language_en": "Punjabi",
+        'website_lang': 'Pn',
         "gamesrepo_suffixes": ['_PN'],
-        "subjects": {}
+        "subjects": {},
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS111",
+            'WatchAndDo': "CRS192",
+            'KhelPuri': "CRS194",
+        }
     },
     "kn": {
         "language_en": "Kannada",
         "gamesrepo_suffixes": ['_KN'],
-        "subjects": {}
+        "subjects": {
+            "Mathematics": "गणित",
+            "English": "अंग्रेजी",
+            "Science": "विज्ञान",
+            #
+            "Health": "स्वास्थ्य",
+            "Sports": "खेलकूद",
+            #
+            "Fun": "मौज",
+            "Story": "कहानियाँ",
+            #
+            "Hospitality": "अतिथी सत्कार",
+            "Construction": "भवन-निर्माण",
+            "Automobile": "वाहन",
+            "Electric": "इलेक्ट्रिक",
+            "Beauty": "ब्युटी",
+            "Healthcare": "स्वास्थ्य सेवा",
+            #
+            "KhelBadi": "खेळ-वाडी",
+            "WatchAndDo": "बघा आणि शिका",
+            "KhelPuri": "खेळ-पुरी",
+            #
+            "LanguageAndCommunication": "भाषा और संवाद",
+        },
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS168",
+            'WatchAndDo': "CRS170",
+            'KhelPuri': "CRS169",
+        }
     },
     "ta": {
         "language_en": "Tamil",
+        'website_lang': 'Tm',
         "gamesrepo_suffixes": ['_TM'],
-        "subjects": {}
+        "subjects": {},
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS195",
+            'WatchAndDo': "CRS196",
+            'KhelPuri': "CRS112",
+        }
     },
     "te": {
         "language_en": "Telugu",
+        'website_lang': 'Tl',
         "gamesrepo_suffixes": ['_TL'],
-        "subjects": {}
-    },
-    "mr": {
-        "language_en": "Marathi",
-        "gamesrepo_suffixes": ['_KKS', '_MR', '_M'],
-        "subjects": {
-            # Marathi games pages = खेळ
-            "CRS125": "खेळ-वाडी",
-            "CRS127": "बघा आणि शिका",
-            "CRS126": "खेळ-पुरी",
+        "subjects": {},
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS113",
+            'WatchAndDo': "CRS177",
+            'KhelPuri': "CRS176",
         }
     },
     "gu": {
+        'website_lang': 'Gj',
         "language_en": "Gujarati",
         "gamesrepo_suffixes": ['_KKS', '_GJ'],
-        "subjects": {}
+        "subjects": {},
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS174",
+            'WatchAndDo': "CRS175",
+            'KhelPuri': "CRS108",
+        }
     },
     "as": {
         "language_en": "Assamese",
         "gamesrepo_suffixes": ['_AS'],
-        "subjects": {}
+        "subjects": {},
+        'course_ids_by_subject_en': {
+            'KhelBadi': "CRS199",
+            'WatchAndDo': "CRS200",
+            'KhelPuri': "CRS106",
+        }
     },
 }
 
@@ -237,13 +333,15 @@ PRATHAM_COMMENTS_KEY = 'Pratham'
 LE_COMMENTS_KEY = 'LE Comments'
 PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
 PRADIGI_SUBJECTS = [
-    'Mathematics',
-    'Language',
+    'Mathematics',      #                             math games
+    'Language',         # Koibri-only folder just for langauge games
     'English',
     'Science',
+    #
     'Health',
-    "CRS68",  # "स्वास्थ्य",        # Health
-    'Fun',
+    "Sports",
+    #
+    'Fun',              # Contains website /Fun content + all games not in the other categories
     'Story',
     #
     'Hospitality',
@@ -253,34 +351,12 @@ PRADIGI_SUBJECTS = [
     'Healthcare',
     'Construction',
     #
-    "CRS128", # "आदरातिथ्य",      # Hospitality
-    "CRS129", # "ऑटोमोटिव्ह",      # Automobile
-    "CRS130", # "ब्युटी",          # Beauty
-    "CRS131", # "इलेक्ट्रिकल",      # Electric
-    "CRS91",  # "स्वास्थ्य सेवा",     # Healthcare
-    "CRS93",  # "भवन निर्माण",     # Construction -- URL broken!!!!!!!!!
+    # Games pages
+    'KhelBadi',           # "खेल-बाड़ी"       3-6    # Game-box
+    'WatchAndDo',         # "देखो और करों     3-6,   # Watch and Do
+    'KhelPuri',           # "खेल-पुरी",       6-10   # Games Sport-puri
     #
-    "CRS136", # "खेलकूद",         # Sports
-    #
-    # Hindi games pages =  खेल
-    "CRS122", # "खेल-बाड़ी",      # Game-box
-    "CRS124", # "देखो और करों",   # Watch and Do
-    "CRS123", # "खेल-पुरी",       # Games Sport-puri
-    #
-    #
-    #
-    #
-    # Marathi games pages = खेळ
-    "CRS125", # "खेळ-वाडी",
-    "CRS127", # "बघा आणि शिका",
-    "CRS126", # "खेळ-पुरी",
-    #
-    # Kannada 
-    'CRS153',
-    'CRS168',
-    'CRS170',
-    'CRS169',
-    'LanguageAndCommunication',
+    'LanguageAndCommunication',     # currently missing from website
 ]
 PRADIGI_RESOURCE_TYPES = ['Game', 'Website Resources']
 # Note: can add 'Video Resources', 'Interactive Resoruces' and 'Book Resources'
@@ -961,7 +1037,7 @@ def should_compress_video(video_web_resource):
     """
     Web-optimized videos do not need to be re-encoded and compressed: it's better
     to upload to Studio the original files. We compress large vidoes (> 30MB) in
-    order to limit storage and transfers needs.
+    order to limit storage and transfer needs.
     """
     size_bytes = video_web_resource['content-length']
     size_mb = int(size_bytes)/1024/1024

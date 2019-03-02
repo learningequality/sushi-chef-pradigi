@@ -945,6 +945,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             description=tree.get('description', ''),
             thumbnail=thumbnail,
             license=PRADIGI_LICENSE,
+            role='learner',
             files=[],
         )
         video_url = tree['url']
@@ -968,6 +969,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             language=lang,
             title=tree['title'],
             description=tree.get('description', ''),
+            role='learner',
             thumbnail=thumbnail,
             license=PRADIGI_LICENSE,
             files=[],
@@ -991,6 +993,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             language=lang,
             title=tree['title'],
             description=tree.get('description', ''),
+            role='learner',
             thumbnail=thumbnail,
             license=PRADIGI_LICENSE,
             files=[],
@@ -1017,6 +1020,7 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
             language=lang,
             title=tree['title'],
             description=tree.get('description', ''),
+            role='learner',
             thumbnail=thumbnail,
             license=PRADIGI_LICENSE,
             files=[],
@@ -1145,6 +1149,7 @@ def website_game_webresouce_to_ricecooker_node(lang, web_resource):
         title=web_resource['title'],
         description='source_url=' + web_resource['url'] if DEBUG_MODE else '',
         license=PRADIGI_LICENSE,
+        role='learner',
         thumbnail=web_resource.get('thumbnail_url'),
         files=[],
     )

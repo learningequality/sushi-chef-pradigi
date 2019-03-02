@@ -703,6 +703,11 @@ def get_zip_file(zip_file_url, main_file):
             zip_basename = zip_basename.replace('Awazchitra', 'AwazChitra')
         if '_KKS_Hi' in zip_basename:
             zip_basename = zip_basename.replace('_KKS_Hi', '_KKS_HI')
+        # Mar 2: more edge cases where zip filename doesn't match folder name inside it
+        if 'Memorygamekb' in zip_basename:
+            zip_basename = zip_basename.replace('Memorygamekb', 'MemoryGamekb')
+        if 'cityofstories' in zip_basename:
+            zip_basename = zip_basename.replace('cityofstories', 'CityOfStories')
 
         zip_folder = os.path.join(destpath, zip_basename)  # e.g. destpath/Mathematics/
         main_file = main_file.split('/')[-1]               # e.g. activity_name.html or index.html
@@ -1063,6 +1068,8 @@ def find_games_for_lang(name, lang, take_from=None):
     """
     suffixes = PRADIGI_STRINGS[lang]['gamesrepo_suffixes']
     suffixes = suffixes*2   # Double list to implement two-passes (needed for multi-suffix games)
+    suffixes.append('_KKS_Hi')  # Mar 2nd Hi game used in other laguages
+    suffixes.append('_KKS_MR')  # Mar 2nd MR game used in other laguages
     language_en = PRADIGI_STRINGS[lang]['language_en'] # ???
 
     # load website game web resource data

@@ -136,11 +136,11 @@ PRADIGI_STRINGS = {
             'Health': 'CRS68',
             #
             'Sports': 'CRS136',
-            "Healthcare": "CRS91",
+            # "Healthcare": "Healthcare",
             "Beauty": "CRS130",
             "Electric": "CRS131",
             "Automobile": "CRS129",
-            "Construction": "CRS93",
+            # "Construction": "Construction",
             "Hospitality": "CRS128",
         }
     },
@@ -181,9 +181,9 @@ PRADIGI_STRINGS = {
             'Health': 'CRS73',
             'Sports': 'CRS138',
             #
-            "Healthcare": "CRS140",
+            # "Healthcare": "Healthcare",
             "Electric": "CRS141",
-            "Construction": "CRS142",
+            # "Construction": "Construction",
             "Hospitality": "CRS143",
             "Beauty": "CRS144",
         }
@@ -219,7 +219,6 @@ PRADIGI_STRINGS = {
             'KhelBadi': "CRS110",
             'WatchAndDo': "CRS188",
             'KhelPuri': "CRS189",
-            "Science": "CRS178",
         }
     },
     "bn": {
@@ -250,7 +249,6 @@ PRADIGI_STRINGS = {
             'KhelBadi': "CRS111",
             'WatchAndDo': "CRS192",
             'KhelPuri': "CRS194",
-            "Science": "CRS190",
         }
     },
     "kn": {
@@ -298,7 +296,6 @@ PRADIGI_STRINGS = {
             'KhelBadi': "CRS195",
             'WatchAndDo': "CRS196",
             'KhelPuri': "CRS112",
-            "Science": "CRS171",
         }
     },
     "te": {
@@ -331,7 +328,6 @@ PRADIGI_STRINGS = {
             'KhelBadi': "CRS199",
             'WatchAndDo': "CRS200",
             'KhelPuri': "CRS106",
-            "Science": "CRS197",
         }
     },
 }

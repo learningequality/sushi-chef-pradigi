@@ -185,303 +185,323 @@
     {
       "children": [
         {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/FlipIt.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/FlipIt/index.html",
-          "source_id": "en/game/9099",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/FlipItCover.jpg",
-          "title": "Flip It",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/FlipIt.zip"
+          "children": [
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/FlipIt.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/FlipIt/index.html",
+              "source_id": "en/game/9099",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/FlipItCover.jpg",
+              "title": "Flip It",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/FlipIt.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CrumbleTumble.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CrumbleTumble/index.html",
+              "source_id": "en/game/9100",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CrumbleTumbleCover.jpg",
+              "title": "Crumble Tumble",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CrumbleTumble.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/fixUpMixUp.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/fixUpMixUp/index.html",
+              "source_id": "en/game/9101",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/FixUpMixUpCover.jpg",
+              "title": "Fix-Up Mix-Up",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/fixUpMixUp.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/YouSaid.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/YouSaid/index.html",
+              "source_id": "en/game/9102",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/YouSaidCover.jpg",
+              "title": "You Said",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/YouSaid.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/PointMeOut.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/PointMeOut/index.html",
+              "source_id": "en/game/9103",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/PointMeOutCover.jpg",
+              "title": "Point Me Out",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/PointMeOut.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/GuessWho.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/GuessWho/index.html",
+              "source_id": "en/game/9104",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/GuessWhoCover.jpg",
+              "title": "Guess Who",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/GuessWho.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/ABCD.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/ABCD/index.html",
+              "source_id": "en/game/9105",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ABCDCover.jpg",
+              "title": "ABCD",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/ABCD.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/LetterBox.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/LetterBox/index.html",
+              "source_id": "en/game/9106",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/LetterBoxCover.png",
+              "title": "Letter Box",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/LetterBox.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/JumbleTumble.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/JumbleTumble/index.html",
+              "source_id": "en/game/9107",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/JumbleTumbleCover.png",
+              "title": "Jumble Tumble",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/JumbleTumble.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CountAndKnow.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CountAndKnow/index.html",
+              "source_id": "en/game/9108",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CountandKnowCover_EN.jpg",
+              "title": "Count & Know",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CountAndKnow.zip"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CountIt.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CountIt/index.html",
+              "source_id": "en/game/9109",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CountItCover_EN.jpg",
+              "title": "Count It",
+              "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CountIt.zip"
+            }
+          ],
+          "description": "",
+          "kind": "fun_page",
+          "source_id": "LES1073",
+          "thumbnail_url": null,
+          "title": "English Game",
+          "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/LES1073"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "content-length": "448417",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Hickory_Dickory.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9111",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Hickory_Dickory.png",
+              "title": "Hickory Dickory",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/Hickory_Dickory.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "694947",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Twinkle_Twinkle.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9112",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Twinkle_Twinkle.png",
+              "title": "Twinkle Twinkle",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/Twinkle_Twinkle.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "1176862",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/ENGINE_ENGINE.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9113",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ENGINE_ENGINE.png",
+              "title": "ENGINE ENGINE",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/ENGINE_ENGINE.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "1602918",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/LAZY_MARY.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9114",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/LAZY_MARY.png",
+              "title": "LAZY MARY",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/LAZY_MARY.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "4406385",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/MY_GRANDFATHER.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9115",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MY_GRANDFATHER.png",
+              "title": "MY GRANDFATHER",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/MY_GRANDFATHER.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "575780",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/PAT_A_CAKE.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9116",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/PAT_A_CAKE.png",
+              "title": "PAT A CAKE",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/PAT_A_CAKE.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "1311704",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/RAIN_RAIN.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9117",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RAIN_RAIN.png",
+              "title": "RAIN RAIN",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/RAIN_RAIN.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "579123",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/TALL_EAR.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9118",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/TALL_EAR.png",
+              "title": "TALL EAR",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/TALL_EAR.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "478789",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Twolittle.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9119",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/twolittle.png",
+              "title": "TWO LITTLE",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/Twolittle.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "535391",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/babablack.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9120",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/babablack.png",
+              "title": "BABA BLACK SHIP",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/babablack.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "276390",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_barkpuppybark.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9121",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_barkpuppybark.png",
+              "title": "Bark Puppy Bark",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_barkpuppybark.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "289045",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_colours.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9122",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_colours.png",
+              "title": "Colours",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_colours.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "259801",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_hokeypokey.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9123",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_hokeypokey.png",
+              "title": "Hokey-Pokey",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_hokeypokey.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "440435",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_lostfound.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9124",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_lostfound.png",
+              "title": "Lost And Found",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_lostfound.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "262606",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_shapes.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9125",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_shapes.png",
+              "title": "Shapes",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_shapes.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "522267",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_teachmehow.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/9126",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_teachmehow.png",
+              "title": "Teach Me How?",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_teachmehow.mp4"
+            }
+          ],
+          "description": "",
+          "kind": "fun_page",
+          "source_id": "LES1074",
+          "thumbnail_url": null,
+          "title": "Rhymes",
+          "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/LES1074"
         },
         {
           "children": [],
-          "content-length": "448417",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Hickory_Dickory.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9111",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Hickory_Dickory.png",
-          "title": "Hickory Dickory",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/Hickory_Dickory.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/CityOfStories.zip",
+          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CityOfStories.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CityOfStories/index.html",
           "source_id": "en/game/9110",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/cityofstories.png",
           "title": "City Of Stories",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/CityOfStories.zip"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/CrumbleTumble.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CrumbleTumble/index.html",
-          "source_id": "en/game/9100",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CrumbleTumbleCover.jpg",
-          "title": "Crumble Tumble",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/CrumbleTumble.zip"
-        },
-        {
-          "children": [],
-          "content-length": "694947",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Twinkle_Twinkle.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9112",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Twinkle_Twinkle.png",
-          "title": "Twinkle Twinkle",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/Twinkle_Twinkle.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/fixUpMixUp.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/fixUpMixUp/index.html",
-          "source_id": "en/game/9101",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/FixUpMixUpCover.jpg",
-          "title": "Fix-Up Mix-Up",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/fixUpMixUp.zip"
-        },
-        {
-          "children": [],
-          "content-length": "1176862",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/ENGINE_ENGINE.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9113",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ENGINE_ENGINE.png",
-          "title": "ENGINE ENGINE",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/ENGINE_ENGINE.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/YouSaid.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/YouSaid/index.html",
-          "source_id": "en/game/9102",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/YouSaidCover.jpg",
-          "title": "You Said",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/YouSaid.zip"
-        },
-        {
-          "children": [],
-          "content-length": "1602918",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/LAZY_MARY.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9114",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/LAZY_MARY.png",
-          "title": "LAZY MARY",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/LAZY_MARY.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/PointMeOut.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/PointMeOut/index.html",
-          "source_id": "en/game/9103",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/PointMeOutCover.jpg",
-          "title": "Point Me Out",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/PointMeOut.zip"
-        },
-        {
-          "children": [],
-          "content-length": "4406385",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/MY_GRANDFATHER.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9115",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MY_GRANDFATHER.png",
-          "title": "MY GRANDFATHER",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/MY_GRANDFATHER.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/GuessWho.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/GuessWho/index.html",
-          "source_id": "en/game/9104",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/GuessWhoCover.jpg",
-          "title": "Guess Who",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/GuessWho.zip"
-        },
-        {
-          "children": [],
-          "content-length": "575780",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/PAT_A_CAKE.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9116",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/PAT_A_CAKE.png",
-          "title": "PAT A CAKE",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/PAT_A_CAKE.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/ABCD.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/ABCD/index.html",
-          "source_id": "en/game/9105",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ABCDCover.jpg",
-          "title": "ABCD",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/ABCD.zip"
-        },
-        {
-          "children": [],
-          "content-length": "1311704",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/RAIN_RAIN.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9117",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RAIN_RAIN.png",
-          "title": "RAIN RAIN",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/RAIN_RAIN.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/LetterBox.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/LetterBox/index.html",
-          "source_id": "en/game/9106",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/LetterBoxCover.png",
-          "title": "Letter Box",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/LetterBox.zip"
-        },
-        {
-          "children": [],
-          "content-length": "579123",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/TALL_EAR.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9118",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/TALL_EAR.png",
-          "title": "TALL EAR",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/TALL_EAR.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/JumbleTumble.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/JumbleTumble/index.html",
-          "source_id": "en/game/9107",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/JumbleTumbleCover.png",
-          "title": "Jumble Tumble",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/JumbleTumble.zip"
-        },
-        {
-          "children": [],
-          "content-length": "478789",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Twolittle.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9119",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/twolittle.png",
-          "title": "TWO LITTLE",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/Twolittle.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/CountAndKnow.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CountAndKnow/index.html",
-          "source_id": "en/game/9108",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CountandKnowCover_EN.jpg",
-          "title": "Count & Know",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/CountAndKnow.zip"
-        },
-        {
-          "children": [],
-          "content-length": "535391",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/babablack.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9120",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/babablack.png",
-          "title": "BABA BLACK SHIP",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/babablack.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/CountIt.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CountIt/index.html",
-          "source_id": "en/game/9109",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CountItCover_EN.jpg",
-          "title": "Count It",
-          "url": "http://www.prathamopenschool.org/en/gamelist/.~/CourseContent/Games/CountIt.zip"
-        },
-        {
-          "children": [],
-          "content-length": "276390",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_barkpuppybark.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9121",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_barkpuppybark.png",
-          "title": "Bark Puppy Bark",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_barkpuppybark.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "289045",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_colours.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9122",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_colours.png",
-          "title": "Colours",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_colours.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "259801",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_hokeypokey.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9123",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_hokeypokey.png",
-          "title": "Hokey-Pokey",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_hokeypokey.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "440435",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_lostfound.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9124",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_lostfound.png",
-          "title": "Lost And Found",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_lostfound.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "262606",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_shapes.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9125",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_shapes.png",
-          "title": "Shapes",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_shapes.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "522267",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_teachmehow.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/game/9126",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_teachmehow.png",
-          "title": "Teach Me How?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_teachmehow.mp4"
+          "url": "http://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CityOfStories.zip"
         }
       ],
-      "kind": "fun_page",
+      "kind": "special_subtopic_page",
       "source_id": "CRS157",
       "subject_en": "CRS157",
       "title": "Game",

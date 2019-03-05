@@ -1423,11 +1423,14 @@ class PraDigiChef(JsonTreeChef):
                     # print('Processing games', games, 'under game_title', game_title, 'for lang', lang, 'found take_from=', take_from, flush=True)
                     for game in games:
                         # CASE website game
-                        game_source_id  = game['source_id']
-                        if 'title_en' in game and game_source_id not in web_resources_source_ids:
-                            # website games:.
-                            node = website_game_webresouce_to_ricecooker_node(lang, game)
-                            web_resources_source_ids.append(game_source_id)
+                        if 'title_en' in game:
+                            game_source_id  = game['source_id']
+                            if game_source_id not in web_resources_source_ids:
+                                # website games:.
+                                node = website_game_webresouce_to_ricecooker_node(lang, game)
+                                web_resources_source_ids.append(game_source_id)
+                            else:
+                                node = None
                         # CASE gamerepo game
                         else:
                             # gamerepo games

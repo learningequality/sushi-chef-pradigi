@@ -1407,6 +1407,10 @@ class PraDigiChef(JsonTreeChef):
                         en_mr_topic['children'].append(ricecooker_subtree3)
                     subject_subtree['children'].append(en_mr_topic)
 
+
+                # Needed to avoid duplicates
+                web_resources_source_ids = [ch['source_id'] for ch in subject_subtree['children']]
+
                 # C. Load game resources
                 game_rows = resources['games']
                 print('Processing games:', [game_row[GAMENAME_KEY] for game_row in game_rows])
@@ -1419,9 +1423,11 @@ class PraDigiChef(JsonTreeChef):
                     # print('Processing games', games, 'under game_title', game_title, 'for lang', lang, 'found take_from=', take_from, flush=True)
                     for game in games:
                         # CASE website game
-                        if 'title_en' in game:
+                        game_source_id  = game['source_id']
+                        if 'title_en' in game and game_source_id not in web_resources_source_ids:
                             # website games:.
                             node = website_game_webresouce_to_ricecooker_node(lang, game)
+                            web_resources_source_ids.append(game_source_id)
                         # CASE gamerepo game
                         else:
                             # gamerepo games

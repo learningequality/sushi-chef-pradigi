@@ -6,10 +6,9 @@ Design
 ------
 This chef combines data from both the prathamopenschool.org website:
   - Hindi
-    - mix of website resource and games (games taken from website preferentially)
-    - some extra vocational material taken from youtube playlists
+    - mix of website resource and games
   - Marathi
-    - mix of website resource and games (games taken from website preferentially)
+    - mix of website resource and games
   - Other languages
     - Not all folders present, and a few videos of here and there
     - Reuse English from Hindi
@@ -48,7 +47,7 @@ Running
         cd sushi-chef-pradigi
         export PHANTOMJS_PATH=/data/sushi-chef-pradigi/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
         source venv/bin/activate
-        nohup ./chef.py -v --reset --thumbnails --token=<your_token> &
+        nohup ./chef.py -v --reset --token=<your_token> --stage &
 
 Use the `--update` option to force re-downloading all files and clear the local
 cache directory of zip files (`chefdata/zipfiles`).
@@ -58,9 +57,7 @@ cache directory of zip files (`chefdata/zipfiles`).
 Future Updates
 --------------
   - Revisit when games with Android API fixed
-  - Revisit when missing English games added
-  - Optional: load string translations for all languages from shared spreadsheet (not needed right now)
-
+  - Optional: load string translations for all languages from shared spreadsheet
 
 
 
@@ -72,7 +69,6 @@ is repeated within each language. The columns in the sheet are:
   - Get full game namelist
   - Extract known games from webpage
   - Take from (if a resource needs to be taken from the wrt of another language)
-  - 
 
 The content of each subject folder is taken from the top-level website menu,
 the yelllo horizontal bar with links:

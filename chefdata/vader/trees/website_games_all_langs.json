@@ -546,6 +546,17 @@
     },
     {
       "children": [],
+      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI.zip",
+      "kind": "PrathamZipResource",
+      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI/index.html",
+      "source_id": "hn/FunResource/9397",
+      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_HI.jpg",
+      "title": "मेमरी गेम",
+      "title_en": "Memorygamekb_HI",
+      "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI.zip"
+    },
+    {
+      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Manmauji_HI.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Manmauji_HI/index.html",
@@ -565,17 +576,6 @@
       "title": "मेक-अप शेक-अप",
       "title_en": "MakeUpShakeUp_HI",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/MakeUpShakeUp_HI.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI/index.html",
-      "source_id": "hn/FunResource/9397",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_HI.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "Memorygamekb_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI.zip"
     },
     {
       "children": [],
@@ -1551,17 +1551,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR/index.html",
-      "source_id": "mr/FunResource/9398",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_MR.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "Memorygamekb_MR",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR/index.html",
@@ -1570,6 +1559,17 @@
       "title": "मेमरी गेम",
       "title_en": "MemoryGame_MR",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip"
+    },
+    {
+      "children": [],
+      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip",
+      "kind": "PrathamZipResource",
+      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR/index.html",
+      "source_id": "mr/FunResource/9398",
+      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_MR.jpg",
+      "title": "मेमरी गेम",
+      "title_en": "Memorygamekb_MR",
+      "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip"
     },
     {
       "children": [],

@@ -634,17 +634,6 @@
       "children": [
         {
           "children": [],
-          "content-length": "19053586",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8606",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
-          "title": "எப்படி பறக்கிறார்கள் ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
-        },
-        {
-          "children": [],
           "content-length": "18622921",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
@@ -653,6 +642,28 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
           "title": "எப்படி ஓடுகிறார்கள் ?",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "24102786",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tm/FunResource/8604",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
+          "title": "எப்படி நீந்துகிறார்கள் ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "48122271",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tm/FunResource/8609",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
+          "title": "கண்ணாடி முன்னாடி",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
         },
         {
           "children": [],
@@ -678,28 +689,6 @@
         },
         {
           "children": [],
-          "content-length": "44730943",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8608",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
-          "title": "கீதா மற்றும் பபிதா",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "48122271",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8609",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
-          "title": "கண்ணாடி முன்னாடி",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
-        },
-        {
-          "children": [],
           "content-length": "28501338",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
@@ -711,14 +700,36 @@
         },
         {
           "children": [],
-          "content-length": "39766638",
+          "content-length": "19053586",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8610",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
-          "title": "பூக்களின் அற்புத வாழ்க்கை",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
+          "source_id": "Tm/FunResource/8606",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
+          "title": "எப்படி பறக்கிறார்கள் ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "44730943",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tm/FunResource/8608",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
+          "title": "கீதா மற்றும் பபிதா",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "231513640",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tm/FunResource/8611",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
+          "title": "கப்பியின் நன்மையும் தீமையும் - 1",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
         },
         {
           "children": [],
@@ -733,25 +744,14 @@
         },
         {
           "children": [],
-          "content-length": "24102786",
+          "content-length": "39766638",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8604",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
-          "title": "எப்படி நீந்துகிறார்கள் ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "231513640",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8611",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
-          "title": "கப்பியின் நன்மையும் தீமையும் - 1",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
+          "source_id": "Tm/FunResource/8610",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
+          "title": "பூக்களின் அற்புத வாழ்க்கை",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
         }
       ],
       "kind": "fun_page",

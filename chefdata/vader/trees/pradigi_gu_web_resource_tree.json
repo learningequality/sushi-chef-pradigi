@@ -893,25 +893,47 @@
       "children": [
         {
           "children": [],
-          "content-length": "19053586",
+          "content-length": "48122271",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8423",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
-          "title": "કેવી રીતે ઉડવું?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
+          "source_id": "Gj/FunResource/8426",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
+          "title": "દર્પણનો ખેલ",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
         },
         {
           "children": [],
-          "content-length": "184784617",
+          "content-length": "18622921",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8429",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
-          "title": "ગરગડીનાં લાભ અને નુકસાન -2",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
+          "source_id": "Gj/FunResource/8424",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
+          "title": "કેવી રીતે દોડવું?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "44730943",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/8425",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
+          "title": "ગીતા અને બબીતા",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "24102786",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/8421",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
+          "title": "કેવી રીતે તરવું?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
         },
         {
           "children": [],
@@ -926,25 +948,14 @@
         },
         {
           "children": [],
-          "content-length": "28501338",
+          "content-length": "9532625",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8430",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
-          "title": "એરપ્લેન લેન્ડીંગ",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "18622921",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8424",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
-          "title": "કેવી રીતે દોડવું?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
+          "source_id": "Gj/FunResource/8422",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
+          "title": "કેવી રીતે પીવું?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4"
         },
         {
           "children": [],
@@ -970,47 +981,36 @@
         },
         {
           "children": [],
-          "content-length": "24102786",
+          "content-length": "19053586",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8421",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
-          "title": "કેવી રીતે તરવું?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
+          "source_id": "Gj/FunResource/8423",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
+          "title": "કેવી રીતે ઉડવું?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
         },
         {
           "children": [],
-          "content-length": "44730943",
+          "content-length": "184784617",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8425",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
-          "title": "ગીતા અને બબીતા",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
+          "source_id": "Gj/FunResource/8429",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
+          "title": "ગરગડીનાં લાભ અને નુકસાન -2",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
         },
         {
           "children": [],
-          "content-length": "48122271",
+          "content-length": "28501338",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8426",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
-          "title": "દર્પણનો ખેલ",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "9532625",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8422",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
-          "title": "કેવી રીતે પીવું?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4"
+          "source_id": "Gj/FunResource/8430",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
+          "title": "એરપ્લેન લેન્ડીંગ",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
         }
       ],
       "kind": "fun_page",

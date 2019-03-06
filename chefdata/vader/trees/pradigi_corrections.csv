@@ -1,12 +1,8 @@
 Correction ID,Bug Type,Game Name,Source URL (Regular Expression),Action,Comment
 "This sheet lists corrective actions that PraDigi chef should take based on RE-pattern matching the Source URL of the content node. If a problem with a game is encountered during QA, can be added to this sheet with SKIP GAME action to skip it from the next chef run. Conversely, if a game is fixed (i.e. not more Android API issues) can be removed form this list so it will be imported on the next chef run.",,,,,
-,,,,,
-18,ENTER FULLSCREEN,multiple,http://www.prathamopenschool.org/CourseContent/Games/Mathematics.zip,ADD MARGIN-TOP,All the math games from Mathemtics.zip in that folder have this issue
-,,,,,
+18,ENTER FULLSCREEN,multiple,http://www.prathamopenschool.org/CourseContent/Games/Mathematics.zip,ADD MARGIN-TOP,All the math games from Mathemtics.zip in that folder have this issue -- Balaji said Remove this mathematics zip folder
 8b,Android API needed,YouSaid,http://www.prathamopenschool.org/CourseContent/Games/YouSaid.zip,SKIP GAME,appears here http://prathamopenschool.org/en/gamelist/CRS157
-,,,,,"Not available thorough the website, but this seems to work http://dev.prathamopenschool.org/CourseContent/Games/Jigsaw_HI/Game.html   See also game Jigsawgame_?"
 50,Android API needed,Flip it,http://www.prathamopenschool.org/CourseContent/Games/FlipIt.zip,SKIP GAME,
-,,,,,
 28,sandboxed localStorage,Translation Machine 1,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglish.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglish.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 29,sandboxed localStorage,Translation Machine 2,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel2.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglishLevel2.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 30,sandboxed localStorage,Translation Machine 3,http://www.prathamopenschool.org/CourseContent/Games/TranslateHindiEnglishLevel3.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateHindiEnglishLevel3.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
@@ -15,19 +11,9 @@ Correction ID,Bug Type,Game Name,Source URL (Regular Expression),Action,Comment
 51,sandboxed localStorage,MR Translation Machine 2,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel2.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel2.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 52,sandboxed localStorage,MR Translation Machine 3,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel3.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel3.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
 53,sandboxed localStorage,MR Translation Machine 4,http://www.prathamopenschool.org/CourseContent/Games/TranslateMarathiToEnglishLevel4.zip,REPLACE WITH:https://minireference.com/static/tmp/pradigizips/TranslateMarathiToEnglishLevel4.zip,Manually fixed zip file to avoid localStorage problem in sandboxed iframe
-,,,,,
-,,,,,
-,,,,,
-,,,,,
 60,Android API needed,BolBacchaBol,http://www.prathamopenschool.org/CourseContent/Games/BolBacchaBol.*.zip,SKIP GAME,
-61,,,,,
-62,,,,,
-63,,,,,
-64,,,,,
-65,,,,,
-66,,,,,
-67,,,,,
-68,,,,,
-69,,,,,
-70,,,,,
-71,,,,,
+63,Typo in ziplink on website,ABCD,http://www.prathamopenschool.org/CourseContent/Games/ABCDCover.zip,REPLACE WITH:http://www.prathamopenschool.org/CourseContent/Games/ABCD.zip,
+64,Typo in ziplink on website,PointMeOut,http://www.prathamopenschool.org/CourseContent/Games/PointMeOutCover.zip,REPLACE WITH:http://www.prathamopenschool.org/CourseContent/Games/PointMeOut.zip,
+65,Typo in ziplink on website,GuessWho,http://www.prathamopenschool.org/CourseContent/Games/GuessWhoCover.zip,REPLACE WITH:http://www.prathamopenschool.org/CourseContent/Games/GuessWho.zip,
+66,Typo in ziplink on website,CountAndKNow,http://www.prathamopenschool.org/CourseContent/Games/CountAndKnowCover.zip,REPLACE WITH:http://www.prathamopenschool.org/CourseContent/Games/CountAndKnow.zip,
+67,Typo in ziplink on website,CountIt,http://www.prathamopenschool.org/CourseContent/Games/CountItCover.zip,REPLACE WITH:http://www.prathamopenschool.org/CourseContent/Games/CountIt.zip,

@@ -644,102 +644,14 @@
       "children": [
         {
           "children": [],
-          "content-length": "48122271",
+          "content-length": "184784617",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8753",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
-          "title": "ଦର୍ପଣର ଖେଳ",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "39766638",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8754",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
-          "title": "ଫୁଲମାନଙ୍କର ଅଦ୍ଭୁତ ଦୁନିଆ",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "24102786",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8748",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
-          "title": "ଆମେ କେମିତି ପହଁରୁ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "44730943",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8752",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
-          "title": "ଗୀତା ଓ ବବିତା",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "19053586",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8750",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
-          "title": "ଆମେ କେମିତି ଉଡୁ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "18622921",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8751",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
-          "title": "ଆମେ କେମିତି ଦଉଡୁ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "231513640",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8755",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
-          "title": "ପୁଲିର ସୁବିଧା ଓ ଅସୁବିଧା -୧",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "9532625",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8749",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
-          "title": "ଆମେ କେମିତି ପିଉ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "28501338",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8747",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
-          "title": "Airplane landing",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
+          "source_id": "Od/FunResource/8756",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
+          "title": "ପୁଲି ର ସୁବିଧା ଓ ଅସୁବିଧା -୨",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
         },
         {
           "children": [],
@@ -754,14 +666,102 @@
         },
         {
           "children": [],
-          "content-length": "184784617",
+          "content-length": "231513640",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Od/FunResource/8756",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
-          "title": "ପୁଲି ର ସୁବିଧା ଓ ଅସୁବିଧା -୨",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
+          "source_id": "Od/FunResource/8755",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
+          "title": "ପୁଲିର ସୁବିଧା ଓ ଅସୁବିଧା -୧",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "28501338",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Od/FunResource/8747",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
+          "title": "Airplane landing",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "39766638",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Od/FunResource/8754",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
+          "title": "ଫୁଲମାନଙ୍କର ଅଦ୍ଭୁତ ଦୁନିଆ",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "44730943",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Od/FunResource/8752",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
+          "title": "ଗୀତା ଓ ବବିତା",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "24102786",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Od/FunResource/8748",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
+          "title": "ଆମେ କେମିତି ପହଁରୁ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "9532625",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Od/FunResource/8749",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
+          "title": "ଆମେ କେମିତି ପିଉ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "19053586",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Od/FunResource/8750",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
+          "title": "ଆମେ କେମିତି ଉଡୁ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "48122271",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Od/FunResource/8753",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
+          "title": "ଦର୍ପଣର ଖେଳ",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "18622921",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Od/FunResource/8751",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
+          "title": "ଆମେ କେମିତି ଦଉଡୁ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
         }
       ],
       "kind": "fun_page",

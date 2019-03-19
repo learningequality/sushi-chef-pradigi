@@ -100,29 +100,29 @@ PRADIGI_STRINGS = {
         'language_en': 'Hindi',
         'website_lang': 'hn',
         'gamesrepo_suffixes': ['_KKS', '_HI', '_Hi'],
-        'subjects': {
-            "Mathematics": "गणित",
-            "English": "अंग्रेजी",
-            "Science": "विज्ञान",
-            #
-            "Health": "स्वास्थ्य",
-            "Sports": "खेलकूद",
-            #
-            "Fun": "मौज",
-            "Story": "कहानियाँ",
-            #
-            "Hospitality": "अतिथी सत्कार",
-            "Construction": "भवन-निर्माण",
-            "Automobile": "वाहन",
-            "Electric": "इलेक्ट्रिक",
-            "Beauty": "ब्युटी",
-            "Healthcare": "स्वास्थ्य सेवा",
-            #
-            "KhelBadi": "खेळ-वाडी",
-            "WatchAndDo": "बघा आणि शिका",
-            "KhelPuri": "खेळ-पुरी",
-            #
-            "LanguageAndCommunication": "भाषा और संवाद",
+        'subjects': {       # NO longer necessary --- get from website
+            # "Mathematics": "गणित",
+            # "English": "अंग्रेजी",
+            # "Science": "विज्ञान",
+            # #
+            # "Health": "स्वास्थ्य",
+            # "Sports": "खेलकूद",
+            # #
+            # "Fun": "मौज",
+            # "Story": "कहानियाँ",
+            # #
+            # "Hospitality": "अतिथी सत्कार",
+            # "Construction": "भवन-निर्माण",
+            # "Automobile": "वाहन",
+            # "Electric": "इलेक्ट्रिक",
+            # "Beauty": "ब्युटी",
+            # "Healthcare": "स्वास्थ्य सेवा",
+            # #
+            # "KhelBadi": "खेळ-वाडी",
+            # "WatchAndDo": "बघा आणि शिका",
+            # "KhelPuri": "खेळ-पुरी",
+            # #
+            # "LanguageAndCommunication": "भाषा और संवाद",
         },
         # Subject (a.k.a. cat_name)  -->  course_id  lookup table
         # this is necessary for special handing of games and visibility in different age groups
@@ -134,8 +134,10 @@ PRADIGI_STRINGS = {
             #
             # Health and Sport for webscraping
             'Health': 'CRS68',
-            #
             'Sports': 'CRS136',
+            'Music': 'Sangeet',
+            'Theatre': 'CRS217',
+            #
             # "Healthcare": "Healthcare",
             "Beauty": "CRS130",
             "Electric": "CRS131",
@@ -148,30 +150,7 @@ PRADIGI_STRINGS = {
         "language_en": "Marathi",
         'website_lang': 'mr',
         "gamesrepo_suffixes": ['_KKS', '_MR', '_M'],
-        "subjects": {
-            "Mathematics": "गणित",
-            "English": "अंग्रेजी",
-            "Science": "विज्ञान",
-            #
-            "Health": "स्वास्थ्य",
-            "Sports": "खेलकूद",
-            #
-            "Fun": "मौज",
-            "Story": "कहानियाँ",
-            #
-            "Hospitality": "अतिथी सत्कार",
-            "Construction": "भवन-निर्माण",
-            "Automobile": "वाहन",
-            "Electric": "इलेक्ट्रिक",
-            "Beauty": "ब्युटी",
-            "Healthcare": "स्वास्थ्य सेवा",
-            #
-            "KhelBadi": "खेळ-वाडी",
-            "WatchAndDo": "बघा आणि शिका",
-            "KhelPuri": "खेळ-पुरी",
-            #
-            "LanguageAndCommunication": "भाषा और संवाद",
-        },
+        "subjects": {},
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS125",       # "खेळ-वाडी",
             'WatchAndDo': "CRS127",     # "बघा आणि शिका",
@@ -180,6 +159,7 @@ PRADIGI_STRINGS = {
             # Health and Sport for webscraping
             'Health': 'CRS73',
             'Sports': 'CRS138',
+            'Music': 'Sangeet',
             #
             # "Healthcare": "Healthcare",
             "Electric": "CRS141",
@@ -254,30 +234,7 @@ PRADIGI_STRINGS = {
     "kn": {
         "language_en": "Kannada",
         "gamesrepo_suffixes": ['_KN'],
-        "subjects": {
-            "Mathematics": "गणित",
-            "English": "अंग्रेजी",
-            "Science": "विज्ञान",
-            #
-            "Health": "स्वास्थ्य",
-            "Sports": "खेलकूद",
-            #
-            "Fun": "मौज",
-            "Story": "कहानियाँ",
-            #
-            "Hospitality": "अतिथी सत्कार",
-            "Construction": "भवन-निर्माण",
-            "Automobile": "वाहन",
-            "Electric": "इलेक्ट्रिक",
-            "Beauty": "ब्युटी",
-            "Healthcare": "स्वास्थ्य सेवा",
-            #
-            "KhelBadi": "खेळ-वाडी",
-            "WatchAndDo": "बघा आणि शिका",
-            "KhelPuri": "खेळ-पुरी",
-            #
-            "LanguageAndCommunication": "भाषा और संवाद",
-        },
+        "subjects": {},
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS168",
             'WatchAndDo': "CRS170",
@@ -367,7 +324,9 @@ PRADIGI_SUBJECTS = [
     'Science',
     #
     'Health',
-    "Sports",
+    'Sports',
+    'Music',
+    'Theatre'
     #
     'Fun',              # Contains website /Fun content + all games not in the other categories
     'Story',
@@ -1340,10 +1299,6 @@ class PraDigiChef(JsonTreeChef):
             for subject_subtree in subject_subtrees:
                 subject_en = subject_subtree['title']
                 subject_subtree['source_id'] = 'pradigi_'+str(lang)+'_'+age_group+'_'+subject_en
-                
-                # localize subject titles when translation is available
-                if subject_en in PRADIGI_STRINGS[lang]['subjects']:
-                    subject_subtree['title'] = PRADIGI_STRINGS[lang]['subjects'][subject_en]
 
                 # MAIN LOOKUP FUNCTION -- GETS CHANNEL STRUCTURE FROM CSV
                 resources = get_resources_for_age_group_and_subject(age_group, subject_en, language_en)
@@ -1364,6 +1319,11 @@ class PraDigiChef(JsonTreeChef):
                         wrt_subtree = get_subtree_by_subject_en(lang, desired_subject_en)
                         if wrt_subtree:
                             ricecooker_subtree = wrt_to_ricecooker_tree(wrt_subtree, lang)
+                            # Set title to localized name obtained from website
+                            subject_subtree['title'] = ricecooker_subtree['title']
+                            # overwsite subject titles when translation is available
+                            if subject_en in PRADIGI_STRINGS[lang]['subjects']:
+                                subject_subtree['title'] = PRADIGI_STRINGS[lang]['subjects'][subject_en]
                             for child in ricecooker_subtree['children']:
                                 subject_subtree['children'].append(child)
                         else:

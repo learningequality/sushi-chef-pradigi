@@ -68,17 +68,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_BN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_BN/index.html",
-      "source_id": "bn/game/5627",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Golmaal_BN.png",
-      "title": "গোলমাল",
-      "title_en": "Golmaal_BN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_BN.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/BolBacchaBol_BN.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/BolBacchaBol_BN/index.html",
@@ -156,28 +145,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/TracingGame_BN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_BN/index.html",
-      "source_id": "bn/game/4627",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4627.png",
-      "title": "ছবি দেখে আঁকো",
-      "title_en": "TracingGame_BN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_BN.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_BN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_BN/index.html",
-      "source_id": "bn/game/4628",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4628.png",
-      "title": "গানে গানে",
-      "title_en": "Sangeet_BN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_BN.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/NumberKas_BN.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_BN/index.html",
@@ -197,17 +164,6 @@
       "title": "স্বর ও চিহ্ন এর খেলা",
       "title_en": "Aksharkhadi_BN",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_BN.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_BN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_BN/index.html",
-      "source_id": "bn/game/4632",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4632.png",
-      "title": "আমাকে দেখে রং লাগাও",
-      "title_en": "Coloring_BN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_BN.zip"
     },
     {
       "children": [],
@@ -480,17 +436,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal/index.html",
-      "source_id": "7549",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Golmaal_EN.png",
-      "title": "Golmaal",
-      "title_en": "Golmaal",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/RailGadi.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/RailGadi/index.html",
@@ -546,17 +491,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI/index.html",
-      "source_id": "hn/FunResource/9397",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_HI.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "Memorygamekb_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Manmauji_HI.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Manmauji_HI/index.html",
@@ -579,17 +513,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_HI/index.html",
-      "source_id": "hn/FunResource/7612",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_HI.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "MemoryGame_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_HI.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Daud_HI.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Daud_HI/index.html",
@@ -598,17 +521,6 @@
       "title": "दौड",
       "title_en": "Daud_HI",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Daud_HI.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI/index.html",
-      "source_id": "hn/game/9397",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_HI.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "Memorygamekb_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_HI.zip"
     },
     {
       "children": [],
@@ -689,28 +601,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/TracingGame_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_HI/index.html",
-      "source_id": "hn/game/3539",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Aakar.png",
-      "title": "आकार",
-      "title_en": "TracingGame_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_HI.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_HI/index.html",
-      "source_id": "hn/game/3540",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/sangeetCover.png",
-      "title": "संगीत",
-      "title_en": "Sangeet_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_HI.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/NumberKas_HI.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_HI/index.html",
@@ -730,17 +620,6 @@
       "title": "अक्षरखड़ी",
       "title_en": "Aksharkhadi_HI",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_HI.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_HI/index.html",
-      "source_id": "hn/game/3544",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ColoringCover.png",
-      "title": "रंग",
-      "title_en": "Coloring_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_HI.zip"
     },
     {
       "children": [],
@@ -785,17 +664,6 @@
       "title": "रेल-गाडी",
       "title_en": "RailGadi_HI",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/RailGadi_HI.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_HI/index.html",
-      "source_id": "hn/game/5508",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5508.png",
-      "title": "गोलमाल",
-      "title_en": "Golmaal_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_HI.zip"
     },
     {
       "children": [],
@@ -865,17 +733,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/ShabdKhel_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/ShabdKhel_HI/index.html",
-      "source_id": "hn/game/7610",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Shabdkhelicon_HI.jpg",
-      "title": "शब्दखेल",
-      "title_en": "ShabdKhel_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/ShabdKhel_HI.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Judwa_KKS_Hi.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Judwa_KKS_Hi/index.html",
@@ -895,17 +752,6 @@
       "title": "टिकटॉक",
       "title_en": "TikTok_HI",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/TikTok_HI.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_HI.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_HI/index.html",
-      "source_id": "hn/game/7612",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_HI.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "MemoryGame_HI",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_HI.zip"
     },
     {
       "children": [],
@@ -1142,17 +988,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_KN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_KN/index.html",
-      "source_id": "kn/game/5617",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Golmaal_KN.png",
-      "title": "ಗೋ ಲ್ಮಾ ಲ್",
-      "title_en": "Golmaal_KN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_KN.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_KN.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_KN/index.html",
@@ -1230,28 +1065,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/TracingGame_KN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_KN/index.html",
-      "source_id": "kn/game/4783",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4783.png",
-      "title": "ಆಕಾರ",
-      "title_en": "TracingGame_KN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_KN.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_KN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_KN/index.html",
-      "source_id": "kn/game/4784",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4784.png",
-      "title": "ಸಂಗೀತ",
-      "title_en": "Sangeet_KN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_KN.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/NumberKas_KN.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_KN/index.html",
@@ -1271,17 +1084,6 @@
       "title": "ಹೇಳಿದ ಅಕ್ಷರ ಗುರುತಿಸಿ",
       "title_en": "Aksharkhadi_KN",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_KN.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_KN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_KN/index.html",
-      "source_id": "kn/game/4788",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4788.png",
-      "title": "ಬಣ್ಣ",
-      "title_en": "Coloring_KN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_KN.zip"
     },
     {
       "children": [],
@@ -1474,17 +1276,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal/index.html",
-      "source_id": "7555",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Golmaal_EN.png",
-      "title": "Golmaal",
-      "title_en": "Golmaal",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/RailGadi.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/RailGadi/index.html",
@@ -1551,28 +1342,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR/index.html",
-      "source_id": "mr/FunResource/7960",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MemoryGame_MR.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "MemoryGame_MR",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR/index.html",
-      "source_id": "mr/FunResource/9398",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_MR.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "Memorygamekb_MR",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Manmauji_MR.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Manmauji_MR/index.html",
@@ -1603,17 +1372,6 @@
       "title": "ससा आणि कासव",
       "title_en": "Daud_MR",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Daud_MR.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR/index.html",
-      "source_id": "mr/game/9398",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_MR.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "Memorygamekb_MR",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip"
     },
     {
       "children": [],
@@ -1694,17 +1452,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_MR.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_MR/index.html",
-      "source_id": "mr/game/5507",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5507.png",
-      "title": "गोलमाल",
-      "title_en": "Golmaal_MR",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_MR.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Awazchitra_MR.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Awazchitra_MR/index.html",
@@ -1738,28 +1485,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/TracingGame_MR.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_MR/index.html",
-      "source_id": "mr/game/4096",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4079.png",
-      "title": "आकार",
-      "title_en": "TracingGame_MR",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_MR.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_MR.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_MR/index.html",
-      "source_id": "mr/game/4097",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4088.jpg",
-      "title": "संगीत",
-      "title_en": "Sangeet_MR",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_MR.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/NumberKas_MR.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_MR/index.html",
@@ -1779,17 +1504,6 @@
       "title": "अक्षरखडी",
       "title_en": "Aksharkhadi_MR",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_MR.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_MR.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_MR/index.html",
-      "source_id": "mr/game/4101",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4085.png",
-      "title": "रंग",
-      "title_en": "Coloring_MR",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_MR.zip"
     },
     {
       "children": [],
@@ -1878,17 +1592,6 @@
       "title": "जुळे",
       "title_en": "Judwa_KKS_MR",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Judwa_KKS_MR.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR/index.html",
-      "source_id": "mr/game/7960",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MemoryGame_MR.jpg",
-      "title": "मेमरी गेम",
-      "title_en": "MemoryGame_MR",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip"
     },
     {
       "children": [],
@@ -2092,17 +1795,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_OD.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_OD/index.html",
-      "source_id": "Od/game/5647",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Golmaal_OD.png",
-      "title": "ଗୋଳମାଳ(ପଜଲ)",
-      "title_en": "Golmaal_OD",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_OD.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_OD.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_OD/index.html",
@@ -2180,28 +1872,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/TracingGame_OD.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_OD/index.html",
-      "source_id": "Od/game/4693",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4693.png",
-      "title": "ରଖି ନଜର ,କର ଆକାର",
-      "title_en": "TracingGame_OD",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_OD.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_OD.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_OD/index.html",
-      "source_id": "Od/game/4694",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4694.png",
-      "title": "ସା ରେ ଗା ମା ପା",
-      "title_en": "Sangeet_OD",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_OD.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/NumberKas_OD.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_OD/index.html",
@@ -2221,17 +1891,6 @@
       "title": "ଅକ୍ଷର ମାତ୍ରା",
       "title_en": "Aksharkhadi_OD",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_OD.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_OD.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_OD/index.html",
-      "source_id": "Od/game/4698",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4698.png",
-      "title": "ତୁଳି ଧର, ରଂଗ ଭର",
-      "title_en": "Coloring_OD",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_OD.zip"
     },
     {
       "children": [],
@@ -2435,17 +2094,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_PN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_PN/index.html",
-      "source_id": "Pn/game/5642",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Golmaal_PN.png",
-      "title": "ਗੋਲਮਾਲ",
-      "title_en": "Golmaal_PN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_PN.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_GJ.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_GJ/index.html",
@@ -2490,28 +2138,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/TracingGame_PN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_PN/index.html",
-      "source_id": "Pn/game/4663",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4663.png",
-      "title": "ਟਨਾ ਟਨ ਟ੍ਰੇਸਿੰਗ",
-      "title_en": "TracingGame_PN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_PN.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_PN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_PN/index.html",
-      "source_id": "Pn/game/4664",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4664.jpg",
-      "title": "ਯੋ ਯੋ ਬੈਂਡ",
-      "title_en": "Sangeet_PN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_PN.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/NumberKas_PN.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_PN/index.html",
@@ -2542,17 +2168,6 @@
       "title": "ਮਿਲੇ ਸੁਰ ਮੇਰਾ ਤੇਰਾ",
       "title_en": "Aksharkhadi_PN",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_PN.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_PN.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_PN/index.html",
-      "source_id": "Pn/game/4668",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4668.png",
-      "title": "ਰੰਗਾਂ ਦੀ ਦੁਨੀਆ",
-      "title_en": "Coloring_PN",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_PN.zip"
     },
     {
       "children": [],
@@ -2778,17 +2393,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_TM.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_TM/index.html",
-      "source_id": "Tm/game/5632",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Golmaal_TM.png",
-      "title": "புதிர் படம்",
-      "title_en": "Golmaal_TM",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_TM.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_TM.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_TM/index.html",
@@ -2866,28 +2470,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/TracingGame_TM.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_TM/index.html",
-      "source_id": "Tm/game/4843",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4843.png",
-      "title": "அதுதான் இது",
-      "title_en": "TracingGame_TM",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_TM.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_TM.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_TM/index.html",
-      "source_id": "Tm/game/4844",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4844.png",
-      "title": "இசை",
-      "title_en": "Sangeet_TM",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_TM.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/NumberKas_TM.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_TM/index.html",
@@ -2907,17 +2489,6 @@
       "title": "என் ஒலி - என் எழுத்து",
       "title_en": "Aksharkhadi_TM",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_TM.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_TM.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_TM/index.html",
-      "source_id": "Tm/game/4848",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4848.png",
-      "title": "என் கை வண்ணம்",
-      "title_en": "Coloring_TM",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_TM.zip"
     },
     {
       "children": [],
@@ -3121,17 +2692,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_TL.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_TL/index.html",
-      "source_id": "Tl/game/5637",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Golmaal_TL.png",
-      "title": "గోల్ మాల్",
-      "title_en": "Golmaal_TL",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_TL.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_TL.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_TL/index.html",
@@ -3209,28 +2769,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/TracingGame_TL.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_TL/index.html",
-      "source_id": "Tl/game/4813",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4813.png",
-      "title": "రాయడం నేర్చుకుందాం !",
-      "title_en": "TracingGame_TL",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_TL.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_TL.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_TL/index.html",
-      "source_id": "Tl/game/4814",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4814.png",
-      "title": "సంగీత సాధన",
-      "title_en": "Sangeet_TL",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_TL.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/NumberKas_TL.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_TL/index.html",
@@ -3250,17 +2788,6 @@
       "title": "అక్షరమాల",
       "title_en": "Aksharkhadi_TL",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_TL.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_TL.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_TL/index.html",
-      "source_id": "Tl/game/4818",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4818.png",
-      "title": "రంగులు వేద్దాం !",
-      "title_en": "Coloring_TL",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_TL.zip"
     },
     {
       "children": [],
@@ -3398,6 +2925,72 @@
   "ur": [
     {
       "children": [],
+      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/PointMeOut.zip",
+      "kind": "PrathamZipResource",
+      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/PointMeOut/index.html",
+      "source_id": "9447",
+      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/PointMeOutCover.jpg",
+      "title": "Point Me Out",
+      "title_en": "PointMeOut",
+      "url": "http://www.prathamopenschool.org/CourseContent/Games/PointMeOut.zip"
+    },
+    {
+      "children": [],
+      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/GuessWho.zip",
+      "kind": "PrathamZipResource",
+      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/GuessWho/index.html",
+      "source_id": "9448",
+      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/GuessWhoCover.jpg",
+      "title": "Guess Who",
+      "title_en": "GuessWho",
+      "url": "http://www.prathamopenschool.org/CourseContent/Games/GuessWho.zip"
+    },
+    {
+      "children": [],
+      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/ABCD.zip",
+      "kind": "PrathamZipResource",
+      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/ABCD/index.html",
+      "source_id": "9449",
+      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ABCDCover.jpg",
+      "title": "ABCD",
+      "title_en": "ABCD",
+      "url": "http://www.prathamopenschool.org/CourseContent/Games/ABCD.zip"
+    },
+    {
+      "children": [],
+      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/CountIt.zip",
+      "kind": "PrathamZipResource",
+      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CountIt/index.html",
+      "source_id": "9453",
+      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CountItCover.jpg",
+      "title": "Count It",
+      "title_en": "CountIt",
+      "url": "http://www.prathamopenschool.org/CourseContent/Games/CountIt.zip"
+    },
+    {
+      "children": [],
+      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/CityOfStories.zip",
+      "kind": "PrathamZipResource",
+      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CityOfStories/index.html",
+      "source_id": "9454",
+      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/cityofstories.png",
+      "title": "City Of Stories",
+      "title_en": "CityOfStories",
+      "url": "http://www.prathamopenschool.org/CourseContent/Games/CityOfStories.zip"
+    },
+    {
+      "children": [],
+      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/CountAndKnow.zip",
+      "kind": "PrathamZipResource",
+      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CountAndKnow/index.html",
+      "source_id": "9452",
+      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CountAndKnowCover.jpg",
+      "title": "Count & Know",
+      "title_en": "CountAndKnow",
+      "url": "http://www.prathamopenschool.org/CourseContent/Games/CountAndKnow.zip"
+    },
+    {
+      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/AwazPehchano_UD.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/AwazPehchano_UD/index.html",
@@ -3406,17 +2999,6 @@
       "title": "Awaaz Pehchanye",
       "title_en": "AwazPehchano_UD",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/AwazPehchano_UD.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_UD.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_UD/index.html",
-      "source_id": "ur/game/7877",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ud_coloring.jpg\r\n",
-      "title": "Rangon ka Khel",
-      "title_en": "Coloring_UD",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_UD.zip"
     },
     {
       "children": [],
@@ -3431,17 +3013,6 @@
     },
     {
       "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_UD.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_UD/index.html",
-      "source_id": "ur/game/7879",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ud_golmaal.jpg\r\n",
-      "title": "Golmaal",
-      "title_en": "Golmaal_UD",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_UD.zip"
-    },
-    {
-      "children": [],
       "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/RailGadi_UD.zip",
       "kind": "PrathamZipResource",
       "main_file": "http://www.prathamopenschool.org/CourseContent/Games/RailGadi_UD/index.html",
@@ -3450,17 +3021,6 @@
       "title": "Railgaadi",
       "title_en": "RailGadi_UD",
       "url": "http://www.prathamopenschool.org/CourseContent/Games/RailGadi_UD.zip"
-    },
-    {
-      "children": [],
-      "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_UD.zip",
-      "kind": "PrathamZipResource",
-      "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_UD/index.html",
-      "source_id": "ur/game/7881",
-      "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ud_sangeet.jpg\r\n",
-      "title": "Mousiqi",
-      "title_en": "Sangeet_UD",
-      "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_UD.zip"
     }
   ]
 }

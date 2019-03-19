@@ -2536,6 +2536,28 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5719.png",
                   "title": "थंडगार गर्मी",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/Summer_drinks_MR.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "97677218",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_pollination.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9888",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_pollination.png",
+                  "title": "परागीभवन",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_pollination.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "44916548",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_How_does_plant_drinks_water.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9889",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_How_does_plant_drinks_water.png",
+                  "title": "झाडे पाणी कशी पितात?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_How_does_plant_drinks_water.mp4"
                 }
               ],
               "description": "",
@@ -2571,17 +2593,6 @@
                 },
                 {
                   "children": [],
-                  "content-length": "13998217",
-                  "content-type": "video/mp4",
-                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_Oriental_Dwarf_Kingfisher.mp4",
-                  "kind": "PrathamVideoResource",
-                  "source_id": "8085",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_Oriental_Dwarf_Kingfisher.png",
-                  "title": "तिबोटी खंडया",
-                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_Oriental_Dwarf_Kingfisher.mp4"
-                },
-                {
-                  "children": [],
                   "content-length": "30921837",
                   "content-type": "video/mp4",
                   "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_White_bellied_sea_eagle.mp4",
@@ -2596,7 +2607,7 @@
               "kind": "lesson_page",
               "source_id": "LES1019",
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_amazingworldt.png",
-              "title": "निसर्ग संवर्धन",
+              "title": "निसर्ग संरक्षण",
               "url": "http://www.prathamopenschool.org/mr/Lesson/LES1019"
             },
             {
@@ -2633,6 +2644,28 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_White_bellied_sea_eagle.png",
                   "title": "पांढऱ्या पोटाचा समुद्री गरुड",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_White_bellied_sea_eagle.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "22779755",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Inside_the_animal_mind_MR.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9892",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5722.png",
+                  "title": "Inside animal mind",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/Inside_the_animal_mind_MR.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "19140868",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_howToFly.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9893",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
+                  "title": "कसे उडतात ?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/m_howToFly.mp4"
                 }
               ],
               "description": "",
@@ -2654,6 +2687,17 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_Turtle_conservation.png",
                   "title": "सागरी कासव सरंक्षण",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_Turtle_conservation.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "203019090",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_snake_big_four.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9890",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_snake_big_four.png",
+                  "title": "साप मुख्य चार",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_snake_big_four.mp4"
                 }
               ],
               "description": "",
@@ -2675,6 +2719,28 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_Camouflage.png",
                   "title": "छद्मावरण",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_Camouflage.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "97677218",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_pollination.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9885",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_pollination.png",
+                  "title": "परागीभवन",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_pollination.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "143075119",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_how_does_one_breathe_underwater.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9886",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_how_does_one_breathe_underwater.png",
+                  "title": "पाण्यात सजीव श्वास कसा घेतात?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_how_does_one_breathe_underwater.mp4"
                 }
               ],
               "description": "",
@@ -2683,6 +2749,27 @@
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_Camouflage.png",
               "title": "अनुकूलन",
               "url": "http://www.prathamopenschool.org/mr/Lesson/LES1212"
+            },
+            {
+              "children": [
+                {
+                  "children": [],
+                  "content-length": "97677218",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_pollination.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9887",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_pollination.png",
+                  "title": "परागीभवन",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_pollination.mp4"
+                }
+              ],
+              "description": "",
+              "kind": "lesson_page",
+              "source_id": "LES1323",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_pollinationTopic.png",
+              "title": "अद्भुत कीटक",
+              "url": "http://www.prathamopenschool.org/mr/Lesson/LES1323"
             }
           ],
           "kind": "subtopic_page",
@@ -3080,6 +3167,17 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_liquid_solidMain4.png",
                   "title": "पदार्थ आणि घनता",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/m_liquid_solid.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "82296910",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_why_does_ice_floats_on_water.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9884",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_why_does_ice_floats_on_water.png",
+                  "title": "बर्फ पाण्यावर का तरंगतो?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_why_does_ice_floats_on_water.mp4"
                 },
                 {
                   "children": [],
@@ -3486,6 +3584,28 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_How_soap_works.png",
                   "title": "साबण काम कसा करतो?",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_How_soap_works.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "178502416",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_water_universal_solvent.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9882",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_water_universal_solvent.png",
+                  "title": "पाणी: वैश्विक द्रावक",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_water_universal_solvent.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "82296910",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mr_why_does_ice_floats_on_water.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9883",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mr_why_does_ice_floats_on_water.png",
+                  "title": "बर्फ पाण्यावर का तरंगतो?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/mr_why_does_ice_floats_on_water.mp4"
                 }
               ],
               "description": "",
@@ -5485,22 +5605,95 @@
     {
       "children": [
         {
-          "children": [],
-          "content-length": "12113273",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_First_Aid_box.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/game/5575",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5534.png",
-          "title": "फर्स्ट एड बॉक्स",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_First_Aid_box.mp4"
+          "children": [
+            {
+              "children": [],
+              "content-length": "12113273",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_First_Aid_box.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "5575",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5534.png",
+              "title": "फर्स्ट एड बॉक्स",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/m_First_Aid_box.mp4"
+            }
+          ],
+          "description": "",
+          "kind": "lesson_page",
+          "source_id": "LES846",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/LES846.png",
+          "title": "फर्स्ट एड",
+          "url": "http://www.prathamopenschool.org/mr/Lesson/LES846"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "content-length": "5825719",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/1_mr_growing_up.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "9528",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/1_growing_up.png",
+              "title": "1. मोठं होणं",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/1_mr_growing_up.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "4012100",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/2_mr_healthy_diet.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "9529",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/2_healthy_diet.png",
+              "title": "2. निरोगी आहार कसा असतो?",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/2_mr_healthy_diet.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "5759046",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/3_mr_periods.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "9530",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/3_periods.png",
+              "title": "3. पाळी काय असते?",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/3_mr_periods.mp4"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/4_mr_ext_period.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "9531",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/4_next_period.png",
+              "title": "4. माझी पुढची पाळी कधी आहे?",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/4_mr_ext_period.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "9806979",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/5_mr_during_periods.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "9532",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/5_during_periods.png",
+              "title": "5. पाळीच्या काळात आपली काळजी कशी घ्यावी?",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/5_mr_during_periods.mp4"
+            }
+          ],
+          "description": "",
+          "kind": "lesson_page",
+          "source_id": "LES1281",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Hello_Periods_topic.png",
+          "title": "हॅलो पिरियड्स",
+          "url": "http://www.prathamopenschool.org/mr/Lesson/LES1281"
         }
       ],
-      "kind": "fun_page",
-      "source_id": "CRS73",
-      "subject_en": "CRS73",
+      "kind": "topic_page",
+      "source_id": "Health",
+      "subject_en": "Health",
       "title": "स्वास्थ्य",
-      "url": "http://www.prathamopenschool.org/mr/gamelist/CRS73"
+      "url": "http://www.prathamopenschool.org/mr/Course/Health"
     },
     {
       "children": [
@@ -5635,14 +5828,139 @@
     {
       "children": [
         {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "content-length": "159646486",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_What_is_music.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9645",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_What_is_music.png",
+                  "title": "संगीत म्हणजे काय?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_What_is_music.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "196249150",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_Musical_Survey_of _village.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9646",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_Musical_Survey_of _village.png",
+                  "title": "गावाची संगीत सफर",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_Musical_Survey_of _village.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "206921801",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_Let_sing_along.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "9647",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_Let_sing_along.png",
+                  "title": "चला गाऊया गाणे.",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_Let_sing_along.mp4"
+                }
+              ],
+              "description": "संगीत",
+              "kind": "lesson_page",
+              "source_id": "LES1320",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_musict.png",
+              "title": "संगीताची ओळख",
+              "url": "http://www.prathamopenschool.org/mr/Lesson/LES1320"
+            }
+          ],
+          "kind": "subtopic_page",
+          "source_id": "CRS216",
+          "title": "संगीत परिचय",
+          "url": "http://www.prathamopenschool.org/mr/Course/Sangeet/CRS216"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "content-length": "73170080",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_Algoza.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "9648",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_Algoza.png",
+              "title": "राजस्थान ची शान - अलगोझा",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_Algoza.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "105728248",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_Ravanhatta.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "9649",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_Ravanhatta.png",
+              "title": "रावणहत्ता",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_Ravanhatta.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "10450941",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_Straw_Flute.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "9650",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_Straw_Flute.png",
+              "title": "स्ट्रॉची बासरी",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/m_Straw_Flute.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "12938184",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_jaltarang.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "9651",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_jaltarang.png",
+              "title": "जलतरंग",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_jaltarang.mp4"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_MR.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_MR/index.html",
+              "source_id": "4097",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4088.jpg",
+              "title": "संगीत",
+              "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_MR.zip"
+            }
+          ],
+          "description": "संगीत",
+          "kind": "lesson_page",
+          "source_id": "LES1321",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_Instrumentst.png",
+          "title": "वाद्यांची करामत",
+          "url": "http://www.prathamopenschool.org/mr/Lesson/LES1321"
+        }
+      ],
+      "kind": "topic_page",
+      "source_id": "Sangeet",
+      "subject_en": "Sangeet",
+      "title": "संगीत",
+      "url": "http://www.prathamopenschool.org/mr/Course/Sangeet"
+    },
+    {
+      "children": [
+        {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MakeUpShakeUp_MR.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MakeUpShakeUp_MR/index.html",
-          "source_id": "mr/FunResource/7605",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MakeUpShakeUpCoverIcon_MR.png",
-          "title": "मेक-अप शेक-अप",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/MakeUpShakeUp_MR.zip"
+          "content-length": "15376391",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_real_players.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1526",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_real_players.png",
+          "title": "खरे खेळाडू",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_real_players.mp4"
         },
         {
           "children": [],
@@ -5657,17 +5975,6 @@
         },
         {
           "children": [],
-          "content-length": "14478355",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_self_opearating_gate.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/1525",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/h_self_opearating_gate.png",
-          "title": "आगळेवेगळे फाटक",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_self_opearating_gate.mp4"
-        },
-        {
-          "children": [],
           "content-length": "37772674",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Make_your_own_video_MR.mp4",
@@ -5676,170 +5983,6 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5723.png",
           "title": "बनवा तुमचा व्हिडिओ",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/Make_your_own_video_MR.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "15376391",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_real_players.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/1526",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_real_players.png",
-          "title": "खरे खेळाडू",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_real_players.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "6809205",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mirror.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/1168",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mirror.png",
-          "title": "आरसेबहाद्दर",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/mirror.mp4"
-        },
-        {
-          "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR/index.html",
-          "source_id": "mr/FunResource/7960",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MemoryGame_MR.jpg",
-          "title": "मेमरी गेम",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip"
-        },
-        {
-          "children": [],
-          "content-length": "22779755",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Inside_the_animal_mind_MR.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/5722",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5722.png",
-          "title": "Inside animal mind",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/Inside_the_animal_mind_MR.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "6298294",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_fun_computerwork.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/4343",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_fun_computerwork.png",
-          "title": "कॉम्प्युटरचं काम",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_fun_computerwork.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "10569973",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_Airplane_landing.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/5578",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5578.png",
-          "title": "Airplane Landing",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_Airplane_landing.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "15814683",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_periodic_table.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/1521",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_periodic_table.png",
-          "title": "पिरिऑडिक टेबल",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_periodic_table.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "18414450",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_paper_bridge.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/1524",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1524.png",
-          "title": "कागदाचा पूल",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_paper_bridge.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "19396755",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_bridge_secret.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/1527",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_bridge_secret.png",
-          "title": "पूलांचे रहस्य",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_bridge_secret.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "15045125",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/vaishnavjan.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/8199",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/vaishnavjan.png",
-          "title": "वैष्णव जन",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/vaishnavjan.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "9427853",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Lemon_puzzle_MR.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/5721",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5721.png",
-          "title": "लिंबू खावे लागेल!",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/Lemon_puzzle_MR.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "3874282",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_cow_pump.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/1522",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_cow_pump.png",
-          "title": "गाय चालवते पंप",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_cow_pump.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "7378741",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_Pulley_advantage_and_disadvantages_1.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/5562",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5521.png",
-          "title": "कप्पीचे फायदे आणि तोटे भाग 1",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_Pulley_advantage_and_disadvantages_1.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "9484802",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_Pulley_advantage_and_disadvantages_2.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/5563",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5522.png",
-          "title": "कप्पीचे फायदे आणि तोटे भाग 2",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_Pulley_advantage_and_disadvantages_2.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "12906942",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_coriolis_effect.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/1519",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_coriolis_effect.png",
-          "title": "कोरिओलिस इफेक्ट",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_coriolis_effect.mp4"
         },
         {
           "children": [],
@@ -5854,24 +5997,90 @@
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR/index.html",
-          "source_id": "mr/FunResource/9398",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_MR.jpg",
-          "title": "मेमरी गेम",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip"
+          "content-length": "14478355",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_self_opearating_gate.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1525",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/h_self_opearating_gate.png",
+          "title": "आगळेवेगळे फाटक",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_self_opearating_gate.mp4"
         },
         {
           "children": [],
-          "content-length": "7381302",
+          "content-length": "6298294",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_sandwich.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_fun_computerwork.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/302",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES302.png",
-          "title": "तरंगते सँडविच",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_sandwich.mp4"
+          "source_id": "mr/FunResource/4343",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_fun_computerwork.png",
+          "title": "कॉम्प्युटरचं काम",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_fun_computerwork.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "19396755",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_bridge_secret.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1527",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_bridge_secret.png",
+          "title": "पूलांचे रहस्य",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_bridge_secret.mp4"
+        },
+        {
+          "children": [],
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MakeUpShakeUp_MR.zip",
+          "kind": "PrathamZipResource",
+          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MakeUpShakeUp_MR/index.html",
+          "source_id": "mr/FunResource/7605",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MakeUpShakeUpCoverIcon_MR.png",
+          "title": "मेक-अप शेक-अप",
+          "url": "http://www.prathamopenschool.org/CourseContent/Games/MakeUpShakeUp_MR.zip"
+        },
+        {
+          "children": [],
+          "content-length": "12906942",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_coriolis_effect.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1519",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_coriolis_effect.png",
+          "title": "कोरिओलिस इफेक्ट",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_coriolis_effect.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "14035732",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/8183",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_wakeup.png",
+          "title": "The Wake Up dance",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "9461547",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_howToDrink.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1563",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
+          "title": "कसे पितात?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_howToDrink.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "9427853",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Lemon_puzzle_MR.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/5721",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5721.png",
+          "title": "लिंबू खावे लागेल!",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/Lemon_puzzle_MR.mp4"
         },
         {
           "children": [],
@@ -5883,6 +6092,60 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_pupil_purpose.png",
           "title": "बोलके डोळे",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/m_fun_talkingeyes.mp4"
+        },
+        {
+          "children": [],
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip",
+          "kind": "PrathamZipResource",
+          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR/index.html",
+          "source_id": "mr/FunResource/7960",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MemoryGame_MR.jpg",
+          "title": "मेमरी गेम",
+          "url": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGame_MR.zip"
+        },
+        {
+          "children": [],
+          "content-length": "3874282",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_cow_pump.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1522",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_cow_pump.png",
+          "title": "गाय चालवते पंप",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_cow_pump.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "15814683",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_periodic_table.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1521",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/m_periodic_table.png",
+          "title": "पिरिऑडिक टेबल",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_periodic_table.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "9484802",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_Pulley_advantage_and_disadvantages_2.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/5563",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5522.png",
+          "title": "कप्पीचे फायदे आणि तोटे भाग 2",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_Pulley_advantage_and_disadvantages_2.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "22779755",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/Inside_the_animal_mind_MR.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/5722",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5722.png",
+          "title": "Inside animal mind",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/Inside_the_animal_mind_MR.mp4"
         },
         {
           "children": [],
@@ -5907,14 +6170,112 @@
         },
         {
           "children": [],
-          "content-length": "14035732",
+          "content-length": "7381302",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_sandwich.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "mr/FunResource/8183",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_wakeup.png",
-          "title": "The Wake Up dance",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4"
+          "source_id": "mr/FunResource/302",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES302.png",
+          "title": "तरंगते सँडविच",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_sandwich.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "6809205",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/mirror.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1168",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/mirror.png",
+          "title": "आरसेबहाद्दर",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/mirror.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "24103924",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_howToSwim.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1565",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
+          "title": "कसे पोहतात ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_howToSwim.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "18414450",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_paper_bridge.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1524",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1524.png",
+          "title": "कागदाचा पूल",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_paper_bridge.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "15045125",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/vaishnavjan.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/8199",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/vaishnavjan.png",
+          "title": "वैष्णव जन",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/vaishnavjan.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "7378741",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_Pulley_advantage_and_disadvantages_1.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/5562",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5521.png",
+          "title": "कप्पीचे फायदे आणि तोटे भाग 1",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_Pulley_advantage_and_disadvantages_1.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "18860036",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_howToRun.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1562",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
+          "title": "कसे धावतात ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_howToRun.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "19140868",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_howToFly.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/1564",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
+          "title": "कसे उडतात ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_howToFly.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "10569973",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/m_Airplane_landing.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/FunResource/5578",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES5578.png",
+          "title": "Airplane Landing",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/m_Airplane_landing.mp4"
+        },
+        {
+          "children": [],
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MemoryGamekb_MR.zip",
+          "kind": "PrathamZipResource",
+          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGamekb_MR/index.html",
+          "source_id": "mr/FunResource/9398",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MemoryGame_MR.jpg",
+          "title": "मेमरी गेम",
+          "url": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGamekb_MR.zip"
         }
       ],
       "kind": "fun_page",
@@ -5928,186 +6289,10 @@
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1080",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1080.png",
-          "title": "पैशाचे सुंदर जग",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Finance_01.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1093",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1093.png",
-          "title": "ताजे दूध",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Moo_Moo.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1102",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1102.png",
-          "title": "छुटकू कोळी",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Spincy_Spider.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1096",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1096.png",
-          "title": "सुंदर जग",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Our_Wonderful_World.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1107",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1107.png",
-          "title": "कुहूss कुहूss !",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Koels_Song.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1104",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1104.png",
-          "title": "हत्ती, पक्षी आणि मुनिया",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Elephant_Bird.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1105",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1105.png",
-          "title": "कावळ्याने नातलगांना बोलावले",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Generous_Crow.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1078",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1078.png",
-          "title": "बाबांच्या मिश्या",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Daddys_Mo.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1073",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1073.png",
-          "title": "जंगलातलं मांजर",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Cat_in_the_ghat.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1110",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1110.png",
-          "title": "रंगीत मासा",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Rainbow_Fish.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1100",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1100.png",
-          "title": "शोभिनी आणि आजी",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Shobhini_and_Nani.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1109",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1109.png",
-          "title": "तुटक्या चोचीचा पोपट",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Parrot.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1103",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1103.png",
-          "title": "राजू आणि भाज्या",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Vegetables.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1076",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1076.png",
-          "title": "चुस्कीत शाळेत जाते",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Chuskit_Goes_to_School.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
           "source_id": "mr/StoryResource/1082",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1082.png",
           "title": "लग्नाला जायचंय",
           "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Wedding.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1086",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1086.png",
-          "title": "एक अविस्मरणीय जत्रा",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_History_01.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1092",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1092.png",
-          "title": "मोठे संकट",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Kato_Clever.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1087",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1087.png",
-          "title": "ऑगस्टमधला एक दिवस",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_History_02.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1074",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1074.png",
-          "title": "भंगारवाला",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Cheenus_Gift.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1094",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1094.png",
-          "title": "माझी गाडी",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_My_Car.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1088",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1088.png",
-          "title": "मसाला चहा",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Jungle_Brew.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1098",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1098.png",
-          "title": "पाऊस आला रे",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Rain_Rain.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1108",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1108.png",
-          "title": "चांदोबाची टोपी",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Moon_and_the_Cap.pdf"
         },
         {
           "children": [],
@@ -6120,34 +6305,34 @@
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1070",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1070.png",
-          "title": "अनयाचा अंगठा",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Anaya_Thumb.pdf"
+          "source_id": "mr/StoryResource/1091",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1091.png",
+          "title": "कल्लूचे किस्से २",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Kallus_World_02.pdf"
         },
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1089",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1089.png",
-          "title": "काका आणि मुन्नी",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Kaka_and_Munni.pdf"
+          "source_id": "mr/StoryResource/1093",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1093.png",
+          "title": "ताजे दूध",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Moo_Moo.pdf"
         },
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1111",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1111.png",
-          "title": "चिमणी आणि फळ",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Sparrow_and_the_Fruit.pdf"
+          "source_id": "mr/StoryResource/1090",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1090.png",
+          "title": "कल्लूचे किस्से १",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Kallus_World_01.pdf"
         },
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1106",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1106.png",
-          "title": "ससा आणि कासव",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Hare_and_Tortoise.pdf"
+          "source_id": "mr/StoryResource/1088",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1088.png",
+          "title": "मसाला चहा",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Jungle_Brew.pdf"
         },
         {
           "children": [],
@@ -6160,42 +6345,10 @@
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1079",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1079.png",
-          "title": "मनूच्या आनंदाचा घडा",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Dastkari_03.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1077",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1077.png",
-          "title": "मोरू नावाचे कोडे",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Counting_on_Moru.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1085",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1085.png",
-          "title": "रेडिओ आणि मासे",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Grandpa_Fish_and_Radio.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1112",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1112.png",
-          "title": "शहरी तळ्यात फुलले प्राणीजीवन",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Wildlife_City_Pond.pdf"
-        },
-        {
-          "children": [],
-          "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1091",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1091.png",
-          "title": "कल्लूचे किस्से २",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Kallus_World_02.pdf"
+          "source_id": "mr/StoryResource/1105",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1105.png",
+          "title": "कावळ्याने नातलगांना बोलावले",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Generous_Crow.pdf"
         },
         {
           "children": [],
@@ -6208,18 +6361,58 @@
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1083",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1083.png",
-          "title": "टिंकूची रात्रीची सैर",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Goodnight_Tinku.pdf"
+          "source_id": "mr/StoryResource/1071",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1071.png",
+          "title": "वार्षिक केशकर्तन दिवस",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Annual_Haircut_Day.pdf"
         },
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1084",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1084.png",
-          "title": "आजीचा चष्मा",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Grandmas_Glasses.pdf"
+          "source_id": "mr/StoryResource/1111",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1111.png",
+          "title": "चिमणी आणि फळ",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Sparrow_and_the_Fruit.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1076",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1076.png",
+          "title": "चुस्कीत शाळेत जाते",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Chuskit_Goes_to_School.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1077",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1077.png",
+          "title": "मोरू नावाचे कोडे",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Counting_on_Moru.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1109",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1109.png",
+          "title": "तुटक्या चोचीचा पोपट",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Parrot.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1089",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1089.png",
+          "title": "काका आणि मुन्नी",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Kaka_and_Munni.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1086",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1086.png",
+          "title": "एक अविस्मरणीय जत्रा",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_History_01.pdf"
         },
         {
           "children": [],
@@ -6228,6 +6421,30 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1099.png",
           "title": "राजुची नौका सफर",
           "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Row_Row.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1070",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1070.png",
+          "title": "अनयाचा अंगठा",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Anaya_Thumb.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1096",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1096.png",
+          "title": "सुंदर जग",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Our_Wonderful_World.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1102",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1102.png",
+          "title": "छुटकू कोळी",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Spincy_Spider.pdf"
         },
         {
           "children": [],
@@ -6248,18 +6465,114 @@
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1090",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1090.png",
-          "title": "कल्लूचे किस्से १",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Kallus_World_01.pdf"
+          "source_id": "mr/StoryResource/1079",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1079.png",
+          "title": "मनूच्या आनंदाचा घडा",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Dastkari_03.pdf"
         },
         {
           "children": [],
           "kind": "story_resource_page",
-          "source_id": "mr/StoryResource/1071",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1071.png",
-          "title": "वार्षिक केशकर्तन दिवस",
-          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Annual_Haircut_Day.pdf"
+          "source_id": "mr/StoryResource/1108",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1108.png",
+          "title": "चांदोबाची टोपी",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Moon_and_the_Cap.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1107",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1107.png",
+          "title": "कुहूss कुहूss !",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Koels_Song.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1100",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1100.png",
+          "title": "शोभिनी आणि आजी",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Shobhini_and_Nani.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1083",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1083.png",
+          "title": "टिंकूची रात्रीची सैर",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Goodnight_Tinku.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1094",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1094.png",
+          "title": "माझी गाडी",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_My_Car.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1104",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1104.png",
+          "title": "हत्ती, पक्षी आणि मुनिया",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Elephant_Bird.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1080",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1080.png",
+          "title": "पैशाचे सुंदर जग",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Finance_01.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1092",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1092.png",
+          "title": "मोठे संकट",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Kato_Clever.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1085",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1085.png",
+          "title": "रेडिओ आणि मासे",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Grandpa_Fish_and_Radio.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1084",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1084.png",
+          "title": "आजीचा चष्मा",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Grandmas_Glasses.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1103",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1103.png",
+          "title": "राजू आणि भाज्या",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Vegetables.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1087",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1087.png",
+          "title": "ऑगस्टमधला एक दिवस",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_History_02.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1078",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1078.png",
+          "title": "बाबांच्या मिश्या",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Daddys_Mo.pdf"
         },
         {
           "children": [],
@@ -6268,6 +6581,54 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1095.png",
           "title": "हसू मी कशी?",
           "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_No_Smiles_Today.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1074",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1074.png",
+          "title": "भंगारवाला",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Cheenus_Gift.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1106",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1106.png",
+          "title": "ससा आणि कासव",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Hare_and_Tortoise.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1112",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1112.png",
+          "title": "शहरी तळ्यात फुलले प्राणीजीवन",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Wildlife_City_Pond.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1098",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1098.png",
+          "title": "पाऊस आला रे",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Rain_Rain.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1110",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1110.png",
+          "title": "रंगीत मासा",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Rainbow_Fish.pdf"
+        },
+        {
+          "children": [],
+          "kind": "story_resource_page",
+          "source_id": "mr/StoryResource/1073",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES1073.png",
+          "title": "जंगलातलं मांजर",
+          "url": "http://www.prathamopenschool.org/CourseContent/PDF/m_Cat_in_the_ghat.pdf"
         }
       ],
       "kind": "story_page",
@@ -6296,7 +6657,7 @@
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7406",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Hickory_Dickory.png",
-          "title": "हिकरी डिकरी डॉक",
+          "title": "Hickory Dickory",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/Hickory_Dickory.mp4"
         },
         {
@@ -6322,13 +6683,13 @@
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MemoryGamekb_MR.zip",
           "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR/index.html",
+          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGamekb_MR/index.html",
           "source_id": "mr/game/9398",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Memorygame_MR.jpg",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MemoryGame_MR.jpg",
           "title": "मेमरी गेम",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Memorygamekb_MR.zip"
+          "url": "http://www.prathamopenschool.org/CourseContent/Games/MemoryGamekb_MR.zip"
         },
         {
           "children": [],
@@ -6338,7 +6699,7 @@
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7407",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Twinkle_Twinkle.png",
-          "title": "ट्विंकल ट्विंकल",
+          "title": "Twinkle Twinkle",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/Twinkle_Twinkle.mp4"
         },
         {
@@ -6364,13 +6725,24 @@
         },
         {
           "children": [],
+          "content-length": "7205357",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_little_monkey.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/game/9946",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_little_monkey.png",
+          "title": "Little Monkey",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/en_little_monkey.mp4"
+        },
+        {
+          "children": [],
           "content-length": "1176862",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/ENGINE_ENGINE.mp4",
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7408",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ENGINE_ENGINE.png",
-          "title": "इंजन इंजन",
+          "title": "Engine Engine",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/ENGINE_ENGINE.mp4"
         },
         {
@@ -6396,13 +6768,24 @@
         },
         {
           "children": [],
+          "content-length": "704978",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_johny_johny_yespapa.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/game/9947",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_johny_johny_yespapa.png",
+          "title": "Johny Johny Yes papa",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/en_johny_johny_yespapa.mp4"
+        },
+        {
+          "children": [],
           "content-length": "1602918",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/LAZY_MARY.mp4",
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7409",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/LAZY_MARY.png",
-          "title": "लेज़ी मेरी",
+          "title": "Lazy Mary",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/LAZY_MARY.mp4"
         },
         {
@@ -6434,7 +6817,7 @@
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7410",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/MY_GRANDFATHER.png",
-          "title": "माय ग्रैंडफादर",
+          "title": "My Grandfather",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/MY_GRANDFATHER.mp4"
         },
         {
@@ -6460,13 +6843,24 @@
         },
         {
           "children": [],
+          "content-length": "2073697",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_one_two_buckle_my_shoe.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "mr/game/9949",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_one_two_buckle_my_shoe.png",
+          "title": "One Two Buckle my shoe",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/en_one_two_buckle_my_shoe.mp4"
+        },
+        {
+          "children": [],
           "content-length": "575780",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/PAT_A_CAKE.mp4",
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7411",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/PAT_A_CAKE.png",
-          "title": "पैट अ केक",
+          "title": "Pat A Cake",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/PAT_A_CAKE.mp4"
         },
         {
@@ -6488,7 +6882,7 @@
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7412",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RAIN_RAIN.png",
-          "title": "रेन रेन",
+          "title": "Rain Rain",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/RAIN_RAIN.mp4"
         },
         {
@@ -6510,7 +6904,7 @@
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7413",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/TALL_EAR.png",
-          "title": "टॉल इर",
+          "title": "Tall Ear",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/TALL_EAR.mp4"
         },
         {
@@ -6521,7 +6915,7 @@
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7425",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/twolittle.png",
-          "title": "टू लिटिल",
+          "title": "Two Little",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/Twolittle.mp4"
         },
         {
@@ -6532,7 +6926,7 @@
           "kind": "PrathamVideoResource",
           "source_id": "mr/game/7426",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/babablack.png",
-          "title": "बाबा बाबा ब्लैक शीप",
+          "title": "Baba Baba Black Ship",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/babablack.mp4"
         },
         {

@@ -326,7 +326,7 @@ PRADIGI_SUBJECTS = [
     'Health',
     'Sports',
     'Music',
-    'Theatre'
+    'Theatre',
     #
     'Fun',              # Contains website /Fun content + all games not in the other categories
     'Story',

@@ -42,15 +42,68 @@ Install
 
 Running
 -------
+To run the chef script, follow these steps:
 
-    ssh chef@vader
-        cd sushi-chef-pradigi
-        export PHANTOMJS_PATH=/data/sushi-chef-pradigi/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
-        source venv/bin/activate
-        nohup ./chef.py -v --reset --token=<your_token> --stage &
+1. Go the the project directory
 
-Use the `--update` option to force re-downloading all files and clear the local
-cache directory of zip files (`chefdata/zipfiles`).
+    cd sushi-chef-pradigi
+
+2. Activate the virtual env
+
+    source venv/bin/activate
+
+3. Run the chef script:
+
+    ./chef.py -v --reset --thumbnails --token=<your_token> --stage 
+
+
+
+This commands takes 15+ hours the first time it runs and performs the following:
+
+  - During the `pre_run` stage:
+    - crawl all languages https://www.prathamopenschool.org website  
+      output: json data in `chefdata/trees/pradigi_{lang}_web_resource_tree.json`
+    - Builds the channel ricecooker tree:
+      output: json data in `chefdata/trees/pradigi_ricecooker_json_tree.json`
+    - Build HTML5Zip files from PraDigi games and webapps (saved in `chefdata/zipfiles`)
+
+  - During the `run` stage, it tuns the `uploadchannel` command (multiple steps:
+    - Load tree spec from `chefdata/trees/pradigi_ricecooker_json_tree.json`
+    - Build ricecooker class tree (Python classes) from json spec
+    - Download all files to `storage/` (remembering paths downloaded to `.ricecookerfilecache/`)
+    - Run compression steps for videos and store compressed output in `storage/` (also `.ricecookerfilecache/`)
+    - Run validation logic (check required metadata and all files present)
+    - Upload content to Kolibri Studio
+
+On subsequent runs, the process will use cached version of files downloaded,
+generated HTML5Zip files, and compressed videos to avoid the need to re-download
+everything.
+
+When source files change or are modified, you can run a "clean start" chef run
+but doing the following steps:
+  - clear zip file cache `rm -rf chefdata/zipfiles`
+  - clear web caches `rm -rf .webcache` and `rm -rf cache.sqlite`
+  - clear storage dir `rm -rf storage/`
+Note this will take 15+ hours again since we have to redo all the download and 
+conversion steps.
+
+The `chef.py` optional argument `--update` will force re-downloading all files
+and clear the local cache directory of zip files (`chefdata/zipfiles`) but will
+not clear web caches, which needs to be done manually.
+
+IMPORTANT: We recommend that you run `rm -rf .webcache` and `rm -rf cache.sqlite`
+manually every time the website changes.
+
+
+### Remote server
+
+Run the chef in the background using (useful when running on a remote server via ssh):
+
+    nohup ./chef.py -v --reset --thumbnails --token=<your_token> --stage &
+
+The output of the script will be saved to the local file `nohup.out`, which you
+can "follow" by using `tail -f nohup.out` to monitor the chef run.
+
 
 
 
@@ -85,7 +138,6 @@ For age groups where one or more of the Games subfolders `WatchAndDo`, `KhelBadi
 is not included, the games are "extracted" from these folders are extracted and
 included in the `Fun`, `Mathematics`, `Language`, and `English` subjects as needed,
 according to the structure gsheet.
-
 
 
 

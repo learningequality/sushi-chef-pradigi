@@ -44,7 +44,7 @@ from ricecooker.utils.zip import create_predictable_zip
 
 
 PRADIGI_DOMAIN = 'prathamopenschool.org'
-FULL_DOMAIN_URL = 'http://www.' + PRADIGI_DOMAIN
+FULL_DOMAIN_URL = 'https://www.' + PRADIGI_DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
 PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
 PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational '   \

@@ -34,6 +34,7 @@ for lang, langdata in PRADIGI_STRINGS.items():
 
 
 class PraDigiCrawler(BasicCrawler):
+    SOURCE_DOMAINS = [FULL_DOMAIN_URL, 'http://www.'+PRADIGI_DOMAIN]
     MAIN_SOURCE_DOMAIN = FULL_DOMAIN_URL
     START_PAGE_CONTEXT = {'kind': 'lang_page'}
     IGNORE_URLS = [
@@ -125,6 +126,7 @@ class PraDigiCrawler(BasicCrawler):
                     continue
                 
                 topic_url = urljoin(url, topic['href'].strip())
+                print(topic_url)
                 if self.should_ignore_url(topic_url):
                     print('ignoring topic', topic_url)
                     continue

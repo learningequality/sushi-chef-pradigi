@@ -50,9 +50,9 @@
               "description": "ఇంగ్లీష్ ఆట",
               "kind": "lesson_page",
               "source_id": "LES1129",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CountandKnowCover_EN.jpg",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/CountandKnowCover_EN.jpg",
               "title": "Count and Know",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1129"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1129"
             },
             {
               "children": [],
@@ -80,15 +80,15 @@
               "description": "ఇంగ్లీష్ ఆట",
               "kind": "lesson_page",
               "source_id": "LES1131",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/cityofstories.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/cityofstories.png",
               "title": "CityOfStories",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1131"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1131"
             }
           ],
           "kind": "subtopic_page",
           "source_id": "CRS166",
           "title": "ఇంగ్లీష్ ఆట",
-          "url": "http://www.prathamopenschool.org/Tl/Course/English/CRS166"
+          "url": "https://www.prathamopenschool.org/Tl/Course/English/CRS166"
         },
         {
           "children": [
@@ -107,14 +107,14 @@
           "kind": "subtopic_page",
           "source_id": "CRS167",
           "title": "ఇంగ్లీష్ మాట్లాడండి",
-          "url": "http://www.prathamopenschool.org/Tl/Course/English/CRS167"
+          "url": "https://www.prathamopenschool.org/Tl/Course/English/CRS167"
         }
       ],
       "kind": "topic_page",
       "source_id": "English",
       "subject_en": "English",
       "title": "ఇంగ్లీష్",
-      "url": "http://www.prathamopenschool.org/Tl/Course/English"
+      "url": "https://www.prathamopenschool.org/Tl/Course/English"
     },
     {
       "children": [
@@ -181,15 +181,15 @@
               "description": "మానవ శరీరం",
               "kind": "lesson_page",
               "source_id": "LES1114",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/circulatorySystemCover.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/circulatorySystemCover.png",
               "title": "రక్తప్రసరణ వ్యవస్థ",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1114"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1114"
             }
           ],
           "kind": "subtopic_page",
           "source_id": "CRS163",
           "title": "మానవ శరీరం",
-          "url": "http://www.prathamopenschool.org/Tl/Course/Science/CRS163"
+          "url": "https://www.prathamopenschool.org/Tl/Course/Science/CRS163"
         },
         {
           "children": [
@@ -274,9 +274,9 @@
           "description": "సరళ యంత్రం",
           "kind": "lesson_page",
           "source_id": "LES1115",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_simplemachinet.png",
+          "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_simplemachinet.png",
           "title": "సరళ యంత్రం",
-          "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1115"
+          "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1115"
         },
         {
           "children": [
@@ -418,9 +418,9 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1116",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_airandwatert.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_airandwatert.png",
               "title": "గాలి మరియు నీరు",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1116"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1116"
             },
             {
               "children": [
@@ -472,9 +472,9 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1117",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_balancingtoyt.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_balancingtoyt.png",
               "title": "బొమ్మల సంతులనం",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1117"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1117"
             },
             {
               "children": [
@@ -504,9 +504,9 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1118",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_lightt.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_lightt.png",
               "title": "కాంతి",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1118"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1118"
             },
             {
               "children": [
@@ -591,9 +591,9 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1119",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_magnet_electricity.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_magnet_electricity.png",
               "title": "అయస్కాంతం మరియు విద్యుత్",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1119"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1119"
             },
             {
               "children": [
@@ -612,9 +612,9 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1120",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_mathstopic.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_mathstopic.png",
               "title": "గణితం",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1120"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1120"
             },
             {
               "children": [
@@ -655,9 +655,9 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1121",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_mechanics.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_mechanics.png",
               "title": "మెకానిక్స్",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1121"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1121"
             },
             {
               "children": [
@@ -676,9 +676,9 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1122",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_peper_origami.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_peper_origami.png",
               "title": "పేపర్ ఒరిగామి",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1122"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1122"
             },
             {
               "children": [
@@ -719,9 +719,9 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1123",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_sound.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_sound.png",
               "title": "ధ్వని",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1123"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1123"
             },
             {
               "children": [
@@ -751,9 +751,9 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1124",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_spinningtoyst.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_spinningtoyst.png",
               "title": "స్పిన్నింగ్ బొమ్మలు",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1124"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1124"
             },
             {
               "children": [
@@ -783,22 +783,22 @@
               "description": "సరదా ప్రయోగాలు",
               "kind": "lesson_page",
               "source_id": "LES1125",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_miscellaneoust.png",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/tsap_miscellaneoust.png",
               "title": "ఇతరములు",
-              "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1125"
+              "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1125"
             }
           ],
           "kind": "subtopic_page",
           "source_id": "CRS165",
           "title": "సరదా ప్రయోగాలు",
-          "url": "http://www.prathamopenschool.org/Tl/Course/Science/CRS165"
+          "url": "https://www.prathamopenschool.org/Tl/Course/Science/CRS165"
         }
       ],
       "kind": "topic_page",
       "source_id": "Science",
       "subject_en": "Science",
       "title": "సైన్స్",
-      "url": "http://www.prathamopenschool.org/Tl/Course/Science"
+      "url": "https://www.prathamopenschool.org/Tl/Course/Science"
     },
     {
       "children": [
@@ -841,12 +841,12 @@
               "children": [],
               "content-length": "6471945",
               "content-type": "video/mp4",
-              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/4_tel_ext_period.mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/4_tel_next_period.mp4",
               "kind": "PrathamVideoResource",
               "source_id": "9556",
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/4_next_period.png",
               "title": "4.నా తరువాతి పీరియడ్స్ ఎప్పుడు వస్తుంది?",
-              "url": "http://www.prathamopenschool.org/CourseContent/videos/4_tel_ext_period.mp4"
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/4_tel_next_period.mp4"
             },
             {
               "children": [],
@@ -863,41 +863,19 @@
           "description": "",
           "kind": "lesson_page",
           "source_id": "LES1286",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Hello_Periods_topic.png",
+          "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/Hello_Periods_topic.png",
           "title": "హలో పీరియడ్స్",
-          "url": "http://www.prathamopenschool.org/Tl/Lesson/LES1286"
+          "url": "https://www.prathamopenschool.org/Tl/Lesson/LES1286"
         }
       ],
       "kind": "topic_page",
       "source_id": "Health",
       "subject_en": "Health",
       "title": "ఆరోగ్యం",
-      "url": "http://www.prathamopenschool.org/Tl/Course/Health"
+      "url": "https://www.prathamopenschool.org/Tl/Course/Health"
     },
     {
       "children": [
-        {
-          "children": [],
-          "content-length": "24102786",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tl/FunResource/8526",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
-          "title": "మీరు ఎలా ఈదుతారు?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "184784617",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tl/FunResource/8534",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
-          "title": "కప్పీల ఉపయోగాలు మరియు నష్టాలు 2",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
-        },
         {
           "children": [],
           "content-length": "28501338",
@@ -911,25 +889,14 @@
         },
         {
           "children": [],
-          "content-length": "18622921",
+          "content-length": "48122271",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Tl/FunResource/8529",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
-          "title": "మీరు ఎలా పరుగెడతారు?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "39766638",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tl/FunResource/8532",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
-          "title": "పువ్వుల అద్భుతమైన జీవితం",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
+          "source_id": "Tl/FunResource/8531",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
+          "title": "గాజుపలకల ఆట",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
         },
         {
           "children": [],
@@ -977,6 +944,17 @@
         },
         {
           "children": [],
+          "content-length": "39766638",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/FunResource/8532",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
+          "title": "పువ్వుల అద్భుతమైన జీవితం",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
+        },
+        {
+          "children": [],
           "content-length": "231513640",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
@@ -988,43 +966,65 @@
         },
         {
           "children": [],
-          "content-length": "48122271",
+          "content-length": "18622921",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Tl/FunResource/8531",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
-          "title": "గాజుపలకల ఆట",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
+          "source_id": "Tl/FunResource/8529",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
+          "title": "మీరు ఎలా పరుగెడతారు?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "184784617",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/FunResource/8534",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
+          "title": "కప్పీల ఉపయోగాలు మరియు నష్టాలు 2",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "24102786",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/FunResource/8526",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
+          "title": "మీరు ఎలా ఈదుతారు?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
         }
       ],
       "kind": "fun_page",
       "source_id": "Fun",
       "subject_en": "Fun",
       "title": "సరదా",
-      "url": "http://www.prathamopenschool.org/Tl/Fun"
+      "url": "https://www.prathamopenschool.org/Tl/Fun"
     },
     {
       "children": [
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Golmaal_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Golmaal_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_TL/index.html",
           "source_id": "Tl/game/5637",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/Golmaal_TL.png",
           "title": "గోల్ మాల్",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Golmaal_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Golmaal_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_TL/index.html",
           "source_id": "Tl/game/4820",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4820.png",
           "title": "దొంగ - పోలీస్-1",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Dhoom_1_TL.zip"
         },
         {
           "children": [],
@@ -1050,13 +1050,24 @@
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/ChitraVichitra_TL.zip",
+          "content-length": "3810653",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Aao_Kar_le_Daant_mein_Manjan.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10207",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Aao_Kar_le_Daant_mein_Manjan.png",
+          "title": "दांत मंजन",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Aao_Kar_le_Daant_mein_Manjan.mp4"
+        },
+        {
+          "children": [],
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/ChitraVichitra_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/ChitraVichitra_TL/index.html",
           "source_id": "Tl/game/5639",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ChitraVichitra_TL.png",
           "title": "చిత్ర విచిత్ర",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/ChitraVichitra_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/ChitraVichitra_TL.zip"
         },
         {
           "children": [],
@@ -1093,13 +1104,24 @@
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/DingDangDing_TL.zip",
+          "content-length": "1265695",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Aha_Tamatar.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10208",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Aha_Tamatar_Title.png",
+          "title": "अहा टमाटर",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Aha_Tamatar.mp4"
+        },
+        {
+          "children": [],
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/DingDangDing_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/DingDangDing_TL/index.html",
           "source_id": "Tl/game/5640",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/DingDangDing_TL.png",
           "title": "డింగ్ డాంగ్ డింగ్",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/DingDangDing_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/DingDangDing_TL.zip"
         },
         {
           "children": [],
@@ -1136,13 +1158,24 @@
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/RailGadi_TL.zip",
+          "content-length": "3097701",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Chhote_Mamaji_ke_Ghar.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10209",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Chhote_Mamaji_ke_Ghar_Title.png",
+          "title": "छोटे मामाजी के घर",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Chhote_Mamaji_ke_Ghar.mp4"
+        },
+        {
+          "children": [],
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/RailGadi_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/RailGadi_TL/index.html",
           "source_id": "Tl/game/5641",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RailGadi_TL.png",
           "title": "రైలు బండి",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/RailGadi_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/RailGadi_TL.zip"
         },
         {
           "children": [],
@@ -1165,6 +1198,17 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_threeparrot.png",
           "title": "तीन तोते",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_threeparrot.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "1022409",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Ek_thi_Kamala.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10210",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Ek_thi_Kamala_Title.png",
+          "title": "एक थी कमला",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Ek_thi_Kamala.mp4"
         },
         {
           "children": [],
@@ -1201,6 +1245,17 @@
         },
         {
           "children": [],
+          "content-length": "2914117",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Haiya_O_Haiyaa.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10212",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Haiya_O_Haiyaa_Title.png",
+          "title": "हईया ओ हईया",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Haiya_O_Haiyaa.mp4"
+        },
+        {
+          "children": [],
           "content-length": "575780",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/PAT_A_CAKE.mp4",
@@ -1220,6 +1275,17 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_maitota.png",
           "title": "मैं तोता",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_maitota.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "2172944",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Inchi_Minchi_Makada.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10213",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Inchi_Minchi_Makada_Title.png",
+          "title": "इंची मिंची",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Inchi_Minchi_Makada.mp4"
         },
         {
           "children": [],
@@ -1245,6 +1311,17 @@
         },
         {
           "children": [],
+          "content-length": "1420431",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Jungle_mein_Janvar.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10214",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Jungle_mein_Janvar_Title.png",
+          "title": "जंगल में जानवर खेलते है",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Jungle_mein_Janvar.mp4"
+        },
+        {
+          "children": [],
           "content-length": "579123",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/TALL_EAR.mp4",
@@ -1253,6 +1330,17 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/TALL_EAR.png",
           "title": "Tall Ear",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/TALL_EAR.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "2403852",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Re_MAma_Re.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10215",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Re_MAma_Re_Title.png",
+          "title": "रे मामा रे",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Re_MAma_Re.mp4"
         },
         {
           "children": [],
@@ -1267,6 +1355,17 @@
         },
         {
           "children": [],
+          "content-length": "8371388",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Nanhi_Nanhi_Bunde.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10216",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Nanhi_Nanhi_Bunde_Title.png",
+          "title": "नन्ही नन्ही बुँदे",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Nanhi_Nanhi_Bunde.mp4"
+        },
+        {
+          "children": [],
           "content-length": "535391",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/babablack.mp4",
@@ -1275,6 +1374,17 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/babablack.png",
           "title": "Baba Baba Black Ship",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/babablack.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "1512470",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_Sadak_paar.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tl/game/10217",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_Sadak_paar_Title.png",
+          "title": "सड़कपार",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_Sadak_paar.mp4"
         },
         {
           "children": [],
@@ -1344,100 +1454,100 @@
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Awazchitra_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Awazchitra_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Awazchitra_TL/index.html",
           "source_id": "Tl/game/4810",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4810.png",
           "title": "శబ్దం - చిత్రం",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Awazchitra_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Awazchitra_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Barakhadi_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Barakhadi_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Barakhadi_TL/index.html",
           "source_id": "Tl/game/4811",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4811.png",
           "title": "గుణింతాలు",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Barakhadi_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Barakhadi_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/MujhePehchano_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/MujhePehchano_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/MujhePehchano_TL/index.html",
           "source_id": "Tl/game/4812",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4812.png",
           "title": "నన్ను గుర్తించు",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/MujhePehchano_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/MujhePehchano_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/TracingGame_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/TracingGame_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_TL/index.html",
           "source_id": "Tl/game/4813",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4813.png",
           "title": "రాయడం నేర్చుకుందాం !",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/TracingGame_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/TracingGame_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Sangeet_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Sangeet_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_TL/index.html",
           "source_id": "Tl/game/4814",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4814.png",
           "title": "సంగీత సాధన",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Sangeet_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Sangeet_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/NumberKas_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/NumberKas_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_TL/index.html",
           "source_id": "Tl/game/4815",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4815.png",
           "title": "సంఖ్యలు గుర్తించి లెక్కిద్దాం !",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/NumberKas_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/NumberKas_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_TL/index.html",
           "source_id": "Tl/game/4817",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4817.png",
           "title": "అక్షరమాల",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Aksharkhadi_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Coloring_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Coloring_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_TL/index.html",
           "source_id": "Tl/game/4818",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4818.png",
           "title": "రంగులు వేద్దాం !",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Coloring_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Coloring_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/AwazPehchano_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/AwazPehchano_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/AwazPehchano_TL/index.html",
           "source_id": "Tl/game/4819",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4819.jpg",
           "title": "నేనెవరో చెప్పండి...",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/AwazPehchano_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/AwazPehchano_TL.zip"
         }
       ],
       "kind": "fun_page",
       "source_id": "CRS113",
       "subject_en": "CRS113",
       "title": "ఆట - ప్రాంగణం",
-      "url": "http://www.prathamopenschool.org/Tl/gamelist/CRS113"
+      "url": "https://www.prathamopenschool.org/Tl/gamelist/CRS113"
     },
     {
       "children": [
@@ -1713,7 +1823,7 @@
           "source_id": "LES1156",
           "thumbnail_url": null,
           "title": "ఉపాధ్యాయుల కొరకు",
-          "url": "http://www.prathamopenschool.org/Tl/gamelist/CRS177/LES1156"
+          "url": "https://www.prathamopenschool.org/Tl/gamelist/CRS177/LES1156"
         },
         {
           "children": [
@@ -1789,7 +1899,7 @@
           "source_id": "LES1157",
           "thumbnail_url": null,
           "title": "పిల్లల కొరకు",
-          "url": "http://www.prathamopenschool.org/Tl/gamelist/CRS177/LES1157"
+          "url": "https://www.prathamopenschool.org/Tl/gamelist/CRS177/LES1157"
         },
         {
           "children": [
@@ -1806,6 +1916,17 @@
             },
             {
               "children": [],
+              "content-length": "16802468",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_clay_art.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10547",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_clay_art.png",
+              "title": "రండి రకరకాల ఆకారాలను తయారుచేద్దాం",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_clay_art.mp4"
+            },
+            {
+              "children": [],
               "content-length": "42197926",
               "content-type": "video/mp4",
               "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_together_part2.mp4",
@@ -1817,6 +1938,17 @@
             },
             {
               "children": [],
+              "content-length": "21336491",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_color_recognition.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10548",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_color_recognition.png",
+              "title": "రంగులను గుర్తించుట",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_color_recognition.mp4"
+            },
+            {
+              "children": [],
               "content-length": "37588020",
               "content-type": "video/mp4",
               "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_motherteacher.mp4",
@@ -1825,6 +1957,138 @@
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/tsap_motherteacher.png",
               "title": "మా అమ్మ ఉపాధ్యాయురాలు",
               "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_motherteacher.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "13575381",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_letter_recognition.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10549",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_letter_recognition.png",
+              "title": "అక్షరాలను గుర్తించుట",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_letter_recognition.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "23296737",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_matching.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10550",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_matching.png",
+              "title": "చిత్రాలను ఒకదానితో ఒకటి జతచేయండి",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_matching.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "19512415",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_number_recognition.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10551",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_number_recognition.png",
+              "title": "అంకెలను గుర్తించడం",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_number_recognition.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "14526901",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_picture_recognition.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10552",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_picture_recognition.png",
+              "title": "చిత్రాలను గుర్తించడం",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_picture_recognition.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "16306875",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_thappa_lagao.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10553",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_thappa_lagao.png",
+              "title": "ముద్రించండి/ముద్ర వేయండి",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_thappa_lagao.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "31420491",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_walking_on_the_lines.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10554",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_walking_on_the_lines.png",
+              "title": "జాగ్రత్తగా నడవండి",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_walking_on_the_lines.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "33705085",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_magic_of_rice.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10555",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_magic_of_rice.png",
+              "title": "బియ్యంతో గారడీ",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_magic_of_rice.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "43806243",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_counting_with_household_items.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10556",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_counting_with_household_items.png",
+              "title": "ఇంటిలోని వస్తువులను లెక్కించండి",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_counting_with_household_items.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "22187202",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_count_with_surrounding_object.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10557",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_count_with_surrounding_object.png",
+              "title": "దగ్గరలో ఉన్న వస్తువులను లెక్కించండి",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_count_with_surrounding_object.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "15848408",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_easy_way_to_peel_sweet_lime.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10558",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_easy_way_to_peel_sweet_lime.png",
+              "title": "సులభంగా బత్తాయి పండును ఒలవండి",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_easy_way_to_peel_sweet_lime.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "19372519",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_easy_way_to_open_pomegranate.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10559",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_easy_way_to_open_pomegranate.png",
+              "title": "సులభంగా దానిమ్మ పండును ఒలవండి",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_easy_way_to_open_pomegranate.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "20968979",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/tsap_easy_way_to_cut_an_apple.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "Tl/game/10560",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_easy_way_to_cut_an_apple.png",
+              "title": "సులభంగా ఆఫిల్ ను ముక్కలుగా కోయండి",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/tsap_easy_way_to_cut_an_apple.mp4"
             }
           ],
           "description": "",
@@ -1832,141 +2096,142 @@
           "source_id": "LES1158",
           "thumbnail_url": null,
           "title": "తల్లుల కొరకు",
-          "url": "http://www.prathamopenschool.org/Tl/gamelist/CRS177/LES1158"
+          "url": "https://www.prathamopenschool.org/Tl/gamelist/CRS177/LES1158"
         }
       ],
       "kind": "special_subtopic_page",
       "source_id": "CRS177",
       "subject_en": "CRS177",
       "title": "చూడండి మరియు చేయండి",
-      "url": "http://www.prathamopenschool.org/Tl/gamelist/CRS177"
+      "url": "https://www.prathamopenschool.org/Tl/gamelist/CRS177"
     },
     {
       "children": [
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/CityOfStories.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/CityOfStories.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CityOfStories/index.html",
           "source_id": "Tl/game/7448",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/cityofstories.png",
           "title": "సిటీ ఆఫ్ స్టోరీస",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/CityOfStories.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/CityOfStories.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/JaanoNumber_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/JaanoNumber_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/JaanoNumber_TL/index.html",
           "source_id": "Tl/game/4816",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4816.png",
           "title": "సంఖ్యలు తెలుసుకుందాం !",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/JaanoNumber_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/JaanoNumber_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Dhoom_2_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Dhoom_2_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Dhoom_2_TL/index.html",
           "source_id": "Tl/game/5662",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4820.png",
           "title": "దొంగ - పోలీస్-2",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Dhoom_2_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Dhoom_2_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Kahaniyaan_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Kahaniyaan_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Kahaniyaan_TL/index.html",
           "source_id": "Tl/game/4821",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4821.png",
           "title": "కథలు చెప్పుకుందాం రండి !",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Kahaniyaan_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Kahaniyaan_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/UlatPalat_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/UlatPalat_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/UlatPalat_TL/index.html",
           "source_id": "Tl/game/4823",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4823.png",
           "title": "ముక్క తిప్పండి",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/UlatPalat_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/UlatPalat_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/ShabdhChitra_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/ShabdhChitra_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/ShabdhChitra_TL/index.html",
           "source_id": "Tl/game/4824",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4824.png",
           "title": "చిత్రం - పదం",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/ShabdhChitra_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/ShabdhChitra_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/AgePiche_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/AgePiche_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/AgePiche_TL/index.html",
           "source_id": "Tl/game/4825",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4825.png",
           "title": "ముందు - వెనుక",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/AgePiche_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/AgePiche_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/LineLagao_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/LineLagao_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/LineLagao_TL/index.html",
           "source_id": "Tl/game/4832",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4832.png",
           "title": "వరుసలో పెడదాం",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/LineLagao_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/LineLagao_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Number123_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Number123_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Number123_TL/index.html",
           "source_id": "Tl/game/4833",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4833.png",
           "title": "సంఖ్యలు 1 2 3....",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Number123_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Number123_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/Cricket_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/Cricket_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/Cricket_TL/index.html",
           "source_id": "Tl/game/4834",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4834.png",
           "title": "క్రికెట్ ఆడుదామా?",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/Cricket_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/Cricket_TL.zip"
         },
         {
           "children": [],
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/Games/ThikThak_TL.zip",
+          "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/ThikThak_TL.zip",
           "kind": "PrathamZipResource",
           "main_file": "http://www.prathamopenschool.org/CourseContent/Games/ThikThak_TL/index.html",
           "source_id": "Tl/game/4835",
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/RES4835.png",
           "title": "సరిచేద్దామా?",
-          "url": "http://www.prathamopenschool.org/CourseContent/Games/ThikThak_TL.zip"
+          "url": "https://www.prathamopenschool.org/CourseContent/Games/ThikThak_TL.zip"
         }
       ],
       "kind": "fun_page",
       "source_id": "CRS176",
       "subject_en": "CRS176",
       "title": "ఆట - నగరం",
-      "url": "http://www.prathamopenschool.org/Tl/gamelist/CRS176"
+      "url": "https://www.prathamopenschool.org/Tl/gamelist/CRS176"
     }
   ],
   "description": "PraDigi, developed by Pratham, consists of educational games, videos, and ebooks on language learning, math, science, English, health, and vocational training. The learning material, available for children and youth, is offered in multiple languages: Punjabi, Assamese, Bengali, Odiya, Telugu, Tamil, Kannada, Marathi, Gujarati, Hindi, and English.",
   "kind": "lang_page",
   "language": "te",
+  "original_url": "http://www.prathamopenschool.org/Tl/",
   "source_domain": "prathamopenschool.org",
   "source_id": "pratham-open-school-te",
   "thumbnail": null,
   "title": "PraDigi (తెలుగు)",
-  "url": "http://www.prathamopenschool.org/Tl/"
+  "url": "https://www.prathamopenschool.org/Tl/"
 }

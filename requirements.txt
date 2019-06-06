@@ -1,6 +1,6 @@
+ricecooker>=0.6.30
 le-utils>=0.1.16
-ricecooker>=0.6.26
-#basiccrawler>=0.1.0
 git+https://github.com/learningequality/BasicCrawler@master
 Fabric3>=1.13.1
 PyYAML>=3.12
+jupyter==1.0.0

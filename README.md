@@ -4,17 +4,6 @@ Import content from prathamopenschool.org and the Pratham gamerepo into Studio.
 
 Design
 ------
-This chef combines data from both the prathamopenschool.org website:
-  - Hindi
-    - mix of website resource and games
-  - Marathi
-    - mix of website resource and games
-  - Other languages
-    - Not all folders present, and a few videos of here and there
-    - Reuse English from Hindi
-  - English
-    - Special structure because we must put English stuff in the `Language` topic
-
 The following google spreadhseet are used to determine placement of content nodes within the channel:
   - English https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=1812185465
   - All other languages https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=342105160
@@ -23,20 +12,19 @@ The following corrections are applied to content before uploading to Kolibri:
 https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=93933238
 
 
-
 Install
 -------
 
-    # 1. codes
-    cd /data
+### 1. get the code
+
     git clone https://github.com/learningequality/sushi-chef-pradigi.git
     cd sushi-chef-pradigi/
-    
-    # 2. pythons
+
+### 2. setup a python virtual environment
+
     virtualenv -p python3 venv
     source venv/bin/activate
     pip install -r requirements.txt
-
 
 
 

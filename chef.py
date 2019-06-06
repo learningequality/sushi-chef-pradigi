@@ -57,14 +57,15 @@ PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational ' 
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.DEBUG)
 DEBUG_MODE = True  # source_urls in content desriptions
+if DEBUG_MODE:
+    # Run chef against develop instance of Studio
+    os.environ['STUDIO_URL'] = 'https://develop.studio.learningequality.org'
 
-# Cache logic.
+# WebCache logic (downloaded web resources cached for one day -- good for dev)
 cache = FileCache('.webcache')
 basic_adapter = CacheControlAdapter(cache=cache)
 develop_adapter = CacheControlAdapter(heuristic=OneDayCache(), cache=cache)
 session = requests.Session()
-# session.mount('http://', basic_adapter)
-# session.mount('https://', basic_adapter)
 session.mount('http://www.' + PRADIGI_DOMAIN, develop_adapter)
 session.mount('https://www.' + PRADIGI_DOMAIN, develop_adapter)
 
@@ -72,22 +73,20 @@ session.mount('https://www.' + PRADIGI_DOMAIN, develop_adapter)
 # SOURCE WEBSITES
 ################################################################################
 PRADIGI_LANG_URL_MAP = {
-    'hi': 'http://www.prathamopenschool.org/hn/',
-    'mr': 'http://www.prathamopenschool.org/mr/',
-    'en': 'http://www.prathamopenschool.org/en/',
-    'gu': 'http://www.prathamopenschool.org/Gj',
-    'kn': 'http://www.prathamopenschool.org/kn/',
-    'bn': 'http://www.prathamopenschool.org/bn/',
-    'ur': 'http://www.prathamopenschool.org/ur/',
-    'or': 'http://www.prathamopenschool.org/Od/',
-    'pnb': 'http://www.prathamopenschool.org/pn/',
-    'ta': 'http://www.prathamopenschool.org/Tm/',
-    'te': 'http://www.prathamopenschool.org/Tl/',
+    'hi': 'https://www.prathamopenschool.org/hn/',
+    'mr': 'https://www.prathamopenschool.org/mr/',
+    'en': 'https://www.prathamopenschool.org/en/',
+    'gu': 'https://www.prathamopenschool.org/Gj',
+    'kn': 'https://www.prathamopenschool.org/kn/',
+    'bn': 'https://www.prathamopenschool.org/bn/',
+    'ur': 'https://www.prathamopenschool.org/ur/',
+    'or': 'https://www.prathamopenschool.org/Od/',
+    'pnb': 'https://www.prathamopenschool.org/pn/',
+    'ta': 'https://www.prathamopenschool.org/Tm/',
+    'te': 'https://www.prathamopenschool.org/Tl/',
 }
 # assert set(PRADIGI_WEBSITE_LANGUAGES) == set(PRADIGI_LANG_URL_MAP.keys()), 'need url for lang'
 
-GAMEREPO_MAIN_SOURCE_DOMAIN = 'http://repository.prathamopenschool.org'
-GAME_THUMBS_REMOTE_DIR = 'http://www.prodigi.openiscool.org/repository/Images/'
 GAME_THUMBS_LOCAL_DIR = 'chefdata/gamethumbnails'
 HTML5APP_ZIPS_LOCAL_DIR = 'chefdata/zipfiles'
 
@@ -949,27 +948,6 @@ def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
         )
         if should_compress_video(tree):
             video_file['ffmpeg_settings'] = {"crf": 28}   # average quality
-        video_node['files'].append(video_file)
-        return video_node
-
-    elif kind == 'YouTubeVideoResource':
-        thumbnail = tree['thumbnail_url'] if 'thumbnail_url' in tree else None
-        video_node = dict(
-            kind=content_kinds.VIDEO,
-            source_id=tree['source_id'],
-            language=lang,
-            title=tree['title'],
-            description=tree.get('description', ''),
-            thumbnail=thumbnail,
-            license=PRADIGI_LICENSE,
-            files=[],
-        )
-        video_file = dict(
-            file_type=file_types.VIDEO,
-            youtube_id=tree['youtube_id'],
-            maxheight=480,
-            language=lang,
-        )
         video_node['files'].append(video_file)
         return video_node
 

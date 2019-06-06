@@ -125,7 +125,7 @@ is repeated within each language. The columns in the sheet are:
 
 The content of each subject folder is taken from the top-level website menu,
 the yelllo horizontal bar with links:
-![](./pradigi_subject_structure.png)
+![](./chefdata/pradigi_subject_structure.png)
 
 Special treatment is required for dropdown menus--we ignore the dropdown parent
 and instead treat the submenu items as top-level subjects.

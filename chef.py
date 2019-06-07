@@ -402,7 +402,14 @@ def load_pradigi_structure(which=None):
             if clean_row[SUBJECT_KEY] is None:
                 continue  # skip blank lines (identified by missing subject col)
             if clean_row[AGE_GROUP_KEY] in PRADIGI_AGE_GROUPS and clean_row[SUBJECT_KEY] in PRADIGI_SUBJECTS:
-                struct_list.append(clean_row)
+                resource_type = clean_row[RESOURCE_TYPE_KEY]
+                if resource_type == 'Game' and clean_row[GAMENAME_KEY]:
+                    # make sure Game Name is present when specifying a game
+                    struct_list.append(clean_row)
+                elif resource_type == 'Website Resources':
+                    struct_list.append(clean_row)
+                else:
+                    LOGGER.warning('Problem with structure row {}'.format(str(clean_row)))
             else:
                 LOGGER.warning('Unrecognized structure row {}'.format(str(clean_row)))
     return struct_list
@@ -410,7 +417,6 @@ def load_pradigi_structure(which=None):
 
 PRADIGI_STRUCT_LIST = load_pradigi_structure()
 PRADIGI_ENGLISH_STRUCT_LIST = load_pradigi_structure(which='English')
-
 
 
 
@@ -449,47 +455,6 @@ def get_tree_for_lang_from_structure():
     return lang_tree
 
 TEMPLATE_FOR_LANG = get_tree_for_lang_from_structure()
-# == 
-# {'kind': 'topic',
-#  'children': [
-#   {'title': '3-6 years',
-#    'kind': 'topic',
-#    'children': [
-#         {'title': 'Mathematics', 'kind': 'topic', 'children': []},
-#         {'title': 'Language', 'kind': 'topic', 'children': []},
-#         {'title': 'English', 'kind': 'topic', 'children': []},
-#         {'title': 'Fun', 'kind': 'topic', 'children': []}]},
-#   {'title': '6-10 years',
-#    'kind': 'topic',
-#    'children': [
-#         {'title': 'Mathematics', 'kind': 'topic', 'children': []},
-#         {'title': 'Language', 'kind': 'topic', 'children': []},
-#         {'title': 'English', 'kind': 'topic', 'children': []},
-#         {'title': 'Fun', 'kind': 'topic', 'children': []}]},
-#   {'title': '8-14 years',
-#    'kind': 'topic',
-#    'children': [
-#         {'title': 'Mathematics', 'kind': 'topic', 'children': []},
-#         {'title': 'Language', 'kind': 'topic', 'children': []},
-#         {'title': 'English', 'kind': 'topic', 'children': []},
-#         {'title': 'Fun', 'kind': 'topic', 'children': []},
-#         {'title': 'Science', 'kind': 'topic', 'children': []},
-#         {'title': 'Health', 'kind': 'topic', 'children': []},
-#         {'title': 'Story', 'kind': 'topic', 'children': []}]},
-#   {'title': '14 and above',
-#    'kind': 'topic',
-#    'children': [
-#         {'title': 'Mathematics', 'kind': 'topic', 'children': []},
-#         {'title': 'Language', 'kind': 'topic', 'children': []},
-#         {'title': 'English', 'kind': 'topic', 'children': []},
-#         {'title': 'Fun', 'kind': 'topic', 'children': []},
-#         {'title': 'Health', 'kind': 'topic', 'children': []},
-#         {'title': 'Automobile', 'kind': 'topic', 'children': []},
-#         {'title': 'Beauty', 'kind': 'topic', 'children': []},
-#         {'title': 'Construction', 'kind': 'topic', 'children': []},
-#         {'title': 'Electric', 'kind': 'topic', 'children': []},
-#         {'title': 'Healthcare', 'kind': 'topic', 'children': []},
-#         {'title': 'Hospitality', 'kind': 'topic', 'children': []}]}]}
 
 
 

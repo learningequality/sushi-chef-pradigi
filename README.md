@@ -44,14 +44,19 @@ To run the chef script, follow these steps:
     source venv/bin/activate
 
 
-### 3. Run the chef script:
+### 3. Clear the web caches
+
+    rm -rf .webcache
+    rm -rf cache.sqlite
+
+
+### 4. Run the chef script:
 
     export STUDIO_URL="https://develop.studio.learningequality.org"
     ./chef.py -v --reset --thumbnails --token=<your_token> --stage 
 
 
-
-This commands takes 15+ hours the first time it runs and performs the following:
+This commands takes 19+ hours the first time it runs and performs the following:
 
   - During the `pre_run` stage:
     - crawl all languages https://www.prathamopenschool.org website  
@@ -131,8 +136,6 @@ For age groups where one or more of the Games subfolders `WatchAndDo`, `KhelBadi
 is not included, the games are "extracted" from these folders are extracted and
 included in the `Fun`, `Mathematics`, `Language`, and `English` subjects as needed,
 according to the structure gsheet.
-
-
 
 
 

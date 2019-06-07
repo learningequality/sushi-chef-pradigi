@@ -156,6 +156,7 @@ PRADIGI_STRINGS = {
             'Health': 'CRS73',
             'Sports': 'CRS138',
             'Music': 'Sangeet',
+            'Theatre': 'CRS234',
             #
             # "Healthcare": "Healthcare",
             "Electric": "CRS141",

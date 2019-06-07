@@ -57,9 +57,6 @@ PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational ' 
 # In debug mode, only one topic is downloaded.
 LOGGER.setLevel(logging.DEBUG)
 DEBUG_MODE = True  # source_urls in content desriptions
-if DEBUG_MODE:
-    # Run chef against develop instance of Studio
-    os.environ['STUDIO_URL'] = 'https://develop.studio.learningequality.org'
 
 # WebCache logic (downloaded web resources cached for one day -- good for dev)
 cache = FileCache('.webcache')

@@ -24,12 +24,18 @@ from chef import (
 
 
 # these are course_ids of special pages that we want to renders lesson-subtopics
-WATCH_AND_DO_COURSE_IDS = []
+SPECIAL_SUBTOPIC_COURSE_IDS = []
 for lang, langdata in PRADIGI_STRINGS.items():
     if 'course_ids_by_subject_en' in langdata:
+        if 'KhelBadi' in langdata['course_ids_by_subject_en']:
+            course_id = langdata['course_ids_by_subject_en']['KhelBadi']
+            SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
         if 'WatchAndDo' in langdata['course_ids_by_subject_en']:
             course_id = langdata['course_ids_by_subject_en']['WatchAndDo']
-            WATCH_AND_DO_COURSE_IDS.append(course_id)
+            SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
+        if 'KhelPuri' in langdata['course_ids_by_subject_en']:
+            course_id = langdata['course_ids_by_subject_en']['KhelPuri']
+            SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
 
 
 
@@ -150,7 +156,7 @@ class PraDigiCrawler(BasicCrawler):
                 elif 'Story' in topic['href']:
                     LOGGER.info('found story page: %s: %s' % (source_id, title))
                     context['kind'] = 'story_page'
-                elif any([cid in topic['href'] for cid in WATCH_AND_DO_COURSE_IDS]):
+                elif any([cid in topic['href'] for cid in SPECIAL_SUBTOPIC_COURSE_IDS]):
                     LOGGER.info('FOUND three-tab special_subtopic_page page: %s: %s' % (source_id, title))
                     context['kind'] = 'special_subtopic_page'
                 elif 'gamelist/CRS' in topic['href']:

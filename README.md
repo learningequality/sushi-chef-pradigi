@@ -12,6 +12,8 @@ The following corrections are applied to content before uploading to Kolibri:
 https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=93933238
 
 
+
+
 Install
 -------
 
@@ -32,16 +34,19 @@ Running
 -------
 To run the chef script, follow these steps:
 
-1. Go the the project directory
+### 1. Go the the project directory
+
 
     cd sushi-chef-pradigi
 
-2. Activate the virtual env
+### 2. Activate the virtual env
 
     source venv/bin/activate
 
-3. Run the chef script:
 
+### 3. Run the chef script:
+
+    export STUDIO_URL="https://develop.studio.learningequality.org"
     ./chef.py -v --reset --thumbnails --token=<your_token> --stage 
 
 

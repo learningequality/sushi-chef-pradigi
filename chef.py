@@ -129,12 +129,11 @@ PRADIGI_STRINGS = {
             'KhelPuri': "CRS123",           # "खेल-पुरी",       6-10   # Games Sport-puri
             #
             # Health and Sport for webscraping
-            'Health': 'CRS68',
             'Sports': 'CRS136',
             'Music': 'Sangeet',
             'Theatre': 'CRS217',
             #
-            # "Healthcare": "Healthcare",
+            "Healthcare": "CRS91",
             "Beauty": "CRS130",
             "Electric": "CRS131",
             "Automobile": "CRS129",
@@ -153,7 +152,6 @@ PRADIGI_STRINGS = {
             'KhelPuri': "CRS126",       # "खेळ-पुरी",
             #
             # Health and Sport for webscraping
-            'Health': 'CRS73',
             'Sports': 'CRS138',
             'Music': 'Sangeet',
             'Theatre': 'CRS234',

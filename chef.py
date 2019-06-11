@@ -1127,7 +1127,8 @@ def is_website_game(url):
     """
     if 'CourseContent/Games' not in url:
         return False
-    url_path = url.replace('http://www.prathamopenschool.org/CourseContent/Games/', '')
+    url_path = url.replace('https://www.prathamopenschool.org/CourseContent/Games/', '')
+    url_path = url_path.replace('http://www.prathamopenschool.org/CourseContent/Games/', '')
     for name in ALL_MANUALLY_CURATED_GAME_NAMES:
         if url_path.startswith(name):
             return True
@@ -1161,7 +1162,9 @@ def extract_website_games_from_tree(lang):
                 if child['kind'] == 'PrathamZipResource':
                     if is_website_game(child_url):
                         # extract all game names referenced in manual curation Excel file to process separately...
-                        child['title_en'] = child_url.replace('http://www.prathamopenschool.org/CourseContent/Games/', '').replace('.zip', '')
+                        child_url = child_url.replace('https://www.prathamopenschool.org/CourseContent/Games/', '')
+                        child_url = child_url.replace('http://www.prathamopenschool.org/CourseContent/Games/', '')
+                        child['title_en'] = child_url.replace('.zip', '')
                         print('EXTRACTED game name', child['title_en'], 'form url', child['url'])
                         website_games.append(child)
                     else:

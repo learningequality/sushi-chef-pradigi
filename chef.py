@@ -212,6 +212,7 @@ PRADIGI_STRINGS = {
         "subjects": {},
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS149",
+            'WatchAndDo': "CRS203",
             'English': "Angrezi",  # technically a cat_name, not a course_id ...
         }
     },

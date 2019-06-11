@@ -707,6 +707,9 @@ def flatten_web_resource_tree(lang):
         web_resource_tree = json.load(jsonfile)
     # PROCESS
     def recursive_flatten_web_resource_tree(subtree):
+        if subtree.get('source_id', None) in SPECIAL_SUBTOPIC_COURSE_IDS:
+            # Do not flatten stucture in KhelBadi, WatchAndDo, and KhelPuri
+            return
         if 'children' in subtree:
             # 1. do replacment if matches conditions
             new_children = []

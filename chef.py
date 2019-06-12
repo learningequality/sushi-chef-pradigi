@@ -265,7 +265,7 @@ PRADIGI_STRINGS = {
     "gu": {
         'website_lang': 'Gj',
         "language_en": "Gujarati",
-        "gamesrepo_suffixes": ['_KKS', '_GJ'],
+        "gamesrepo_suffixes": ['_KKS', '_GJ', '_Gj'],
         "subjects": {},
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS174",

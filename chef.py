@@ -647,8 +647,8 @@ def get_zip_file(zip_file_url, main_file):
         zip_basename = zip_filename.rsplit('.', 1)[0]      # e.g. Mathematics/
 
         # Oct 9: handle ednge cases where zip filename doesn't match folder name inside it
-        if 'Awazchitra' in zip_basename:
-            zip_basename = zip_basename.replace('Awazchitra', 'AwazChitra')
+        if 'Awazchitra_HI' in zip_basename:
+            zip_basename = zip_basename.replace('Awazchitra_HI', 'AwazChitra_HI')
         if '_KKS_Hi' in zip_basename:
             zip_basename = zip_basename.replace('_KKS_Hi', '_KKS_HI')
         # Mar 2: more edge cases where zip filename doesn't match folder name inside it
@@ -656,9 +656,18 @@ def get_zip_file(zip_file_url, main_file):
             zip_basename = zip_basename.replace('Memorygamekb', 'MemoryGamekb')
         if 'cityofstories' in zip_basename:
             zip_basename = zip_basename.replace('cityofstories', 'CityOfStories')
+        # Jun 12: fix more edge cases where .zip filename doesn't match dir name
+        if '_KKS_Gj' in zip_basename:
+            zip_basename = zip_basename.replace('_KKS_Gj', '_KKS_GJ')
+        if 'ShabdKhel' in zip_basename:
+            zip_basename = zip_basename.replace('ShabdKhel', 'Shabdkhel')
 
         zip_folder = os.path.join(destpath, zip_basename)  # e.g. destpath/Mathematics/
         main_file = main_file.split('/')[-1]               # e.g. activity_name.html or index.html
+
+        if 'KhelbadiKahaniyan_MR' in zip_basename:
+            # Inconsistency --- `main_file` contains dir name, and not index.html
+            main_file = 'index.html'
 
         # Jul 8th: handle weird case-insensitive webserver main_file
         if main_file == 'mainexpand.html':
@@ -1022,8 +1031,8 @@ def find_games_for_lang(name, lang, take_from=None):
                 games.append(game_resource)
                 # game_source_ids.append(source_id)
         else:
-            if name in game_resource['title_en']:
-                print('>>>>> skipping game_resource', game_resource)
+            if game_resource['title_en'].startswith(name):
+                print('>>>>> skipping game_resource', game_resource, 'even though it is similar', name, 'in lang', lang)
 
     if len(games) == 0:
         pass

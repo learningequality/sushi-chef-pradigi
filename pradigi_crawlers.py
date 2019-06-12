@@ -509,6 +509,10 @@ class PraDigiCrawler(BasicCrawler):
                     page_dict['children'].append(pdf)
 
                 elif download_url and download_url.endswith('zip'):
+                    if '.~' in download_url:
+                        # Fix broken links of the form https://www.prathamopenschool.org/Gj/gamelist/CRS174/.~/CourseContent/Games/NumberKas_GJ.zip
+                        pathels = download_url.split('/')
+                        download_url = '/'.join(pathels[0:3] + pathels[7:])
                     zipfile = dict(
                         url=download_url,
                         kind='PrathamZipResource',

@@ -90,35 +90,32 @@ HTML5APP_ZIPS_LOCAL_DIR = 'chefdata/zipfiles'
 
 # LOCALIZATION AND TRANSLATION STRINGS
 ################################################################################
-
 PRADIGI_STRINGS = {
     'hi': {
         'language_en': 'Hindi',
         'website_lang': 'hn',
         'gamesrepo_suffixes': ['_KKS', '_HI', '_Hi'],
-        'subjects': {       # NO longer necessary --- get from website
-            # "Mathematics": "गणित",
-            # "English": "अंग्रेजी",
-            # "Science": "विज्ञान",
-            # #
-            # "Health": "स्वास्थ्य",
-            # "Sports": "खेलकूद",
-            # #
-            # "Fun": "मौज",
-            # "Story": "कहानियाँ",
-            # #
-            # "Hospitality": "अतिथी सत्कार",
-            # "Construction": "भवन-निर्माण",
-            # "Automobile": "वाहन",
-            # "Electric": "इलेक्ट्रिक",
-            # "Beauty": "ब्युटी",
-            # "Healthcare": "स्वास्थ्य सेवा",
-            # #
-            # "KhelBadi": "खेळ-वाडी",
-            # "WatchAndDo": "बघा आणि शिका",
-            # "KhelPuri": "खेळ-पुरी",
-            # #
-            # "LanguageAndCommunication": "भाषा और संवाद",
+        'subjects': {
+            'Language': 'हिंदी',
+            'Mathematics': 'गणित',
+            'English': 'अंग्रेजी',
+            'Science': 'विज्ञान',
+            'Health': 'स्वास्थ्य',
+            'Sports': 'खेलकूद',
+            'Fun': 'मौज',
+            'Story': 'कहानियाँ',
+            'Hospitality': 'अतिथी सत्कार',
+            'Construction': 'भवन-निर्माण',
+            'Automobile': 'वाहन',
+            'Electric': 'इलेक्ट्रिक',
+            'Beauty': 'ब्युटी',
+            'Healthcare': 'स्वास्थ्य सेवा',
+            'Game': 'खेल',
+            'KhelBadi': 'खेल-बाड़ी',
+            'WatchAndDo': 'देखो और करों',
+            'KhelPuri': 'खेल-पुरी',
+            'Music': 'संगीत',
+            'Theatre': 'नाटक'
         },
         # Subject (a.k.a. cat_name)  -->  course_id  lookup table
         # this is necessary for special handing of games and visibility in different age groups
@@ -145,7 +142,28 @@ PRADIGI_STRINGS = {
         "language_en": "Marathi",
         'website_lang': 'mr',
         "gamesrepo_suffixes": ['_KKS', '_MR', '_M'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'मराठी',
+            'Mathematics': 'गणित',
+            'English': 'इंग्रजी',
+            'Science': 'विज्ञान',
+            'Health': 'स्वास्थ्य',
+            'Sports': 'क्रीडा',
+            'Fun': 'मजा',
+            'Story': 'गोष्टी',
+            'Hospitality': 'आदरातिथ्य',
+            'Construction': 'भवन-निर्माण',
+            'Electric': 'इलेक्ट्रिकल',
+            'Beauty': 'ब्युटी',
+            'Healthcare': 'स्वास्थ्य सेवा',
+            'Financial Literacy': 'Financial Literacy',
+            'Game': 'खेळ',
+            'KhelBadi': 'खेळ-वाडी',
+            'WatchAndDo': 'बघा आणि शिका',
+            'KhelPuri': 'खेळ-पुरी',
+            'Music': 'संगीत',
+            'Theatre': 'नाटक'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS125",       # "खेळ-वाडी",
             'WatchAndDo': "CRS127",     # "बघा आणि शिका",
@@ -189,7 +207,17 @@ PRADIGI_STRINGS = {
         "language_en": "Odia",     # also appears as Odia in CntResource.lang_name
         'website_lang': 'Od',
         "gamesrepo_suffixes": ['_OD'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'ଭାଷା',
+            'Mathematics': 'ଗଣିତ',
+            'English': 'ଇଂରାଜୀ',
+            'Science': 'ବିଜ୍ଞାନ',
+            'Fun': 'ମଜା',
+            'Game': 'ଖେଳ',
+            'KhelBadi': 'ଖେଳର ବଗିଚା',
+            'WatchAndDo': 'ଦେଖ ଏବଂ କର',
+            'KhelPuri': 'ଖେଳର ମହଲ'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS110",
             'WatchAndDo': "CRS188",
@@ -199,7 +227,19 @@ PRADIGI_STRINGS = {
     "bn": {
         "language_en": "Bengali",   # Bengali in CntResource.lang_name
         "gamesrepo_suffixes": ['_BN'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'ভাষা',
+            'Mathematics': 'অংক',
+            'English': 'ইংরেজি',
+            'Science': 'বিজ্ঞান',
+            'Health': 'স্বাস্থ্য',
+            'Fun': 'মজা',
+            'Story': 'গল্প',
+            'Game': 'খেলা',
+            'KhelBadi': 'আঙিনায় খেলা',
+            'WatchAndDo': 'দেখো এবং করো',
+            'KhelPuri': 'শহরে খেলা'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS107",
             'WatchAndDo': "CRS186",
@@ -209,7 +249,16 @@ PRADIGI_STRINGS = {
     "ur": {
         "language_en": "Urdu",
         "gamesrepo_suffixes": ['_UD'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'اردو',
+            'Mathematics': 'ریاضی',
+            'English': 'انگریزی',
+            'Science': 'سائنس',
+            'Fun': 'Tamasha',
+            'Game': 'Khel',
+            'KhelBadi': 'Khel-Baadi',
+            'WatchAndDo': 'Dekhiye aur Kariye'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS149",
             'WatchAndDo': "CRS203",
@@ -220,7 +269,17 @@ PRADIGI_STRINGS = {
         "language_en": "Punjabi",
         'website_lang': 'Pn',
         "gamesrepo_suffixes": ['_PN'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'ਪੰਜਾਬੀ',
+            'Mathematics': 'ਗਣਿਤ',
+            'English': 'ਇੰਗਲਿਸ਼',
+            'Science': 'ਵਿਗਿਆਨ',
+            'Fun': 'ਮੌਜ-ਮਸਤੀ',
+            'Game': 'ਖੇਡ',
+            'KhelBadi': 'ਖੇਲਵਾੜੀ',
+            'WatchAndDo': 'ਦੇਖੋ ਅਤੇ ਕਰੋ',
+            'KhelPuri': 'ਖੇਲ-ਪੁਰ'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS111",
             'WatchAndDo': "CRS192",
@@ -230,7 +289,18 @@ PRADIGI_STRINGS = {
     "kn": {
         "language_en": "Kannada",
         "gamesrepo_suffixes": ['_KN'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'ಕನ್ನಡ',
+            'Mathematics': 'ಗಣಿತ',
+            'English': 'ಇಂಗ್ಲೀಷ್',
+            'Science': 'ವಿಜ್ಞಾನ',
+            'Health': 'ಆರೋಗ್ಯ',
+            'Fun': 'ಮೋಜು',
+            'Game': 'ಗೇಮ್',
+            'KhelBadi': 'ಆಟದ ಅಂಗಳ',
+            'WatchAndDo': 'ನೋಡು ಮತ್ತು ಮಾಡು',
+            'KhelPuri': 'ಆಟದ ನಗರಿ'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS168",
             'WatchAndDo': "CRS170",
@@ -244,7 +314,18 @@ PRADIGI_STRINGS = {
         "language_en": "Tamil",
         'website_lang': 'Tm',
         "gamesrepo_suffixes": ['_TM'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'தமிழ்',
+            'Mathematics': 'கணிதம்',
+            'English': 'ஆங்கிலம்',
+            'Science': 'அறிவியல்',
+            'Health': 'உடல் நலம்',
+            'Fun': 'கேளிக்கை',
+            'Game': 'விளையாட்டு',
+            'KhelBadi': 'வீதி விளையாட்டு',
+            'WatchAndDo': 'பார்த்து செய்யவும்',
+            'KhelPuri': 'விளையாட்டுத் திடல்'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS195",
             'WatchAndDo': "CRS196",
@@ -255,7 +336,18 @@ PRADIGI_STRINGS = {
         "language_en": "Telugu",
         'website_lang': 'Tl',
         "gamesrepo_suffixes": ['_TL'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'తెలుగు',
+            'Mathematics': 'గణితం',
+            'English': 'ఇంగ్లీష్',
+            'Science': 'సైన్స్',
+            'Health': 'ఆరోగ్యం',
+            'Fun': 'సరదా',
+            'Game': 'ఆట',
+            'KhelBadi': 'ఆట - ప్రాంగణం',
+            'WatchAndDo': 'చూడండి మరియు చేయండి',
+            'KhelPuri': 'ఆట - నగరం'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS113",
             'WatchAndDo': "CRS177",
@@ -266,7 +358,18 @@ PRADIGI_STRINGS = {
         'website_lang': 'Gj',
         "language_en": "Gujarati",
         "gamesrepo_suffixes": ['_KKS', '_GJ', '_Gj'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'ગુજરાતી',
+            'Mathematics': 'ગણિતશાસ્ત્ર',
+            'English': 'અંગ્રેજી',
+            'Science': 'વિજ્ઞાન',
+            'Health': 'સ્વાસ્થ્ય',
+            'Fun': 'મનોરંજન',
+            'Game': 'રમત',
+            'KhelBadi': 'ખેલ-વાડી',
+            'WatchAndDo': 'જુઓ અને કરો',
+            'KhelPuri': 'ખેલ-પૂરી'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS174",
             'WatchAndDo': "CRS175",
@@ -276,7 +379,17 @@ PRADIGI_STRINGS = {
     "as": {
         "language_en": "Assamese",
         "gamesrepo_suffixes": ['_AS'],
-        "subjects": {},
+        "subjects": {
+            'Language': 'ভাষা',
+            'Mathematics': 'গণিত',
+            'English': 'ইংৰাজী',
+            'Science': 'বিজ্ঞান',
+            'Fun': 'ধেমালি',
+            'Game': 'খেল',
+            'KhelBadi': 'খেল-পথাৰ',
+            'WatchAndDo': 'চোৱা আৰু কৰা',
+            'KhelPuri': 'খেল- ধেমালী'
+        },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS199",
             'WatchAndDo': "CRS200",
@@ -1351,6 +1464,11 @@ class PraDigiChef(JsonTreeChef):
                         if node:
                             subject_subtree['children'].append(node)
 
+                # Set title to localized name (in case not already translated..)
+                current_title = subject_subtree['title']
+                if current_title in PRADIGI_STRINGS[lang]['subjects']:
+                    subject_subtree['title'] = PRADIGI_STRINGS[lang]['subjects'][current_title]
+
             # Remove empty subject_tree topic nodes
             nonempty_subject_subtrees = []
             for subject_subtree in subject_subtrees:
@@ -1413,5 +1531,4 @@ class PraDigiChef(JsonTreeChef):
 if __name__ == '__main__':
     pradigi_chef = PraDigiChef()
     pradigi_chef.main()
-
 

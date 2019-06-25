@@ -15,7 +15,7 @@ credentials
 
 
 # chef run files --- will be stored under vader instead
-chefdata/vader
+chefdata/trees/
 chefdata/archiveFeb7
 chefdata/pradigi_structure.csv
 chefdata/pradigi_english_structure.csv

@@ -8,6 +8,56 @@
               "children": [
                 {
                   "children": [],
+                  "content-length": "44035260",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10985",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_carrot_and_radish_flute.png",
+                  "title": "Carrot and Radish flute",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4"
+                }
+              ],
+              "description": "Sound",
+              "kind": "lesson_page",
+              "source_id": "LES1389",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/Dhwani-se-pehchan.png",
+              "title": "Introduction to Sound",
+              "url": "https://www.prathamopenschool.org/en/Lesson/LES1389"
+            }
+          ],
+          "kind": "subtopic_page",
+          "source_id": "CRS243",
+          "title": "Sound",
+          "url": "https://www.prathamopenschool.org/en/Course/Science/CRS243"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "content-length": "78882264",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_water_bell.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "10987",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_water_bell.png",
+              "title": "Water bell",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_water_bell.mp4"
+            }
+          ],
+          "description": "Simple machine",
+          "kind": "lesson_page",
+          "source_id": "LES1390",
+          "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/h_saralmachine.png",
+          "title": "Simple machine",
+          "url": "https://www.prathamopenschool.org/en/Lesson/LES1390"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
                   "content-length": "25295091",
                   "content-type": "video/mp4",
                   "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_chintu_ban_gaya_chashmebaddur.mp4",
@@ -329,6 +379,61 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_rocket.png",
                   "title": "Bottle Rocket",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_rocket.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "10960177",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_bottle_blast.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10989",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_bottle_blast.png",
+                  "title": "Bottle Blast",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_bottle_blast.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "4698760",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_water_bulge.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10990",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_water_bulge.png",
+                  "title": "Water Bulge",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_water_bulge.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "11680684",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_fan_sprinkler.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10991",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_fan_sprinkler.png",
+                  "title": "Fan Sprinkler",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_fan_sprinkler.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "4799026",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_mini_straw_pump.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10992",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_mini_straw_pump.png",
+                  "title": "Mini Straw Pump",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_mini_straw_pump.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "5203065",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_rubber_bulb_pump.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10993",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_rubber_bulb_pump.png",
+                  "title": "Rubber Bulb Pump 6/5/2019 3:49:42 PM",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_rubber_bulb_pump.mp4"
                 }
               ],
               "description": "Fun Experiments",
@@ -383,6 +488,28 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_balancing_ballerina.png",
                   "title": "Balancing Ballerina",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_balancing_ballerina.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "2731804",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_floating_forks.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10994",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_floating_forks.png",
+                  "title": "Floating Forks",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_floating_forks.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "6167253",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_balancing_paper_clip.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10995",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_balancing_paper_clip.png",
+                  "title": "Balancing Paper Clip",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_balancing_paper_clip.mp4"
                 }
               ],
               "description": "Fun Experiments",
@@ -415,6 +542,17 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_movietime.png",
                   "title": "Movie Time",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_movietime.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "3377859",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_color_mixer.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11002",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_color_mixer.png",
+                  "title": "Color Mixer",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_color_mixer.mp4"
                 }
               ],
               "description": "Fun Experiments",
@@ -502,6 +640,50 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_standing_spinning_pencil.png",
                   "title": "Standing Spinning Pencil",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_standing_spinning_pencil.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "2250957",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_spooky_spoke.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11003",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_spooky_spoke.png",
+                  "title": "Spooky Spoke 6/5/2019 3:51:30 PM",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_spooky_spoke.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "3447480",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_magnetic_jumping_frog.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11004",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_magnetic_jumping_frog.png",
+                  "title": "Magnetic Jumping Frog",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_magnetic_jumping_frog.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "4623995",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_magnetic_braking.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11005",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_magnetic_braking.png",
+                  "title": "Magnetic Braking 6/5/2019 3:50:31 PM",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_magnetic_braking.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "3030158",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_magnetic_needle.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11006",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_magnetic_needle.png",
+                  "title": "Magnetic Needle",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_magnetic_needle.mp4"
                 }
               ],
               "description": "Fun Experiments",
@@ -534,6 +716,50 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_self_operating_gate.png",
                   "title": "Self-operating Gate",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_self_operating_gate.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "78882264",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_water_bell.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10988",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_water_bell.png",
+                  "title": "Water bell",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_water_bell.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "5553461",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_bouncy_balls.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11007",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_bouncy_balls.png",
+                  "title": "Bouncy Balls",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_bouncy_balls.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "6329600",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_jumping_bug.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11008",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_jumping_bug.png",
+                  "title": "Jumping Bug",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_jumping_bug.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "7975710",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_well_of_death.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11009",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_well_of_death.png",
+                  "title": "Well of Death",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_well_of_death.mp4"
                 }
               ],
               "description": "Fun Experiments",
@@ -566,6 +792,17 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_leaf_zoo.png",
                   "title": "Leaf Zoo",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_leaf_zoo.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "7703624",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_touching_slate.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11010",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_touching_slate.png",
+                  "title": "Touching Slate",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_touching_slate.mp4"
                 }
               ],
               "description": "Fun Experiments",
@@ -598,6 +835,17 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_paper_caper.png",
                   "title": "Paper Caper",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_paper_caper.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "7641430",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_envelope_petals.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11013",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_envelope_petals.png",
+                  "title": "Envelope Petals",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_envelope_petals.mp4"
                 }
               ],
               "description": "Fun Experiments",
@@ -641,6 +889,39 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_tringtring_paper_cup_telephone.png",
                   "title": "Tring tring- Paper cup telephone",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_tringtring_paper_cup_telephone.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "44035260",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10986",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_carrot_and_radish_flute.png",
+                  "title": "Carrot and Radish flute",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "4653546",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_loud_lid.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11014",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_loud_lid.png",
+                  "title": "Loud Lid",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_loud_lid.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "6714071",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_trumpet_thunder.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11015",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_trumpet_thunder.png",
+                  "title": "Trumpet Thunder",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_trumpet_thunder.mp4"
                 }
               ],
               "description": "Fun Experiments",
@@ -673,6 +954,39 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_newtons_cdisc.png",
                   "title": "Newtons C Disc",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_newtons_cdisc.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "3527692",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_balloon_spinner.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11016",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_balloon_spinner.png",
+                  "title": "Balloon Spinner",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_balloon_spinner.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "4044146",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_glass_propellor.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11017",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_glass_propellor.png",
+                  "title": "Glass Propellor",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_glass_propellor.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "5673786",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_ball_centrifuge.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11018",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_ball_centrifuge.png",
+                  "title": "Ball Centrifuge",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_ball_centrifuge.mp4"
                 }
               ],
               "description": "Fun Experiments",
@@ -681,6 +995,134 @@
               "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/en_spinningt.png",
               "title": "Spinning toys",
               "url": "https://www.prathamopenschool.org/en/Lesson/LES1299"
+            },
+            {
+              "children": [
+                {
+                  "children": [],
+                  "content-length": "2741860",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_cut_potato_turns_brown.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10996",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_cut_potato_turns_brown.png",
+                  "title": "Cut Potato Turns Brown",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_cut_potato_turns_brown.mp4"
+                }
+              ],
+              "description": "Fun Experiments",
+              "kind": "lesson_page",
+              "source_id": "LES1391",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/h_chemistry.png",
+              "title": "Chemistry",
+              "url": "https://www.prathamopenschool.org/en/Lesson/LES1391"
+            },
+            {
+              "children": [
+                {
+                  "children": [],
+                  "content-length": "6323892",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_climbing_butterfly.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10997",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_climbing_butterfly.png",
+                  "title": "Climbing Butterfly",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_climbing_butterfly.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "7358887",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_geometry_with_magnets.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10998",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_geometry_with_magnets.png",
+                  "title": "Geometry with Magnets",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_geometry_with_magnets.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "8722626",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_maglev_cd.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10999",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_maglev_cd.png",
+                  "title": "Maglev CD",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_maglev_cd.mp4"
+                }
+              ],
+              "description": "Fun Experiments",
+              "kind": "lesson_page",
+              "source_id": "LES1392",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/as_frictiont.png",
+              "title": "Friction",
+              "url": "https://www.prathamopenschool.org/en/Lesson/LES1392"
+            },
+            {
+              "children": [
+                {
+                  "children": [],
+                  "content-length": "5880224",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_convection_currents.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11000",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_convection_currents.png",
+                  "title": "Convection Currents",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_convection_currents.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "3940781",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_expansion_of_air.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11001",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_expansion_of_air.png",
+                  "title": "Expansion of Air",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_expansion_of_air.mp4"
+                }
+              ],
+              "description": "Fun Experiments",
+              "kind": "lesson_page",
+              "source_id": "LES1393",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/as_heatt.png",
+              "title": "Heat",
+              "url": "https://www.prathamopenschool.org/en/Lesson/LES1393"
+            },
+            {
+              "children": [
+                {
+                  "children": [],
+                  "content-length": "9911737",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_paper_flexagon.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11011",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_paper_flexagon.png",
+                  "title": "Paper Flexagon 6/5/2019 3:51:00 PM",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_paper_flexagon.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "7411207",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_14_page_book.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "11012",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_14_page_book.png",
+                  "title": "14 Page Book",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/en_14_page_book.mp4"
+                }
+              ],
+              "description": "Fun Experiments",
+              "kind": "lesson_page",
+              "source_id": "LES1394",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/hn_paper_daynaomic.png",
+              "title": "Paper dynamic models",
+              "url": "https://www.prathamopenschool.org/en/Lesson/LES1394"
             }
           ],
           "kind": "subtopic_page",
@@ -934,6 +1376,60 @@
           "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/Hello_Periods_topic.png",
           "title": "Hello Periods",
           "url": "https://www.prathamopenschool.org/en/Lesson/LES1279"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "content-length": "146896022",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_drooling.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "10795",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_drooling.png",
+              "title": "Drooling",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_drooling.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "263661291",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_epilepsy.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "10796",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_epilepsy.png",
+              "title": "Epilepsy",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_epilepsy.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "360439981",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_finemotorskills.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "10797",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_finemotorskills.png",
+              "title": "Fine Motor Skills",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_finemotorskills.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "291779746",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_grossmotorskills.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "10798",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_grossmotorskills.png",
+              "title": "Gross Motor Skills",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_grossmotorskills.mp4"
+            }
+          ],
+          "description": "",
+          "kind": "lesson_page",
+          "source_id": "LES1363",
+          "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/en_childcareles.png",
+          "title": "Child Care",
+          "url": "https://www.prathamopenschool.org/en/Lesson/LES1363"
         }
       ],
       "kind": "subtopic_page",
@@ -944,38 +1440,35 @@
     {
       "children": [
         {
-          "children": [],
-          "content-length": "14035732",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9636",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_wakeup.png",
-          "title": "The Wake Up dance",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "44730943",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9631",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
-          "title": "Geeta and Babeeta",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "24102786",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9627",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
-          "title": "How do we swim?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
-        },
+          "children": [
+            {
+              "children": [],
+              "content-length": "44035260",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "10984",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_carrot_and_radish_flute.png",
+              "title": "Carrot and Radish flute",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4"
+            }
+          ],
+          "description": "Musical Instruments",
+          "kind": "lesson_page",
+          "source_id": "LES1388",
+          "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/hn_Instrumentst.png",
+          "title": "Musical Instruments",
+          "url": "https://www.prathamopenschool.org/en/Lesson/LES1388"
+        }
+      ],
+      "kind": "topic_page",
+      "source_id": "Sangeet",
+      "subject_en": "Sangeet",
+      "title": "Music",
+      "url": "https://www.prathamopenschool.org/en/Course/Sangeet"
+    },
+    {
+      "children": [
         {
           "children": [],
           "content-length": "48122271",
@@ -989,17 +1482,6 @@
         },
         {
           "children": [],
-          "content-length": "39766638",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9633",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
-          "title": "The magical life of flowers",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
-        },
-        {
-          "children": [],
           "content-length": "184784617",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
@@ -1008,39 +1490,6 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
           "title": "Advantages and disadvantages of Pulley- 2",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "18622921",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9630",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
-          "title": "How do we run?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "19053586",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9629",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
-          "title": "How do birds fly?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "28501338",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9626",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
-          "title": "Airplane landing",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
         },
         {
           "children": [],
@@ -1063,6 +1512,83 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
           "title": "How do we drink?",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "14035732",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9636",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_wakeup.png",
+          "title": "The Wake Up dance",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "19053586",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9629",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
+          "title": "How do birds fly?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "24102786",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9627",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
+          "title": "How do we swim?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "44730943",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9631",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
+          "title": "Geeta and Babeeta",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "18622921",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9630",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
+          "title": "How do we run?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "28501338",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9626",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
+          "title": "Airplane landing",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "39766638",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9633",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
+          "title": "The magical life of flowers",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
         }
       ],
       "kind": "fun_page",
@@ -1077,53 +1603,53 @@
           "children": [
             {
               "children": [],
-              "description": "source_url=https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/PointMeOut.zip",
+              "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/PointMeOut.zip",
               "kind": "PrathamZipResource",
               "main_file": "http://www.prathamopenschool.org/CourseContent/Games/PointMeOut/index.html",
               "source_id": "en/game/9103",
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/PointMeOutCover.jpg",
               "title": "Point Me Out",
-              "url": "https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/PointMeOut.zip"
+              "url": "https://www.prathamopenschool.org/CourseContent/Games/PointMeOut.zip"
             },
             {
               "children": [],
-              "description": "source_url=https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/GuessWho.zip",
+              "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/GuessWho.zip",
               "kind": "PrathamZipResource",
               "main_file": "http://www.prathamopenschool.org/CourseContent/Games/GuessWho/index.html",
               "source_id": "en/game/9104",
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/GuessWhoCover.jpg",
               "title": "Guess Who",
-              "url": "https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/GuessWho.zip"
+              "url": "https://www.prathamopenschool.org/CourseContent/Games/GuessWho.zip"
             },
             {
               "children": [],
-              "description": "source_url=https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/ABCD.zip",
+              "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/ABCD.zip",
               "kind": "PrathamZipResource",
               "main_file": "http://www.prathamopenschool.org/CourseContent/Games/ABCD/index.html",
               "source_id": "en/game/9105",
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/ABCDCover.jpg",
               "title": "ABCD",
-              "url": "https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/ABCD.zip"
+              "url": "https://www.prathamopenschool.org/CourseContent/Games/ABCD.zip"
             },
             {
               "children": [],
-              "description": "source_url=https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CountAndKnow.zip",
+              "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/CountAndKnow.zip",
               "kind": "PrathamZipResource",
               "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CountAndKnow/index.html",
               "source_id": "en/game/9108",
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CountandKnowCover_EN.jpg",
               "title": "Count & Know",
-              "url": "https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CountAndKnow.zip"
+              "url": "https://www.prathamopenschool.org/CourseContent/Games/CountAndKnow.zip"
             },
             {
               "children": [],
-              "description": "source_url=https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CountIt.zip",
+              "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/CountIt.zip",
               "kind": "PrathamZipResource",
               "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CountIt/index.html",
               "source_id": "en/game/9109",
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/CountItCover_EN.jpg",
               "title": "Count It",
-              "url": "https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CountIt.zip"
+              "url": "https://www.prathamopenschool.org/CourseContent/Games/CountIt.zip"
             }
           ],
           "description": "",
@@ -1343,6 +1869,50 @@
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_teachmehow.png",
               "title": "Teach Me How?",
               "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_teachmehow.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "1975423",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_aeroplane_aeroplane.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/10737",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_aeroplane_aeroplane.png",
+              "title": "Aeroplane Aeroplane",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_aeroplane_aeroplane.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "1564585",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_little_puppy.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/10738",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_little_puppy.png",
+              "title": "Little Puppy",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_little_puppy.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "5501327",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_the_wheel_on_the_bus.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/10739",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_the_wheel_on_the_bus.png",
+              "title": "The Wheel On The Bus",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_the_wheel_on_the_bus.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "2093701",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_two_little_hands.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/10740",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_two_little_hands.png",
+              "title": "Two Little Hands",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/en_two_little_hands.mp4"
             }
           ],
           "description": "",
@@ -1529,6 +2099,61 @@
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_ekmotahathi.png",
               "title": "एक मोटा हाथी",
               "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_ekmotahathi.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "7969581",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_ek_chhoti_kishti.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/10732",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_ek_chhoti_kishti.png",
+              "title": "एक छोटी किश्ती",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_ek_chhoti_kishti.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "2088396",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_gadi_ka_pahiya.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/10733",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_gadi_ka_pahiya.png",
+              "title": "गाड़ी का पहिया",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_gadi_ka_pahiya.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "2284129",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_machhali_jai_ki_rani.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/10734",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_machhali_jai_ki_rani.png",
+              "title": "मछली जल की रानी",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_machhali_jai_ki_rani.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "1761683",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_nacho_nacho_aise_nacho.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/10735",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_nacho_nacho_aise_nacho.png",
+              "title": "नाचो नाचो ऐसे नाचो",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_nacho_nacho_aise_nacho.mp4"
+            },
+            {
+              "children": [],
+              "content-length": "1732102",
+              "content-type": "video/mp4",
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hi_rasila_aam.mp4",
+              "kind": "PrathamVideoResource",
+              "source_id": "en/game/10736",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hi_rasila_aam.png",
+              "title": "रसीला आम",
+              "url": "http://www.prathamopenschool.org/CourseContent/videos/hi_rasila_aam.mp4"
             }
           ],
           "description": "",
@@ -1539,14 +2164,24 @@
           "url": "https://www.prathamopenschool.org/en/gamelist/CRS157/LES1334"
         },
         {
-          "children": [],
-          "description": "source_url=https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CityOfStories.zip",
-          "kind": "PrathamZipResource",
-          "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CityOfStories/index.html",
-          "source_id": "en/game/9110",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/cityofstories.png",
+          "children": [
+            {
+              "children": [],
+              "description": "source_url=https://www.prathamopenschool.org/CourseContent/Games/CityOfStories.zip",
+              "kind": "PrathamZipResource",
+              "main_file": "http://www.prathamopenschool.org/CourseContent/Games/CityOfStories/index.html",
+              "source_id": "en/game/9110",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/cityofstories.png",
+              "title": "City Of Stories",
+              "url": "https://www.prathamopenschool.org/CourseContent/Games/CityOfStories.zip"
+            }
+          ],
+          "description": "",
+          "kind": "fun_page",
+          "source_id": "LES1075",
+          "thumbnail_url": null,
           "title": "City Of Stories",
-          "url": "https://www.prathamopenschool.org/en/gamelist/CRS157/.~/CourseContent/Games/CityOfStories.zip"
+          "url": "https://www.prathamopenschool.org/en/gamelist/CRS157/LES1075"
         }
       ],
       "kind": "special_subtopic_page",
@@ -1559,7 +2194,6 @@
   "description": "PraDigi, developed by Pratham, consists of educational games, videos, and ebooks on language learning, math, science, English, health, and vocational training. The learning material, available for children and youth, is offered in multiple languages: Punjabi, Assamese, Bengali, Odiya, Telugu, Tamil, Kannada, Marathi, Gujarati, Hindi, and English.",
   "kind": "lang_page",
   "language": "en",
-  "original_url": "http://www.prathamopenschool.org/en/",
   "source_domain": "prathamopenschool.org",
   "source_id": "pratham-open-school-en",
   "thumbnail": null,

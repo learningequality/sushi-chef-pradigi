@@ -195,12 +195,15 @@ PRADIGI_STRINGS = {
             "Electric": "Electric",
             "Beauty": "Beauty",
             "Healthcare": "Healthcare",
+            "Music": "Sangeet",
             "Fun": "Fun",
             "Story": "Story",
-            "WatchAndDo": "Games",
+            "FinancialLiteracy": "Financial Literacy",
+            "KhelBadi": "Khel-Baadi",
         },
         'course_ids_by_subject_en': {
-            'WatchAndDo': "CRS157",     # the Game menu on English
+            'KhelBadi': "CRS157",
+            'FinancialLiteracy': 'CRS228',
         },
     },
     "or": {
@@ -446,6 +449,7 @@ PRADIGI_SUBJECTS = [
     'Electric',
     'Healthcare',
     'Construction',
+    'FinancialLiteracy'
     #
     # Games pages
     'KhelBadi',           # "खेल-बाड़ी"       3-6    # Game-box
@@ -1394,49 +1398,10 @@ class PraDigiChef(JsonTreeChef):
                         else:
                             print('no wrt for subject ' + desired_subject_en + ' in language ' + lang)
 
-                # B. Copy English learning videos from HI and MR subtrees to English subtree
-                if lang == 'en' and subject_en == 'Language' and age_group in ['8-14 years', '14 and above']:
-                    # B2.hi: add "For Hindi speakers" subfolder
-                    en_hi_topic = dict(
-                        title='For Hindi speakers',
-                        source_id='en_hi_topic',
-                        kind=content_kinds.TOPIC,
-                        language='hi',
-                        children=[],
-                    )
-                    # ADD http://www.prathamopenschool.org/hn/Course/English/CRS1
-                    wrt_subtree1 = get_subtree_by_source_id('hi', 'CRS1')
-                    if wrt_subtree1:
-                        ricecooker_subtree1 = wrt_to_ricecooker_tree(wrt_subtree1, 'hi')
-                        en_hi_topic['children'].append(ricecooker_subtree1)
-                    #
-                    # ADD http://www.prathamopenschool.org/hn/Course/English/CRS96
-                    wrt_subtree2 = get_subtree_by_source_id('hi', 'CRS96')
-                    if wrt_subtree2:
-                        ricecooker_subtree2 = wrt_to_ricecooker_tree(wrt_subtree2, 'hi')
-                        en_hi_topic['children'].append(ricecooker_subtree2)
-                    subject_subtree['children'].append(en_hi_topic)
-                    #
-                    # B2.mr: add "For Marathi speakers" subfolder
-                    en_mr_topic = dict(
-                        title='For Marathi speakers',
-                        source_id='en_mr_topic',
-                        kind=content_kinds.TOPIC,
-                        language='mr',
-                        children=[],
-                    )
-                    # ADD http://www.prathamopenschool.org/mr/Course/English/CRS34
-                    wrt_subtree3 = get_subtree_by_source_id('mr', 'CRS34')
-                    if wrt_subtree3:
-                        ricecooker_subtree3 = wrt_to_ricecooker_tree(wrt_subtree3, 'mr')
-                        en_mr_topic['children'].append(ricecooker_subtree3)
-                    subject_subtree['children'].append(en_mr_topic)
-
-
                 # Needed to avoid duplicates
                 web_resources_source_ids = [ch['source_id'] for ch in subject_subtree['children']]
 
-                # C. Load game resources
+                # B. Load game resources
                 game_rows = resources['games']
                 print('Processing games:', [game_row[GAMENAME_KEY] for game_row in game_rows])
                 for game_row in game_rows:
@@ -1456,11 +1421,9 @@ class PraDigiChef(JsonTreeChef):
                                 web_resources_source_ids.append(game_source_id)
                             else:
                                 node = None
-                        # CASE gamerepo game
                         else:
                             # gamerepo games
                             raise ValueError('Should be processing only website games now...')
-                        #
                         if node:
                             subject_subtree['children'].append(node)
 

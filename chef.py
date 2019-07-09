@@ -439,6 +439,7 @@ PRADIGI_SUBJECTS = [
     'Sports',
     'Music',
     'Theatre',
+    'Art Project',
     #
     'Fun',              # Contains website /Fun content + all games not in the other categories
     'Story',
@@ -449,7 +450,7 @@ PRADIGI_SUBJECTS = [
     'Electric',
     'Healthcare',
     'Construction',
-    'FinancialLiteracy'
+    'FinancialLiteracy',
     #
     # Games pages
     'KhelBadi',           # "खेल-बाड़ी"       3-6    # Game-box

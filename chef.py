@@ -96,7 +96,7 @@ PRADIGI_STRINGS = {
         'website_lang': 'hn',
         'gamesrepo_suffixes': ['_KKS', '_HI', '_Hi'],
         'subjects': {
-            'Language': 'हिंदी',
+            'Language': 'भाषा',
             'Mathematics': 'गणित',
             'English': 'अंग्रेजी',
             'Science': 'विज्ञान',
@@ -143,7 +143,7 @@ PRADIGI_STRINGS = {
         'website_lang': 'mr',
         "gamesrepo_suffixes": ['_KKS', '_MR', '_M'],
         "subjects": {
-            'Language': 'मराठी',
+            'Language': 'भाषा',
             'Mathematics': 'गणित',
             'English': 'इंग्रजी',
             'Science': 'विज्ञान',
@@ -253,7 +253,7 @@ PRADIGI_STRINGS = {
         "language_en": "Urdu",
         "gamesrepo_suffixes": ['_UD'],
         "subjects": {
-            'Language': 'اردو',
+            'Language': 'زبان',
             'Mathematics': 'ریاضی',
             'English': 'انگریزی',
             'Science': 'سائنس',
@@ -273,7 +273,7 @@ PRADIGI_STRINGS = {
         'website_lang': 'Pn',
         "gamesrepo_suffixes": ['_PN'],
         "subjects": {
-            'Language': 'ਪੰਜਾਬੀ',
+            'Language': 'ਭਾਸ਼ਾ',
             'Mathematics': 'ਗਣਿਤ',
             'English': 'ਇੰਗਲਿਸ਼',
             'Science': 'ਵਿਗਿਆਨ',
@@ -293,7 +293,7 @@ PRADIGI_STRINGS = {
         "language_en": "Kannada",
         "gamesrepo_suffixes": ['_KN'],
         "subjects": {
-            'Language': 'ಕನ್ನಡ',
+            'Language': 'ಭಾಷೆ',
             'Mathematics': 'ಗಣಿತ',
             'English': 'ಇಂಗ್ಲೀಷ್',
             'Science': 'ವಿಜ್ಞಾನ',
@@ -318,7 +318,7 @@ PRADIGI_STRINGS = {
         'website_lang': 'Tm',
         "gamesrepo_suffixes": ['_TM'],
         "subjects": {
-            'Language': 'தமிழ்',
+            'Language': 'மொழி',
             'Mathematics': 'கணிதம்',
             'English': 'ஆங்கிலம்',
             'Science': 'அறிவியல்',
@@ -340,7 +340,7 @@ PRADIGI_STRINGS = {
         'website_lang': 'Tl',
         "gamesrepo_suffixes": ['_TL'],
         "subjects": {
-            'Language': 'తెలుగు',
+            'Language': 'భాషా',
             'Mathematics': 'గణితం',
             'English': 'ఇంగ్లీష్',
             'Science': 'సైన్స్',
@@ -362,7 +362,7 @@ PRADIGI_STRINGS = {
         "language_en": "Gujarati",
         "gamesrepo_suffixes": ['_KKS', '_GJ', '_Gj'],
         "subjects": {
-            'Language': 'ગુજરાતી',
+            'Language': 'ભાષાી',
             'Mathematics': 'ગણિતશાસ્ત્ર',
             'English': 'અંગ્રેજી',
             'Science': 'વિજ્ઞાન',

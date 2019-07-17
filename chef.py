@@ -121,8 +121,8 @@ PRADIGI_STRINGS = {
         # this is necessary for special handing of games and visibility in different age groups
         'course_ids_by_subject_en': {
             # Hindi games pages = खेल
-            'KhelBadi': "CRS122",           # "खेल-बाड़ी"       3-6    # Game-box
-            'WatchAndDo': "CRS124",         # "देखो और करों     3-6,   # Watch and Do
+            'KhelBadi': "KhelBadi",           # "खेल-बाड़ी"       3-6    # Game-box
+            'WatchAndDo': "somethingthatdoesnexist",     # intentionally set to somethingthatdoesnexist
             'KhelPuri': "CRS123",           # "खेल-पुरी",       6-10   # Games Sport-puri
             #
             # Health and Sport for webscraping
@@ -156,7 +156,7 @@ PRADIGI_STRINGS = {
             'Electric': 'इलेक्ट्रिकल',
             'Beauty': 'ब्युटी',
             'Healthcare': 'स्वास्थ्य सेवा',
-            'Financial Literacy': 'Financial Literacy',
+            # 'Financial Literacy': '????',
             'Game': 'खेळ',
             'KhelBadi': 'खेळ-वाडी',
             'WatchAndDo': 'बघा आणि शिका',
@@ -165,8 +165,8 @@ PRADIGI_STRINGS = {
             'Theatre': 'नाटक'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "CRS125",       # "खेळ-वाडी",
-            'WatchAndDo': "CRS127",     # "बघा आणि शिका",
+            'KhelBadi': "KhelBadi",       # "खेळ-वाडी",
+            'WatchAndDo': "somethingthatdoesnexist",     # intentionally set to somethingthatdoesnexist
             'KhelPuri': "CRS126",       # "खेळ-पुरी",
             #
             # Health and Sport for webscraping
@@ -203,7 +203,7 @@ PRADIGI_STRINGS = {
         },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS157",
-            'FinancialLiteracy': 'CRS228',
+            # 'FinancialLiteracy': 'CRS228',
         },
     },
     "or": {
@@ -450,7 +450,8 @@ PRADIGI_SUBJECTS = [
     'Electric',
     'Healthcare',
     'Construction',
-    'FinancialLiteracy',
+    'Financial Literacy',
+    '14_To_18',
     #
     # Games pages
     'KhelBadi',           # "खेल-बाड़ी"       3-6    # Game-box

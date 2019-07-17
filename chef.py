@@ -1359,6 +1359,8 @@ class PraDigiChef(JsonTreeChef):
         lang_subtree['title'] = first_native_name
         lang_subtree['language'] = lang
         lang_subtree['source_id'] = 'pradigi_'+str(lang)
+        thumbnail_path = os.path.join('chefdata', 'LanguagesImages', language_en + '.png')
+        lang_subtree['thumbnail'] = thumbnail_path
 
         # Go through template age groups and subjects
         age_groups_subtrees = lang_subtree['children']

@@ -121,7 +121,6 @@ PRADIGI_STRINGS = {
         # this is necessary for special handing of games and visibility in different age groups
         'course_ids_by_subject_en': {
             # Hindi games pages = खेल
-            'KhelBadi': "KhelBadi",           # "खेल-बाड़ी"       3-6    # Game-box
             'WatchAndDo': "somethingthatdoesnexist",     # intentionally set to somethingthatdoesnexist
             'KhelPuri': "CRS123",           # "खेल-पुरी",       6-10   # Games Sport-puri
             #
@@ -136,6 +135,7 @@ PRADIGI_STRINGS = {
             "Automobile": "CRS129",
             # "Construction": "Construction",
             "Hospitality": "CRS128",
+            'Financial Literacy': 'CRS226',
         }
     },
     "mr": {
@@ -165,7 +165,6 @@ PRADIGI_STRINGS = {
             'Theatre': 'नाटक'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "KhelBadi",       # "खेळ-वाडी",
             'WatchAndDo': "somethingthatdoesnexist",     # intentionally set to somethingthatdoesnexist
             'KhelPuri': "CRS126",       # "खेळ-पुरी",
             #
@@ -179,6 +178,7 @@ PRADIGI_STRINGS = {
             # "Construction": "Construction",
             "Hospitality": "CRS143",
             "Beauty": "CRS144",
+            'Financial Literacy': 'CRS227',
         }
     },
     'en': {
@@ -198,12 +198,12 @@ PRADIGI_STRINGS = {
             "Music": "Sangeet",
             "Fun": "Fun",
             "Story": "Story",
-            "FinancialLiteracy": "Financial Literacy",
+            "Financial Literacy": "Financial Literacy",
             "KhelBadi": "Khel-Baadi",
         },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS157",
-            # 'FinancialLiteracy': 'CRS228',
+            'Financial Literacy': 'CRS228',
         },
     },
     "or": {

@@ -969,17 +969,6 @@ def get_subtree_by_source_id(lang, source_id):
     return recursive_find_by_source_id(web_resource_tree, source_id)
 
 
-# NOT USED RIGHT NOW --- getting all website resources instead.
-# Use blacklist approach in Corrections if you want to ignore/skip specific resource.
-#
-# def _only_videos(node):
-#     """
-#     Set this as the `filter_fn` to `wrt_to_ricecooker_tree` to select only videos.
-#     """
-#     allowed_kinds = ['lang_page', 'topic_page', 'subtopic_page', 'lesson_page',
-#                      'fun_page', 'story_page', 'PrathamVideoResource']
-#     return node['kind'] in allowed_kinds
-
 
 def wrt_to_ricecooker_tree(tree, lang, filter_fn=lambda node: True):
     """
@@ -1131,14 +1120,9 @@ def find_games_for_lang(name, lang, take_from=None):
     else:
         website_data_lang = []
 
-    # load gamrewpo game infos
-    # gamerepo_data = json.load(open('chefdata/trees/pradigi_games_all_langs.json','r'))
-    # assert gamerepo_data["kind"] == "index_page", 'wrong web resource tree loaded'
-
     games = []
-    # game_source_ids = []
     #
-    # First try to get game from website_games json by title_en (ignoring _LANG suffixes)
+    # Get game from website_games json by title_en (ignoring _LANG suffixes)
     for game_resource in website_data_lang:
         title = game_resource['title_en']
         for suffix in suffixes:
@@ -1148,7 +1132,6 @@ def find_games_for_lang(name, lang, take_from=None):
             # source_id = game_resource['source_id']
             if len(games) == 0:
                 games.append(game_resource)
-                # game_source_ids.append(source_id)
         else:
             if game_resource['title_en'].startswith(name):
                 print('>>>>> skipping game_resource', game_resource, 'even though it is similar', name, 'in lang', lang)
@@ -1158,38 +1141,6 @@ def find_games_for_lang(name, lang, take_from=None):
         # print('game', name, 'not found for lang', lang)
 
     return games
-
-    # if len(games) == 0:
-    #     # Get game from pradigi_games json by ignoring _LANG suffixes
-    #     for gameslang_page in gamerepo_data['children']:
-    #         if gameslang_page['language_en'] == language_en:
-    #             for game in gameslang_page['children']:
-    #                 title = game['title']
-    #                 for suffix in suffixes:
-    #                     if title.strip().endswith(suffix):
-    #                         title = title.replace(suffix, '').strip()
-    #                 if name == title:
-    #                     source_id = game['title']
-    #                     if len(games) == 0:
-    #                         games.append(game)
-    #                         # game_source_ids.append(source_id)
-    # 
-    # if take_from is not None and len(games) == 0:
-    #     # Extra pass to get English games to be included in other languages
-    #     take_lang = LANGUAGE_EN_TO_LANG[take_from]
-    #     take_suffixes = PRADIGI_STRINGS[take_lang]['gamesrepo_suffixes']
-    #     take_suffixes = take_suffixes*2
-    #     for gameslang_page in gamerepo_data['children']:
-    #         if gameslang_page['language_en'] == take_from:
-    #             for game in gameslang_page['children']:
-    #                 title = game['title']
-    #                 for suffix in take_suffixes:
-    #                     if title.strip().endswith(suffix):
-    #                         title = title.replace(suffix, '').strip()
-    #                 if name == title and len(games) == 0:
-    #                     games.append(game)
-    #                     # game_source_ids.append(source_id)
-
 
 
 
@@ -1265,9 +1216,9 @@ def is_website_game(url):
 
 def extract_website_games_from_tree(lang):
     """
-    Extracts all games from the normal web resource tree so they can be
-    deduplicated with gamerepo games and manually placed within subject folders.
-    Modifies tree in place + returns `website_games` (list) for given `lang`.
+    Extracts all games from the normal web resource tree so they be manually
+    placed within additional subject folders.
+    Returns `website_games` (list) for given `lang`.
     """
     if lang not in PRADIGI_LANG_URL_MAP:
         raise ValueError('Language `lang` must be in PRADIGI_LANG_URL_MAP')
@@ -1302,15 +1253,11 @@ def extract_website_games_from_tree(lang):
                 else:
                     # leave other content as is
                     new_children.append(child)
-            # DISABLE subtree['children'] = new_children
             #
             # recurse
             for child in subtree['children']:
                 recursive_extract_website_games(child)
     recursive_extract_website_games(web_resource_tree)
-    # DISABLE WRITOUT
-    # DISABLE with open(wrt_filename, 'w') as wrt_file:
-    # DISABLE     json.dump(web_resource_tree, wrt_file, ensure_ascii=False, indent=2, sort_keys=True)
     return website_games
 
 

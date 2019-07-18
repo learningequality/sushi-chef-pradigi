@@ -706,25 +706,14 @@
       "children": [
         {
           "children": [],
-          "content-length": "24102786",
+          "content-length": "231513640",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8604",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
-          "title": "எப்படி நீந்துகிறார்கள் ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "18622921",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8607",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
-          "title": "எப்படி ஓடுகிறார்கள் ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
+          "source_id": "Tm/FunResource/8611",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
+          "title": "கப்பியின் நன்மையும் தீமையும் - 1",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
         },
         {
           "children": [],
@@ -739,58 +728,14 @@
         },
         {
           "children": [],
-          "content-length": "19053586",
+          "content-length": "24102786",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8606",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
-          "title": "எப்படி பறக்கிறார்கள் ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "48122271",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8609",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
-          "title": "கண்ணாடி முன்னாடி",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "231513640",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8611",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
-          "title": "கப்பியின் நன்மையும் தீமையும் - 1",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "184784617",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8612",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
-          "title": "கப்பியின் நன்மையும் தீமையும் - 2",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "39766638",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Tm/FunResource/8610",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
-          "title": "பூக்களின் அற்புத வாழ்க்கை",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
+          "source_id": "Tm/FunResource/8604",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
+          "title": "எப்படி நீந்துகிறார்கள் ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
         },
         {
           "children": [],
@@ -824,6 +769,61 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
           "title": "ஏரோபிளேன் லேன்டிங்",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "48122271",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tm/FunResource/8609",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
+          "title": "கண்ணாடி முன்னாடி",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "19053586",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tm/FunResource/8606",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
+          "title": "எப்படி பறக்கிறார்கள் ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "18622921",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tm/FunResource/8607",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
+          "title": "எப்படி ஓடுகிறார்கள் ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "184784617",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tm/FunResource/8612",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
+          "title": "கப்பியின் நன்மையும் தீமையும் - 2",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "39766638",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Tm/FunResource/8610",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
+          "title": "பூக்களின் அற்புத வாழ்க்கை",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
         }
       ],
       "kind": "fun_page",

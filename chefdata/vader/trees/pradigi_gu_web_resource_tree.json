@@ -219,6 +219,42 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_ankhe_kya_kahati_hai.png",
                   "title": "આંખો શું કહે છે?",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_ankhe_kya_kahati_hai.mp4"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Chintu_ban_gaya_chashme_baddur.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11863",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Chintu_ban_gaya_chashme_baddur.png",
+                  "title": "ચિન્ટુ બની ગયો ચશ્માવાળો",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Chintu_ban_gaya_chashme_baddur.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Colourful_world1.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11864",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Colourful_world1.png",
+                  "title": "ઘાસ લીલું શા માટે દેખાય છે?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Colourful_world1.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Eye_checking.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11865",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Eye_checking.png",
+                  "title": "સ્નેલેન ચાર્ટ દ્વારા આંખોની તપાસ (શું તમને સ્પષ્ટ દેખાય છે?)",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Eye_checking.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_How_do_we_see.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11866",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_How_do_we_see.png",
+                  "title": "આંખની કાર્ય પ્રણાલી (આપણે કેવી રીતે જોઈએ છીએ?)",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_How_do_we_see.pdf"
                 }
               ],
               "description": "માનવ શરીર",
@@ -284,6 +320,51 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_blood_pressure_checking.png",
                   "title": "રુધિરના દબાણની તપાસ",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_blood_pressure_checking.mp4"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Blood_introduction.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11858",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Blood_introduction.png",
+                  "title": "રુધિરનો પરિચય",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Blood_introduction.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Blood_pressure_checking.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11859",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Blood_pressure_checking.png",
+                  "title": "રુધિર દાબની તપાસ કેવી રીતે કરવામાં આવે છે?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Blood_pressure_checking.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Circulatory_system.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11860",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Circulatory_system.png",
+                  "title": "હૃદયમાં ધક-ધક !",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Circulatory_system.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_What_is_blood_pressure.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11861",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_What_is_blood_pressure.png",
+                  "title": "રુધિર દાબ શું છે?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_What_is_blood_pressure.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_What_is_there_in_blood.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11862",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_What_is_there_in_blood.png",
+                  "title": "રુધિરમાં શું હોય છે?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_What_is_there_in_blood.pdf"
                 }
               ],
               "description": "માનવ શરીર",
@@ -382,6 +463,60 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/gj_Hinge_Man.png",
                   "title": "સાંધાઓની કરામત (હિંજ મેન)",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/gj_Hinge_Man.mp4"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Skeletal_Intro.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11867",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Skeletal_Intro.png",
+                  "title": "સ્ટીલથી પણ વધારે મજબૂત - આપણાં હાડકાં",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Skeletal_Intro.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Our_Skeleton_Main_Parts.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11868",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Our_Skeleton_Main_Parts.png",
+                  "title": "હાડપિંજરનાં મુખ્ય ભાગ",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Our_Skeleton_Main_Parts.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Skeletal_evolution.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11869",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Skeletal_evolution.png",
+                  "title": "ચિમ્પાન્ઝી, લૂસી અને મનુષ્યનું હાડપિંજર",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Skeletal_evolution.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Skull.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11870",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Skull.png",
+                  "title": "શું ચિમ્પાન્ઝીની ખોપડી આપણા જેવી છે?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Skull.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Joints.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11871",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Joints.png",
+                  "title": "સાંધાઓ સાથે જોડાયેલું હાડપિંજર",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Joints.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Vertebral_column.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11872",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Vertebral_column.png",
+                  "title": "મજબૂત પરંતુ લચીલી - આપણી કરોડરજ્જુ",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Vertebral_column.pdf"
                 }
               ],
               "description": "human body",
@@ -443,6 +578,51 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_story_of_galileo_part_2.png",
                   "title": "ગેલીલિયોની વાર્તા : ભાગ - 2",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_story_of_galileo_part_2.mp4"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part1.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11878",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Galilio_Part1.png",
+                  "title": "ગેલીલિયોની વાર્તા : ભાગ - ૧",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part1.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part1.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11879",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Galilio_Part1.png",
+                  "title": "ગેલીલિયોની વાર્તા : ભાગ - ૧",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part1.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part2.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11880",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Galilio_Part2.png",
+                  "title": "ગેલીલિયોની વાર્તા : ભાગ - ૨",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part2.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_solar_system.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11888",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_solar_system.png",
+                  "title": "સૂર્યમંડળ",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_solar_system.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_earth_from_space.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11889",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_earth_from_space.png",
+                  "title": "અંતરિક્ષ પરથી પૃથ્વી",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_earth_from_space.pdf"
                 }
               ],
               "description": "સૂર્ય અને પૃથ્વી",
@@ -472,6 +652,51 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_introduction_to_pendulum.png",
                   "title": "લોલકનો પરિચય",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_introduction_to_pendulum.mp4"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Race.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11873",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Race.png",
+                  "title": "દોડ",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Race.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Type_of_motion.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11874",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Type_of_motion.png",
+                  "title": "વિભિન્ન પ્રકારની ગતિઓ",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Type_of_motion.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_What_will_be_the_speed.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11875",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_What_will_be_the_speed.png",
+                  "title": "બોલો ભાઈ ન્યૂટન, ગતિ શું છે?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_What_will_be_the_speed.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_what_will_reach_ground_first.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11876",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_what_will_reach_ground_first.png",
+                  "title": "બોલો ભાઈ ગેલીલિયો, જમીન પર પહેલાં કોણ?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_what_will_reach_ground_first.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_what_will_reach_ground_first.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11877",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_what_will_reach_ground_first.png",
+                  "title": "બોલો ભાઈ ગેલીલિયો, જમીન પર પહેલાં કોણ?",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_what_will_reach_ground_first.pdf"
                 }
               ],
               "description": "ગતિ",
@@ -645,6 +870,51 @@
               "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_funicular_railway.png",
               "title": "શું એન્જીન વિના પણ ટ્રેન ચાલી શકે?",
               "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_funicular_railway.mp4"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Level_mechanical_advantage.pdf",
+              "kind": "PrathamPdfResource",
+              "source_id": "11883",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Level_mechanical_advantage.png",
+              "title": "ઉચ્ચાલન અને યાંત્રિક લાભ",
+              "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Level_mechanical_advantage.pdf"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Type_of_lever.pdf",
+              "kind": "PrathamPdfResource",
+              "source_id": "11884",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Type_of_lever.png",
+              "title": "ઉચ્ચાલનનાં પ્રકારો",
+              "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Type_of_lever.pdf"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Lever_mathematics.pdf",
+              "kind": "PrathamPdfResource",
+              "source_id": "11885",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Lever_mathematics.png",
+              "title": "ઉચ્ચાલનનું શક્તિશાળી ગણિત",
+              "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Lever_mathematics.pdf"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Inclined_plane.pdf",
+              "kind": "PrathamPdfResource",
+              "source_id": "11886",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Inclined_plane.png",
+              "title": "ઢાળ - એક સાદું યંત્ર",
+              "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Inclined_plane.pdf"
+            },
+            {
+              "children": [],
+              "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Pulley.pdf",
+              "kind": "PrathamPdfResource",
+              "source_id": "11887",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Pulley.png",
+              "title": "ગરગડી અને તેના ફાયદાઓ",
+              "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Pulley.pdf"
             }
           ],
           "description": "સાદું યંત્ર",
@@ -797,7 +1067,7 @@
                   "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/guj_air_has_weight_experiment.mp4",
                   "kind": "PrathamVideoResource",
                   "source_id": "10846",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_air_has_weight_experiment.png",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_air_has_weight.png",
                   "title": "શું હવાને પણ વજન હોય છે?",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_air_has_weight_experiment.mp4"
                 },
@@ -1516,6 +1786,8 @@
                 },
                 {
                   "children": [],
+                  "content-length": "16608802",
+                  "content-type": "video/mp4",
                   "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/guj_paper_flexagon.mp4",
                   "kind": "PrathamVideoResource",
                   "source_id": "10869",
@@ -1678,6 +1950,24 @@
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_story_of_galileo_part_2.png",
                   "title": "ગેલીલિયોની વાર્તા : ભાગ - 2",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_story_of_galileo_part_2.mp4"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part1.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11881",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Galilio_Part1.png",
+                  "title": "ગેલીલિયોની વાર્તા : ભાગ - ૧",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part1.pdf"
+                },
+                {
+                  "children": [],
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part2.pdf",
+                  "kind": "PrathamPdfResource",
+                  "source_id": "11882",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_Galilio_Part2.png",
+                  "title": "ગેલીલિયોની વાર્તા : ભાગ - ૨",
+                  "url": "http://www.prathamopenschool.org/CourseContent/PDF/guj_Galilio_Part2.pdf"
                 }
               ],
               "description": "",
@@ -1799,39 +2089,6 @@
       "children": [
         {
           "children": [],
-          "content-length": "45672350",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/guj_summer_drinks.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/10880",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_summer_drinks.png",
-          "title": "ઠંડી ગરમી",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_summer_drinks.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "19053586",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8423",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
-          "title": "કેવી રીતે ઉડવું?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "9532625",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8422",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
-          "title": "કેવી રીતે પીવું?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4"
-        },
-        {
-          "children": [],
           "content-length": "67017899",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/guj_inside_the_animal_mind.mp4",
@@ -1840,83 +2097,6 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_inside_the_animal_mind.png",
           "title": "ઈન્સાઈડ ધ ઍનિમલ માઈન્ડ",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_inside_the_animal_mind.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "97767145",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/guj_make_your_own_video.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/10878",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_make_your_own_video.png",
-          "title": "તમારી જાતે વિડીયો બનાવો",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_make_your_own_video.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "89583753",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/guj_lemon_puzzle.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/10877",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_lemon_puzzle.png",
-          "title": "લીંબુ ખાવું પડશે !!!",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_lemon_puzzle.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "231513640",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8428",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
-          "title": "ગરગડીનાં લાભ અને નુકસાન -1",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "44730943",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8425",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
-          "title": "ગીતા અને બબીતા",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "28501338",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8430",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
-          "title": "એરપ્લેન લેન્ડીંગ",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "184784617",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8429",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
-          "title": "ગરગડીનાં લાભ અને નુકસાન -2",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "48122271",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8426",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
-          "title": "દર્પણનો ખેલ",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
         },
         {
           "children": [],
@@ -1931,14 +2111,14 @@
         },
         {
           "children": [],
-          "content-length": "14035732",
+          "content-length": "24102786",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8431",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_wakeup.png",
-          "title": "The Wake Up dance",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4"
+          "source_id": "Gj/FunResource/8421",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
+          "title": "કેવી રીતે તરવું?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
         },
         {
           "children": [],
@@ -1953,14 +2133,124 @@
         },
         {
           "children": [],
-          "content-length": "24102786",
+          "content-length": "9532625",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "Gj/FunResource/8421",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
-          "title": "કેવી રીતે તરવું?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
+          "source_id": "Gj/FunResource/8422",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
+          "title": "કેવી રીતે પીવું?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "19053586",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/8423",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
+          "title": "કેવી રીતે ઉડવું?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "89583753",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/guj_lemon_puzzle.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/10877",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_lemon_puzzle.png",
+          "title": "લીંબુ ખાવું પડશે !!!",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_lemon_puzzle.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "45672350",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/guj_summer_drinks.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/10880",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_summer_drinks.png",
+          "title": "ઠંડી ગરમી",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_summer_drinks.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "28501338",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/8430",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
+          "title": "એરપ્લેન લેન્ડીંગ",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "48122271",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/8426",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
+          "title": "દર્પણનો ખેલ",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "44730943",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/8425",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
+          "title": "ગીતા અને બબીતા",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "97767145",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/guj_make_your_own_video.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/10878",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/guj_make_your_own_video.png",
+          "title": "તમારી જાતે વિડીયો બનાવો",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/guj_make_your_own_video.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "14035732",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/8431",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_wakeup.png",
+          "title": "The Wake Up dance",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "231513640",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/8428",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
+          "title": "ગરગડીનાં લાભ અને નુકસાન -1",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "184784617",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "Gj/FunResource/8429",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
+          "title": "ગરગડીનાં લાભ અને નુકસાન -2",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
         }
       ],
       "kind": "fun_page",

@@ -305,12 +305,8 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'ಆಟದ ನಗರಿ'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "CRS168",
-            'WatchAndDo': "CRS170",
+            'Music': 'Sangeet',
             'KhelPuri': "CRS169",
-            #
-            # Health and Sport for webscraping
-            'Health': 'CRS153',
         }
     },
     "ta": {
@@ -352,8 +348,7 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'ఆట - నగరం'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "CRS113",
-            'WatchAndDo': "CRS177",
+            'Music': 'Sangeet',
             'KhelPuri': "CRS176",
         }
     },
@@ -374,9 +369,8 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'ખેલ-પૂરી'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "CRS174",
-            'WatchAndDo': "CRS175",
             'KhelPuri': "CRS108",
+            'Music': 'Sangeet',
         }
     },
     "as": {

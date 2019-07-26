@@ -244,8 +244,7 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'শহরে খেলা'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "CRS107",
-            'WatchAndDo': "CRS186",
+            'Music': 'Sangeet',
             'KhelPuri': "CRS187",
         }
     },
@@ -369,8 +368,8 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'ખેલ-પૂરી'
         },
         'course_ids_by_subject_en': {
-            'KhelPuri': "CRS108",
             'Music': 'Sangeet',
+            'KhelPuri': "CRS108",
         }
     },
     "as": {

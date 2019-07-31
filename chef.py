@@ -758,16 +758,21 @@ def get_zip_file(zip_file_url, main_file):
         zip_filename = zip_file_url.split('/')[-1]         # e.g. Mathematics.zip
         zip_basename = zip_filename.rsplit('.', 1)[0]      # e.g. Mathematics/
 
-        # Oct 9: handle ednge cases where zip filename doesn't match folder name inside it
-        if 'Awazchitra_HI' in zip_basename:
-            zip_basename = zip_basename.replace('Awazchitra_HI', 'AwazChitra_HI')
+        # July 31: handle ednge cases where zip filename doesn't match folder name inside it
+        awazchitras = ['Awazchitra_HI', 'Awazchitra_TL', 'Awazchitra_KN',
+            'Awazchitra_BN', 'Awazchitra_OD', 'Awazchitra_PN', 'Awazchitra_TM']
+        for awazchitra in awazchitras:
+            if awazchitra in zip_basename:
+                zip_basename = zip_basename.replace('Awazchitra', 'AwazChitra')
         if '_KKS_Hi' in zip_basename:
             zip_basename = zip_basename.replace('_KKS_Hi', '_KKS_HI')
+
         # Mar 2: more edge cases where zip filename doesn't match folder name inside it
         if 'Memorygamekb' in zip_basename:
             zip_basename = zip_basename.replace('Memorygamekb', 'MemoryGamekb')
         if 'cityofstories' in zip_basename:
             zip_basename = zip_basename.replace('cityofstories', 'CityOfStories')
+
         # Jun 12: fix more edge cases where .zip filename doesn't match dir name
         if '_KKS_Gj' in zip_basename:
             zip_basename = zip_basename.replace('_KKS_Gj', '_KKS_GJ')

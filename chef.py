@@ -347,7 +347,7 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'ఆట - నగరం'
         },
         'course_ids_by_subject_en': {
-            'Music': 'Sangeet',
+            'Music': 'CRS252',
             'KhelPuri': "CRS176",
         }
     },

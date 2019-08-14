@@ -15,43 +15,45 @@ sources into a single channel:
 https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=342105160
 """
 
+from cachecontrol.heuristics import OneDayCache
 import copy
-import csv
-import hashlib
-from itertools import groupby
 import json
 import logging
-from operator import itemgetter
 import os
-import re
 import requests
 import shutil
-import tempfile
-import zipfile
-from urllib.parse import urlparse
 
-from bs4 import BeautifulSoup
 from le_utils.constants import content_kinds, file_types, licenses
 from le_utils.constants.languages import getlang
 from ricecooker.chefs import JsonTreeChef
 from ricecooker.classes.licenses import get_license
 from ricecooker.config import LOGGER
-from cachecontrol.heuristics import OneDayCache
 from ricecooker.utils.caching import (FileCache, CacheControlAdapter)
 from ricecooker.utils.jsontrees import write_tree_to_json_tree
-from ricecooker.utils.html import download_file
-from ricecooker.utils.zip import create_predictable_zip
+
+from structure import GAMENAME_KEY, TAKE_FROM_KEY
+from structure import TEMPLATE_FOR_LANG
+from structure import get_resources_for_age_group_and_subject
+from structure import load_pradigi_structure
+from transform import HTML5APP_ZIPS_LOCAL_DIR
+from transform import get_zip_file
+from transform import get_phet_zip_file
+from corrections import should_skip_file
+
+
 
 
 PRADIGI_DOMAIN = 'prathamopenschool.org'
+PRADIGI_SOURCE_ID__VARIANT_PRATHAM = 'pradigi-videos-and-games'  # Pratham internal 
+PRADIGI_SOURCE_ID__VARIANT_LE = 'pradigi-channel'                # Studio PUBLIC channel
 FULL_DOMAIN_URL = 'https://www.' + PRADIGI_DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
 PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
-PRADIGI_DESCRIPTION = 'PraDigi, developed by Pratham, consists of educational '   \
-    + 'games, videos, and ebooks on language learning, math, science, English, '  \
-    + 'health, and vocational training. The learning material, available for '    \
-    + 'children and youth, is offered in multiple languages: Punjabi, Assamese, ' \
-    + 'Bengali, Odiya, Telugu, Tamil, Kannada, Marathi, Gujarati, Hindi, and English.'
+PRADIGI_DESCRIPTION = 'Developed by Pratham, these educational games, videos, ' \
+    'and ebooks are designed to teach language learning, math, science, English, ' \
+    'health, and vocational training in Hindi, Marathi, Odia, Bengali, Urdu, ' \
+    'Punjabi, Kannada, Tamil, Telugu, Gujarati and Assamese. Materials are ' \
+    'designed for learners of all ages, including those outside the formal classroom setting.'
 
 
 # In debug mode, only one topic is downloaded.
@@ -84,8 +86,6 @@ PRADIGI_LANG_URL_MAP = {
 }
 # assert set(PRADIGI_WEBSITE_LANGUAGES) == set(PRADIGI_LANG_URL_MAP.keys()), 'need url for lang'
 
-GAME_THUMBS_LOCAL_DIR = 'chefdata/gamethumbnails'
-HTML5APP_ZIPS_LOCAL_DIR = 'chefdata/zipfiles'
 
 
 # LOCALIZATION AND TRANSLATION STRINGS
@@ -394,528 +394,16 @@ PRADIGI_STRINGS = {
     },
 }
 
-# lookup helper function, e.g. English --> en
-LANGUAGE_EN_TO_LANG = {}
-for lang, lang_data in PRADIGI_STRINGS.items():
-    language_en = lang_data['language_en']
-    LANGUAGE_EN_TO_LANG[language_en] = lang
+# # lookup helper function, e.g. English --> en
+# LANGUAGE_EN_TO_LANG = {}
+# for lang, lang_data in PRADIGI_STRINGS.items():
+#     language_en = lang_data['language_en']
+#     LANGUAGE_EN_TO_LANG[language_en] = lang
 
 
 
 
 
-
-
-# STRUCTURE = CSV EXPORT of the Google Sheet titled "Kolibri- Content structure"
-################################################################################
-GSHEETS_BASE = 'https://docs.google.com/spreadsheets/d/'
-PRADIGI_SHEET_ID = '1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg'
-PRADIGI_STRUCTURE_SHEET_GID = '342105160'
-PRADIGI_SHEET_CSV_URL = GSHEETS_BASE + PRADIGI_SHEET_ID + '/export?format=csv&gid=' + PRADIGI_STRUCTURE_SHEET_GID
-PRADIGI_SHEET_CSV_PATH = 'chefdata/pradigi_structure.csv'
-AGE_GROUP_KEY = 'Age Group'
-SUBJECT_KEY = 'Subject'
-RESOURCE_TYPE_KEY = 'Resource Type'
-GAMENAME_KEY = 'Game Name'
-TAKE_FROM_KEY = 'Take From Repo'
-USE_ONLY_IN_KEY = 'Use Only In'
-PRATHAM_COMMENTS_KEY = 'Pratham'
-LE_COMMENTS_KEY = 'LE Comments'
-PRADIGI_AGE_GROUPS = ['3-6 years', '6-10 years', '8-14 years', '14 and above']
-PRADIGI_SUBJECTS = [
-    'Mathematics',      #                             math games
-    'Language',         # Koibri-only folder just for langauge games
-    'English',
-    'Science',
-    #
-    'Health',
-    'Sports',
-    'Music',
-    'Theatre',
-    'Art Project',
-    #
-    'Fun',              # Contains website /Fun content + all games not in the other categories
-    'Story',
-    #
-    'Hospitality',
-    'Automobile',
-    'Beauty',
-    'Electric',
-    'Healthcare',
-    'Construction',
-    'Financial Literacy',
-    '14_To_18',
-    #
-    # Games pages
-    'KhelBadi',           # "खेल-बाड़ी"       3-6    # Game-box
-    'WatchAndDo',         # "देखो और करों     3-6,   # Watch and Do
-    'KhelPuri',           # "खेल-पुरी",       6-10   # Games Sport-puri
-    #
-    'LanguageAndCommunication',     # currently missing from website
-]
-PRADIGI_RESOURCE_TYPES = ['Game', 'Website Resources']
-# Note: can add 'Video Resources', 'Interactive Resoruces' and 'Book Resources'
-# as separate categories for more flexibility in the future
-PRADIGI_SHEET_CSV_FILEDNAMES = [
-    AGE_GROUP_KEY,
-    SUBJECT_KEY,
-    RESOURCE_TYPE_KEY,
-    GAMENAME_KEY,
-    TAKE_FROM_KEY,
-    USE_ONLY_IN_KEY,
-    PRATHAM_COMMENTS_KEY,
-    LE_COMMENTS_KEY,
-]
-
-# NEW: July 12 load data from separate sheet for English folder structure
-PRADIGI_ENGLISH_STRUCTURE_SHEET_GID = '1812185465'
-PRADIGI_ENGLISH_SHEET_CSV_URL = GSHEETS_BASE + PRADIGI_SHEET_ID + '/export?format=csv&gid=' + PRADIGI_ENGLISH_STRUCTURE_SHEET_GID
-PRADIGI_ENGLISH_SHEET_CSV_PATH = 'chefdata/pradigi_english_structure.csv'
-
-
-def download_structure_csv(which=None):
-    if which == 'English':
-        response = requests.get(PRADIGI_ENGLISH_SHEET_CSV_URL)
-        csv_data = response.content.decode('utf-8')
-        with open(PRADIGI_ENGLISH_SHEET_CSV_PATH, 'w') as csvfile:
-            csvfile.write(csv_data)
-            LOGGER.info('Succesfully saved ' + PRADIGI_ENGLISH_SHEET_CSV_PATH)
-        return PRADIGI_ENGLISH_SHEET_CSV_PATH
-    else:
-        response = requests.get(PRADIGI_SHEET_CSV_URL)
-        csv_data = response.content.decode('utf-8')
-        with open(PRADIGI_SHEET_CSV_PATH, 'w') as csvfile:
-            csvfile.write(csv_data)
-            LOGGER.info('Succesfully saved ' + PRADIGI_SHEET_CSV_PATH)
-        return PRADIGI_SHEET_CSV_PATH
-
-def _clean_dict(row):
-    """
-    Transform empty strings values of dict `row` to None.
-    """
-    row_cleaned = {}
-    for key, val in row.items():
-        if val is None or val == '':
-            row_cleaned[key] = None
-        else:
-            row_cleaned[key] = val.strip()
-    return row_cleaned
-
-def load_pradigi_structure(which=None):
-    csv_path = download_structure_csv(which=which)
-    struct_list = []
-    with open(csv_path, 'r') as csvfile:
-        reader = csv.DictReader(csvfile, fieldnames=PRADIGI_SHEET_CSV_FILEDNAMES)
-        next(reader)  # Skip Headers row
-        next(reader)  # Skip info line
-        for row in reader:
-            clean_row = _clean_dict(row)
-            if clean_row[SUBJECT_KEY] is None:
-                continue  # skip blank lines (identified by missing subject col)
-            if clean_row[AGE_GROUP_KEY] in PRADIGI_AGE_GROUPS and clean_row[SUBJECT_KEY] in PRADIGI_SUBJECTS:
-                resource_type = clean_row[RESOURCE_TYPE_KEY]
-                if resource_type == 'Game' and clean_row[GAMENAME_KEY]:
-                    # make sure Game Name is present when specifying a game
-                    struct_list.append(clean_row)
-                elif resource_type == 'Website Resources':
-                    struct_list.append(clean_row)
-                else:
-                    LOGGER.warning('Problem with structure row {}'.format(str(clean_row)))
-            else:
-                LOGGER.warning('Unrecognized structure row {}'.format(str(clean_row)))
-    return struct_list
-
-
-PRADIGI_STRUCT_LIST = load_pradigi_structure()
-PRADIGI_ENGLISH_STRUCT_LIST = load_pradigi_structure(which='English')
-
-
-
-
-
-def get_tree_for_lang_from_structure():
-    """
-    Build the template structure for language-subtree based on structure in CSV.
-    """
-    lang_tree = dict(
-        kind=content_kinds.TOPIC,
-        children=[],
-    )
-    struct_list = PRADIGI_STRUCT_LIST + PRADIGI_ENGLISH_STRUCT_LIST
-    struct_list = sorted(struct_list, key=itemgetter(AGE_GROUP_KEY, SUBJECT_KEY))
-    age_groups_dict = dict((k, list(g)) for k, g in groupby(struct_list, key=itemgetter(AGE_GROUP_KEY)))
-    for age_group_title in PRADIGI_AGE_GROUPS:
-        age_groups_subtree = dict(
-            title=age_group_title,
-            kind=content_kinds.TOPIC,
-            children=[],
-        )
-        lang_tree['children'].append(age_groups_subtree)
-        items_in_age_group = list(age_groups_dict[age_group_title])
-        items_in_age_group = sorted(items_in_age_group, key=itemgetter(SUBJECT_KEY))
-        subjects_dict = dict((k, list(g)) for k, g in groupby(items_in_age_group, key=itemgetter(SUBJECT_KEY)))
-        for subject_en in PRADIGI_SUBJECTS:
-            if subject_en in subjects_dict:
-                subject_subtree = dict(
-                    title=subject_en,
-                    kind=content_kinds.TOPIC,
-                    children=[],
-                )
-                age_groups_subtree['children'].append(subject_subtree)
-    # print('lang_tree=', lang_tree, flush=True)
-    return lang_tree
-
-TEMPLATE_FOR_LANG = get_tree_for_lang_from_structure()
-
-
-
-def get_resources_for_age_group_and_subject(age_group, subject_en, language_en):
-    """
-    Select the rows from the structure CSV with matching age_group and subject_en.
-    Returns a dictionary:
-    { 
-        'website': [subject_en, ...],  # Include all from /subject_en on website
-        'games': [{game struct row}, {anothe game row}, ...]   # Include localized verison of games in this list
-    }
-    """
-    # print('in get_resources_for_age_group_and_subject with', age_group, subject_en, flush=True)
-    if language_en == 'English':
-        struct_list = PRADIGI_ENGLISH_STRUCT_LIST
-    else:
-        struct_list = PRADIGI_STRUCT_LIST
-    website = []
-    games = []
-    for row in struct_list:
-        if row[AGE_GROUP_KEY] == age_group and row[SUBJECT_KEY] == subject_en:
-            if row[USE_ONLY_IN_KEY] and not row[USE_ONLY_IN_KEY] == language_en:
-                # skip row if USE_ONLY set and different from current language
-                continue
-            if row[RESOURCE_TYPE_KEY] == 'Game':
-                games.append(row)
-            elif row[RESOURCE_TYPE_KEY] == 'Website Resources':
-                website.append(subject_en)
-            else:
-                print('Unknown resource type', row[RESOURCE_TYPE_KEY], 'in row', row)
-    # print('games=', games, flush=True)
-    return {'website':website, 'games':games}
-
-
-
-
-# CORRECTIONS = Excel sheet to edit or specify correction tasks
-################################################################################
-
-PRADIGI_CORRECTIONS_SHEET_GID = '93933238'
-PRADIGI_CORRECTIONS_CSV_URL = GSHEETS_BASE + PRADIGI_SHEET_ID + '/export?format=csv&gid=' + PRADIGI_CORRECTIONS_SHEET_GID
-PRADIGI_CORRECTIONS_CSV_PATH = 'chefdata/pradigi_corrections.csv'
-CORRECTIONS_ID_KEY = 'Correction ID'
-CORRECTIONS_BUG_TYPE_KEY = 'Bug Type'
-CORRECTIONS_GAME_NAME_KEY = 'Game Name'
-CORRECTIONS_SOURCE_URL_PAT_KEY = 'Source URL (Regular Expression)'
-CORRECTIONS_ACTION_KEY = 'Action'
-CORRECTIONS_COMMENT_KEY = 'Comment'
-PRADIGI_CORRECTIONS_CSV_FILEDNAMES = [
-    CORRECTIONS_ID_KEY,
-    CORRECTIONS_BUG_TYPE_KEY,
-    CORRECTIONS_GAME_NAME_KEY,
-    CORRECTIONS_SOURCE_URL_PAT_KEY,
-    CORRECTIONS_ACTION_KEY,
-    CORRECTIONS_COMMENT_KEY,
-]
-SKIP_GAME_ACTION = 'SKIP GAME'
-ADD_MARGIN_TOP_ACTION = 'ADD MARGIN-TOP'
-# Third possible action 'REPLACE WITH:{URL}' handled manually in code
-PRADIGI_CORRECTIONS_ACTIONS = [SKIP_GAME_ACTION, ADD_MARGIN_TOP_ACTION]
-
-
-
-def download_corrections_csv():
-    response = requests.get(PRADIGI_CORRECTIONS_CSV_URL)
-    csv_data = response.content.decode('utf-8')
-    with open(PRADIGI_CORRECTIONS_CSV_PATH, 'w') as csvfile:
-        csvfile.write(csv_data)
-        LOGGER.info('Succesfully saved ' + PRADIGI_CORRECTIONS_CSV_PATH)
-
-def load_pradigi_corrections():
-    download_corrections_csv()
-    struct_list = []
-    with open(PRADIGI_CORRECTIONS_CSV_PATH, 'r') as csvfile:
-        reader = csv.DictReader(csvfile, fieldnames=PRADIGI_CORRECTIONS_CSV_FILEDNAMES)
-        next(reader)  # Skip Headers row
-        next(reader)  # Skip info line
-        for row in reader:
-            clean_row = _clean_dict(row)
-            if clean_row[CORRECTIONS_ACTION_KEY] is None:
-                continue  # skip blank lines (identified by missing action col)
-            action = clean_row[CORRECTIONS_ACTION_KEY]
-            if action in PRADIGI_CORRECTIONS_ACTIONS or action.startswith('REPLACE WITH:'):
-                try:
-                    pat_str = clean_row[CORRECTIONS_SOURCE_URL_PAT_KEY]
-                    pat = re.compile(pat_str)
-                    clean_row[CORRECTIONS_SOURCE_URL_PAT_KEY] = pat
-                    struct_list.append(clean_row)
-                except re.error as e:
-                    print('RE error {} when parsing pat {}'.format(e, pat_str))
-            elif action == 'FIXED':
-                pass  # nothing to do for fixed games...
-            else:
-                print('Unrecognized corrections row', clean_row)
-    return struct_list
-
-PRADIGI_CORRECTIONS_LIST = load_pradigi_corrections()
-
-
-def should_skip_file(url):
-    """
-    Checks `url` against list of SKIP GAME corrections.
-    Returns True if `url` should be skipped, False otherwise
-    """
-    should_skip = False
-    for row in PRADIGI_CORRECTIONS_LIST:
-        if row[CORRECTIONS_ACTION_KEY] == SKIP_GAME_ACTION:
-            pat = row[CORRECTIONS_SOURCE_URL_PAT_KEY]
-            m = pat.match(url)
-            if m:
-                should_skip = True
-    return should_skip
-
-
-def should_replace_with(url):
-    """
-    Checks `url` against list of REPLACE WITH: corrections and returns the
-    replaceement url if match found. Used to replace zips with manual fixes.
-    """
-    for row in PRADIGI_CORRECTIONS_LIST:
-        action = row[CORRECTIONS_ACTION_KEY]
-        if action.startswith('REPLACE WITH:'):
-            pat = row[CORRECTIONS_SOURCE_URL_PAT_KEY]
-            m = pat.match(url)
-            if m:
-                replacement_url = action.replace('REPLACE WITH:', '')
-                return replacement_url.strip()
-    return None
-
-
-# ZIP FILE DOWNLOADING, TRANFORMS, AND FIXUPS
-################################################################################
-
-def make_request(url):
-    response = session.get(url)
-    if response.status_code != 200:
-        LOGGER.error("ERROR when GETting: %s" % (url))
-    return response
-
-def make_temporary_dir_from_key(key_str):
-    """
-    Creates a subdirectory of HTML5APP_ZIPS_LOCAL_DIR to store
-    the downloded, unzipped, and final version of each HTML5Zip file.
-    """
-    key_bytes = key_str.encode('utf-8')
-    m = hashlib.md5()
-    m.update(key_bytes)
-    subdir = m.hexdigest()
-    dest = os.path.join(HTML5APP_ZIPS_LOCAL_DIR, subdir)
-    if not os.path.exists(dest):
-        os.mkdir(dest)
-    return dest
-
-def add_body_margin_top(zip_folder, filename, margin='44px'):
-    file_path = os.path.join(zip_folder, filename)
-    with open(file_path, 'r') as inf:
-        html = inf.read()
-    page = BeautifulSoup(html, "html.parser")  # Load index.html as BS4
-    body = page.find('body')
-    if body.has_attr('style'):
-        prev_style_str = body['style']
-    else:
-        prev_style_str = ''
-    body['style'] = prev_style_str + " margin-top:" + margin + ";"
-    with open(file_path, 'w') as outf:
-        outf.write(str(page))
-
-
-def get_zip_file(zip_file_url, main_file):
-    """
-    HTML games are provided as zip files, the entry point of the game is `main_file`.
-    THe `main_file` needs to be renamed to index.html to make it compatible with Kolibri.
-    """
-    key = zip_file_url + main_file
-    destpath = make_temporary_dir_from_key(key)
-    
-    # Check for "REPLACE WITH:" correction rule for the current `zip_file_url`
-    replacement_url = should_replace_with(zip_file_url)
-    if replacement_url:
-        zip_file_url = replacement_url
-
-    # return cached version if already there
-    final_webroot_path = os.path.join(destpath, 'webroot.zip')
-    if os.path.exists(final_webroot_path):
-        return final_webroot_path
-
-    try:
-        download_file(zip_file_url, destpath, request_fn=make_request)
-
-        zip_filename = zip_file_url.split('/')[-1]         # e.g. Mathematics.zip
-        zip_basename = zip_filename.rsplit('.', 1)[0]      # e.g. Mathematics/
-
-        # July 31: handle ednge cases where zip filename doesn't match folder name inside it
-        awazchitras = ['Awazchitra_HI', 'Awazchitra_TL', 'Awazchitra_KN',
-            'Awazchitra_BN', 'Awazchitra_OD', 'Awazchitra_PN', 'Awazchitra_TM']
-        for awazchitra in awazchitras:
-            if awazchitra in zip_basename:
-                zip_basename = zip_basename.replace('Awazchitra', 'AwazChitra')
-        if '_KKS_Hi' in zip_basename:
-            zip_basename = zip_basename.replace('_KKS_Hi', '_KKS_HI')
-
-        # Mar 2: more edge cases where zip filename doesn't match folder name inside it
-        if 'Memorygamekb' in zip_basename:
-            zip_basename = zip_basename.replace('Memorygamekb', 'MemoryGamekb')
-        if 'cityofstories' in zip_basename:
-            zip_basename = zip_basename.replace('cityofstories', 'CityOfStories')
-
-        # Jun 12: fix more edge cases where .zip filename doesn't match dir name
-        if '_KKS_Gj' in zip_basename:
-            zip_basename = zip_basename.replace('_KKS_Gj', '_KKS_GJ')
-        if 'ShabdKhel' in zip_basename:
-            zip_basename = zip_basename.replace('ShabdKhel', 'Shabdkhel')
-
-        zip_folder = os.path.join(destpath, zip_basename)  # e.g. destpath/Mathematics/
-        main_file = main_file.split('/')[-1]               # e.g. activity_name.html or index.html
-
-        if 'KhelbadiKahaniyan_MR' in zip_basename:
-            # Inconsistency --- `main_file` contains dir name, and not index.html
-            main_file = 'index.html'
-
-        # Jul 8th: handle weird case-insensitive webserver main_file
-        if main_file == 'mainexpand.html':
-            main_file = 'mainExpand.html'  # <-- this is the actual filename in the zip
-
-        # Zip files from Pratham website have the web content inside subfolder
-        # of the same as the zip filename. We need to recreate these zip files
-        # to make sure the index.html is in the root of the zip.
-        local_zip_file = os.path.join(destpath, zip_filename)
-        with zipfile.ZipFile(local_zip_file) as zf:
-            # If main_file is in the root (like zips from the game repository)
-            # then we need to extract the zip contents to subfolder zip_basename/
-            for zfileinfo in zf.filelist:
-                if zfileinfo.filename == main_file:
-                    destpath = os.path.join(destpath, zip_basename)
-            # Extract zip so main file will be in destpath/zip_basename/index.html
-            zf.extractall(destpath)
-
-        # In some cases, the files are under the www directory,
-        # let's move them up one level.
-        www_dir = os.path.join(zip_folder, 'www')
-        if os.path.isdir(www_dir):
-            files = os.listdir(www_dir)
-            for f in files:
-                shutil.move(os.path.join(www_dir, f), zip_folder)
-
-        # Rename `main_file` to index.html
-        src = os.path.join(zip_folder, main_file)
-        dest = os.path.join(zip_folder, 'index.html')
-        os.rename(src, dest)
-
-        # Logic to add margin-top:44px; for games that match Corrections tab
-        add_margin_top = False
-        for row in PRADIGI_CORRECTIONS_LIST:
-            if row[CORRECTIONS_ACTION_KEY] == ADD_MARGIN_TOP_ACTION:
-                pat = row[CORRECTIONS_SOURCE_URL_PAT_KEY]
-                m = pat.match(zip_file_url)
-                if m:
-                    add_margin_top = True
-        if add_margin_top:
-            if zip_file_url.endswith('CourseContent/Games/Mathematics.zip'):
-                LOGGER.info("adding body.margin-top:44px; to ALL .html files in: %s" % zip_file_url)
-                for root, dirs, files in os.walk(zip_folder):
-                    for file in files:
-                        if file.endswith(".html"):
-                            add_body_margin_top(root, file)
-            else:
-                LOGGER.info("adding body.margin-top:44px; to index.html in: %s" % zip_file_url)
-                add_body_margin_top(zip_folder, 'index.html')
-
-        # Replace occurences of `main_file` with index.html to avoid broken links
-        for root, dirs, files in os.walk(zip_folder):
-            for file in files:
-                if file.endswith(".html") or file.endswith(".js"):
-                    file_path = os.path.join(root, file)
-                    # use bytes to avoid Unicode errors "invalid start/continuation byte"
-                    bytes_in = open(file_path, 'rb').read()
-                    bytes_out = bytes_in.replace(main_file.encode('utf-8'), b'index.html')
-                    open(file_path, 'wb').write(bytes_out)
-
-        # create the zip file and copy it to 
-        tmp_predictable_zip_path = create_predictable_zip(zip_folder)
-        shutil.copyfile(tmp_predictable_zip_path, final_webroot_path)
-        return final_webroot_path
-
-    except Exception as e:
-        LOGGER.error("get_zip_file: %s, %s, %s, %s" %
-                     (zip_file_url, main_file, destpath, e))
-        return None
-
-
-PHET_INDEX_HTML_TEMPLATE = """
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-</head>
-<body>
-  <div><p>Redirecting to phet simulation {sim_id} now...</p></div>
-</body>
-<script type="text/javascript">
-    window.location.href = "phetindex.html?id={sim_id}";
-</script>
-</html>
-"""
-
-
-def get_phet_zip_file(zip_file_url, main_file_and_query):
-    """
-    Phet simulations are provided in the zip file `phet.zip`, and the entry point
-    is passed as a GET parameter in `main_file_and_query`. To make these compatible
-    with Kolibri's default behaviour of loading index.html, we will:
-      - Rename index.html to phetindex.thml
-      - Add a custom index.html that uses javascrpt redirect to phetindex.thml?{sim_id}
-    """
-    u = urlparse(main_file_and_query)
-    idk, sim_id = u.query.split('=')
-    assert idk == 'id', 'unknown query sting format found' + main_file_and_query
-    main_file = u.scheme + '://' + u.netloc + u.path  # skip querystring
-    
-    destpath = tempfile.mkdtemp()
-    LOGGER.info('saving phet zip file in dir ' + destpath)
-    try:
-        download_file(zip_file_url, destpath, request_fn=make_request)
-
-        zip_filename = zip_file_url.split('/')[-1]
-        zip_basename = zip_filename.rsplit('.', 1)[0]
-        zip_folder = os.path.join(destpath, zip_basename)
-
-        # Extract zip file contents.
-        local_zip_file = os.path.join(destpath, zip_filename)
-        with zipfile.ZipFile(local_zip_file) as zf:
-            zf.extractall(destpath)
-
-        # Rename main_file to phetindex.html
-        main_file = main_file.split('/')[-1]
-        src = os.path.join(zip_folder, main_file)
-        dest = os.path.join(zip_folder, 'phetindex.html')
-        os.rename(src, dest)
-
-        # Create the 
-        index_html = PHET_INDEX_HTML_TEMPLATE.format(sim_id=sim_id)
-        with open(os.path.join(zip_folder, 'index.html'), 'w') as indexf:
-            indexf.write(index_html)
-        
-        # Always be zipping!
-        return create_predictable_zip(zip_folder)
-
-    except Exception as e:
-        LOGGER.error("get_phet_zip_file: %s, %s, %s, %s" %
-                     (zip_file_url, main_file_and_query, destpath, e))
-        return None
 
 
 
@@ -1175,12 +663,8 @@ def website_game_webresouce_to_ricecooker_node(lang, web_resource):
 
 
 
-
-
-
 # OCT updates helpers
 ################################################################################
-
 
 def get_all_game_names():
     """
@@ -1257,6 +741,10 @@ def extract_website_games_from_tree(lang):
                 recursive_extract_website_games(child)
     recursive_extract_website_games(web_resource_tree)
     return website_games
+
+
+
+
 
 
 
@@ -1405,6 +893,7 @@ class PraDigiChef(JsonTreeChef):
         """
         LOGGER.info('in pre_run...')
 
+        # delete .zip files in temporary dir when running using update
         if args['update']:
             LOGGER.info('Deleting all zips in cache dir {}'.format(HTML5APP_ZIPS_LOCAL_DIR))
             for rel_path in os.listdir(HTML5APP_ZIPS_LOCAL_DIR):
@@ -1412,16 +901,27 @@ class PraDigiChef(JsonTreeChef):
                 if os.path.isdir(abs_path):
                     shutil.rmtree(abs_path)
 
+        # option to skip crawling stage
         if 'nocrawl' not in options:
             self.crawl(args, options)
+
+        # Conditionally determine `source_id` depending on variant specified
+        if 'variant' in options and options['variant'].upper() == 'LE':
+            # Official PraDigi channel = 
+            channel_source_id = PRADIGI_SOURCE_ID__VARIANT_LE
+            DEBUG_MODE = False
+        else:
+            # Pratham ETL (used to import content from website into Pratham app)
+            # channel_id = f9da12749d995fa197f8b4c0192e7b2c
+            channel_source_id = PRADIGI_SOURCE_ID__VARIANT_PRATHAM
 
         ricecooker_json_tree = dict(
             title='PraDigi',
             source_domain=PRADIGI_DOMAIN,
-            source_id='pradigi-videos-and-games',
+            source_id=channel_source_id,
             description=PRADIGI_DESCRIPTION,
             thumbnail='chefdata/prathamlogo_b01-v1.jpg',
-            language='mul',   # Using mul as top-level language because mixed content
+            language='mul',
             children=[],
         )
         for lang in PRADIGI_WEBSITE_LANGUAGES:
@@ -1448,4 +948,3 @@ class PraDigiChef(JsonTreeChef):
 if __name__ == '__main__':
     pradigi_chef = PraDigiChef()
     pradigi_chef.main()
-

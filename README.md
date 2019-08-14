@@ -53,7 +53,7 @@ To run the chef script, follow these steps:
 ### 4. Run the chef script:
 
     export STUDIO_URL="https://develop.studio.learningequality.org"
-    ./chef.py -v --reset --thumbnails --token=<your_token> --stage 
+    ./chef.py -v --reset --thumbnails --token=<your_token> --stage
 
 
 This commands takes 19+ hours the first time it runs and performs the following:
@@ -93,22 +93,35 @@ IMPORTANT: We recommend that you run `rm -rf .webcache` and `rm -rf cache.sqlite
 manually every time the website changes.
 
 
-### Remote server
 
-Run the chef in the background using (useful when running on a remote server via ssh):
+LE variant of the channel
+-------------------------
+There are two variants of the PraDigi channel, the `LE` variant is the "official"
+version that is PUBLIC channel on Studio that all Kolibri users can see and import.
+The `PRATHAM` variant is almost identical, but includes extra "debug info" in the
+descriptions of each content node. The PRATHAM variant is maintained by Pratham.
 
-    nohup ./chef.py -v --reset --thumbnails --token=<your_token> --stage &
+To run the Learning Equality (LE) variant use the following command:
+
+    ./chef.py -v --reset --thumbnails --token=<your_token> --stage  variant=LE
+
+Note the extra command line option `varian=LE` passed in to select the LE variant.
+
+
+### Running on vader
+
+To run the chef in the background using (useful when running on a remote server via ssh):
+
+    ssh chef@vader
+        cd sushi-chef-pradigi
+            rm -rf .webcache
+            soure venv/bin/activate
+            nohup ./chef.py -v --reset --thumbnails --token=<your_token> --stage variant=LE &
 
 The output of the script will be saved to the local file `nohup.out`, which you
 can "follow" by using `tail -f nohup.out` to monitor the chef run.
 
 
-
-
-Future Updates
---------------
-  - Revisit when games with Android API fixed
-  - Optional: load string translations for all languages from shared spreadsheet
 
 
 

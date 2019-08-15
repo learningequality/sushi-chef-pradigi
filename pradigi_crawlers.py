@@ -480,7 +480,7 @@ class PraDigiCrawler(BasicCrawler):
 
                 LOGGER.debug('      Fun content: %s: %s at %s' % (source_id, title, respath_url))
 
-                if respath_path.endswith('mp4') or respath_path.endswith('MP4') or respath_path..endswith('m4v'):
+                if respath_path.endswith('mp4') or respath_path.endswith('MP4') or respath_path.endswith('m4v'):
                     video = dict(
                         url=respath_url,
                         kind='PrathamVideoResource',

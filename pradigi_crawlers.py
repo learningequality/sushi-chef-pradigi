@@ -336,7 +336,7 @@ class PraDigiCrawler(BasicCrawler):
                 if len(main_file) < 10:
                     print('something strage --- short main file url with   title - main_file - master_file ', title, '-', main_file, '-', master_file)
 
-                if main_file.endswith('mp4') or main_file.endswith('MP4'):
+                if main_file.endswith('mp4') or main_file.endswith('MP4') or main_file.endswith('m4v'):
                     video = dict(
                         url=main_file,
                         kind='PrathamVideoResource',
@@ -480,7 +480,7 @@ class PraDigiCrawler(BasicCrawler):
 
                 LOGGER.debug('      Fun content: %s: %s at %s' % (source_id, title, respath_url))
 
-                if respath_path.endswith('mp4') or respath_path.endswith('MP4'):
+                if respath_path.endswith('mp4') or respath_path.endswith('MP4') or respath_path..endswith('m4v'):
                     video = dict(
                         url=respath_url,
                         kind='PrathamVideoResource',

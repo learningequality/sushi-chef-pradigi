@@ -908,15 +908,17 @@ class PraDigiChef(JsonTreeChef):
         # Conditionally determine `source_id` depending on variant specified
         if 'variant' in options and options['variant'].upper() == 'LE':
             # Official PraDigi channel = 
+            channel_name = 'PraDigi'
             channel_source_id = PRADIGI_SOURCE_ID__VARIANT_LE
             DEBUG_MODE = False
         else:
             # Pratham ETL (used to import content from website into Pratham app)
             # channel_id = f9da12749d995fa197f8b4c0192e7b2c
+            channel_name = 'PraDigi Pratham'
             channel_source_id = PRADIGI_SOURCE_ID__VARIANT_PRATHAM
 
         ricecooker_json_tree = dict(
-            title='PraDigi',
+            title=channel_name,
             source_domain=PRADIGI_DOMAIN,
             source_id=channel_source_id,
             description=PRADIGI_DESCRIPTION,

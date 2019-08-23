@@ -204,6 +204,7 @@ PRADIGI_STRINGS = {
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS157",
             'Financial Literacy': 'CRS228',
+            'Music': 'Sangeet',
         },
     },
     "or": {
@@ -390,6 +391,7 @@ PRADIGI_STRINGS = {
             'KhelBadi': "CRS199",
             'WatchAndDo': "CRS200",
             'KhelPuri': "CRS106",
+            'Music': 'Sangeet',
         }
     },
 }

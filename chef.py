@@ -195,7 +195,7 @@ PRADIGI_STRINGS = {
             "Electric": "Electric",
             "Beauty": "Beauty",
             "Healthcare": "Healthcare",
-            "Music": "Sangeet",
+            "Music": "Music",
             "Fun": "Fun",
             "Story": "Story",
             "Financial Literacy": "Financial Literacy",
@@ -205,6 +205,7 @@ PRADIGI_STRINGS = {
             'KhelBadi': "CRS157",
             'Financial Literacy': 'CRS228',
             'Music': 'Sangeet',
+            'Health': 'CRS205',
         },
     },
     "or": {

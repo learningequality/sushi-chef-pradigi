@@ -48,7 +48,7 @@ PRADIGI_SOURCE_ID__VARIANT_PRATHAM = 'pradigi-videos-and-games'  # Pratham inter
 PRADIGI_SOURCE_ID__VARIANT_LE = 'pradigi-channel'                # Studio PUBLIC channel
 FULL_DOMAIN_URL = 'https://www.' + PRADIGI_DOMAIN
 PRADIGI_LICENSE = get_license(licenses.CC_BY_NC_SA, copyright_holder='PraDigi').as_dict()
-PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te']
+PRADIGI_WEBSITE_LANGUAGES = ['hi', 'mr', 'en', 'gu', 'kn', 'bn', 'ur', 'or', 'pnb', 'ta', 'te', 'as']
 PRADIGI_DESCRIPTION = 'Developed by Pratham, these educational games, videos, ' \
     'and ebooks are designed to teach language learning, math, science, English, ' \
     'health, and vocational training in Hindi, Marathi, Odia, Bengali, Urdu, ' \
@@ -83,6 +83,7 @@ PRADIGI_LANG_URL_MAP = {
     'pnb': 'https://www.prathamopenschool.org/pn/',
     'ta': 'https://www.prathamopenschool.org/Tm/',
     'te': 'https://www.prathamopenschool.org/Tl/',
+    'as': 'https://www.prathamopenschool.org/as/'
 }
 # assert set(PRADIGI_WEBSITE_LANGUAGES) == set(PRADIGI_LANG_URL_MAP.keys()), 'need url for lang'
 
@@ -224,8 +225,6 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'ଖେଳର ମହଲ'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "CRS110",
-            'WatchAndDo': "CRS188",
             'KhelPuri': "CRS189",
         }
     },
@@ -285,8 +284,6 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'ਖੇਲ-ਪੁਰ'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "CRS111",
-            'WatchAndDo': "CRS192",
             'KhelPuri': "CRS194",
         }
     },
@@ -327,8 +324,6 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'விளையாட்டுத் திடல்'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "CRS195",
-            'WatchAndDo': "CRS196",
             'KhelPuri': "CRS112",
         }
     },
@@ -349,7 +344,7 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'ఆట - నగరం'
         },
         'course_ids_by_subject_en': {
-            'Music': 'CRS252',
+            'Music': 'Sangeet',
             'KhelPuri': "CRS176",
         }
     },
@@ -389,8 +384,6 @@ PRADIGI_STRINGS = {
             'KhelPuri': 'খেল- ধেমালী'
         },
         'course_ids_by_subject_en': {
-            'KhelBadi': "CRS199",
-            'WatchAndDo': "CRS200",
             'KhelPuri': "CRS106",
             'Music': 'Sangeet',
         }

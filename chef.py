@@ -35,6 +35,7 @@ from structure import GAMENAME_KEY, TAKE_FROM_KEY
 from structure import TEMPLATE_FOR_LANG
 from structure import get_resources_for_age_group_and_subject
 from structure import load_pradigi_structure
+from structure import LANGS_WITH_NEW_VOCATIONAL_STRUCTURE, VOCATIONAL_SUBJECTS
 from transform import HTML5APP_ZIPS_LOCAL_DIR
 from transform import get_zip_file
 from transform import get_phet_zip_file
@@ -813,6 +814,14 @@ class PraDigiChef(JsonTreeChef):
                 # A. Load website resources
                 if lang in PRADIGI_WEBSITE_LANGUAGES:
                     for desired_subject_en in resources['website']:
+
+                        # Aug 27: custom logic to skip top-level vocational subjects
+                        #         since they are now subtopics under Vocational
+                        if lang in LANGS_WITH_NEW_VOCATIONAL_STRUCTURE:
+                            if desired_subject_en in VOCATIONAL_SUBJECTS:
+                                print('Skipping vocational subject', desired_subject_en, 'in', lang)
+                                continue
+
                         # manual course_id rename for courses where subject_en not the same as cateogy_id
                         lookup_table = PRADIGI_STRINGS[lang]['course_ids_by_subject_en']
                         if desired_subject_en in lookup_table:

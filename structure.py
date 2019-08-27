@@ -12,6 +12,22 @@ from le_utils.constants import content_kinds
 
 LOGGER.setLevel(logging.DEBUG)
 
+# NEW VOCATIONAL STRUCTURE
+################################################################################
+
+LANGS_WITH_NEW_VOCATIONAL_STRUCTURE = ['mr']
+VOCATIONAL_SUBJECTS = [
+    'Hospitality',
+    'Automobile',
+    'Beauty',
+    'Electric',
+    'Healthcare',
+    'Construction',
+    'Financial Literacy',
+    '14_To_18',
+]
+
+
 
 # STRUCTURE = CSV EXPORT of the Google Sheet titled "Kolibri- Content structure"
 ################################################################################
@@ -44,6 +60,7 @@ PRADIGI_SUBJECTS = [
     'Fun',              # Contains website /Fun content + all games not in the other categories
     'Story',
     #
+    'Vocational',  # new top-level menu that includes all others in MR only
     'Hospitality',
     'Automobile',
     'Beauty',

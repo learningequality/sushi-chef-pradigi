@@ -1,10 +1,11 @@
 PraDigi Sushi Chef
 ==================
-Import content from prathamopenschool.org and the Pratham gamerepo into Studio.
+Scripts to import content from prathamopenschool.org website into Kolibri Studio.
+
 
 Design
 ------
-The following google spreadhseet are used to determine placement of content nodes within the channel:
+The following google spreadsheet are used to determine placement of content within the channel:
   - English https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=1812185465
   - All other languages https://docs.google.com/spreadsheets/d/1kPOnTVZ5vwq038x1aQNlA2AFtliLIcc2Xk5Kxr852mg/edit#gid=342105160
 
@@ -53,7 +54,7 @@ To run the chef script, follow these steps:
 ### 4. Run the chef script:
 
     export STUDIO_URL="https://develop.studio.learningequality.org"
-    ./chef.py -v --reset --thumbnails --token=<your_token> --stage
+    ./sushichef.py -v --reset --thumbnails --token=<your_token> --stage
 
 
 This commands takes 19+ hours the first time it runs and performs the following:
@@ -85,7 +86,7 @@ but doing the following steps:
 Note this will take 15+ hours again since we have to redo all the download and 
 conversion steps.
 
-The `chef.py` optional argument `--update` will force re-downloading all files
+The `sushichef.py` optional argument `--update` will force re-downloading all files
 and clear the local cache directory of zip files (`chefdata/zipfiles`) but will
 not clear web caches, which needs to be done manually.
 
@@ -103,7 +104,7 @@ descriptions of each content node. The PRATHAM variant is maintained by Pratham.
 
 To run the Learning Equality (LE) variant use the following command:
 
-    ./chef.py -v --reset --thumbnails --token=<your_token> --stage  variant=LE
+    ./sushichef.py -v --reset --thumbnails --token=<your_token> --stage  variant=LE
 
 Note the extra command line option `varian=LE` passed in to select the LE variant.
 
@@ -115,13 +116,11 @@ To run the chef in the background using (useful when running on a remote server 
     ssh chef@vader
         cd sushi-chef-pradigi
             rm -rf .webcache
-            soure venv/bin/activate
-            nohup ./chef.py -v --reset --thumbnails --token=<your_token> --stage variant=LE &
+            source venv/bin/activate
+            nohup ./sushichef.py -v --reset --thumbnails --token=<your_token> --stage variant=LE &
 
 The output of the script will be saved to the local file `nohup.out`, which you
 can "follow" by using `tail -f nohup.out` to monitor the chef run.
-
-
 
 
 
@@ -132,28 +131,21 @@ is repeated within each language. The columns in the sheet are:
   - Game Name instead of Name on gamerepo (before lang underscore)
   - Get full game namelist
   - Extract known games from webpage
-  - Take from (if a resource needs to be taken from the wrt of another language)
+  - Take from (if a resource needs to be taken from another language)
 
 The content of each subject folder is taken from the top-level website menu,
-the yelllo horizontal bar with links:
+the yellow horizontal bar with links:
 ![](./chefdata/pradigi_subject_structure.png)
 
 Special treatment is required for dropdown menus--we ignore the dropdown parent
 and instead treat the submenu items as top-level subjects.
 
 The resources under Games are handled differently depending on the age group:
-  - `KhelBadi==CRS122` and `WatchAndDo==CRS124` only in the `3-6 years` subfolder
-  - `KhelPuri==CRS123` are included only in the `6-10 years` subfolder
+  - `KhelBadi` is used instead of the `3-6 years` subfolder
+  - `KhelPuri` are included only in the `6-10 years` subfolder
 
-For age groups where one or more of the Games subfolders `WatchAndDo`, `KhelBadi`, `KhelPuri`
-is not included, the games are "extracted" from these folders are extracted and
-included in the `Fun`, `Mathematics`, `Language`, and `English` subjects as needed,
-according to the structure gsheet.
-
-
-
-
-
+The games extracted from the `KhelPuri` folder can be included in the `Fun`,
+`Mathematics`, `Language`, and `English` subjects according to the structure gsheet.
 
 
 

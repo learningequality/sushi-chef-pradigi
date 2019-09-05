@@ -31,7 +31,7 @@ CORRECTIONS_CACHE_FILENAME = 'pradigi_corrections.csv'
 WEBSITE_GAMES_JSON_FILENAME = 'website_games_all_langs.json'
 CRAWLING_STAGE_OUTPUT_TMPL = 'pradigi_{}_web_resource_tree.json'
 SCRAPING_STAGE_OUTPUT = 'pradigi_ricecooker_json_tree.json'
-from chef import PRADIGI_WEBSITE_LANGUAGES
+from sushichef import PRADIGI_WEBSITE_LANGUAGES
 
 
 
@@ -44,7 +44,7 @@ def run_pradigi():
         with prefix('source ' + os.path.join(CHEF_DATA_DIR, 'venv/bin/activate')):
             with shell_env(STUDIO_URL="http://develop.studio.learningequality.org",
                            PHANTOMJS_PATH="/data/sushi-chef-pradigi/phantomjs-2.1.1-linux-x86_64/bin/phantomjs"):
-                cmd = 'nohup ./chef.py  -v --reset --stage --token={} crawlonly=t &'.format(STUDIO_TOKEN)
+                cmd = 'nohup ./sushichef.py  -v --reset --stage --token={} crawlonly=t &'.format(STUDIO_TOKEN)
                 output = sudo(cmd, user=CHEF_USER)
                 print(output.stdout)
 

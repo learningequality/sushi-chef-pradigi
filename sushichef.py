@@ -114,7 +114,6 @@ PRADIGI_STRINGS = {
             'Healthcare': 'स्वास्थ्य सेवा',
             'Game': 'खेल',
             'KhelBadi': 'खेल-बाड़ी',
-            'WatchAndDo': 'देखो और करों',
             'KhelPuri': 'खेल-पुरी',
             'Music': 'संगीत',
             'Theatre': 'नाटक'
@@ -123,7 +122,6 @@ PRADIGI_STRINGS = {
         # this is necessary for special handing of games and visibility in different age groups
         'course_ids_by_subject_en': {
             # Hindi games pages = खेल
-            'WatchAndDo': "somethingthatdoesnexist",     # intentionally set to somethingthatdoesnexist
             'KhelPuri': "CRS123",           # "खेल-पुरी",       6-10   # Games Sport-puri
             #
             # Health and Sport for webscraping
@@ -161,13 +159,11 @@ PRADIGI_STRINGS = {
             # 'Financial Literacy': '????',
             'Game': 'खेळ',
             'KhelBadi': 'खेळ-वाडी',
-            'WatchAndDo': 'बघा आणि शिका',
             'KhelPuri': 'खेळ-पुरी',
             'Music': 'संगीत',
             'Theatre': 'नाटक'
         },
         'course_ids_by_subject_en': {
-            'WatchAndDo': "somethingthatdoesnexist",     # intentionally set to somethingthatdoesnexist
             'KhelPuri': "CRS126",       # "खेळ-पुरी",
             #
             # Health and Sport for webscraping
@@ -222,7 +218,6 @@ PRADIGI_STRINGS = {
             'Fun': 'ମଜା',
             'Game': 'ଖେଳ',
             'KhelBadi': 'ଖେଳର ବଗିଚା',
-            'WatchAndDo': 'ଦେଖ ଏବଂ କର',
             'KhelPuri': 'ଖେଳର ମହଲ'
         },
         'course_ids_by_subject_en': {
@@ -242,7 +237,6 @@ PRADIGI_STRINGS = {
             'Story': 'গল্প',
             'Game': 'খেলা',
             'KhelBadi': 'আঙিনায় খেলা',
-            'WatchAndDo': 'দেখো এবং করো',
             'KhelPuri': 'শহরে খেলা'
         },
         'course_ids_by_subject_en': {
@@ -261,7 +255,6 @@ PRADIGI_STRINGS = {
             'Fun': 'Tamasha',
             'Game': 'Khel',
             'KhelBadi': 'Khel-Baadi',
-            'WatchAndDo': 'Dekhiye aur Kariye'
         },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS149",
@@ -281,7 +274,6 @@ PRADIGI_STRINGS = {
             'Fun': 'ਮੌਜ-ਮਸਤੀ',
             'Game': 'ਖੇਡ',
             'KhelBadi': 'ਖੇਲਵਾੜੀ',
-            'WatchAndDo': 'ਦੇਖੋ ਅਤੇ ਕਰੋ',
             'KhelPuri': 'ਖੇਲ-ਪੁਰ'
         },
         'course_ids_by_subject_en': {
@@ -300,7 +292,6 @@ PRADIGI_STRINGS = {
             'Fun': 'ಮೋಜು',
             'Game': 'ಗೇಮ್',
             'KhelBadi': 'ಆಟದ ಅಂಗಳ',
-            'WatchAndDo': 'ನೋಡು ಮತ್ತು ಮಾಡು',
             'KhelPuri': 'ಆಟದ ನಗರಿ'
         },
         'course_ids_by_subject_en': {
@@ -321,7 +312,6 @@ PRADIGI_STRINGS = {
             'Fun': 'கேளிக்கை',
             'Game': 'விளையாட்டு',
             'KhelBadi': 'வீதி விளையாட்டு',
-            'WatchAndDo': 'பார்த்து செய்யவும்',
             'KhelPuri': 'விளையாட்டுத் திடல்'
         },
         'course_ids_by_subject_en': {
@@ -341,7 +331,6 @@ PRADIGI_STRINGS = {
             'Fun': 'సరదా',
             'Game': 'ఆట',
             'KhelBadi': 'ఆట - ప్రాంగణం',
-            'WatchAndDo': 'చూడండి మరియు చేయండి',
             'KhelPuri': 'ఆట - నగరం'
         },
         'course_ids_by_subject_en': {
@@ -362,7 +351,6 @@ PRADIGI_STRINGS = {
             'Fun': 'મનોરંજન',
             'Game': 'રમત',
             'KhelBadi': 'ખેલ-વાડી',
-            'WatchAndDo': 'જુઓ અને કરો',
             'KhelPuri': 'ખેલ-પૂરી'
         },
         'course_ids_by_subject_en': {
@@ -381,7 +369,6 @@ PRADIGI_STRINGS = {
             'Fun': 'ধেমালি',
             'Game': 'খেল',
             'KhelBadi': 'খেল-পথাৰ',
-            'WatchAndDo': 'চোৱা আৰু কৰা',
             'KhelPuri': 'খেল- ধেমালী'
         },
         'course_ids_by_subject_en': {

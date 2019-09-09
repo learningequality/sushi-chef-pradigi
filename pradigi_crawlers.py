@@ -11,7 +11,7 @@ from ricecooker.config import LOGGER
 LOGGER.setLevel(logging.WARNING)
 from le_utils.constants.languages import getlang
 
-from chef import (
+from sushichef import (
     PRADIGI_DOMAIN,
     PRADIGI_STRINGS,
     FULL_DOMAIN_URL,
@@ -27,12 +27,6 @@ from chef import (
 SPECIAL_SUBTOPIC_COURSE_IDS = []
 for lang, langdata in PRADIGI_STRINGS.items():
     if 'course_ids_by_subject_en' in langdata:
-        if 'KhelBadi' in langdata['course_ids_by_subject_en']:
-            course_id = langdata['course_ids_by_subject_en']['KhelBadi']
-            SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
-        if 'WatchAndDo' in langdata['course_ids_by_subject_en']:
-            course_id = langdata['course_ids_by_subject_en']['WatchAndDo']
-            SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
         if 'KhelPuri' in langdata['course_ids_by_subject_en']:
             course_id = langdata['course_ids_by_subject_en']['KhelPuri']
             SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)

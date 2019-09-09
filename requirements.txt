@@ -3,4 +3,9 @@ le-utils>=0.1.16
 git+https://github.com/learningequality/BasicCrawler@master
 Fabric3>=1.13.1
 PyYAML>=3.12
+#
+# For notebooks/
 jupyter==1.0.0
+#
+# used to check for typos
+pyflakes

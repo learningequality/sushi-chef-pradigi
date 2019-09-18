@@ -53,7 +53,6 @@ To run the chef script, follow these steps:
 
 ### 4. Run the chef script:
 
-    export STUDIO_URL="https://develop.studio.learningequality.org"
     ./sushichef.py -v --reset --thumbnails --token=<your_token> --stage
 
 

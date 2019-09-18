@@ -9,7 +9,7 @@ class SimpleChef(SushiChef):
     channel_info = {
         'CHANNEL_TITLE': 'Potatoes info channel',
         'CHANNEL_SOURCE_DOMAIN': '<yourdomain.org>',    # where you got the content
-        'CHANNEL_SOURCE_ID': '<unique id for channel>',  # channel's unique id
+        'CHANNEL_SOURCE_ID': '<an unique id for channel>',  # channel's unique id
         'CHANNEL_LANGUAGE': 'en',                        # le_utils language code
         'CHANNEL_THUMBNAIL': 'https://upload.wikimedia.org/wikipedia/commons/b/b7/A_Grande_Batata.jpg', # (optional)
         'CHANNEL_DESCRIPTION': 'What is this channel about?',      # (optional)
@@ -30,6 +30,7 @@ class SimpleChef(SushiChef):
         )
         potato_topic.add_child(doc_node)
         return channel
+
 
 
 if __name__ == '__main__':

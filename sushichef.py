@@ -222,6 +222,7 @@ PRADIGI_STRINGS = {
         },
         'course_ids_by_subject_en': {
             'KhelPuri': "CRS189",
+            'Music': 'Sangeet',
         }
     },
     "bn": {
@@ -258,7 +259,7 @@ PRADIGI_STRINGS = {
         },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS149",
-            'KhelPuri': "CRS203",
+            'DekhiyeaurKariye': "CRS203",
             'English': "Angrezi",
         }
     },

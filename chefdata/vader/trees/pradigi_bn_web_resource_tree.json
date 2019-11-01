@@ -114,75 +114,6 @@
               "children": [
                 {
                   "children": [],
-                  "content-length": "65620210",
-                  "content-type": "video/mp4",
-                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_electricity_generation.mp4",
-                  "kind": "PrathamVideoResource",
-                  "source_id": "10946",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_electricity_generation.png",
-                  "title": "বিদ্যুতের উৎপাদন",
-                  "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_electricity_generation.mp4"
-                },
-                {
-                  "children": [],
-                  "content-length": "25477557",
-                  "content-type": "video/mp4",
-                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_syringe_generator.mp4",
-                  "kind": "PrathamVideoResource",
-                  "source_id": "10947",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_syringe_generator.png",
-                  "title": "সিরিঞ্জ জেনেরেটর",
-                  "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_syringe_generator.mp4"
-                }
-              ],
-              "description": "বিদ্যুৎ",
-              "kind": "lesson_page",
-              "source_id": "LES1378",
-              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/Kaise-banati-bijali.png",
-              "title": "বিদ্যুৎ কীভাবে উৎপন্ন হয় ?",
-              "url": "https://www.prathamopenschool.org/bn/Lesson/LES1378"
-            }
-          ],
-          "kind": "subtopic_page",
-          "source_id": "CRS240",
-          "title": "বিদ্যুৎ",
-          "url": "https://www.prathamopenschool.org/bn/Course/Science/CRS240"
-        },
-        {
-          "children": [
-            {
-              "children": [
-                {
-                  "children": [],
-                  "content-length": "44726276",
-                  "content-type": "video/mp4",
-                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_inside_the_animal_mind.mp4",
-                  "kind": "PrathamVideoResource",
-                  "source_id": "10948",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_inside_the_animal_mind.png",
-                  "title": "Inside the animal mind",
-                  "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_inside_the_animal_mind.mp4"
-                }
-              ],
-              "description": "আমাদের চারপাশ",
-              "kind": "lesson_page",
-              "source_id": "LES1379",
-              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/hn_Oriental_Dwarf_Kingfisher.png",
-              "title": "পাখিদের জগৎ",
-              "url": "https://www.prathamopenschool.org/bn/Lesson/LES1379"
-            }
-          ],
-          "kind": "subtopic_page",
-          "source_id": "CRS241",
-          "title": "আমাদের চারপাশ",
-          "url": "https://www.prathamopenschool.org/bn/Course/Science/CRS241"
-        },
-        {
-          "children": [
-            {
-              "children": [
-                {
-                  "children": [],
                   "content-length": "220323072",
                   "content-type": "video/mp4",
                   "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_blood_introduction.mp4",
@@ -449,6 +380,75 @@
         {
           "children": [
             {
+              "children": [
+                {
+                  "children": [],
+                  "content-length": "65620210",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_electricity_generation.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10946",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_electricity_generation.png",
+                  "title": "বিদ্যুতের উৎপাদন",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_electricity_generation.mp4"
+                },
+                {
+                  "children": [],
+                  "content-length": "25477557",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_syringe_generator.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10947",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_syringe_generator.png",
+                  "title": "সিরিঞ্জ জেনেরেটর",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_syringe_generator.mp4"
+                }
+              ],
+              "description": "বিদ্যুৎ",
+              "kind": "lesson_page",
+              "source_id": "LES1378",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/Kaise-banati-bijali.png",
+              "title": "বিদ্যুৎ কীভাবে উৎপন্ন হয় ?",
+              "url": "https://www.prathamopenschool.org/bn/Lesson/LES1378"
+            }
+          ],
+          "kind": "subtopic_page",
+          "source_id": "CRS240",
+          "title": "বিদ্যুৎ",
+          "url": "https://www.prathamopenschool.org/bn/Course/Science/CRS240"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "content-length": "44726276",
+                  "content-type": "video/mp4",
+                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_inside_the_animal_mind.mp4",
+                  "kind": "PrathamVideoResource",
+                  "source_id": "10948",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_inside_the_animal_mind.png",
+                  "title": "ইনসাইড দ্যা এনিম্যাল মাইন্ড",
+                  "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_inside_the_animal_mind.mp4"
+                }
+              ],
+              "description": "আমাদের চারপাশ",
+              "kind": "lesson_page",
+              "source_id": "LES1379",
+              "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/hn_Oriental_Dwarf_Kingfisher.png",
+              "title": "পাখিদের জগৎ",
+              "url": "https://www.prathamopenschool.org/bn/Lesson/LES1379"
+            }
+          ],
+          "kind": "subtopic_page",
+          "source_id": "CRS241",
+          "title": "আমাদের চারপাশ",
+          "url": "https://www.prathamopenschool.org/bn/Course/Science/CRS241"
+        },
+        {
+          "children": [
+            {
               "children": [],
               "content-length": "457689374",
               "content-type": "video/mp4",
@@ -693,10 +693,12 @@
                 },
                 {
                   "children": [],
+                  "content-length": "17075193",
+                  "content-type": "video/mp4",
                   "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_air_has_weight_experiment.mp4",
                   "kind": "PrathamVideoResource",
                   "source_id": "10953",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_air_has_weight_experiment.png",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_air_has_weight_experiment1.png",
                   "title": "বায়ুর কী ওজন আছে ?",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_air_has_weight_experiment.mp4"
                 },
@@ -836,22 +838,11 @@
               "kind": "lesson_page",
               "source_id": "LES1182",
               "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/od_balancingtoyt.png",
-              "title": "পুতুলের ভারসাম্য",
+              "title": "ভারসাম্যযুক্ত খেলনা",
               "url": "https://www.prathamopenschool.org/bn/Lesson/LES1182"
             },
             {
               "children": [
-                {
-                  "children": [],
-                  "content-length": "4034470",
-                  "content-type": "video/mp4",
-                  "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_expansion_air.mp4",
-                  "kind": "PrathamVideoResource",
-                  "source_id": "8804",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_expansion_air.png",
-                  "title": "বায়ুর প্রসারণ",
-                  "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_expansion_air.mp4"
-                },
                 {
                   "children": [],
                   "content-length": "4034470",
@@ -1303,7 +1294,7 @@
                   "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_glass_propellor.mp4",
                   "kind": "PrathamVideoResource",
                   "source_id": "10982",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_glass_propellor.png",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_Glass_propellor.png",
                   "title": "গ্লাস প্রপেলার",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_glass_propellor.mp4"
                 },
@@ -1480,7 +1471,7 @@
                   "kind": "PrathamVideoResource",
                   "source_id": "10263",
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_Story_of_Galileo_Part_1.png",
-                  "title": "গ্যালিলিওর গল্প পর্ব - 1 3/30/2019 2:38:18 PM",
+                  "title": "গ্যালিলিওর গল্প পর্ব - 1",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_Story_of_Galileo_Part_1.mp4"
                 },
                 {
@@ -1709,58 +1700,14 @@
       "children": [
         {
           "children": [],
-          "content-length": "18622921",
+          "content-length": "19053586",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/8887",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
-          "title": "কীভাবে দৌড়ায় ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "44730943",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/8888",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
-          "title": "গীতা ও ববিতা",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "231513640",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/8891",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
-          "title": "কপিকলের সুবিধা ও অসুবিধা 1",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "24102786",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/8884",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
-          "title": "কীভাবে সাঁতার কাটে ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "62441217",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_summer_drinks.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/10951",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_summer_drinks.png",
-          "title": "গ্রীষ্মে পানীয়",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_summer_drinks.mp4"
+          "source_id": "bn/FunResource/8886",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
+          "title": "কীভাবে ওড়ে ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
         },
         {
           "children": [],
@@ -1775,17 +1722,6 @@
         },
         {
           "children": [],
-          "content-length": "57451065",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_lemon_puzzle.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/10949",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_lemon_puzzle.png",
-          "title": "পাতিলেবু খেতেই হবে",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_lemon_puzzle.mp4"
-        },
-        {
-          "children": [],
           "content-length": "48122271",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
@@ -1797,47 +1733,25 @@
         },
         {
           "children": [],
-          "content-length": "44726276",
+          "content-length": "24102786",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_inside_the_animal_mind.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/10950",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_inside_the_animal_mind.png",
-          "title": "ইনসাইড দ্যা এনিম্যাল মাইন্ড",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_inside_the_animal_mind.mp4"
+          "source_id": "bn/FunResource/8884",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdoweswim.png",
+          "title": "কীভাবে সাঁতার কাটে ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdoweswim.mp4"
         },
         {
           "children": [],
-          "content-length": "184784617",
+          "content-length": "18622921",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/8892",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
-          "title": "কপিকলের সুবিধা ও অসুবিধা 2",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "9532625",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/8885",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
-          "title": "কীভাবে পান করো ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "19053586",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "bn/FunResource/8886",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
-          "title": "কীভাবে ওড়ে ?",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
+          "source_id": "bn/FunResource/8887",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowerun.png",
+          "title": "কীভাবে দৌড়ায় ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowerun.mp4"
         },
         {
           "children": [],
@@ -1852,6 +1766,50 @@
         },
         {
           "children": [],
+          "content-length": "62441217",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_summer_drinks.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "bn/FunResource/10951",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_summer_drinks.png",
+          "title": "গ্রীষ্মে পানীয়",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_summer_drinks.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "44730943",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "bn/FunResource/8888",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
+          "title": "গীতা ও ববিতা",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "9532625",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "bn/FunResource/8885",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdowedrink.png",
+          "title": "কীভাবে পান করো ?",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdowedrink.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "184784617",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "bn/FunResource/8892",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley2.png",
+          "title": "কপিকলের সুবিধা ও অসুবিধা 2",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4"
+        },
+        {
+          "children": [],
           "content-length": "39766638",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
@@ -1860,6 +1818,39 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
           "title": "ফুলের অদ্ভূত জীবন",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "57451065",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_lemon_puzzle.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "bn/FunResource/10949",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_lemon_puzzle.png",
+          "title": "পাতিলেবু খেতেই হবে",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_lemon_puzzle.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "231513640",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "bn/FunResource/8891",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
+          "title": "কপিকলের সুবিধা ও অসুবিধা 1",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "44726276",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/bn_inside_the_animal_mind.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "bn/FunResource/10950",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/bn_inside_the_animal_mind.png",
+          "title": "ইনসাইড দ্যা এনিম্যাল মাইন্ড",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/bn_inside_the_animal_mind.mp4"
         }
       ],
       "kind": "fun_page",

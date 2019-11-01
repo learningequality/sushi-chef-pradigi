@@ -6,9 +6,9 @@ from urllib.parse import urlparse
 
 from le_utils.constants.languages import getlang_by_name
 
-from chef import load_pradigi_structure, find_games_for_lang, get_all_game_names
-from chef import should_skip_file
-from chef import PRADIGI_LANGUAGES, PRADIGI_STRINGS
+from sushichef import load_pradigi_structure, find_games_for_lang, get_all_game_names
+from sushichef import should_skip_file
+from sushichef import PRADIGI_WEBSITE_LANGUAGES, PRADIGI_STRINGS
 
 
 

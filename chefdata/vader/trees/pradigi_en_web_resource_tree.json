@@ -13,7 +13,7 @@
                   "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4",
                   "kind": "PrathamVideoResource",
                   "source_id": "10985",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_carrot_and_radish_flute.png",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_Carrot_and_radish_flute.png",
                   "title": "Carrot and Radish flute",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4"
                 }
@@ -432,7 +432,7 @@
                   "kind": "PrathamVideoResource",
                   "source_id": "10993",
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_rubber_bulb_pump.png",
-                  "title": "Rubber Bulb Pump 6/5/2019 3:49:42 PM",
+                  "title": "Rubber Bulb Pump",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_rubber_bulb_pump.mp4"
                 }
               ],
@@ -649,7 +649,7 @@
                   "kind": "PrathamVideoResource",
                   "source_id": "11003",
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_spooky_spoke.png",
-                  "title": "Spooky Spoke 6/5/2019 3:51:30 PM",
+                  "title": "Spooky Spoke",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_spooky_spoke.mp4"
                 },
                 {
@@ -671,7 +671,7 @@
                   "kind": "PrathamVideoResource",
                   "source_id": "11005",
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_magnetic_braking.png",
-                  "title": "Magnetic Braking 6/5/2019 3:50:31 PM",
+                  "title": "Magnetic Braking",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_magnetic_braking.mp4"
                 },
                 {
@@ -897,7 +897,7 @@
                   "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4",
                   "kind": "PrathamVideoResource",
                   "source_id": "10986",
-                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_carrot_and_radish_flute.png",
+                  "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_Carrot_and_radish_flute.png",
                   "title": "Carrot and Radish flute",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4"
                 },
@@ -1102,7 +1102,7 @@
                   "kind": "PrathamVideoResource",
                   "source_id": "11011",
                   "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_paper_flexagon.png",
-                  "title": "Paper Flexagon 6/5/2019 3:51:00 PM",
+                  "title": "Paper Flexagon",
                   "url": "http://www.prathamopenschool.org/CourseContent/videos/en_paper_flexagon.mp4"
                 },
                 {
@@ -1448,16 +1448,16 @@
               "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4",
               "kind": "PrathamVideoResource",
               "source_id": "10984",
-              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_carrot_and_radish_flute.png",
+              "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/en_Carrot_and_radish_flute.png",
               "title": "Carrot and Radish flute",
               "url": "http://www.prathamopenschool.org/CourseContent/videos/en_carrot_and_radish_flute.mp4"
             }
           ],
-          "description": "Musical Instruments",
+          "description": "Fun with musical instruments",
           "kind": "lesson_page",
           "source_id": "LES1388",
           "thumbnail_url": "https://www.prathamopenschool.org/CourseContent/coverImages/hn_Instrumentst.png",
-          "title": "Musical Instruments",
+          "title": "Fun with musical instruments",
           "url": "https://www.prathamopenschool.org/en/Lesson/LES1388"
         }
       ],
@@ -1471,17 +1471,6 @@
       "children": [
         {
           "children": [],
-          "content-length": "48122271",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9632",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
-          "title": "Mirror Tricks",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
-        },
-        {
-          "children": [],
           "content-length": "184784617",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley2.mp4",
@@ -1493,14 +1482,14 @@
         },
         {
           "children": [],
-          "content-length": "231513640",
+          "content-length": "48122271",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9634",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
-          "title": "Advantages and disadvantages of Pulley- 1",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
+          "source_id": "en/FunResource/9632",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_mirrortricks.png",
+          "title": "Mirror Tricks",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_mirrortricks.mp4"
         },
         {
           "children": [],
@@ -1515,17 +1504,6 @@
         },
         {
           "children": [],
-          "content-length": "14035732",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9636",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_wakeup.png",
-          "title": "The Wake Up dance",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4"
-        },
-        {
-          "children": [],
           "content-length": "19053586",
           "content-type": "video/mp4",
           "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4",
@@ -1534,6 +1512,28 @@
           "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_howdobirdsfly.png",
           "title": "How do birds fly?",
           "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_howdobirdsfly.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "39766638",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9633",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
+          "title": "The magical life of flowers",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "231513640",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9634",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_advantagesanddisadvantagesof_pulley1.png",
+          "title": "Advantages and disadvantages of Pulley- 1",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_advantagesanddisadvantagesof_pulley1.mp4"
         },
         {
           "children": [],
@@ -1548,14 +1548,25 @@
         },
         {
           "children": [],
-          "content-length": "44730943",
+          "content-length": "28501338",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9631",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
-          "title": "Geeta and Babeeta",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
+          "source_id": "en/FunResource/9626",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
+          "title": "Airplane landing",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
+        },
+        {
+          "children": [],
+          "content-length": "14035732",
+          "content-type": "video/mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4",
+          "kind": "PrathamVideoResource",
+          "source_id": "en/FunResource/9636",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/hn_wakeup.png",
+          "title": "The Wake Up dance",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/hn_wakeup.mp4"
         },
         {
           "children": [],
@@ -1570,25 +1581,14 @@
         },
         {
           "children": [],
-          "content-length": "28501338",
+          "content-length": "44730943",
           "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4",
+          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4",
           "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9626",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_airplane_landing.png",
-          "title": "Airplane landing",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_airplane_landing.mp4"
-        },
-        {
-          "children": [],
-          "content-length": "39766638",
-          "content-type": "video/mp4",
-          "description": "source_url=http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4",
-          "kind": "PrathamVideoResource",
-          "source_id": "en/FunResource/9633",
-          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_magical_life_of_flowers.png",
-          "title": "The magical life of flowers",
-          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_magical_life_of_flowers.mp4"
+          "source_id": "en/FunResource/9631",
+          "thumbnail_url": "http://www.prathamopenschool.org/CourseContent/coverImages/nav_geeta_babeeta.png",
+          "title": "Geeta and Babeeta",
+          "url": "http://www.prathamopenschool.org/CourseContent/videos/nav_geeta_babeeta.mp4"
         }
       ],
       "kind": "fun_page",

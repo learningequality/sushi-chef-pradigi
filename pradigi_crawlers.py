@@ -11,7 +11,7 @@ from ricecooker.config import LOGGER
 LOGGER.setLevel(logging.WARNING)
 from le_utils.constants.languages import getlang
 
-from chef import (
+from sushichef import (
     PRADIGI_DOMAIN,
     PRADIGI_STRINGS,
     FULL_DOMAIN_URL,
@@ -27,12 +27,6 @@ from chef import (
 SPECIAL_SUBTOPIC_COURSE_IDS = []
 for lang, langdata in PRADIGI_STRINGS.items():
     if 'course_ids_by_subject_en' in langdata:
-        if 'KhelBadi' in langdata['course_ids_by_subject_en']:
-            course_id = langdata['course_ids_by_subject_en']['KhelBadi']
-            SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
-        if 'WatchAndDo' in langdata['course_ids_by_subject_en']:
-            course_id = langdata['course_ids_by_subject_en']['WatchAndDo']
-            SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
         if 'KhelPuri' in langdata['course_ids_by_subject_en']:
             course_id = langdata['course_ids_by_subject_en']['KhelPuri']
             SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
@@ -43,10 +37,7 @@ class PraDigiCrawler(BasicCrawler):
     SOURCE_DOMAINS = [FULL_DOMAIN_URL, 'http://www.'+PRADIGI_DOMAIN]
     MAIN_SOURCE_DOMAIN = FULL_DOMAIN_URL
     START_PAGE_CONTEXT = {'kind': 'lang_page'}
-    IGNORE_URLS = [
-        'http://www.prathamopenschool.org/mr/Course/English/CRS97',  # Hindi game show in Marathi channel
-        'https://www.prathamopenschool.org/mr/Course/English/CRS97',  # Hindi game show in Marathi channel
-    ]
+    IGNORE_URLS = []
     kind_handlers = {
         'lang_page': 'on_lang_page',
         'topic_page': 'on_topic_page',
@@ -339,7 +330,7 @@ class PraDigiCrawler(BasicCrawler):
                 if len(main_file) < 10:
                     print('something strage --- short main file url with   title - main_file - master_file ', title, '-', main_file, '-', master_file)
 
-                if main_file.endswith('mp4') or main_file.endswith('MP4'):
+                if main_file.endswith('mp4') or main_file.endswith('MP4') or main_file.endswith('m4v'):
                     video = dict(
                         url=main_file,
                         kind='PrathamVideoResource',
@@ -483,7 +474,7 @@ class PraDigiCrawler(BasicCrawler):
 
                 LOGGER.debug('      Fun content: %s: %s at %s' % (source_id, title, respath_url))
 
-                if respath_path.endswith('mp4') or respath_path.endswith('MP4'):
+                if respath_path.endswith('mp4') or respath_path.endswith('MP4') or respath_path.endswith('m4v'):
                     video = dict(
                         url=respath_url,
                         kind='PrathamVideoResource',

@@ -178,7 +178,7 @@ PRADIGI_STRINGS = {
             "Hospitality": "CRS143",
             "Beauty": "CRS144",
             'Financial Literacy': 'CRS227',
-            'Recipe': 'रेसिपी',
+            'Recipe': 'Recipe',
         }
     },
     'en': {

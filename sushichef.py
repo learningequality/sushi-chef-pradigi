@@ -161,7 +161,8 @@ PRADIGI_STRINGS = {
             'KhelBadi': 'खेळ-वाडी',
             'KhelPuri': 'खेळ-पुरी',
             'Music': 'संगीत',
-            'Theatre': 'नाटक'
+            'Theatre': 'नाटक',
+            'Recipe': 'रेसिपी'
         },
         'course_ids_by_subject_en': {
             'KhelPuri': "CRS126",       # "खेळ-पुरी",
@@ -177,6 +178,7 @@ PRADIGI_STRINGS = {
             "Hospitality": "CRS143",
             "Beauty": "CRS144",
             'Financial Literacy': 'CRS227',
+            'Recipe': 'रेसिपी',
         }
     },
     'en': {

@@ -74,7 +74,8 @@ PRADIGI_SUBJECTS = [
     'KhelBadi',           # "खेल-बाड़ी"       3-6    # Game-box
     'WatchAndDo',         # "देखो और करों     3-6,   # Watch and Do
     'KhelPuri',           # "खेल-पुरी",       6-10   # Games Sport-puri
-    'DekhiyeaurKariye',   # only for urdu same as khelpuri but needs to be in 3-6 
+    'DekhiyeaurKariye',   # only for urdu same as khelpuri but needs to be in 3-6
+    'Recipe',             # for marathi 8-14
     #
     'LanguageAndCommunication',     # currently missing from website
 ]

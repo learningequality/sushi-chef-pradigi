@@ -56,6 +56,7 @@ PRADIGI_SUBJECTS = [
     'Music',
     'Theatre',
     'Art Project',
+    'Recipe',             # for marathi 8-14
     #
     'Fun',              # Contains website /Fun content + all games not in the other categories
     'Story',
@@ -75,7 +76,6 @@ PRADIGI_SUBJECTS = [
     'WatchAndDo',         # "देखो और करों     3-6,   # Watch and Do
     'KhelPuri',           # "खेल-पुरी",       6-10   # Games Sport-puri
     'DekhiyeaurKariye',   # only for urdu same as khelpuri but needs to be in 3-6
-    'Recipe',             # for marathi 8-14
     #
     'LanguageAndCommunication',     # currently missing from website
 ]

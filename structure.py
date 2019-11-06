@@ -57,9 +57,6 @@ PRADIGI_SUBJECTS = [
     'Theatre',
     'Art Project',
     'Recipe',             # for marathi 8-14 years
-    'Khel',
-    'NazmeinAngrezi',
-    'NazmeinHindi',
     #
     'Fun',              # Contains website /Fun content + all games not in the other categories
     'Story',

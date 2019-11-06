@@ -260,11 +260,9 @@ PRADIGI_STRINGS = {
             'KhelBadi': 'Khel-Baadi',
         },
         'course_ids_by_subject_en': {
-            'Khel': "CRS149",
+            'KhelBadi': "CRS149",
             'DekhiyeaurKariye': "CRS203",
             'English': "Angrezi",
-            'NazmeinAngrezi': "CRS149",
-            'NazmeinHindi': "CRS149",
         }
     },
     "pnb": {

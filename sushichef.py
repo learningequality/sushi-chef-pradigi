@@ -875,9 +875,15 @@ class PraDigiChef(JsonTreeChef):
             age_groups_subtree['children'] = nonempty_subject_subtrees
 
             # Flatten the '3-6 years' agre group to contain contents of KhelBadi
-            if age_groups_subtree['title'] == '3-6 years' and len(age_groups_subtree['children']) == 1:
-                khelbadi_subtree = age_groups_subtree['children'][0]
-                age_groups_subtree['children'] = khelbadi_subtree['children']
+            # if age_groups_subtree['title'] == '3-6 years' and len(age_groups_subtree['children']) == 1:
+            #     khelbadi_subtree = age_groups_subtree['children'][0]
+            #     age_groups_subtree['children'] = khelbadi_subtree['children']
+            if age_groups_subtree['title'] == '3-6 years':
+                flat_subfolders = []
+                for folder in age_groups_subtree['children']:
+                    for subfolder in folder['children']:
+                        flat_subfolders.append(subfolder)
+                age_groups_subtree['children'] = flat_subfolders
 
         return lang_subtree
 

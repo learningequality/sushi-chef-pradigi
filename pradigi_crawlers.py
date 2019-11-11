@@ -22,14 +22,21 @@ from sushichef import (
 )
 
 
-
+# these are special pages that we require special code to scrape lesson subtopics
+SPECIAL_KEYS = ['KhelBadi', 'DekhiyeaurKariye', 'KhelPuri']
 # these are course_ids of special pages that we want to renders lesson-subtopics
 SPECIAL_SUBTOPIC_COURSE_IDS = []
 for lang, langdata in PRADIGI_STRINGS.items():
     if 'course_ids_by_subject_en' in langdata:
-        if 'KhelPuri' in langdata['course_ids_by_subject_en']:
-            course_id = langdata['course_ids_by_subject_en']['KhelPuri']
-            SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
+        for special_key in SPECIAL_KEYS:
+            if special_key in langdata['course_ids_by_subject_en']:
+                course_id = langdata['course_ids_by_subject_en'][special_key]
+                SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
+
+
+        # if 'KhelPuri' in langdata['course_ids_by_subject_en']:
+        #     course_id = langdata['course_ids_by_subject_en']['KhelPuri']
+        #     SPECIAL_SUBTOPIC_COURSE_IDS.append(course_id)
 
 
 

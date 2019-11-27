@@ -59,7 +59,7 @@ To run the chef script, follow these steps:
 This commands takes 19+ hours the first time it runs and performs the following:
 
   - During the `pre_run` stage:
-    - crawl all languages https://www.prathamopenschool.org website  
+    - crawl all languages https://www.prathamopenschool.org website
       output: json data in `chefdata/trees/pradigi_{lang}_web_resource_tree.json`
     - Builds the channel ricecooker tree:
       output: json data in `chefdata/trees/pradigi_ricecooker_json_tree.json`
@@ -82,7 +82,7 @@ but doing the following steps:
   - clear zip file cache `rm -rf chefdata/zipfiles`
   - clear web caches `rm -rf .webcache` and `rm -rf cache.sqlite`
   - clear storage dir `rm -rf storage/`
-Note this will take 15+ hours again since we have to redo all the download and 
+Note this will take 15+ hours again since we have to redo all the download and
 conversion steps.
 
 The `sushichef.py` optional argument `--update` will force re-downloading all files
@@ -155,127 +155,3 @@ Backlog
 Cross check with all games from here:  http://www.prathamopenschool.org/CourseContent/Games/
 
 
-
-
-Check what's wrong with these:
-
-```
-
->>>>> skipping game_resource {'main_file': 'http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_Hi/index.html', 'kind': 'PrathamZipResource', 'title': 'भालू की बारहखड़ी', 'thumbnail_url': 'http://www.prathamopenschool.org/CourseContent/coverImages/RES5609.png', 'children': [], 'source_id': 'hn/game/5609', 'description': 'source_url=http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_Hi.zip', 'title_en': 'BhalooKiBarakhadi_KKS_Hi', 'url': 'http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_Hi.zip'}
-
->>>>> skipping game_resource {'main_file': 'http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_MR/index.html', 'kind': 'PrathamZipResource', 'title': 'भभलू ची बाराखडी', 'thumbnail_url': 'http://www.prathamopenschool.org/CourseContent/coverImages/BhalooKiBarakhadi_KKS_MR.png', 'children': [], 'source_id': 'mr/game/7431', 'description': 'source_url=http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_MR.zip', 'title_en': 'BhalooKiBarakhadi_KKS_MR', 'url': 'http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_MR.zip'}
-
->>>>> skipping game_resource {'main_file': 'http://www.prathamopenschool.org/CourseContent/Games/JigsawGame_M/CoverPage.html', 'kind': 'PrathamZipResource', 'title': 'या चित्रात दडलंय काय?', 'thumbnail_url': 'http://www.prathamopenschool.org/CourseContent/coverImages/RES1113.png', 'children': [], 'source_id': 'mr/FunResource/1113', 'description': 'source_url=http://www.prathamopenschool.org/CourseContent/Games/JigsawGame_M.zip', 'title_en': 'JigsawGame_M', 'url': 'http://www.prathamopenschool.org/CourseContent/Games/JigsawGame_M.zip'}
-
->>>>> skipping game_resource {'main_file': 'http://www.prathamopenschool.org/CourseContent/Games/JigsawGame_M/CoverPage.html', 'kind': 'PrathamZipResource', 'title': 'या चित्रात दडलंय काय?', 'thumbnail_url': 'http://www.prathamopenschool.org/CourseContent/coverImages/RES1113.png', 'children': [], 'source_id': 'mr/FunResource/1113', 'description': 'source_url=http://www.prathamopenschool.org/CourseContent/Games/JigsawGame_M.zip', 'title_en': 'JigsawGame_M', 'url': 'http://www.prathamopenschool.org/CourseContent/Games/JigsawGame_M.zip'}In main loop lang=mr age_group=8-14 years subject_en=Mathematics
-
->>>>> skipping game_resource {'main_file': 'http://www.prathamopenschool.org/CourseContent/Games/UlatPalat_HI/index.html', 'kind': 'PrathamZipResource', 'title': 'उलट पलट', 'thumbnail_url': 'http://www.prathamopenschool.org/CourseContent/coverImages/UlatpalatCover.png', 'children': [], 'source_id': 'hn/game/3524', 'description': 'source_url=http://www.prathamopenschool.org/CourseContent/Games/UlatPalat_HI.zip', 'title_en': 'UlatPalat_HI', 'url': 'http://www.prathamopenschool.org/CourseContent/Games/UlatPalat_HI.zip'}
-
->>>>> skipping game_resource {'main_file': 'http://www.prathamopenschool.org/CourseContent/Games/UlatPalat_MR/index.html', 'kind': 'PrathamZipResource', 'title': 'उलट पलट', 'thumbnail_url': 'http://www.prathamopenschool.org/CourseContent/coverImages/RES4080.png', 'children': [], 'source_id': 'mr/game/4080', 'description': 'source_url=http://www.prathamopenschool.org/CourseContent/Games/UlatPalat_MR.zip', 'title_en': 'UlatPalat_MR', 'url': 'http://www.prathamopenschool.org/CourseContent/Games/UlatPalat_MR.zip'}
-skipping <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="background: transparent;">
-
-```
-
-
-
-check this:
-
->>>>> skipping game_resource {'children': [], 'description': 'source_url=http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_Hi.zip', 'kind': 'PrathamZipResource', 'main_file': 'http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_Hi/index.html', 'source_id': 'hn/game/5609', 'thumbnail_url': 'http://www.prathamopenschool.org/CourseContent/coverImages/RES5609.png', 'title': 'भालू की बारहखड़ी', 'title_en': 'BhalooKiBarakhadi_KKS_Hi', 'url': 'http://www.prathamopenschool.org/CourseContent/Games/BhalooKiBarakhadi_KKS_Hi.zip'}
-
-
-
-
-The prathamopenschool Database
-------------------------------
-
-### CntResource
-(for resource_id and resource_name- Video , pdf and games)
-
-```
-resources = dbex("SELECT * FROM CntResource;")
-resources[300]
-{'resource_id': '1444',
- 'resource_type': 'VIDEO',
- 'resource_title': 'ऑटो क्लेव',
- 'resource_title_english': 'Auto clave',
- 'resource_path': 'CourseContent/videos/H_Auto Clave.mp4',
- 'resource_thumb': 'CourseContent/coverImages/RES1444.png',
- 'lang_name': 'Hindi',
- 'keywords': 'Healthcare',
- 'description': '',
- 'course_applicable': 'Healthcare',
- 'subject_applicable': '',
- 'course_source': '',
- 'duration': '494',
- 'resource_size': '',
- 'fun': '',
- 'know': '',
- 'story': '',
- 'isactive': 'Yes',
- 'createdon': None,
- 'createdby': '',
- 'updatedon': None,
- 'updatedby': '',
- 'Alt_ResourceId': None,
- 'seqno': 1444,
- 'dn_link': ''}
- 
- count_values_for_attr(resources, 'resource_type', 'lang_name', 'course_applicable', 'isactive')
- {'resource_type': defaultdict(int,
-             {'VIDEO': 3327, 'INTERNAL LINK': 755, 'PDF': 238, 'GAME': 10}),
- 'lang_name': defaultdict(int,
-             {'Hindi': 1541,
-              'English': 141,
-              'Marathi': 1231,
-              'CourseContent/coverImages/RES45.png': 1,
-              'Bengali': 204,
-              'Punjabi': 144,
-              'Odia': 145,
-              'Assamese': 139,
-              'Gujarati': 191,
-              'Kannada': 204,
-              'Telugu': 170,
-              'Tamil': 145,
-              'Urdu': 74}),
- 'course_applicable': defaultdict(int,
-             {'Science': 1373,
-              'Story': 124,
-              'Mathematics': 239,
-              None: 818,
-              'English': 378,
-              'Language': 1,
-              'Health': 38,
-              'Game': 73,
-              'Hospitality': 75,
-              'Electric': 2,
-              'Healthcare': 7,
-              'Construction': 1,
-              'Automobile': 3,
-              '': 5,
-              'Maths': 357,
-              'Fun': 19,
-              'LanguageAndCommunication': 221,
-              'KhelBadi': 155,
-              'Automotive': 22,
-              'Beauty': 5,
-              'Electrical': 15,
-              'Entrepreneurship': 16,
-              'Pratham Policies': 5,
-              'Financial Literacy': 12,
-              'English Communication': 33,
-              'General Masti': 6,
-              'Digital Litercy': 50,
-              'Assessment': 10,
-              'Hindi': 33,
-              'Vocational Training': 102,
-              'જુઓ અને કરો ': 33,
-              'Dekho Aur Karo': 99}),
- 'isactive': defaultdict(int,
-             {'yes': 590,
-              'Yes': 896,
-              '': 114,
-              None: 2050,
-              'No': 76,
-              'no': 604})}
-```
- 

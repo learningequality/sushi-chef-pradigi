@@ -161,7 +161,8 @@ PRADIGI_STRINGS = {
             'KhelBadi': 'खेळ-वाडी',
             'KhelPuri': 'खेळ-पुरी',
             'Music': 'संगीत',
-            'Theatre': 'नाटक'
+            'Theatre': 'नाटक',
+            'Recipe': 'रेसिपी',
         },
         'course_ids_by_subject_en': {
             'KhelPuri': "CRS126",       # "खेळ-पुरी",
@@ -174,6 +175,7 @@ PRADIGI_STRINGS = {
             # "Healthcare": "Healthcare",
             "Electric": "CRS141",
             # "Construction": "Construction",
+            'Recipe': 'CRS317',
             "Hospitality": "CRS143",
             "Beauty": "CRS144",
             'Financial Literacy': 'CRS227',
@@ -222,6 +224,7 @@ PRADIGI_STRINGS = {
         },
         'course_ids_by_subject_en': {
             'KhelPuri': "CRS189",
+            'Music': 'Sangeet',
         }
     },
     "bn": {
@@ -258,7 +261,7 @@ PRADIGI_STRINGS = {
         },
         'course_ids_by_subject_en': {
             'KhelBadi': "CRS149",
-            'KhelPuri': "CRS203",
+            'DekhiyeaurKariye': "CRS203",
             'English': "Angrezi",
         }
     },
@@ -872,9 +875,21 @@ class PraDigiChef(JsonTreeChef):
             age_groups_subtree['children'] = nonempty_subject_subtrees
 
             # Flatten the '3-6 years' agre group to contain contents of KhelBadi
-            if age_groups_subtree['title'] == '3-6 years' and len(age_groups_subtree['children']) == 1:
+            # if age_groups_subtree['title'] == '3-6 years' and len(age_groups_subtree['children']) == 1:
+            #     khelbadi_subtree = age_groups_subtree['children'][0]
+            #     age_groups_subtree['children'] = khelbadi_subtree['children']
+            if age_groups_subtree['title'] == '3-6 years' and age_groups_subtree['children']:
+                new_children = []
                 khelbadi_subtree = age_groups_subtree['children'][0]
-                age_groups_subtree['children'] = khelbadi_subtree['children']
+                new_children = khelbadi_subtree['children']
+                other_subtrees = age_groups_subtree['children'][1:]
+                new_children.extend(other_subtrees)
+                age_groups_subtree['children'] = new_children
+                # flat_subfolders = []
+                # for folder in age_groups_subtree['children']:
+                #     for subfolder in folder['children']:
+                #         flat_subfolders.append(subfolder)
+                # age_groups_subtree['children'] = flat_subfolders
 
         return lang_subtree
 

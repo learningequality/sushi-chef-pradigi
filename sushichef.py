@@ -400,7 +400,7 @@ PRADIGI_STRINGS = {
 def get_subtree_by_subject_en(lang, subject):
     if lang not in PRADIGI_LANG_URL_MAP:
         raise ValueError('Language `lang` must be in PRADIGI_LANG_URL_MAP')
-    wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
+    wrt_filename = 'chefdata/vader/trees/pradigi_{}_web_resource_tree.json'.format(lang)
     with open(wrt_filename) as jsonfile:
         web_resource_tree = json.load(jsonfile)
     subject_subtrees = web_resource_tree['children']
@@ -425,7 +425,7 @@ def get_subtree_by_source_id(lang, source_id):
     """
     if lang not in PRADIGI_LANG_URL_MAP:
         raise ValueError('Language `lang` must be in PRADIGI_LANG_URL_MAP')
-    wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
+    wrt_filename = 'chefdata/vader/trees/pradigi_{}_web_resource_tree.json'.format(lang)
     with open(wrt_filename) as jsonfile:
         web_resource_tree = json.load(jsonfile)
     # setup recusive find function
@@ -586,7 +586,7 @@ def find_games_for_lang(name, lang, take_from=None):
     language_en = PRADIGI_STRINGS[lang]['language_en'] # ???
 
     # load website game web resource data
-    WEBSITE_GAMES_OUTPUT = 'chefdata/trees/website_games_all_langs.json'
+    WEBSITE_GAMES_OUTPUT = 'chefdata/vader/trees/website_games_all_langs.json'
     website_data = json.load(open(WEBSITE_GAMES_OUTPUT, 'r'))
     if lang in website_data:
         website_data_lang = website_data[lang]
@@ -692,7 +692,7 @@ def extract_website_games_from_tree(lang):
     if lang not in PRADIGI_LANG_URL_MAP:
         raise ValueError('Language `lang` must be in PRADIGI_LANG_URL_MAP')
     # READ IN
-    wrt_filename = 'chefdata/trees/pradigi_{}_web_resource_tree.json'.format(lang)
+    wrt_filename = 'chefdata/vader/trees/pradigi_{}_web_resource_tree.json'.format(lang)
     with open(wrt_filename) as jsonfile:
         web_resource_tree = json.load(jsonfile)
     # PROCESS
@@ -764,7 +764,7 @@ class PraDigiChef(JsonTreeChef):
         for lang in PRADIGI_WEBSITE_LANGUAGES:
             lang_games = extract_website_games_from_tree(lang)
             website_games[lang] = lang_games
-        WEBSITE_GAMES_OUTPUT = 'chefdata/trees/website_games_all_langs.json'
+        WEBSITE_GAMES_OUTPUT = 'chefdata/vader/trees/website_games_all_langs.json'
         # Save website games
         with open(WEBSITE_GAMES_OUTPUT, 'w') as json_file:
             json.dump(website_games, json_file, ensure_ascii=False, indent=2, sort_keys=True)
@@ -901,7 +901,7 @@ class PraDigiChef(JsonTreeChef):
         LOGGER.info('in pre_run...')
 
         # delete .zip files in temporary dir when running using update
-        if args['update']:
+        if False or args['update']:
             LOGGER.info('Deleting all zips in cache dir {}'.format(HTML5APP_ZIPS_LOCAL_DIR))
             for rel_path in os.listdir(HTML5APP_ZIPS_LOCAL_DIR):
                 abs_path = os.path.join(HTML5APP_ZIPS_LOCAL_DIR, rel_path)
@@ -909,8 +909,8 @@ class PraDigiChef(JsonTreeChef):
                     shutil.rmtree(abs_path)
 
         # option to skip crawling stage
-        if 'nocrawl' not in options:
-            self.crawl(args, options)
+        #if 'nocrawl' not in options:
+            #self.crawl(args, options)
 
         # Conditionally determine `source_id` depending on variant specified
         if 'variant' in options and options['variant'].upper() == 'LE':

@@ -83,6 +83,8 @@ def get_zip_file(zip_file_url, main_file):
     final_webroot_path = os.path.join(destpath, 'webroot.zip')
     if os.path.exists(final_webroot_path):
         return final_webroot_path
+    else:
+        LOGGER.error("Now we need local files so we can process them: %s" % final_webroot_path)
 
     try:
         download_file(zip_file_url, destpath, request_fn=make_request)
@@ -177,6 +179,18 @@ def get_zip_file(zip_file_url, main_file):
                     bytes_out = bytes_in.replace(main_file.encode('utf-8'), b'index.html')
                     open(file_path, 'wb').write(bytes_out)
 
+        for root, dirs, files in os.walk(zip_folder):
+            for file in files:
+                if file.endswith(".js"):
+                    LOGGER.info("Fixing Android bug in JS file: %s" % file)
+                    with open(file, 'w') as f:
+                        content = f.read()
+                        content = content.replace(
+                            'Utils.mobileDeviceFlag=true', 
+                            'Utils.mobileDeviceFlag=false'
+                        )
+                        f.write(content)
+                        f.close()
         # create the zip file and copy it to 
         tmp_predictable_zip_path = create_predictable_zip(zip_folder)
         shutil.copyfile(tmp_predictable_zip_path, final_webroot_path)
